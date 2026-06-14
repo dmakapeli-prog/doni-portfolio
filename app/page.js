@@ -157,9 +157,10 @@ function IDCard() {
         {/* Foto Profil */}
         <div className="w-32 h-32 rounded-xl mb-5 flex items-center justify-center shadow-inner relative overflow-hidden">
           <img 
-            src="/foto-doni.jpg" 
+            src="/foto-doni.jpeg" 
             alt="Donie Makapeli"
             style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+            onError={(e) => { e.target.style.display='none' }}
           />
         </div>
 
@@ -303,9 +304,10 @@ function AboutSection() {
             <div className="glass-card w-full max-w-md p-6 sm:p-8 flex flex-col items-center">
               <div className="w-full aspect-square rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30">
                 <img 
-                  src="/foto-doni.jpg" 
+                  src="/foto-doni.jpeg" 
                   alt="Donie Makapeli"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }}
+                  onError={(e) => { e.target.style.display='none' }}
                 />
               </div>
 
@@ -464,6 +466,7 @@ function CertificateGrid() {
                 alt={cert.nama}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 className="rounded-t-xl"
+                onError={(e) => { e.target.src = 'https://placehold.co/400x280/1a1a2e/00D9FF?text=Sertifikat' }}
               />
             </div>
             <div className="p-4 sm:p-5" style={{ background: 'rgba(10, 14, 26, 0.6)' }}>
