@@ -368,110 +368,111 @@ function AboutSection() {
 function CertificateGrid() {
   const [showAll, setShowAll] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState("");
+  const [modalImage, setModalImage] = useState('');
 
-  const certificates = [
-    {
-      src: "/certificates/sertif-icitacs.jpg",
-      nama: "ICITACS 2025 - International Conference on IT",
-      penerbit: "Nusa Putra University × Undiksha | Japan",
-      tahun: "2025",
-    },
-    {
-      src: "/certificates/sertif-icemac.jpg",
-      nama: "ICEMAC 2025 - International Conference on Economic",
-      penerbit: "Nusa Putra University × Undiksha | Japan",
-      tahun: "2025",
-    },
-    {
-      src: "/certificates/sertif-mikrotik.jpg",
-      nama: "MikroTik Certified Network Associate (MTCNA)",
-      penerbit: "MikroTik",
-      tahun: "2026",
-    },
-    {
-      src: "/certificates/sertif-databases.jpg",
-      nama: "IT Specialist - Databases",
-      penerbit: "Certiport × CertNexus × Pearson",
-      tahun: "2026",
-    },
-    {
-      src: "/certificates/sertif-myskill.jpg",
-      nama: "Pivot Table in Microsoft Excel",
-      penerbit: "MySkill Short Class",
-      tahun: "2025",
-    },
-    {
-      src: "/certificates/sertif-workshop-ti.jpg",
-      nama: "Workshop TI - Keamanan Jaringan & Proteksi Cyber",
-      penerbit: "Universitas Nusa Putra",
-      tahun: "2024",
-    },
-    {
-      src: "/certificates/sertif-workshop-si.jpg",
-      nama: "Workshop SI - From Data to Decisions: AI",
-      penerbit: "Universitas Nusa Putra",
-      tahun: "2025",
-    },
-    {
-      src: "/certificates/sertif-public-speaking.jpg",
-      nama: "Public Speaking - Novice Level (EPDC × MURI)",
-      penerbit: "The Energetic EPDC",
-      tahun: "2026",
-    },
+  const certs = [
+    { src: '/certificates/sertif-icitacs.jpg', nama: 'ICITACS 2025 - International Conference on IT', penerbit: 'Nusa Putra University | Japan', tahun: '2025' },
+    { src: '/certificates/sertif-icemac.jpg', nama: 'ICEMAC 2025 - International Conference on Economic', penerbit: 'Nusa Putra University | Japan', tahun: '2025' },
+    { src: '/certificates/sertif-mikrotik.jpg', nama: 'MikroTik Certified Network Associate (MTCNA)', penerbit: 'MikroTik', tahun: '2026' },
+    { src: '/certificates/sertif-databases.jpg', nama: 'IT Specialist - Databases', penerbit: 'Certiport x CertNexus x Pearson', tahun: '2026' },
+    { src: '/certificates/sertif-myskill.jpg', nama: 'Pivot Table in Microsoft Excel', penerbit: 'MySkill Short Class', tahun: '2025' },
+    { src: '/certificates/sertif-workshop-ti.jpg', nama: 'Workshop TI - Keamanan Jaringan & Proteksi Cyber', penerbit: 'Universitas Nusa Putra', tahun: '2024' },
+    { src: '/certificates/sertif-workshop-si.jpg', nama: 'Workshop SI - From Data to Decisions: AI', penerbit: 'Universitas Nusa Putra', tahun: '2025' },
+    { src: '/certificates/sertif-public-speaking.jpg', nama: 'Public Speaking - Novice Level (EPDC x MURI)', penerbit: 'The Energetic EPDC', tahun: '2026' },
   ];
 
-  const visibleCerts = showAll ? certificates : certificates.slice(0, 4);
+  const visible = showAll ? certs : certs.slice(0, 4);
 
   return (
-    <>
-      {/* Modal Preview */}
+    <div>
       {modalOpen && (
         <div
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 backdrop-blur-sm"
           onClick={() => setModalOpen(false)}
+          style={{
+            position: 'fixed', top: 0, left: 0,
+            width: '100vw', height: '100vh',
+            background: 'rgba(0,0,0,0.85)',
+            zIndex: 9999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
         >
           <button
             onClick={() => setModalOpen(false)}
-            className="absolute top-6 right-6 text-white text-3xl font-bold hover:text-red-400 transition-colors z-[210] cursor-pointer"
-            aria-label="Close modal"
-          >
-            ✕
-          </button>
+            style={{
+              position: 'absolute', top: 20, right: 30,
+              color: 'white', fontSize: '2rem',
+              background: 'none', border: 'none',
+              cursor: 'pointer',
+            }}
+          >✕</button>
           <img
             src={modalImage}
             alt="Certificate Preview"
-            className="max-w-3xl w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: '90vw',
+              maxHeight: '90vh',
+              objectFit: 'contain',
+              borderRadius: '12px',
+            }}
           />
         </div>
       )}
 
-      {/* Certificate Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {visibleCerts.map((cert, i) => (
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        gap: '20px',
+        marginTop: '24px',
+      }}>
+        {visible.map((cert, i) => (
           <div
             key={i}
-            className="cert-card glass-card rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:border-accent-cyan/50 hover:shadow-[0_0_25px_rgba(0,217,255,0.15)] fade-up"
-            style={{ transitionDelay: `${0.05 * i}s` }}
-            onClick={() => {
-              setModalImage(cert.src);
-              setModalOpen(true);
+            onClick={() => { setModalImage(cert.src); setModalOpen(true); }}
+            style={{
+              background: 'rgba(255,255,255,0.05)',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              cursor: 'pointer',
+              border: '1px solid rgba(255,255,255,0.1)',
+              transition: 'transform 0.2s, border-color 0.2s',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.03)';
+              e.currentTarget.style.borderColor = '#00D9FF';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
             }}
           >
-            <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
+            <div style={{ width: '100%', height: '180px', overflow: 'hidden' }}>
               <img
                 src={cert.src}
                 alt={cert.nama}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                className="rounded-t-xl"
-                onError={(e) => { e.target.src = 'https://placehold.co/400x280/1a1a2e/00D9FF?text=Sertifikat' }}
+                style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }}
+                onError={(e) => {
+                  e.target.src = 'https://placehold.co/400x180/1a1a2e/00D9FF?text=Sertifikat';
+                }}
               />
             </div>
-            <div className="p-4 sm:p-5" style={{ background: 'rgba(10, 14, 26, 0.6)' }}>
-              <h4 className="text-white font-bold text-sm mb-1 leading-snug">{cert.nama}</h4>
-              <p className="text-text-secondary text-xs mb-3">{cert.penerbit}</p>
-              <span className="inline-block px-3 py-1 rounded-full border border-accent-cyan/30 text-accent-cyan text-[10px] font-bold tracking-wider bg-accent-cyan/5">
+            <div style={{ padding: '12px 16px', background: 'rgba(10,14,23,0.6)' }}>
+              <h4 style={{ color: 'white', fontWeight: 'bold', fontSize: '13px', marginBottom: '4px' }}>
+                {cert.nama}
+              </h4>
+              <p style={{ color: '#9CA3AF', fontSize: '11px', marginBottom: '6px' }}>
+                {cert.penerbit}
+              </p>
+              <span style={{
+                display: 'inline-block',
+                padding: '2px 10px',
+                borderRadius: '999px',
+                border: '1px solid #00D9FF',
+                color: '#00D9FF',
+                fontSize: '11px',
+              }}>
                 {cert.tahun}
               </span>
             </div>
@@ -479,16 +480,23 @@ function CertificateGrid() {
         ))}
       </div>
 
-      {/* Show More / Show Less */}
-      <div className="flex justify-center mt-8">
+      <div style={{ textAlign: 'center', marginTop: '24px' }}>
         <button
           onClick={() => setShowAll(!showAll)}
-          className="btn-outline px-6 py-2.5 rounded-full text-sm flex items-center gap-2"
+          style={{
+            padding: '10px 28px',
+            borderRadius: '999px',
+            border: '1px solid #00D9FF',
+            color: '#00D9FF',
+            background: 'transparent',
+            cursor: 'pointer',
+            fontSize: '14px',
+          }}
         >
-          {showAll ? "Show Less ▲" : "Show More ▼"}
+          {showAll ? 'Show Less ↑' : 'Show More ↓'}
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
