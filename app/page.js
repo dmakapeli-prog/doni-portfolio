@@ -459,7 +459,7 @@ function CertificateGrid() {
               setModalOpen(true);
             }}
           >
-            <div className="w-full aspect-[4/3] overflow-hidden">
+            <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
               <img
                 src={cert.src}
                 alt={cert.nama}
