@@ -460,13 +460,12 @@ function CertificateGrid() {
               setModalOpen(true);
             }}
           >
-            <div className="w-full aspect-[4/3] overflow-hidden">
+            <div className="h-44 overflow-hidden rounded-t-xl">
               <img
                 src={cert.src}
                 alt={cert.nama}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                className="rounded-t-xl"
-                onError={(e) => { e.target.src = 'https://placehold.co/400x280/1a1a2e/00D9FF?text=Sertifikat' }}
+                onError={(e) => { e.target.src = 'https://placehold.co/400x180/1a1a2e/00D9FF?text=Sertifikat' }}
               />
             </div>
             <div className="p-4 sm:p-5" style={{ background: 'rgba(10, 14, 26, 0.6)' }}>
