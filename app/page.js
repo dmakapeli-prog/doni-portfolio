@@ -101,7 +101,7 @@ function Navbar() {
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "pt-4" : "pt-6"}`}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        
+
         {/* Kiri: Logo */}
         <div className="flex flex-col items-center md:items-start">
           <a href="#home" className="text-2xl font-bold tracking-tight text-white flex items-center gap-1 select-none">
@@ -119,11 +119,10 @@ function Navbar() {
               key={l.id}
               href={`#${l.id}`}
               onClick={() => setActive(l.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                active === l.id 
-                  ? "nav-item-active" 
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${active === l.id
+                  ? "nav-item-active"
                   : "text-text-secondary nav-item-hover"
-              }`}
+                }`}
             >
               {l.label}
             </a>
@@ -141,7 +140,7 @@ function Navbar() {
 function IDCard() {
   return (
     <div className="id-card-wrapper flex flex-col items-center cursor-pointer select-none">
-      
+
       {/* --- Lanyard Top Holes (Gesper) --- */}
       <div className="flex justify-between items-center w-8 h-4 bg-white/10 border border-white/20 rounded-t-sm px-1.5 relative z-10">
         <div className="w-2 h-2 rounded-full bg-gray-200 border border-gray-400" />
@@ -153,14 +152,14 @@ function IDCard() {
 
       {/* --- Card Body --- */}
       <div className="id-card-body w-[260px] h-[360px] rounded-2xl p-6 flex flex-col items-center relative z-20 -mt-1">
-        
+
         {/* Foto Profil */}
         <div className="w-32 h-32 rounded-xl mb-5 flex items-center justify-center shadow-inner relative overflow-hidden">
-          <img 
-            src="/foto-doni.jpeg" 
+          <img
+            src="/foto-doni.jpeg"
             alt="Donie Makapeli"
             style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
-            onError={(e) => { e.target.style.display='none' }}
+            onError={(e) => { e.target.style.display = 'none' }}
           />
         </div>
 
@@ -211,10 +210,10 @@ function HomeSection() {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-32 pb-16 px-5 sm:px-8 z-10">
       <div className="relative z-10 max-w-7xl mx-auto w-full grid md:grid-cols-[60%_40%] gap-12 lg:gap-8 items-center">
-        
+
         {/* ====== KIRI (60%): Teks ====== */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
-          
+
           <p className="text-text-secondary text-xs tracking-wider mb-4 uppercase">
             Portfolio Website V1
           </p>
@@ -238,9 +237,9 @@ function HomeSection() {
           </p>
 
           <p className="text-text-secondary text-sm leading-relaxed max-w-xl mb-10">
-            Saya mahasiswa S1 Teknik Informatika di Universitas Nusa Putra dengan minat pada 
-            pengembangan web modern dan analisis data. Berpengalaman magang sebagai Administrasi 
-            di PT Bank Rakyat Indonesia (BRI) Unit Cipanas, di mana saya juga mengerjakan project 
+            Saya mahasiswa S1 Teknik Informatika di Universitas Nusa Putra dengan minat pada
+            pengembangan web modern dan analisis data. Berpengalaman magang sebagai Administrasi
+            di PT Bank Rakyat Indonesia (BRI) Unit Cipanas, di mana saya juga mengerjakan project
             analisis data kunjungan nasabah menggunakan Python sebagai kontribusi sesuai bidang Informatika.
           </p>
 
@@ -303,11 +302,11 @@ function AboutSection() {
           <div className="fade-up fade-delay-1 flex justify-center">
             <div className="glass-card w-full max-w-md p-6 sm:p-8 flex flex-col items-center">
               <div className="w-full aspect-square rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30">
-                <img 
-                  src="/foto-doni.jpeg" 
+                <img
+                  src="/foto-doni.jpeg"
                   alt="Donie Makapeli"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }}
-                  onError={(e) => { e.target.style.display='none' }}
+                  onError={(e) => { e.target.style.display = 'none' }}
                 />
               </div>
 
@@ -331,19 +330,19 @@ function AboutSection() {
           {/* KOLOM KANAN */}
           <div className="flex flex-col gap-6">
             <p className="fade-up fade-delay-2 text-text-secondary leading-relaxed text-sm sm:text-base">
-              Saya <span className="text-white font-medium">Donie Makapeli</span>, mahasiswa S1 Teknik 
-              Informatika di Universitas Nusa Putra dengan fokus pada pengembangan web modern menggunakan 
+              Saya <span className="text-white font-medium">Donie Makapeli</span>, mahasiswa S1 Teknik
+              Informatika di Universitas Nusa Putra dengan fokus pada pengembangan web modern menggunakan
               Next.js dan Tailwind CSS, serta analisis data menggunakan Python.
             </p>
             <p className="fade-up fade-delay-3 text-text-secondary leading-relaxed text-sm sm:text-base">
-              Berpengalaman magang sebagai Administrasi di PT Bank Rakyat Indonesia (BRI) Unit Cipanas, 
-              di mana saya mengerjakan project analisis data kunjungan nasabah sebagai kontribusi sesuai 
+              Berpengalaman magang sebagai Administrasi di PT Bank Rakyat Indonesia (BRI) Unit Cipanas,
+              di mana saya mengerjakan project analisis data kunjungan nasabah sebagai kontribusi sesuai
               bidang Informatika - mulai dari preprocessing data, exploratory data analysis, hingga penyusunan laporan.
             </p>
             <p className="fade-up fade-delay-4 text-text-secondary leading-relaxed text-sm sm:text-base">
-              Selain itu, saya membangun <span className="text-accent-cyan font-medium">DTech</span>, sebuah 
-              website agency digital berisi 10+ halaman demo template (e-commerce, company profile, undangan 
-              digital, dan lainnya) untuk menunjukkan kemampuan dalam membangun layout, animasi, dan tampilan 
+              Selain itu, saya membangun <span className="text-accent-cyan font-medium">DTech</span>, sebuah
+              website agency digital berisi 10+ halaman demo template (e-commerce, company profile, undangan
+              digital, dan lainnya) untuk menunjukkan kemampuan dalam membangun layout, animasi, dan tampilan
               responsif menggunakan Next.js. Saya juga aktif di organisasi mahasiswa untuk mengasah kepemimpinan dan kerja tim.
             </p>
 
@@ -460,12 +459,13 @@ function CertificateGrid() {
               setModalOpen(true);
             }}
           >
-            <div className="h-44 overflow-hidden rounded-t-xl">
+            <div className="w-full aspect-[4/3] overflow-hidden">
               <img
                 src={cert.src}
                 alt={cert.nama}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                onError={(e) => { e.target.src = 'https://placehold.co/400x180/1a1a2e/00D9FF?text=Sertifikat' }}
+                className="rounded-t-xl"
+                onError={(e) => { e.target.src = 'https://placehold.co/400x280/1a1a2e/00D9FF?text=Sertifikat' }}
               />
             </div>
             <div className="p-4 sm:p-5" style={{ background: 'rgba(10, 14, 26, 0.6)' }}>
@@ -567,11 +567,10 @@ function EducationSection() {
               <button
                 key={t.id}
                 onClick={() => setActiveTab(t.id)}
-                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 ${
-                  activeTab === t.id 
-                  ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg" 
-                  : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
-                }`}
+                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 ${activeTab === t.id
+                    ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg"
+                    : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
+                  }`}
               >
                 <span>{t.icon}</span> {t.id}
               </button>
@@ -589,13 +588,13 @@ function EducationSection() {
             <div className="relative">
               {/* Vertical Line */}
               <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent-cyan/50 via-accent-purple/30 to-transparent transform md:-translate-x-1/2" />
-              
+
               <div className="space-y-12">
                 {content[activeTab]?.map((item, index) => {
                   const isLeft = index % 2 === 0;
                   return (
                     <div key={index} className={`w-full flex flex-col md:flex-row ${isLeft ? '' : 'md:flex-row-reverse'} relative fade-up`} style={{ transitionDelay: `${0.1 * (index + 1)}s` }}>
-                      
+
                       {/* Timeline Dot */}
                       <div className="absolute left-6 md:left-1/2 top-2 w-3.5 h-3.5 rounded-full bg-accent-cyan transform -translate-x-1/2 shadow-[0_0_10px_rgba(0,217,255,0.6)] border-2 border-[#1A1235] z-10" />
 
@@ -702,11 +701,10 @@ function SkillsSection() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
-                  activeTab === tab
+                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${activeTab === tab
                     ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg"
                     : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -998,9 +996,8 @@ function ContactSection() {
     <section id="contact" className="relative py-24 sm:py-32 px-5 sm:px-8 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.5)] to-transparent">
       {/* Toast Notification */}
       <div
-        className={`fixed top-6 right-6 z-[100] toast-glass px-5 py-3.5 rounded-xl text-sm text-white font-medium transition-all duration-500 ${
-          showToast ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
+        className={`fixed top-6 right-6 z-[100] toast-glass px-5 py-3.5 rounded-xl text-sm text-white font-medium transition-all duration-500 ${showToast ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+          }`}
       >
         ✅ Pesan terkirim! <span className="text-text-secondary">(Demo - form belum terhubung ke backend)</span>
       </div>
@@ -1024,7 +1021,7 @@ function ContactSection() {
           <div className="fade-up fade-delay-1">
             <div className="glass-card p-6 sm:p-8 h-full flex flex-col">
               <h3 className="text-white font-bold text-lg mb-6">Informasi Kontak</h3>
-              
+
               <div className="space-y-4 mb-8 flex-1">
                 {contactInfo.map((item, i) => (
                   <div
