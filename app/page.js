@@ -154,13 +154,13 @@ function IDCard() {
       {/* --- Card Body --- */}
       <div className="id-card-body w-[260px] h-[360px] rounded-2xl p-6 flex flex-col items-center relative z-20 -mt-1">
         
-        {/* Placeholder Foto */}
-        <div className="w-32 h-32 rounded-xl mb-5 flex items-center justify-center shadow-inner relative overflow-hidden"
-             style={{ background: "linear-gradient(135deg, #A78BFA, #00D9FF)" }}>
-          <span className="text-6xl font-bold text-white relative z-10">D</span>
-          {/* subtle pattern inside photo */}
-          <div className="absolute inset-0 opacity-20"
-               style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "10px 10px" }} />
+        {/* Foto Profil */}
+        <div className="w-32 h-32 rounded-xl mb-5 flex items-center justify-center shadow-inner relative overflow-hidden">
+          <img 
+            src="/foto-doni.jpg" 
+            alt="Donie Makapeli"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+          />
         </div>
 
         {/* Nama & Role */}
@@ -301,11 +301,12 @@ function AboutSection() {
           {/* KOLOM KIRI */}
           <div className="fade-up fade-delay-1 flex justify-center">
             <div className="glass-card w-full max-w-md p-6 sm:p-8 flex flex-col items-center">
-              <div className="w-full aspect-square rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30"
-                   style={{ background: "linear-gradient(135deg, #00D9FF, #A78BFA)" }}>
-                <span className="text-7xl font-extrabold text-white relative z-10">D</span>
-                <div className="absolute inset-0 opacity-20"
-                     style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "12px 12px" }} />
+              <div className="w-full aspect-square rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30">
+                <img 
+                  src="/foto-doni.jpg" 
+                  alt="Donie Makapeli"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }}
+                />
               </div>
 
               <div className="w-full space-y-4">
@@ -357,6 +358,135 @@ function AboutSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+/* ==================================================================
+   CERTIFICATE GRID COMPONENT
+   ================================================================== */
+function CertificateGrid() {
+  const [showAll, setShowAll] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState("");
+
+  const certificates = [
+    {
+      src: "/certificates/sertif-icitacs.jpg",
+      nama: "ICITACS 2025 - International Conference on IT",
+      penerbit: "Nusa Putra University × Undiksha | Japan",
+      tahun: "2025",
+    },
+    {
+      src: "/certificates/sertif-icemac.jpg",
+      nama: "ICEMAC 2025 - International Conference on Economic",
+      penerbit: "Nusa Putra University × Undiksha | Japan",
+      tahun: "2025",
+    },
+    {
+      src: "/certificates/sertif-mikrotik.jpg",
+      nama: "MikroTik Certified Network Associate (MTCNA)",
+      penerbit: "MikroTik",
+      tahun: "2026",
+    },
+    {
+      src: "/certificates/sertif-databases.jpg",
+      nama: "IT Specialist - Databases",
+      penerbit: "Certiport × CertNexus × Pearson",
+      tahun: "2026",
+    },
+    {
+      src: "/certificates/sertif-myskill.jpg",
+      nama: "Pivot Table in Microsoft Excel",
+      penerbit: "MySkill Short Class",
+      tahun: "2025",
+    },
+    {
+      src: "/certificates/sertif-workshop-ti.jpg",
+      nama: "Workshop TI - Keamanan Jaringan & Proteksi Cyber",
+      penerbit: "Universitas Nusa Putra",
+      tahun: "2024",
+    },
+    {
+      src: "/certificates/sertif-workshop-si.jpg",
+      nama: "Workshop SI - From Data to Decisions: AI",
+      penerbit: "Universitas Nusa Putra",
+      tahun: "2025",
+    },
+    {
+      src: "/certificates/sertif-public-speaking.jpg",
+      nama: "Public Speaking - Novice Level (EPDC × MURI)",
+      penerbit: "The Energetic EPDC",
+      tahun: "2026",
+    },
+  ];
+
+  const visibleCerts = showAll ? certificates : certificates.slice(0, 4);
+
+  return (
+    <>
+      {/* Modal Preview */}
+      {modalOpen && (
+        <div
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          onClick={() => setModalOpen(false)}
+        >
+          <button
+            onClick={() => setModalOpen(false)}
+            className="absolute top-6 right-6 text-white text-3xl font-bold hover:text-red-400 transition-colors z-[210] cursor-pointer"
+            aria-label="Close modal"
+          >
+            ✕
+          </button>
+          <img
+            src={modalImage}
+            alt="Certificate Preview"
+            className="max-w-3xl w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+
+      {/* Certificate Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {visibleCerts.map((cert, i) => (
+          <div
+            key={i}
+            className="cert-card glass-card rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:border-accent-cyan/50 hover:shadow-[0_0_25px_rgba(0,217,255,0.15)] fade-up"
+            style={{ transitionDelay: `${0.05 * i}s` }}
+            onClick={() => {
+              setModalImage(cert.src);
+              setModalOpen(true);
+            }}
+          >
+            <div className="w-full aspect-[4/3] overflow-hidden">
+              <img
+                src={cert.src}
+                alt={cert.nama}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                className="rounded-t-xl"
+              />
+            </div>
+            <div className="p-4 sm:p-5" style={{ background: 'rgba(10, 14, 26, 0.6)' }}>
+              <h4 className="text-white font-bold text-sm mb-1 leading-snug">{cert.nama}</h4>
+              <p className="text-text-secondary text-xs mb-3">{cert.penerbit}</p>
+              <span className="inline-block px-3 py-1 rounded-full border border-accent-cyan/30 text-accent-cyan text-[10px] font-bold tracking-wider bg-accent-cyan/5">
+                {cert.tahun}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Show More / Show Less */}
+      <div className="flex justify-center mt-8">
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="btn-outline px-6 py-2.5 rounded-full text-sm flex items-center gap-2"
+        >
+          {showAll ? "Show Less ▲" : "Show More ▼"}
+        </button>
+      </div>
+    </>
   );
 }
 
@@ -450,11 +580,8 @@ function EducationSection() {
         {/* Timeline Content */}
         <div className="relative fade-up fade-delay-2 transition-opacity duration-500 min-h-[300px]">
           {activeTab === "Certificate" ? (
-            <div className="flex justify-center items-center h-40">
-              <div className="glass-card px-8 py-6 text-center border-accent-cyan/20">
-                <span className="text-3xl mb-3 block">🎓</span>
-                <p className="text-white font-medium text-lg">Sertifikat akan segera ditambahkan 🚀</p>
-              </div>
+            <div className="tab-fade-enter">
+              <CertificateGrid />
             </div>
           ) : (
             <div className="relative">
@@ -854,8 +981,8 @@ function ContactSection() {
   };
 
   const contactInfo = [
-    { icon: "📧", label: "Email", value: "doniemakapeli@gmail.com" },
-    { icon: "💬", label: "WhatsApp", value: "+62 819-9652-2114" },
+    { icon: "📧", label: "Email", value: "dmakapeli@gmail.com" },
+    { icon: "💬", label: "WhatsApp", value: "+62 81996522114" },
     { icon: "📍", label: "Lokasi", value: "Sukabumi, Jawa Barat" },
   ];
 
