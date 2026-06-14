@@ -214,9 +214,7 @@ function HomeSection() {
         {/* ====== KIRI (60%): Teks ====== */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
 
-          <p className="text-text-secondary text-xs tracking-wider mb-4 uppercase">
-            Portfolio Website V1
-          </p>
+
 
           <div className="badge-glass inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium text-white mb-6">
             <span>✨</span> Mahasiswa S1 Teknik Informatika - Universitas Nusa Putra
