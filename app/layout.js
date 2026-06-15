@@ -11,9 +11,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "Donie Makapeli | Web Developer & Data Analyst",
   description:
-    "Portfolio Doni Setiawan — Mahasiswa S1 Teknik Informatika Universitas Nusa Putra. Web Developer, Data Analyst, dan Data Enthusiast.",
+    "Portfolio Donie Makapeli — Mahasiswa S1 Teknik Informatika Universitas Nusa Putra. Web Developer dan Data Analyst.",
   keywords: [
-    "Doni Setiawan",
+    "Donie Makapeli",
     "Portfolio",
     "Web Developer",
     "Data Analyst",

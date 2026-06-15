@@ -65,6 +65,19 @@ function useTypingAnimation(words, typingSpeed = 100, deletingSpeed = 50, pauseD
    ANIMATED BACKGROUND BLOBS
    ================================================================== */
 function BackgroundBlobs() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile(); // Check on mount
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  if (isMobile) return null;
+
   return (
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       <div className="blob blob-cyan w-[500px] h-[500px] top-[-10%] left-[-5%]" />
@@ -120,8 +133,8 @@ function Navbar() {
               href={`#${l.id}`}
               onClick={() => setActive(l.id)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${active === l.id
-                  ? "nav-item-active"
-                  : "text-text-secondary nav-item-hover"
+                ? "nav-item-active"
+                : "text-text-secondary nav-item-hover"
                 }`}
             >
               {l.label}
@@ -208,7 +221,7 @@ function HomeSection() {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-32 pb-16 px-5 sm:px-8 z-10">
+    <section id="home" className="relative min-h-screen flex items-center pt-[100px] md:pt-32 pb-16 px-5 sm:px-8 z-10">
       <div className="relative z-10 max-w-7xl mx-auto w-full grid md:grid-cols-[60%_40%] gap-12 lg:gap-8 items-center">
 
         {/* ====== KIRI (60%): Teks ====== */}
@@ -299,11 +312,12 @@ function AboutSection() {
           {/* KOLOM KIRI */}
           <div className="fade-up fade-delay-1 flex justify-center">
             <div className="glass-card w-full max-w-md p-6 sm:p-8 flex flex-col items-center">
-              <div className="w-full aspect-square rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30">
+              <div className="w-full aspect-square rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30"
+                   style={{ maxWidth: '280px', margin: '0 auto', maxHeight: '320px' }}>
                 <img
                   src="/foto-doni.jpeg"
                   alt="Donie Makapeli"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', borderRadius: '16px' }}
                   onError={(e) => { e.target.style.display = 'none' }}
                 />
               </div>
@@ -379,6 +393,14 @@ function CertificateGrid() {
     { src: '/certificates/sertif-public-speaking.jpg', nama: 'Public Speaking - Novice Level (EPDC x MURI)', penerbit: 'The Energetic EPDC', tahun: '2026' },
   ];
 
+  useEffect(() => {
+    // Preload gambar sertifikat
+    certs.forEach(cert => {
+      const img = new Image();
+      img.src = cert.src;
+    });
+  }, []);
+
   const visible = showAll ? certs : certs.slice(0, 4);
 
   return (
@@ -421,8 +443,8 @@ function CertificateGrid() {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        gap: '20px',
+        gridTemplateColumns: typeof window !== 'undefined' && window.innerWidth < 500 ? '1fr' : 'repeat(2, 1fr)',
+        gap: '16px',
         marginTop: '24px',
       }}>
         {visible.map((cert, i) => (
@@ -446,11 +468,14 @@ function CertificateGrid() {
               e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
             }}
           >
-            <div style={{ width: '100%', height: '180px', overflow: 'hidden' }}>
+            <div style={{ width: '100%', height: '160px', overflow: 'hidden', backgroundColor: '#1a1a2e', display: 'block' }}>
               <img
                 src={cert.src}
                 alt={cert.nama}
-                style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                style={{ width: '100%', height: '160px', objectFit: 'cover', display: 'block', willChange: 'auto' }}
                 onError={(e) => {
                   e.target.src = 'https://placehold.co/400x180/1a1a2e/00D9FF?text=Sertifikat';
                 }}
@@ -574,8 +599,8 @@ function EducationSection() {
                 key={t.id}
                 onClick={() => setActiveTab(t.id)}
                 className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 ${activeTab === t.id
-                    ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg"
-                    : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
+                  ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg"
+                  : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
                   }`}
               >
                 <span>{t.icon}</span> {t.id}
@@ -708,8 +733,8 @@ function SkillsSection() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${activeTab === tab
-                    ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg"
-                    : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
+                  ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg"
+                  : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
                   }`}
               >
                 {tab}
