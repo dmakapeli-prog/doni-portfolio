@@ -5,7 +5,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 /* ==================================================================
    HOOKS
    ================================================================== */
-function useStaggerFade() {
+function useStaggerFade(deps = []) {
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
@@ -17,7 +17,7 @@ function useStaggerFade() {
     );
     items.forEach((c) => io.observe(c));
     return () => items.forEach((c) => io.unobserve(c));
-  }, []);
+  }, deps);
   return ref;
 }
 
@@ -313,7 +313,7 @@ function AboutSection() {
           <div className="fade-up fade-delay-1 flex justify-center">
             <div className="glass-card w-full max-w-md p-6 sm:p-8 flex flex-col items-center">
               <div className="w-full aspect-square rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30"
-                   style={{ maxWidth: '280px', margin: '0 auto', maxHeight: '320px' }}>
+                style={{ maxWidth: '280px', margin: '0 auto', maxHeight: '320px' }}>
                 <img
                   src="/foto-doni.jpeg"
                   alt="Donie Makapeli"
@@ -352,7 +352,7 @@ function AboutSection() {
               bidang Informatika - mulai dari preprocessing data, exploratory data analysis, hingga penyusunan laporan.
             </p>
             <p className="fade-up fade-delay-4 text-text-secondary leading-relaxed text-sm sm:text-base">
-              Selain itu, saya membangun <span className="text-accent-cyan font-medium">DTech</span>, sebuah
+              Selain itu, saya membangun <span className="text-accent-cyan font-medium">DiCode</span>, sebuah
               website agency digital berisi 10+ halaman demo template (e-commerce, company profile, undangan
               digital, dan lainnya) untuk menunjukkan kemampuan dalam membangun layout, animasi, dan tampilan
               responsif menggunakan Next.js. Saya juga aktif di organisasi mahasiswa untuk mengasah kepemimpinan dan kerja tim.
@@ -527,8 +527,8 @@ function CertificateGrid() {
    EDUCATION SECTION
    ================================================================== */
 function EducationSection() {
-  const stagger = useStaggerFade();
   const [activeTab, setActiveTab] = useState("Academic");
+  const stagger = useStaggerFade([activeTab]);
 
   const tabs = [
     { id: "Academic", icon: "📚" },
@@ -570,8 +570,8 @@ function EducationSection() {
     Achievement: [
       {
         period: "2026",
-        title: "Menyelesaikan Project DTech",
-        sub: "Website agency digital dengan 10+ halaman demo",
+        title: "Menyelesaikan Project DiCode",
+        sub: "Website agency digital DiCode dengan 10+ halaman demo template",
         badge: "Project",
       },
       {
@@ -819,13 +819,13 @@ function ProjectsSection() {
   const projects = [
     {
       icon: "🌐",
-      title: "DTech - Website Agency Digital",
+      title: "DiCode - Website Agency Digital",
       badge: "Web App",
       badgeClass: "badge-cyan",
-      desc: "Website agency digital dengan 10+ halaman demo template (e-commerce, company profile, undangan digital, dll) menggunakan Next.js dan Tailwind CSS",
+      desc: "Website agency digital DiCode dengan 10+ halaman demo template (e-commerce, company profile, undangan digital, dll) menggunakan Next.js dan Tailwind CSS",
       techStack: ["Next.js", "Tailwind CSS", "React", "Vercel"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
-      live: "https://dtech-website-pied.vercel.app",
+      live: "https://dicode-website-pied.vercel.app",
     },
     {
       icon: "💌",
@@ -835,7 +835,7 @@ function ProjectsSection() {
       desc: "Template undangan pernikahan digital dengan desain minimalis, countdown real-time, RSVP form, dan galeri foto",
       techStack: ["Next.js", "Tailwind CSS", "Animation"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
-      live: "https://dtech-website-pied.vercel.app/demo/minimalist-elegance",
+      live: "https://dicode-website-pied.vercel.app/demo/minimalist-elegance",
     },
     {
       icon: "👑",
@@ -845,7 +845,7 @@ function ProjectsSection() {
       desc: "Template undangan pernikahan digital tema mewah dengan animasi gerbang pembuka, parallax, partikel emas, dan galeri carousel interaktif",
       techStack: ["Next.js", "Tailwind CSS", "Animation"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
-      live: "https://dtech-website-pied.vercel.app/demo/royal-blossom",
+      live: "https://dicode-website-pied.vercel.app/demo/royal-blossom",
     },
     {
       icon: "📊",
