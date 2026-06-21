@@ -179,7 +179,7 @@ function IDCard() {
         {/* Nama & Role */}
         <h3 className="text-2xl font-bold text-white mb-1 tracking-wide">Doni</h3>
         <p className="text-accent-cyan text-[11px] font-medium tracking-widest uppercase">
-          Web Developer | Data Analyst
+          Fullstack Developer | Data Analyst
         </p>
 
         {/* Divider */}
@@ -238,7 +238,7 @@ function HomeSection() {
           </h1>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl italic font-serif gradient-text mb-6">
-            Web Developer + Data Analyst
+            Fullstack Developer & Data Analyst
           </h2>
 
           <TypingLine />
