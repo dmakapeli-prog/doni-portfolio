@@ -825,7 +825,7 @@ function ProjectsSection() {
       desc: "Website agency digital DiCode dengan 10+ halaman demo template (e-commerce, company profile, undangan digital, dll) menggunakan Next.js dan Tailwind CSS",
       techStack: ["Next.js", "Tailwind CSS", "React", "Vercel"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
-      live: "https://dicode-website-pied.vercel.app",
+      live: "https://dicode-website.vercel.app",
     },
     {
       icon: "💌",
@@ -835,7 +835,7 @@ function ProjectsSection() {
       desc: "Template undangan pernikahan digital dengan desain minimalis, countdown real-time, RSVP form, dan galeri foto",
       techStack: ["Next.js", "Tailwind CSS", "Animation"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
-      live: "https://dicode-website-pied.vercel.app/demo/minimalist-elegance",
+      live: "https://dicode-website.vercel.app/demo/minimalist-elegance",
     },
     {
       icon: "👑",
@@ -845,7 +845,7 @@ function ProjectsSection() {
       desc: "Template undangan pernikahan digital tema mewah dengan animasi gerbang pembuka, parallax, partikel emas, dan galeri carousel interaktif",
       techStack: ["Next.js", "Tailwind CSS", "Animation"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
-      live: "https://dicode-website-pied.vercel.app/demo/royal-blossom",
+      live: "https://dicode-website.vercel.app/demo/royal-blossom",
     },
     {
       icon: "📊",
