@@ -828,6 +828,16 @@ function ProjectsSection() {
       live: "https://dicode-website.vercel.app",
     },
     {
+      icon: "🍽️",
+      title: "DapurKu - Website Kuliner",
+      badge: "Web App",
+      badgeClass: "badge-orange",
+      desc: "Website kuliner modern untuk DapurKu Gunung Walat dengan fitur menu interaktif, filter kategori, keranjang belanja, integrasi WhatsApp & GrabFood, peta lokasi, dan testimoni pelanggan.",
+      techStack: ["Next.js", "Tailwind CSS", "Vercel", "WhatsApp API"],
+      github: null,
+      live: "https://dapurku-gunung-walat.vercel.app",
+    },
+    {
       icon: "💌",
       title: "Minimalist Elegance - Undangan Digital",
       badge: "Demo Template",

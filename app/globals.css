@@ -356,6 +356,11 @@ body {
   color: #4ADE80;
   border: 1px solid rgba(74,222,128,0.25);
 }
+.badge-orange {
+  background: rgba(251,191,36,0.1);
+  color: #FBBF24;
+  border: 1px solid rgba(251,191,36,0.25);
+}
 .badge-gray {
   background: rgba(156,163,175,0.1);
   color: #9CA3AF;
