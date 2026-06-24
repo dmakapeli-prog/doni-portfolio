@@ -818,6 +818,16 @@ function ProjectsSection() {
 
   const projects = [
     {
+      icon: "🥚",
+      title: "Ovara - Toko Telur Segar Online",
+      badge: "Web App",
+      badgeClass: "badge-orange",
+      desc: "Website e-commerce telur ayam segar premium dengan fitur keranjang belanja, sistem stok realtime via Supabase, dan integrasi order WhatsApp otomatis. Dibangun untuk UMKM lokal Cibadak, Sukabumi.",
+      techStack: ["Next.js", "Tailwind CSS", "Supabase", "Vercel"],
+      github: "https://github.com/dmakapeli-prog/ovara-website",
+      live: "https://ovara-nine.vercel.app",
+    },
+    {
       icon: "🌐",
       title: "DiCode - Website Agency Digital",
       badge: "Web App",
