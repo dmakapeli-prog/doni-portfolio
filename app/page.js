@@ -845,7 +845,7 @@ function ProjectsSection() {
       desc: "Website kuliner modern untuk DapurKu Gunung Walat dengan fitur menu interaktif, filter kategori, keranjang belanja, integrasi WhatsApp & GrabFood, peta lokasi, dan testimoni pelanggan.",
       techStack: ["Next.js", "Tailwind CSS", "Vercel", "WhatsApp API"],
       github: null,
-      live: "https://dapurku-gunung-walat.vercel.app",
+      live: "https://dapurku-websiite.vercel.app",
     },
     {
       icon: "💌",
