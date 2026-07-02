@@ -828,6 +828,17 @@ function ProjectsSection() {
       live: "https://ovara-nine.vercel.app",
     },
     {
+      icon: "🛍️",
+      title: "ThriftIn - Preloved Fashion Marketplace",
+      badge: "Web App",
+      badgeClass: "badge-cyan",
+      desc: "Platform marketplace fashion thrift dan preloved dengan fitur lengkap seperti real-time chat, sistem tawar harga, pelacakan pesanan, notifikasi real-time, rating & ulasan, wishlist, dan admin panel untuk manajemen produk dan transaksi.",
+      techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
+      github: "https://github.com/dmakapeli-prog/thriftin",
+      live: "https://thriftin-alpha.vercel.app",
+      image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80&w=800",
+    },
+    {
       icon: "🌐",
       title: "DiCode - Website Agency Digital",
       badge: "Web App",
