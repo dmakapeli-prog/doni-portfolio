@@ -650,9 +650,8 @@ function EducationSection() {
       {
         period: "2026",
         title: "Menyelesaikan Web Aplikasi \"Halo Jurnal\"",
-        sub: "halo-jurnal-app.vercel.app",
+        sub: "Web App PKL - halo-jurnal-app.vercel.app · Kanal terintegrasi untuk portal utama Jurnal Vibes, diselesaikan sebagai output PKL di PT MEDIA JURNAL SUKABUMI",
         badge: "PKL Project",
-        desc: "Membangun dan merilis aplikasi web (halo-jurnal-app.vercel.app) yang difungsikan sebagai kanal terintegrasi untuk portal utama, diselesaikan sebagai output dari program Praktik Kerja Lapangan (PKL) di PT MEDIA JURNAL SUKABUMI.",
       },
       {
         period: "2026",
