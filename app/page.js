@@ -778,40 +778,41 @@ function SkillsSection() {
   ];
 
   const expertiseSkills = [
-    { icon: "⚛️", title: "React JS" },
-    { icon: "▲", title: "Next JS" },
-    { icon: "🎨", title: "Tailwind CSS" },
-    { icon: "🟨", title: "JavaScript" },
-    { icon: "🐍", title: "Python" },
-    { icon: "🐼", title: "Pandas" },
-    { icon: "🎯", title: "Figma" },
-    { icon: "🌐", title: "HTML & CSS" },
-    { icon: "🤖", title: "AI-Assisted Development" },
     {
-      title: "Supabase",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C.33 12.59.738 13.5 1.424 13.5H11.1a.5.5 0 01.5.5v9.465c.015.986 1.26 1.41 1.874.637l9.262-11.652c.435-.539.027-1.448-.659-1.448H12.4a.5.5 0 01-.5-.5V1.036z" fill="#3ECF8E"/>
-        </svg>
-      ),
-    },
-    {
-      title: "PostgreSQL",
+      title: "React JS",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.128 0a10.134 10.134 0 00-2.755.403l-.063.02A10.922 10.922 0 0012.6.258C11.422.238 10.41.524 9.594 1 8.79.721 7.122.24 5.364.336 4.14.403 2.804.775 1.814 1.82.824 2.865.305 4.48.5 6.682c.064.72.198 1.404.372 2.035l.008.028C1.419 10.4 2.162 11.707 3.15 12.226c.406.208.904.173 1.329-.048a6.647 6.647 0 01-.302.443 3.3 3.3 0 00-.374.686c-.129.399-.192.861-.102 1.343.275 1.463 1.555 2.189 2.95 2.286a4.048 4.048 0 00-.405.893c-.198.73-.252 1.646.095 2.55.343.895 1.023 1.652 2.026 2.113 1.45.663 3.356.7 5.47-.168.155-.063.306-.13.455-.197.784-.35 1.522-.68 2.258-.68.697 0 1.135.306 1.504.644a4.194 4.194 0 00.427.345c.604.413 1.356.573 2.138.463.779-.11 1.575-.518 2.229-1.256 1.43-1.62 2.39-4.576 1.565-8.937-.159-.834-.406-1.72-.756-2.602.062-.007.123-.018.185-.033l.004-.001c1.01-.254 1.744-1.575 2.15-3.185.406-1.612.435-3.515.098-5.064-.337-1.547-1.16-2.944-2.337-3.465A4.342 4.342 0 0017.128 0zm.21 1.874c.355.033.703.159.982.355.356.244.593.575.76 1.042.338.937.336 2.17.007 3.218-.236.758-.574 1.32-.914 1.587a9.317 9.317 0 00-.756-2.047c-.489-.96-1.181-1.811-2.063-2.356a8.362 8.362 0 011.984-.799zm-4.976.218c.384.006.74.06 1.066.16 1.94.6 3.337 2.96 3.556 5.99.003.04-.001.08 0 .12.036.567.026 1.155-.011 1.737a26.526 26.526 0 01-.57-.009c-1.542-.043-2.73-.298-3.44-.66l-.004-.002c-.383-.189-.597-.397-.671-.532.152-.07.4-.145.8-.203a1 1 0 00-.288-1.979c-.84.123-1.454.358-1.895.673-.157-.218-.307-.505-.456-.876a12.813 12.813 0 01-.376-1.265 6.228 6.228 0 011.289-3.15zm-3.75 4.164c.166.514.37 1.006.602 1.443.248.47.524.857.825 1.12-.28.277-.528.673-.72 1.247-.403-1.142-.79-1.904-1.212-2.403a4.506 4.506 0 01.505-.407zm8.337 2.34c.168.012.337.025.5.044.038.565.038 1.13-.012 1.683-1.227.04-2.138-.048-2.8-.198l.02-.04c.27-.581.567-.98.857-1.226.456.037.927.04 1.435.037a1 1 0 000-.3zm-9.524.85c.57.607 1.111 1.576 1.712 3.228a1 1 0 001.875-.69c-.083-.228-.165-.44-.247-.644 1.073.32 2.587.546 4.605.601.047 0 .094-.003.141-.006-.148.845-.37 1.636-.652 2.294-.471 1.1-1.058 1.748-1.621 1.985-.558.234-1.207.207-1.986-.175-.781-.381-1.353-1.062-1.713-1.998-.364-.945-.479-2.07-.314-3.165a1 1 0 10-1.97-.323c-.222 1.356-.098 2.786.381 4.052.482 1.253 1.317 2.322 2.553 2.933.815.398 1.7.567 2.573.464a3.604 3.604 0 01-1.124 1.003c-1.16.67-2.767.84-4.452.084-.715-.327-1.086-.838-1.26-1.296-.171-.446-.179-1.012-.01-1.614.163-.593.47-1.116.742-1.43a1 1 0 10-1.508-1.313c-.43.494-.827 1.176-1.08 2.084a5.967 5.967 0 00-.175.729c-.5-.293-.995-.99-1.412-2.332l-.008-.027a11.15 11.15 0 01-.296-1.602c-.16-1.793.264-2.95.826-3.55.563-.598 1.428-.93 2.553-.994.052-.003.105-.003.157-.004l.034-.001.057-.001c.211 0 .428.008.65.024z" fill="#336791"/>
+          <circle cx="12" cy="12" r="2.139" fill="#61DAFB"/>
+          <path d="M12 6.5c3.9 0 7.5.9 10.2 2.4C24.9 10.5 26 12 26 13.5c0 1.5-1.1 3-3.8 4.6C19.5 19.6 15.9 20.5 12 20.5s-7.5-.9-10.2-2.4C-.9 16.5-2 15-2 13.5c0-1.5 1.1-3 3.8-4.6C4.5 7.4 8.1 6.5 12 6.5zm0-1c-4.1 0-7.9 1-10.8 2.7C-1.7 9.9-3 11.6-3 13.5s1.3 3.6 4.2 5.3C4.1 20.5 7.9 21.5 12 21.5s7.9-1 10.8-2.7c2.9-1.7 4.2-3.4 4.2-5.3s-1.3-3.6-4.2-5.3C19.9 6.5 16.1 5.5 12 5.5z" fill="none"/>
+          <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none"/>
+          <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none" transform="rotate(60 12 12)"/>
+          <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none" transform="rotate(120 12 12)"/>
         </svg>
       ),
     },
     {
-      title: "SQL",
+      title: "Next JS",
       svgIcon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="3" width="20" height="3.5" rx="1.5" fill="#60A5FA"/>
-          <rect x="2" y="8" width="20" height="3.5" rx="1.5" fill="#93C5FD"/>
-          <rect x="2" y="13" width="13" height="3.5" rx="1.5" fill="#BFDBFE"/>
-          <circle cx="19" cy="19" r="4" fill="#3B82F6"/>
-          <path d="M17.5 19h3M19 17.5v3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="12" fill="white"/>
+          <path d="M19.07 20.624L8.432 7H7v10.001h1.432V8.955l9.793 12.207c.302-.173.595-.361.878-.563M16 7h1.432v10H16z" fill="black"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Tailwind CSS",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 6C9.33 6 7.67 7.33 7 10c1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35.98 1 2.09 2.15 4.6 2.15 2.67 0 4.33-1.33 5-4-.99 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.62 7.15 14.51 6 12 6zM7 13c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.38 17.85 9.49 19 12 19c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.62 14.15 9.51 13 7 13z" fill="#38BDF8"/>
+        </svg>
+      ),
+    },
+    {
+      title: "JavaScript",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="3" fill="#F7DF1E"/>
+          <path d="M6.234 18.03c.353.576.957.96 1.86.96 1.02 0 1.68-.51 1.68-1.56V11.4h-1.62v5.94c0 .48-.18.66-.48.66-.3 0-.51-.18-.66-.45l-1.17.6-.01-.01zm5.01-.09c.45.72 1.29 1.17 2.43 1.17 1.29 0 2.19-.63 2.19-1.8 0-1.05-.6-1.56-1.71-2.04l-.36-.15c-.54-.24-.78-.39-.78-.78 0-.3.24-.54.6-.54.36 0 .6.15.81.54l1.11-.72c-.45-.78-1.08-1.08-1.92-1.08-1.2 0-1.98.75-1.98 1.8 0 1.05.6 1.59 1.56 1.98l.36.15c.6.27.93.42.93.84 0 .36-.33.63-.84.63-.6 0-.99-.3-1.26-.78l-1.14.72-.07.07z" fill="black"/>
         </svg>
       ),
     },
@@ -825,28 +826,207 @@ function SkillsSection() {
       ),
     },
     {
-      title: "Stitch AI",
+      title: "Python",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.963 3.403 5.963h2.031v-2.868s-.109-3.403 3.347-3.403h5.768s3.236.052 3.236-3.13V3.13S18.304 0 11.914 0zm-3.22 1.814a1.04 1.04 0 11-.001 2.08 1.04 1.04 0 010-2.08z" fill="#3673A5"/>
+          <path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12v-.826h8.12S24 18.211 24 12.031c0-6.18-3.403-5.963-3.403-5.963h-2.031v2.868s.109 3.403-3.347 3.403H9.451s-3.236-.052-3.236 3.13V20.87S5.696 24 12.086 24zm3.22-1.814a1.04 1.04 0 110-2.08 1.04 1.04 0 010 2.08z" fill="#FDD048"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Pandas",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="1" width="3.5" height="10" rx="1.75" fill="#130754"/>
+          <rect x="4" y="13" width="3.5" height="10" rx="1.75" fill="#E70488"/>
+          <rect x="16.5" y="1" width="3.5" height="10" rx="1.75" fill="#130754"/>
+          <rect x="16.5" y="13" width="3.5" height="10" rx="1.75" fill="#E70488"/>
+          <rect x="8.5" y="7" width="7" height="3.5" rx="1.75" fill="#130754"/>
+          <rect x="8.5" y="13.5" width="7" height="3.5" rx="1.75" fill="#E70488"/>
+        </svg>
+      ),
+    },
+    {
+      title: "HTML & CSS",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.5 0h9l-1 11-3.5 1-3.5-1L1.5 0z" fill="#E44D26"/>
+          <path d="M10.5 0l-1 11-3.5 1V0h4.5z" fill="#F16529"/>
+          <path d="M6 8.5l-.25-3h4.25l-.25-2.5h-4l-.25-2.5h5.25l-.75 8.5L6 9.75V8.5z" fill="white"/>
+          <path d="M13.5 0h9l-1 11-3.5 1-3.5-1-1-11z" fill="#1572B6" transform="translate(0 0)"/>
+          <path d="M22.5 0l-1 11-3.5 1V0h4.5z" fill="#33A9DC"/>
+          <path d="M19 8.5l-.25-3h4.25l-.25-2.5h-4L18.5 0.5H22L21.25 9 19 9.75V8.5z" fill="white"/>
+        </svg>
+      ),
+    },
+    {
+      title: "AI-Assisted Dev",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2l1.09 3.26L16.5 4l-2.26 2.5L15.5 10l-3.5-1.5L8.5 10l1.26-3.5L7.5 4l3.41 1.26L12 2z" fill="#A78BFA"/>
-          <path d="M19 8l.6 1.8L21.5 9l-1.2 1.4.8 2-1.9-.9-1.9.9.8-2L16.5 9l1.9.8L19 8z" fill="#C4B5FD"/>
-          <path d="M6 14l.6 1.8L8.5 15l-1.2 1.4.8 2-1.9-.9-1.9.9.8-2L3.5 15l1.9.8L6 14z" fill="#C4B5FD"/>
-          <path d="M9 19c0 1.657 1.343 3 3 3s3-1.343 3-3" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round"/>
-          <circle cx="12" cy="13" r="2.5" fill="#7C3AED" opacity="0.4"/>
-          <path d="M12 10.5v1M12 15.5v1M9.5 13h1M14.5 13h1" stroke="#A78BFA" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M12 2a7 7 0 017 7v1h1a2 2 0 010 4h-1v1a7 7 0 01-7 7 7 7 0 01-7-7v-1H4a2 2 0 010-4h1V9a7 7 0 017-7z" fill="#A78BFA" opacity="0.25"/>
+          <circle cx="9" cy="10" r="1.5" fill="#A78BFA"/>
+          <circle cx="15" cy="10" r="1.5" fill="#A78BFA"/>
+          <path d="M9 15c0 1.657 1.343 3 3 3s3-1.343 3-3" stroke="#A78BFA" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M12 2v2M6.5 4.5l1.5 1.5M17.5 4.5L16 6" stroke="#C4B5FD" strokeWidth="1.5" strokeLinecap="round"/>
+          <circle cx="19" cy="5" r="2" fill="#7C3AED"/>
+          <path d="M18.3 5l.5.5.9-1" stroke="white" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Supabase",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C.33 12.59.738 13.5 1.424 13.5H11.1a.5.5 0 01.5.5v9.465c.015.986 1.26 1.41 1.874.637l9.262-11.652c.435-.539.027-1.448-.659-1.448H12.4a.5.5 0 01-.5-.5V1.036z" fill="#3ECF8E"/>
+        </svg>
+      ),
+    },
+    {
+      title: "PostgreSQL",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="12" cy="6" rx="8" ry="3.5" fill="#336791"/>
+          <path d="M4 6v5c0 1.933 3.582 3.5 8 3.5S20 12.933 20 11V6" stroke="#336791" strokeWidth="2" fill="none"/>
+          <path d="M4 11v5c0 1.933 3.582 3.5 8 3.5S20 17.933 20 16v-5" stroke="#4F9DC7" strokeWidth="2" fill="none"/>
+          <ellipse cx="12" cy="6" rx="8" ry="3.5" fill="none" stroke="#4F9DC7" strokeWidth="1"/>
+          <path d="M15.5 5.5v5c0 .828-.672 1.5-1.5 1.5H10c-.828 0-1.5-.672-1.5-1.5V5.5" stroke="#7DC4E4" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M9.5 7.5h5" stroke="#7DC4E4" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M9.5 9.5h5" stroke="#7DC4E4" strokeWidth="1" strokeLinecap="round"/>
+        </svg>
+      ),
+    },
+    {
+      title: "SQL",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="4" rx="1.5" fill="#60A5FA"/>
+          <rect x="2" y="8" width="20" height="4" rx="1.5" fill="#93C5FD" opacity="0.8"/>
+          <rect x="2" y="14" width="12" height="4" rx="1.5" fill="#BFDBFE" opacity="0.6"/>
+          <circle cx="19" cy="19" r="4" fill="#3B82F6"/>
+          <path d="M17.4 19h3.2M19 17.4v3.2" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
         </svg>
       ),
     },
   ];
 
   const toolsSkills = [
-    { icon: "🐙", title: "GitHub" },
-    { icon: "▼", title: "Vercel" },
-    { icon: "📓", title: "Google Colab" },
-    { icon: "💻", title: "VS Code" },
-    { icon: "📊", title: "Excel / Spreadsheet" },
-    { icon: "🎨", title: "Canva" },
+    {
+      title: "GitHub",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" fill="white"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Vercel",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 22.525H0l12-21.05 12 21.05z" fill="white"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Google Colab",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm0 2.182c5.422 0 9.818 4.396 9.818 9.818S17.422 21.818 12 21.818 2.182 17.422 2.182 12 6.578 2.182 12 2.182z" fill="#F9AB00"/>
+          <path d="M7.636 12l4.364-7.636L16.364 12l-4.364 7.636z" fill="#F9AB00" opacity="0.6"/>
+          <circle cx="12" cy="12" r="3.273" fill="#F9AB00"/>
+        </svg>
+      ),
+    },
+    {
+      title: "VS Code",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.15 2.587L18.21.21a1.494 1.494 0 00-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 00-1.276.057L.327 7.261A1 1 0 00.326 8.74L3.899 12 .326 15.26a1 1 0 00.001 1.479L1.65 17.94a.999.999 0 001.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 001.704.29l4.942-2.377A1.5 1.5 0 0024 20.06V3.939a1.5 1.5 0 00-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" fill="#007ACC"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Excel / Sheets",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="3" fill="#217346"/>
+          <path d="M14 4h6v16h-6V4zM4 4l7 8-7 8h3l5.5-6.5L7 4H4z" fill="white"/>
+          <rect x="14" y="10" width="6" height="1.5" fill="#A9D18E"/>
+          <rect x="14" y="13" width="6" height="1.5" fill="#A9D18E"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Canva",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="12" fill="#00C4CC"/>
+          <path d="M15.5 8.5c-1.5 0-2.5.75-3 1.5-.5-.75-1.5-1.5-3-1.5-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5c1.5 0 2.5-.75 3-1.5.5.75 1.5 1.5 3 1.5 1.933 0 3.5-1.567 3.5-3.5S17.433 8.5 15.5 8.5z" fill="white"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Figma",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 24c2.209 0 4-1.791 4-4v-4H8c-2.209 0-4 1.791-4 4s1.791 4 4 4z" fill="#0ACF83"/>
+          <path d="M4 12c0-2.209 1.791-4 4-4h4v8H8c-2.209 0-4-1.791-4-4z" fill="#A259FF"/>
+          <path d="M4 4c0-2.209 1.791-4 4-4h4v8H8C5.791 8 4 6.209 4 4z" fill="#F24E1E"/>
+          <path d="M12 0h4c2.209 0 4 1.791 4 4s-1.791 4-4 4h-4V0z" fill="#FF7262"/>
+          <circle cx="16" cy="12" r="4" fill="#1ABCFE"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Postman",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="12" fill="#FF6C37"/>
+          <path d="M13.5 7.5l-5 5 2 2 5-5-2-2z" fill="white" opacity="0.9"/>
+          <circle cx="10" cy="14" r="1.5" fill="white" opacity="0.7"/>
+          <path d="M7 17l2-2" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
+          <path d="M14.5 7l1.5-1.5c.5-.5 1.5-.5 2 0s.5 1.5 0 2L16.5 9" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Antigravity IDE",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L9 9H2l5.5 4-2 7L12 16l6.5 4-2-7L22 9h-7L12 2z" fill="#00D9FF" opacity="0.9"/>
+          <circle cx="12" cy="12" r="3" fill="#0A0E1A"/>
+          <path d="M10.5 11.5l1 1 2-2" stroke="#00D9FF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+    },
+    {
+      title: "BRIMEN - BRI",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="4" width="14" height="17" rx="2" fill="#1E40AF" opacity="0.9"/>
+          <rect x="5" y="7" width="10" height="1.5" rx="0.75" fill="#93C5FD"/>
+          <rect x="5" y="10.5" width="10" height="1.5" rx="0.75" fill="#93C5FD"/>
+          <rect x="5" y="14" width="7" height="1.5" rx="0.75" fill="#93C5FD" opacity="0.7"/>
+          <circle cx="18" cy="17" r="5" fill="#2563EB"/>
+          <path d="M15.5 17l1.5 1.5 3-3" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M3 4l2-2h10l2 2" stroke="#60A5FA" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Stitch AI",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3l1.5 4L18 6l-3 3 1.5 4.5L12 11l-4.5 2.5L9 9l-3-3 4.5 1.5L12 3z" fill="#A78BFA"/>
+          <path d="M19.5 13l.8 2.2 2.2-.8-1.5 1.8 1 2.3-2.2-.9-1.8 1.5.3-2.4-2.3-1 2.2-.8.3-2.4.8 2.2 2.2-.7z" fill="#C4B5FD" opacity="0.8"/>
+          <path d="M5 14l.6 1.8 1.8-.6-1.2 1.5.8 1.9-1.8-.8-1.5 1.2.3-2-1.9-.8 1.8-.6.3-2 .6 1.8 1.8-.6z" fill="#C4B5FD" opacity="0.6"/>
+          <circle cx="12" cy="16" r="2" fill="#7C3AED" opacity="0.5"/>
+          <path d="M12 14v1M12 17v1M10 16h1M13 16h1" stroke="#A78BFA" strokeWidth="1" strokeLinecap="round"/>
+        </svg>
+      ),
+    },
   ];
+
 
   return (
     <section id="skills" className="relative py-24 sm:py-32 px-5 sm:px-8 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.6)] to-transparent">
@@ -922,7 +1102,10 @@ function SkillsSection() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {toolsSkills.map((s, i) => (
                   <div key={i} className="skill-card p-5 sm:p-6 flex flex-col items-center text-center cursor-default">
-                    <span className="text-2xl sm:text-3xl mb-3">{s.icon}</span>
+                    {s.svgIcon
+                      ? <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.svgIcon}</div>
+                      : <span className="text-2xl sm:text-3xl mb-3">{s.icon}</span>
+                    }
                     <h4 className="text-white font-semibold text-sm">{s.title}</h4>
                   </div>
                 ))}
