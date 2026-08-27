@@ -649,6 +649,13 @@ function EducationSection() {
     Achievement: [
       {
         period: "2026",
+        title: "Menyelesaikan Web Aplikasi \"Halo Jurnal\"",
+        sub: "halo-jurnal-app.vercel.app",
+        badge: "PKL Project",
+        desc: "Membangun dan merilis aplikasi web (halo-jurnal-app.vercel.app) yang difungsikan sebagai kanal terintegrasi untuk portal utama, diselesaikan sebagai output dari program Praktik Kerja Lapangan (PKL) di PT MEDIA JURNAL SUKABUMI.",
+      },
+      {
+        period: "2026",
         title: "Menyelesaikan Project DiCode",
         sub: "Website agency digital DiCode dengan 10+ halaman demo template",
         badge: "Project",
