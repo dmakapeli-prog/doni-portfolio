@@ -391,6 +391,7 @@ function CertificateGrid() {
     { src: '/certificates/sertif-workshop-ti.jpg', nama: 'Workshop TI - Keamanan Jaringan & Proteksi Cyber', penerbit: 'Universitas Nusa Putra', tahun: '2024' },
     { src: '/certificates/sertif-workshop-si.jpg', nama: 'Workshop SI - From Data to Decisions: AI', penerbit: 'Universitas Nusa Putra', tahun: '2025' },
     { src: '/certificates/sertif-public-speaking.jpg', nama: 'Public Speaking - Novice Level (EPDC x MURI)', penerbit: 'The Energetic EPDC', tahun: '2026' },
+    { src: '/certificates/sertif-seminas-sismatik-SI.jpg', nama: 'Seminar Nasional SISMATIK 2026', penerbit: 'Universitas Nusa Putra', tahun: '2026' },
   ];
 
   useEffect(() => {
