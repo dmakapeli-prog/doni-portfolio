@@ -826,6 +826,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS", "Supabase", "Vercel"],
       github: "https://github.com/dmakapeli-prog/ovara-website",
       live: "https://ovara-nine.vercel.app",
+      image: "/project-ovara.png",
     },
     {
       icon: "🛍️",
@@ -836,7 +837,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
       github: "https://github.com/dmakapeli-prog/thriftin",
       live: "https://thriftin-alpha.vercel.app",
-      image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80&w=800",
+      image: "/project-thriftin.png",
     },
     {
       icon: "🌐",
@@ -847,6 +848,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS", "React", "Vercel"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
       live: "https://dicode-website.vercel.app",
+      image: "/project-dicode.png",
     },
     {
       icon: "🍽️",
@@ -857,6 +859,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS", "Vercel", "WhatsApp API"],
       github: null,
       live: "https://dapurku-websiite.vercel.app",
+      image: "/project-dapurku.png",
     },
     {
       icon: "💌",
@@ -867,6 +870,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS", "Animation"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
       live: "https://dicode-website.vercel.app/demo/minimalist-elegance",
+      image: "/project-minimalist.png",
     },
     {
       icon: "👑",
@@ -877,6 +881,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS", "Animation"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
       live: "https://dicode-website.vercel.app/demo/royal-blossom",
+      image: "/project-royalblossom.png",
     },
     {
       icon: "📊",
@@ -887,6 +892,7 @@ function ProjectsSection() {
       techStack: ["Python", "Pandas", "Google Colab", "EDA"],
       github: null,
       live: null,
+      image: null,
     },
   ];
 
@@ -929,17 +935,54 @@ function ProjectsSection() {
 
                 {/* Preview Image */}
                 <div
-                  className="w-full aspect-video rounded-xl mb-6 flex items-center justify-center relative overflow-hidden"
-                  style={{ background: "linear-gradient(135deg, #00D9FF, #A78BFA)" }}
+                  className="w-full aspect-video rounded-xl mb-6 relative overflow-hidden group"
+                  style={{ background: "linear-gradient(135deg, #0a0e1a, #1a1235)" }}
                 >
-                  <span className="text-6xl sm:text-7xl relative z-10">{projects[currentSlide].icon}</span>
-                  <div
-                    className="absolute inset-0 opacity-15"
-                    style={{
-                      backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
-                      backgroundSize: "14px 14px",
-                    }}
-                  />
+                  {projects[currentSlide].image ? (
+                    <>
+                      <img
+                        src={projects[currentSlide].image}
+                        alt={projects[currentSlide].title}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          objectPosition: 'top center',
+                          display: 'block',
+                          transition: 'transform 0.5s ease',
+                        }}
+                        className="group-hover:scale-105"
+                        onError={(e) => { e.target.style.display = 'none'; }}
+                      />
+                      {/* Overlay saat hover */}
+                      <div
+                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style={{ background: 'rgba(0,0,0,0.45)' }}
+                      >
+                        {projects[currentSlide].live && (
+                          <span className="flex items-center gap-2 px-5 py-2.5 rounded-full text-white font-semibold text-sm" style={{ background: 'rgba(0,217,255,0.2)', border: '1px solid rgba(0,217,255,0.5)', backdropFilter: 'blur(8px)' }}>
+                            🔗 Lihat Website
+                          </span>
+                        )}
+                      </div>
+                      {/* Badge icon di pojok kiri atas */}
+                      <div className="absolute top-3 left-3 w-9 h-9 rounded-full flex items-center justify-center text-lg" style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                        {projects[currentSlide].icon}
+                      </div>
+                    </>
+                  ) : (
+                    /* Fallback: emoji besar untuk proyek tanpa gambar */
+                    <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #00D9FF22, #A78BFA22)" }}>
+                      <span className="text-6xl sm:text-7xl">{projects[currentSlide].icon}</span>
+                      <div
+                        className="absolute inset-0 opacity-15"
+                        style={{
+                          backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+                          backgroundSize: "14px 14px",
+                        }}
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {/* Title + Badge */}
