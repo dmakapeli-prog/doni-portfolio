@@ -619,6 +619,20 @@ function EducationSection() {
     ],
     Experience: [
       {
+        period: "Agu 2026 - Jan 2027",
+        title: "Web Developer Intern",
+        sub: "PT MEDIA JURNAL SUKABUMI (WFH)",
+        badge: "Magang",
+        desc: "Bertanggung jawab dalam pengembangan \"Jurnal Vibes\", sebuah website portal utama yang akan mengintegrasikan berbagai sub-kanal aplikasi."
+      },
+      {
+        period: "13 Jul 2026 - 13 Agu 2026",
+        title: "Web Developer (Praktik Kerja Lapangan)",
+        sub: "PT MEDIA JURNAL SUKABUMI (WFH)",
+        badge: "PKL",
+        desc: "Membangun dan menyelesaikan web aplikasi \"Halo Jurnal\" (halo-jurnal-app.vercel.app) yang difungsikan sebagai salah satu kanal untuk portal utama Jurnal Vibes."
+      },
+      {
         period: "Feb 2026 - Jun 2026",
         title: "Magang Administrasi & Data Science",
         sub: "PT Bank Rakyat Indonesia (BRI) Unit Cipanas",
