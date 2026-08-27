@@ -412,33 +412,97 @@ function CertificateGrid() {
           style={{
             position: 'fixed', top: 0, left: 0,
             width: '100vw', height: '100vh',
-            background: 'rgba(0,0,0,0.85)',
+            background: 'rgba(0,0,0,0.80)',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
             zIndex: 9999,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            padding: '20px',
           }}
         >
-          <button
-            onClick={() => setModalOpen(false)}
-            style={{
-              position: 'absolute', top: 20, right: 30,
-              color: 'white', fontSize: '2rem',
-              background: 'none', border: 'none',
-              cursor: 'pointer',
-            }}
-          >✕</button>
-          <img
-            src={modalImage}
-            alt="Certificate Preview"
+          {/* Modal Container */}
+          <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              maxWidth: '90vw',
+              position: 'relative',
+              maxWidth: '896px',
+              width: '100%',
               maxHeight: '90vh',
-              objectFit: 'contain',
-              borderRadius: '12px',
+              background: 'rgba(15, 18, 35, 0.95)',
+              borderRadius: '20px',
+              overflow: 'hidden',
+              border: '1px solid rgba(255,255,255,0.1)',
+              boxShadow: '0 25px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,217,255,0.08)',
+              display: 'flex',
+              flexDirection: 'column',
+              animation: 'modalScaleIn 0.22s cubic-bezier(0.34,1.56,0.64,1)',
             }}
-          />
+          >
+            {/* Header Bar */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '14px 20px',
+              borderBottom: '1px solid rgba(255,255,255,0.07)',
+              flexShrink: 0,
+            }}>
+              <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', fontWeight: '600', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                📜 Certificate Preview
+              </span>
+              <button
+                onClick={() => setModalOpen(false)}
+                style={{
+                  width: '32px', height: '32px',
+                  borderRadius: '50%',
+                  background: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  color: 'rgba(255,255,255,0.7)',
+                  fontSize: '16px',
+                  cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  transition: 'background 0.2s',
+                  lineHeight: 1,
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.16)'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
+              >✕</button>
+            </div>
+
+            {/* Image Area */}
+            <div style={{
+              flex: 1,
+              overflow: 'hidden',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '20px',
+              minHeight: 0,
+            }}>
+              <img
+                src={modalImage}
+                alt="Certificate Preview"
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: 'calc(90vh - 110px)',
+                  width: 'auto',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  borderRadius: '12px',
+                  display: 'block',
+                }}
+              />
+            </div>
+          </div>
+
+          <style>{`
+            @keyframes modalScaleIn {
+              from { opacity: 0; transform: scale(0.92); }
+              to   { opacity: 1; transform: scale(1); }
+            }
+          `}</style>
         </div>
       )}
 
