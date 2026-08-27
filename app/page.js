@@ -840,7 +840,7 @@ function SkillsSection() {
                   <div key={i} className="skill-card-lg p-8 sm:p-10 flex flex-col items-center text-center cursor-default">
                     <span className="text-4xl sm:text-5xl mb-4">{s.icon}</span>
                     <h4 className="text-white font-bold text-base sm:text-lg">{s.title}</h4>
-                    {s.desc && <p className="text-sm text-gray-400 text-center mt-3 px-4 line-clamp-3">{s.desc}</p>}
+                    {s.desc && <p className="text-sm text-gray-400 text-center mt-3 px-4">{s.desc}</p>}
                   </div>
                 ))}
               </div>
