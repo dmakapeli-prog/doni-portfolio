@@ -782,11 +782,11 @@ function SkillsSection() {
       title: "React JS",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="2.139" fill="#61DAFB"/>
-          <path d="M12 6.5c3.9 0 7.5.9 10.2 2.4C24.9 10.5 26 12 26 13.5c0 1.5-1.1 3-3.8 4.6C19.5 19.6 15.9 20.5 12 20.5s-7.5-.9-10.2-2.4C-.9 16.5-2 15-2 13.5c0-1.5 1.1-3 3.8-4.6C4.5 7.4 8.1 6.5 12 6.5zm0-1c-4.1 0-7.9 1-10.8 2.7C-1.7 9.9-3 11.6-3 13.5s1.3 3.6 4.2 5.3C4.1 20.5 7.9 21.5 12 21.5s7.9-1 10.8-2.7c2.9-1.7 4.2-3.4 4.2-5.3s-1.3-3.6-4.2-5.3C19.9 6.5 16.1 5.5 12 5.5z" fill="none"/>
-          <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none"/>
-          <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none" transform="rotate(60 12 12)"/>
-          <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none" transform="rotate(120 12 12)"/>
+          <circle cx="12" cy="12" r="2.139" fill="#61DAFB" />
+          <path d="M12 6.5c3.9 0 7.5.9 10.2 2.4C24.9 10.5 26 12 26 13.5c0 1.5-1.1 3-3.8 4.6C19.5 19.6 15.9 20.5 12 20.5s-7.5-.9-10.2-2.4C-.9 16.5-2 15-2 13.5c0-1.5 1.1-3 3.8-4.6C4.5 7.4 8.1 6.5 12 6.5zm0-1c-4.1 0-7.9 1-10.8 2.7C-1.7 9.9-3 11.6-3 13.5s1.3 3.6 4.2 5.3C4.1 20.5 7.9 21.5 12 21.5s7.9-1 10.8-2.7c2.9-1.7 4.2-3.4 4.2-5.3s-1.3-3.6-4.2-5.3C19.9 6.5 16.1 5.5 12 5.5z" fill="none" />
+          <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none" />
+          <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none" transform="rotate(60 12 12)" />
+          <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none" transform="rotate(120 12 12)" />
         </svg>
       ),
     },
@@ -794,8 +794,8 @@ function SkillsSection() {
       title: "Next JS",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="12" fill="white"/>
-          <path d="M19.07 20.624L8.432 7H7v10.001h1.432V8.955l9.793 12.207c.302-.173.595-.361.878-.563M16 7h1.432v10H16z" fill="black"/>
+          <circle cx="12" cy="12" r="12" fill="white" />
+          <path d="M19.07 20.624L8.432 7H7v10.001h1.432V8.955l9.793 12.207c.302-.173.595-.361.878-.563M16 7h1.432v10H16z" fill="black" />
         </svg>
       ),
     },
@@ -803,7 +803,7 @@ function SkillsSection() {
       title: "Tailwind CSS",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 6C9.33 6 7.67 7.33 7 10c1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35.98 1 2.09 2.15 4.6 2.15 2.67 0 4.33-1.33 5-4-.99 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.62 7.15 14.51 6 12 6zM7 13c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.38 17.85 9.49 19 12 19c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.62 14.15 9.51 13 7 13z" fill="#38BDF8"/>
+          <path d="M12 6C9.33 6 7.67 7.33 7 10c1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35.98 1 2.09 2.15 4.6 2.15 2.67 0 4.33-1.33 5-4-.99 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.62 7.15 14.51 6 12 6zM7 13c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.38 17.85 9.49 19 12 19c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.62 14.15 9.51 13 7 13z" fill="#38BDF8" />
         </svg>
       ),
     },
@@ -811,8 +811,8 @@ function SkillsSection() {
       title: "JavaScript",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" rx="3" fill="#F7DF1E"/>
-          <path d="M6.234 18.03c.353.576.957.96 1.86.96 1.02 0 1.68-.51 1.68-1.56V11.4h-1.62v5.94c0 .48-.18.66-.48.66-.3 0-.51-.18-.66-.45l-1.17.6-.01-.01zm5.01-.09c.45.72 1.29 1.17 2.43 1.17 1.29 0 2.19-.63 2.19-1.8 0-1.05-.6-1.56-1.71-2.04l-.36-.15c-.54-.24-.78-.39-.78-.78 0-.3.24-.54.6-.54.36 0 .6.15.81.54l1.11-.72c-.45-.78-1.08-1.08-1.92-1.08-1.2 0-1.98.75-1.98 1.8 0 1.05.6 1.59 1.56 1.98l.36.15c.6.27.93.42.93.84 0 .36-.33.63-.84.63-.6 0-.99-.3-1.26-.78l-1.14.72-.07.07z" fill="black"/>
+          <rect width="24" height="24" rx="3" fill="#F7DF1E" />
+          <path d="M6.234 18.03c.353.576.957.96 1.86.96 1.02 0 1.68-.51 1.68-1.56V11.4h-1.62v5.94c0 .48-.18.66-.48.66-.3 0-.51-.18-.66-.45l-1.17.6-.01-.01zm5.01-.09c.45.72 1.29 1.17 2.43 1.17 1.29 0 2.19-.63 2.19-1.8 0-1.05-.6-1.56-1.71-2.04l-.36-.15c-.54-.24-.78-.39-.78-.78 0-.3.24-.54.6-.54.36 0 .6.15.81.54l1.11-.72c-.45-.78-1.08-1.08-1.92-1.08-1.2 0-1.98.75-1.98 1.8 0 1.05.6 1.59 1.56 1.98l.36.15c.6.27.93.42.93.84 0 .36-.33.63-.84.63-.6 0-.99-.3-1.26-.78l-1.14.72-.07.07z" fill="black" />
         </svg>
       ),
     },
@@ -820,8 +820,8 @@ function SkillsSection() {
       title: "TypeScript",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" rx="3" fill="#3178C6"/>
-          <path d="M13.37 14.571v1.714c.278.143.608.25.99.32.38.07.78.106 1.196.106.41 0 .797-.044 1.163-.13.366-.086.686-.225.96-.416.274-.19.49-.435.65-.733.16-.298.24-.657.24-1.078 0-.302-.044-.566-.133-.793a1.903 1.903 0 00-.39-.617 3.16 3.16 0 00-.627-.496 7.658 7.658 0 00-.846-.43 9.274 9.274 0 01-.55-.27 2.48 2.48 0 01-.38-.263.985.985 0 01-.217-.29.79.79 0 01-.07-.332c0-.112.022-.212.068-.3a.616.616 0 01.193-.22.9.9 0 01.302-.135 1.47 1.47 0 01.39-.047c.104 0 .213.008.328.024.115.016.23.042.345.078.116.036.228.083.337.14.11.057.21.124.303.201v-1.603a4.28 4.28 0 00-.882-.22 6.353 6.353 0 00-1.022-.077c-.404 0-.783.047-1.138.14a2.795 2.795 0 00-.933.43 2.083 2.083 0 00-.633.733c-.155.296-.232.645-.232 1.046 0 .518.147.96.441 1.326.294.366.74.676 1.336.93.198.083.384.165.558.248.174.082.325.17.453.263.128.093.23.196.303.31.074.113.11.242.11.387 0 .118-.023.225-.07.32a.64.64 0 01-.208.237 1.02 1.02 0 01-.337.15 1.79 1.79 0 01-.456.053c-.296 0-.59-.054-.882-.162a3.106 3.106 0 01-.812-.476zM9.8 11.03H12V9.6H6V11.03h2.196V18H9.8V11.03z" fill="white"/>
+          <rect width="24" height="24" rx="3" fill="#3178C6" />
+          <path d="M13.37 14.571v1.714c.278.143.608.25.99.32.38.07.78.106 1.196.106.41 0 .797-.044 1.163-.13.366-.086.686-.225.96-.416.274-.19.49-.435.65-.733.16-.298.24-.657.24-1.078 0-.302-.044-.566-.133-.793a1.903 1.903 0 00-.39-.617 3.16 3.16 0 00-.627-.496 7.658 7.658 0 00-.846-.43 9.274 9.274 0 01-.55-.27 2.48 2.48 0 01-.38-.263.985.985 0 01-.217-.29.79.79 0 01-.07-.332c0-.112.022-.212.068-.3a.616.616 0 01.193-.22.9.9 0 01.302-.135 1.47 1.47 0 01.39-.047c.104 0 .213.008.328.024.115.016.23.042.345.078.116.036.228.083.337.14.11.057.21.124.303.201v-1.603a4.28 4.28 0 00-.882-.22 6.353 6.353 0 00-1.022-.077c-.404 0-.783.047-1.138.14a2.795 2.795 0 00-.933.43 2.083 2.083 0 00-.633.733c-.155.296-.232.645-.232 1.046 0 .518.147.96.441 1.326.294.366.74.676 1.336.93.198.083.384.165.558.248.174.082.325.17.453.263.128.093.23.196.303.31.074.113.11.242.11.387 0 .118-.023.225-.07.32a.64.64 0 01-.208.237 1.02 1.02 0 01-.337.15 1.79 1.79 0 01-.456.053c-.296 0-.59-.054-.882-.162a3.106 3.106 0 01-.812-.476zM9.8 11.03H12V9.6H6V11.03h2.196V18H9.8V11.03z" fill="white" />
         </svg>
       ),
     },
@@ -829,8 +829,8 @@ function SkillsSection() {
       title: "Python",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.963 3.403 5.963h2.031v-2.868s-.109-3.403 3.347-3.403h5.768s3.236.052 3.236-3.13V3.13S18.304 0 11.914 0zm-3.22 1.814a1.04 1.04 0 11-.001 2.08 1.04 1.04 0 010-2.08z" fill="#3673A5"/>
-          <path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12v-.826h8.12S24 18.211 24 12.031c0-6.18-3.403-5.963-3.403-5.963h-2.031v2.868s.109 3.403-3.347 3.403H9.451s-3.236-.052-3.236 3.13V20.87S5.696 24 12.086 24zm3.22-1.814a1.04 1.04 0 110-2.08 1.04 1.04 0 010 2.08z" fill="#FDD048"/>
+          <path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.963 3.403 5.963h2.031v-2.868s-.109-3.403 3.347-3.403h5.768s3.236.052 3.236-3.13V3.13S18.304 0 11.914 0zm-3.22 1.814a1.04 1.04 0 11-.001 2.08 1.04 1.04 0 010-2.08z" fill="#3673A5" />
+          <path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12v-.826h8.12S24 18.211 24 12.031c0-6.18-3.403-5.963-3.403-5.963h-2.031v2.868s.109 3.403-3.347 3.403H9.451s-3.236-.052-3.236 3.13V20.87S5.696 24 12.086 24zm3.22-1.814a1.04 1.04 0 110-2.08 1.04 1.04 0 010 2.08z" fill="#FDD048" />
         </svg>
       ),
     },
@@ -838,12 +838,15 @@ function SkillsSection() {
       title: "Pandas",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="1" width="3.5" height="10" rx="1.75" fill="#130754"/>
-          <rect x="4" y="13" width="3.5" height="10" rx="1.75" fill="#E70488"/>
-          <rect x="16.5" y="1" width="3.5" height="10" rx="1.75" fill="#130754"/>
-          <rect x="16.5" y="13" width="3.5" height="10" rx="1.75" fill="#E70488"/>
-          <rect x="8.5" y="7" width="7" height="3.5" rx="1.75" fill="#130754"/>
-          <rect x="8.5" y="13.5" width="7" height="3.5" rx="1.75" fill="#E70488"/>
+          {/* Left column — top dark blue, bottom pink */}
+          <rect x="3" y="1.5" width="3.2" height="8" rx="1.6" fill="#150458" />
+          <rect x="3" y="14.5" width="3.2" height="8" rx="1.6" fill="#E70488" />
+          {/* Right column — top dark blue, bottom pink */}
+          <rect x="17.8" y="1.5" width="3.2" height="8" rx="1.6" fill="#150458" />
+          <rect x="17.8" y="14.5" width="3.2" height="8" rx="1.6" fill="#E70488" />
+          {/* Middle connector bars */}
+          <rect x="7" y="7" width="10" height="3" rx="1.5" fill="#150458" />
+          <rect x="7" y="14" width="10" height="3" rx="1.5" fill="#E70488" />
         </svg>
       ),
     },
@@ -851,12 +854,12 @@ function SkillsSection() {
       title: "HTML & CSS",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.5 0h9l-1 11-3.5 1-3.5-1L1.5 0z" fill="#E44D26"/>
-          <path d="M10.5 0l-1 11-3.5 1V0h4.5z" fill="#F16529"/>
-          <path d="M6 8.5l-.25-3h4.25l-.25-2.5h-4l-.25-2.5h5.25l-.75 8.5L6 9.75V8.5z" fill="white"/>
-          <path d="M13.5 0h9l-1 11-3.5 1-3.5-1-1-11z" fill="#1572B6" transform="translate(0 0)"/>
-          <path d="M22.5 0l-1 11-3.5 1V0h4.5z" fill="#33A9DC"/>
-          <path d="M19 8.5l-.25-3h4.25l-.25-2.5h-4L18.5 0.5H22L21.25 9 19 9.75V8.5z" fill="white"/>
+          {/* Official HTML5 shield/badge shape */}
+          <path d="M4.136 0l1.69 18.954L12 21l6.17-2.043L19.86 0z" fill="#E34F26" />
+          <path d="M12 1.5v18.13l5.018-1.66 1.455-16.47H12z" fill="#EF652A" />
+          {/* White 5 digit */}
+          <path d="M12 7.3H7.895l.265 2.9H12v2.82H7.57l.35 3.92L12 18.03v-2.97l-2.06-.55-.14-1.51H12V7.3z" fill="white" />
+          <path d="M12 7.3v2.9h3.75l-.355 4.47-3.395.89v2.97l4.14-1.15.465-5.19H12z" fill="white" opacity="0.9" />
         </svg>
       ),
     },
@@ -864,7 +867,7 @@ function SkillsSection() {
       title: "Supabase",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C.33 12.59.738 13.5 1.424 13.5H11.1a.5.5 0 01.5.5v9.465c.015.986 1.26 1.41 1.874.637l9.262-11.652c.435-.539.027-1.448-.659-1.448H12.4a.5.5 0 01-.5-.5V1.036z" fill="#3ECF8E"/>
+          <path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C.33 12.59.738 13.5 1.424 13.5H11.1a.5.5 0 01.5.5v9.465c.015.986 1.26 1.41 1.874.637l9.262-11.652c.435-.539.027-1.448-.659-1.448H12.4a.5.5 0 01-.5-.5V1.036z" fill="#3ECF8E" />
         </svg>
       ),
     },
@@ -872,13 +875,21 @@ function SkillsSection() {
       title: "PostgreSQL",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="12" cy="6" rx="8" ry="3.5" fill="#336791"/>
-          <path d="M4 6v5c0 1.933 3.582 3.5 8 3.5S20 12.933 20 11V6" stroke="#336791" strokeWidth="2" fill="none"/>
-          <path d="M4 11v5c0 1.933 3.582 3.5 8 3.5S20 17.933 20 16v-5" stroke="#4F9DC7" strokeWidth="2" fill="none"/>
-          <ellipse cx="12" cy="6" rx="8" ry="3.5" fill="none" stroke="#4F9DC7" strokeWidth="1"/>
-          <path d="M15.5 5.5v5c0 .828-.672 1.5-1.5 1.5H10c-.828 0-1.5-.672-1.5-1.5V5.5" stroke="#7DC4E4" strokeWidth="1" strokeLinecap="round"/>
-          <path d="M9.5 7.5h5" stroke="#7DC4E4" strokeWidth="1" strokeLinecap="round"/>
-          <path d="M9.5 9.5h5" stroke="#7DC4E4" strokeWidth="1" strokeLinecap="round"/>
+          {/* Official PostgreSQL elephant head */}
+          {/* Main head shape */}
+          <path d="M17.5 3C16.2 1.7 14.5 1 12.7 1c-1.2 0-2.4.3-3.4.9C7.8 1.3 6.2 1.7 5 2.9 3.2 4.7 3 7.7 3 9.5c0 1.2.2 2.5.7 3.6.6 1.3 1.6 1.8 2.1 1.8.4 0 .7-.1 1-.3v2.2c0 2.1.7 3.8 2.5 4.6.5.2 1 .3 1.5.3 1 0 1.9-.3 2.7-.9.6-.4 1-.9 1.3-1.5.3.1.6.2 1 .2.9 0 1.9-.4 2.5-1.4.5-.8.7-1.8.7-2.9V15c.4-.5.7-1.1.8-1.7.3-1 .4-2.2.4-3.2C21 6.9 19.8 4.7 17.5 3z" fill="#336791" />
+          {/* Ear */}
+          <path d="M19 7.5c.8 0 1.5-.7 1.5-1.5S19.8 4.5 19 4.5c-.7 0-1.3.5-1.5 1.1L17 5.4c.3-.5.8-.9 1.5-.9.9 0 1.5.7 1.5 1.5S19.4 7.5 18.5 7.5" fill="#336791" />
+          {/* Eye whites */}
+          <ellipse cx="9.5" cy="8" rx="1.5" ry="1.7" fill="white" />
+          <ellipse cx="14.5" cy="8" rx="1.5" ry="1.7" fill="white" />
+          {/* Pupils */}
+          <circle cx="9.8" cy="8.2" r="0.8" fill="#1a1a1a" />
+          <circle cx="14.8" cy="8.2" r="0.8" fill="#1a1a1a" />
+          {/* Nose / snout */}
+          <path d="M10 11.5c0 1.1.9 2 2 2s2-.9 2-2" stroke="white" strokeWidth="0.8" fill="none" strokeLinecap="round" />
+          {/* Tusk */}
+          <path d="M10.5 13.5c-.5.8-1.2 1.5-2 1.8" stroke="#C8A96E" strokeWidth="1" fill="none" strokeLinecap="round" />
         </svg>
       ),
     },
@@ -886,11 +897,11 @@ function SkillsSection() {
       title: "SQL",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="20" height="4" rx="1.5" fill="#60A5FA"/>
-          <rect x="2" y="8" width="20" height="4" rx="1.5" fill="#93C5FD" opacity="0.8"/>
-          <rect x="2" y="14" width="12" height="4" rx="1.5" fill="#BFDBFE" opacity="0.6"/>
-          <circle cx="19" cy="19" r="4" fill="#3B82F6"/>
-          <path d="M17.4 19h3.2M19 17.4v3.2" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+          <rect x="2" y="2" width="20" height="4" rx="1.5" fill="#60A5FA" />
+          <rect x="2" y="8" width="20" height="4" rx="1.5" fill="#93C5FD" opacity="0.8" />
+          <rect x="2" y="14" width="12" height="4" rx="1.5" fill="#BFDBFE" opacity="0.6" />
+          <circle cx="19" cy="19" r="4" fill="#3B82F6" />
+          <path d="M17.4 19h3.2M19 17.4v3.2" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       ),
     },
@@ -901,7 +912,7 @@ function SkillsSection() {
       title: "GitHub",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" fill="white"/>
+          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" fill="white" />
         </svg>
       ),
     },
@@ -909,7 +920,7 @@ function SkillsSection() {
       title: "Vercel",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M24 22.525H0l12-21.05 12 21.05z" fill="white"/>
+          <path d="M24 22.525H0l12-21.05 12 21.05z" fill="white" />
         </svg>
       ),
     },
@@ -917,9 +928,12 @@ function SkillsSection() {
       title: "Google Colab",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm0 2.182c5.422 0 9.818 4.396 9.818 9.818S17.422 21.818 12 21.818 2.182 17.422 2.182 12 6.578 2.182 12 2.182z" fill="#F9AB00"/>
-          <path d="M7.636 12l4.364-7.636L16.364 12l-4.364 7.636z" fill="#F9AB00" opacity="0.6"/>
-          <circle cx="12" cy="12" r="3.273" fill="#F9AB00"/>
+          {/* Official Google Colab logo: orange circle with two overlapping play triangles */}
+          <circle cx="12" cy="12" r="12" fill="#F9AB00" />
+          {/* Left play triangle (white) */}
+          <path d="M7.5 8.5l5.5 3.5-5.5 3.5V8.5z" fill="white" />
+          {/* Right play triangle (overlapping, slightly offset, orange-tinted) */}
+          <path d="M10.5 8.5l5.5 3.5-5.5 3.5V8.5z" fill="white" opacity="0.55" />
         </svg>
       ),
     },
@@ -927,7 +941,7 @@ function SkillsSection() {
       title: "VS Code",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M23.15 2.587L18.21.21a1.494 1.494 0 00-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 00-1.276.057L.327 7.261A1 1 0 00.326 8.74L3.899 12 .326 15.26a1 1 0 00.001 1.479L1.65 17.94a.999.999 0 001.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 001.704.29l4.942-2.377A1.5 1.5 0 0024 20.06V3.939a1.5 1.5 0 00-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" fill="#007ACC"/>
+          <path d="M23.15 2.587L18.21.21a1.494 1.494 0 00-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 00-1.276.057L.327 7.261A1 1 0 00.326 8.74L3.899 12 .326 15.26a1 1 0 00.001 1.479L1.65 17.94a.999.999 0 001.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 001.704.29l4.942-2.377A1.5 1.5 0 0024 20.06V3.939a1.5 1.5 0 00-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" fill="#007ACC" />
         </svg>
       ),
     },
@@ -935,10 +949,19 @@ function SkillsSection() {
       title: "Excel / Sheets",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" rx="3" fill="#217346"/>
-          <path d="M14 4h6v16h-6V4zM4 4l7 8-7 8h3l5.5-6.5L7 4H4z" fill="white"/>
-          <rect x="14" y="10" width="6" height="1.5" fill="#A9D18E"/>
-          <rect x="14" y="13" width="6" height="1.5" fill="#A9D18E"/>
+          {/* Microsoft Excel official logo: green background with white X */}
+          <rect width="24" height="24" rx="3" fill="#1D6F42" />
+          {/* Document/page part right */}
+          <rect x="13" y="3" width="8" height="18" rx="1" fill="#21A366" />
+          {/* Horizontal lines in right pane */}
+          <rect x="14" y="7" width="6" height="1.2" rx="0.5" fill="white" opacity="0.6" />
+          <rect x="14" y="10" width="6" height="1.2" rx="0.5" fill="white" opacity="0.6" />
+          <rect x="14" y="13" width="6" height="1.2" rx="0.5" fill="white" opacity="0.6" />
+          <rect x="14" y="16" width="6" height="1.2" rx="0.5" fill="white" opacity="0.6" />
+          {/* Green left fold/tab */}
+          <path d="M3 4.5C3 3.67 3.67 3 4.5 3H13v18H4.5C3.67 21 3 20.33 3 19.5V4.5z" fill="#107C41" />
+          {/* Bold white X on left */}
+          <path d="M5.5 8l3.5 4-3.5 4h2.2l2.4-3 2.4 3H12.2L8.7 12l3.5-4H10l-2.4 3-2.4-3z" fill="white" />
         </svg>
       ),
     },
@@ -946,11 +969,11 @@ function SkillsSection() {
       title: "Figma",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 24c2.209 0 4-1.791 4-4v-4H8c-2.209 0-4 1.791-4 4s1.791 4 4 4z" fill="#0ACF83"/>
-          <path d="M4 12c0-2.209 1.791-4 4-4h4v8H8c-2.209 0-4-1.791-4-4z" fill="#A259FF"/>
-          <path d="M4 4c0-2.209 1.791-4 4-4h4v8H8C5.791 8 4 6.209 4 4z" fill="#F24E1E"/>
-          <path d="M12 0h4c2.209 0 4 1.791 4 4s-1.791 4-4 4h-4V0z" fill="#FF7262"/>
-          <circle cx="16" cy="12" r="4" fill="#1ABCFE"/>
+          <path d="M8 24c2.209 0 4-1.791 4-4v-4H8c-2.209 0-4 1.791-4 4s1.791 4 4 4z" fill="#0ACF83" />
+          <path d="M4 12c0-2.209 1.791-4 4-4h4v8H8c-2.209 0-4-1.791-4-4z" fill="#A259FF" />
+          <path d="M4 4c0-2.209 1.791-4 4-4h4v8H8C5.791 8 4 6.209 4 4z" fill="#F24E1E" />
+          <path d="M12 0h4c2.209 0 4 1.791 4 4s-1.791 4-4 4h-4V0z" fill="#FF7262" />
+          <circle cx="16" cy="12" r="4" fill="#1ABCFE" />
         </svg>
       ),
     },
@@ -958,12 +981,12 @@ function SkillsSection() {
       title: "Power BI",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="12" width="4" height="10" rx="1" fill="#F2C811"/>
-          <rect x="8" y="8" width="4" height="14" rx="1" fill="#F2C811" opacity="0.85"/>
-          <rect x="14" y="4" width="4" height="18" rx="1" fill="#F2C811" opacity="0.7"/>
-          <rect x="20" y="1" width="2" height="21" rx="1" fill="#F2C811" opacity="0.5"/>
-          <circle cx="4" cy="10" r="2" fill="#FFD700"/>
-          <path d="M4 10 C4 10 8 8 12 6 C16 4 20 2 20 2" stroke="#F2C811" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6"/>
+          <rect x="2" y="12" width="4" height="10" rx="1" fill="#F2C811" />
+          <rect x="8" y="8" width="4" height="14" rx="1" fill="#F2C811" opacity="0.85" />
+          <rect x="14" y="4" width="4" height="18" rx="1" fill="#F2C811" opacity="0.7" />
+          <rect x="20" y="1" width="2" height="21" rx="1" fill="#F2C811" opacity="0.5" />
+          <circle cx="4" cy="10" r="2" fill="#FFD700" />
+          <path d="M4 10 C4 10 8 8 12 6 C16 4 20 2 20 2" stroke="#F2C811" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6" />
         </svg>
       ),
     },
@@ -971,11 +994,28 @@ function SkillsSection() {
       title: "Postman",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="12" fill="#FF6C37"/>
-          <path d="M16.5 7.5a1.5 1.5 0 00-2.12 0l-6.5 6.5 2.12 2.12 6.5-6.5a1.5 1.5 0 000-2.12z" fill="white" opacity="0.95"/>
-          <circle cx="9.5" cy="14.5" r="1.5" fill="white" opacity="0.8"/>
-          <path d="M6.5 17.5l2-2" stroke="white" strokeWidth="1.3" strokeLinecap="round"/>
-          <path d="M15 6l2-2c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1L17.1 8" stroke="white" strokeWidth="1.3" strokeLinecap="round"/>
+          {/* Official Postman logo: orange background with astronaut/rocket figure */}
+          <circle cx="12" cy="12" r="12" fill="#FF6C37" />
+          {/* Postman 'P' letter - the official icon is a stylized P */}
+          {/* Astronaut body */}
+          <ellipse cx="11" cy="13" rx="3.5" ry="4.5" fill="white" opacity="0.95" />
+          {/* Helmet (head) */}
+          <circle cx="11" cy="9" r="3" fill="white" />
+          <circle cx="11" cy="9" r="2" fill="#FF6C37" />
+          {/* Visor highlight */}
+          <circle cx="10.3" cy="8.3" r="0.6" fill="white" opacity="0.7" />
+          {/* Arms */}
+          <path d="M7.5 12.5c-1 0-1.5.8-1.5 1.5s.5 1.5 1.5 1.5" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+          <path d="M14.5 12.5c1 0 1.5.8 1.5 1.5s-.5 1.5-1.5 1.5" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+          {/* Legs */}
+          <path d="M9 17l-1.5 2.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+          <path d="M13 17l1.5 2.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+          {/* Boots */}
+          <ellipse cx="7.5" cy="19.8" rx="1.2" ry="0.7" fill="white" />
+          <ellipse cx="14.5" cy="19.8" rx="1.2" ry="0.7" fill="white" />
+          {/* Antenna */}
+          <path d="M11 6l.5-2.5" stroke="white" strokeWidth="1" strokeLinecap="round" />
+          <circle cx="11.5" cy="3.3" r="0.7" fill="white" />
         </svg>
       ),
     },
@@ -983,17 +1023,26 @@ function SkillsSection() {
       title: "Antigravity IDE",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          {/* Rocket nose cone */}
+          <path d="M12 1C12 1 7.5 5.5 7.5 12H16.5C16.5 5.5 12 1 12 1z" fill="#00D9FF" />
           {/* Rocket body */}
-          <path d="M12 2C12 2 8 6 8 12v2l4 2 4-2v-2C16 6 12 2 12 2z" fill="#00D9FF" opacity="0.9"/>
-          {/* Rocket fins */}
-          <path d="M8 14l-2 4 4-2z" fill="#7C3AED"/>
-          <path d="M16 14l2 4-4-2z" fill="#7C3AED"/>
-          {/* Rocket window */}
-          <circle cx="12" cy="11" r="2" fill="#0A0E1A" stroke="#00D9FF" strokeWidth="0.8"/>
-          {/* Sparkle top-right */}
-          <path d="M18 3l.5 1.5L20 5l-1.5.5L18 7l-.5-1.5L16 5l1.5-.5z" fill="#F2C811"/>
-          {/* Flame bottom */}
-          <path d="M11 18c0 2 .5 3.5 1 4 .5-.5 1-2 1-4" fill="#FF6C37" opacity="0.8"/>
+          <rect x="7.5" y="12" width="9" height="5" fill="#00B8D9" />
+          {/* Left fin */}
+          <path d="M7.5 13.5L4.5 18.5l3-1V13.5z" fill="#7C3AED" />
+          {/* Right fin */}
+          <path d="M16.5 13.5L19.5 18.5l-3-1V13.5z" fill="#7C3AED" />
+          {/* Porthole window */}
+          <circle cx="12" cy="11" r="2.2" fill="#0A0E1A" />
+          <circle cx="12" cy="11" r="1.5" fill="#1a2a4a" />
+          <circle cx="11.3" cy="10.3" r="0.45" fill="#00D9FF" opacity="0.8" />
+          {/* Engine nozzle */}
+          <path d="M9.5 17h5l.5 1h-6z" fill="#555" />
+          {/* Flame */}
+          <path d="M10.5 18.5C10.5 18.5 10 21 12 22.5C14 21 13.5 18.5 13.5 18.5H10.5z" fill="#FF6C37" opacity="0.9" />
+          <path d="M11 19C11 19 11 21.5 12 22C13 21.5 13 19 13 19H11z" fill="#FFD700" opacity="0.8" />
+          {/* Stars/sparkles */}
+          <path d="M19 3l.4 1.2L20.6 4.6l-1.2.4-.4 1.2-.4-1.2-1.2-.4 1.2-.4z" fill="#FFD700" />
+          <path d="M4.5 6l.3.9.9.3-.9.3-.3.9-.3-.9-.9-.3.9-.3z" fill="#00D9FF" opacity="0.7" />
         </svg>
       ),
     },
@@ -1001,15 +1050,19 @@ function SkillsSection() {
       title: "Stitch AI",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          {/* Central big sparkle */}
-          <path d="M12 2l1.8 5.4L19.2 6l-4.2 3.6 1.8 5.4L12 12l-4.8 3 1.8-5.4L4.8 6l5.4 1.4z" fill="#A78BFA"/>
-          {/* Top-right small sparkle */}
-          <path d="M19.5 2l.6 1.8 1.8.6-1.8.6-.6 1.8-.6-1.8-1.8-.6 1.8-.6z" fill="#C4B5FD" opacity="0.9"/>
-          {/* Bottom-left small sparkle */}
-          <path d="M4.5 16l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="#C4B5FD" opacity="0.7"/>
-          {/* AI circuit dot center */}
-          <circle cx="12" cy="17" r="1.5" fill="#7C3AED" opacity="0.6"/>
-          <path d="M12 15.5v1M12 18v1M10.5 17h1M13 17h1" stroke="#A78BFA" strokeWidth="0.9" strokeLinecap="round"/>
+          {/* Magic wand stick */}
+          <path d="M14.5 9.5L4.5 19.5" stroke="#C4B5FD" strokeWidth="1.8" strokeLinecap="round" />
+          {/* Wand tip star/sparkle — 4-point sharp star */}
+          <path d="M14.5 2L15.5 5.5L19 6.5L15.5 7.5L14.5 11L13.5 7.5L10 6.5L13.5 5.5z" fill="#A78BFA" />
+          {/* Large glow ring */}
+          <circle cx="14.5" cy="6.5" r="3.5" stroke="#7C3AED" strokeWidth="0.5" opacity="0.4" fill="none" />
+          {/* Scattered sparkles */}
+          <path d="M20 2l.4 1.3 1.3.4-1.3.4-.4 1.3-.4-1.3-1.3-.4 1.3-.4z" fill="#E879F9" opacity="0.9" />
+          <path d="M20 13l.3 1 1 .3-1 .3-.3 1-.3-1-1-.3 1-.3z" fill="#C4B5FD" opacity="0.7" />
+          <path d="M6 3l.3 1 1 .3-1 .3-.3 1-.3-1-1-.3 1-.3z" fill="#A78BFA" opacity="0.6" />
+          {/* Small dot sparkles on wand trail */}
+          <circle cx="7.5" cy="16.5" r="0.8" fill="#C4B5FD" opacity="0.5" />
+          <circle cx="11" cy="13" r="0.6" fill="#E879F9" opacity="0.4" />
         </svg>
       ),
     },
