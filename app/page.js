@@ -861,20 +861,6 @@ function SkillsSection() {
       ),
     },
     {
-      title: "AI-Assisted Dev",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2a7 7 0 017 7v1h1a2 2 0 010 4h-1v1a7 7 0 01-7 7 7 7 0 01-7-7v-1H4a2 2 0 010-4h1V9a7 7 0 017-7z" fill="#A78BFA" opacity="0.25"/>
-          <circle cx="9" cy="10" r="1.5" fill="#A78BFA"/>
-          <circle cx="15" cy="10" r="1.5" fill="#A78BFA"/>
-          <path d="M9 15c0 1.657 1.343 3 3 3s3-1.343 3-3" stroke="#A78BFA" strokeWidth="1.5" strokeLinecap="round"/>
-          <path d="M12 2v2M6.5 4.5l1.5 1.5M17.5 4.5L16 6" stroke="#C4B5FD" strokeWidth="1.5" strokeLinecap="round"/>
-          <circle cx="19" cy="5" r="2" fill="#7C3AED"/>
-          <path d="M18.3 5l.5.5.9-1" stroke="white" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-    },
-    {
       title: "Supabase",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
@@ -957,15 +943,6 @@ function SkillsSection() {
       ),
     },
     {
-      title: "Canva",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="12" fill="#00C4CC"/>
-          <path d="M15.5 8.5c-1.5 0-2.5.75-3 1.5-.5-.75-1.5-1.5-3-1.5-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5c1.5 0 2.5-.75 3-1.5.5.75 1.5 1.5 3 1.5 1.933 0 3.5-1.567 3.5-3.5S17.433 8.5 15.5 8.5z" fill="white"/>
-        </svg>
-      ),
-    },
-    {
       title: "Figma",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
@@ -978,14 +955,27 @@ function SkillsSection() {
       ),
     },
     {
+      title: "Power BI",
+      svgIcon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="12" width="4" height="10" rx="1" fill="#F2C811"/>
+          <rect x="8" y="8" width="4" height="14" rx="1" fill="#F2C811" opacity="0.85"/>
+          <rect x="14" y="4" width="4" height="18" rx="1" fill="#F2C811" opacity="0.7"/>
+          <rect x="20" y="1" width="2" height="21" rx="1" fill="#F2C811" opacity="0.5"/>
+          <circle cx="4" cy="10" r="2" fill="#FFD700"/>
+          <path d="M4 10 C4 10 8 8 12 6 C16 4 20 2 20 2" stroke="#F2C811" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6"/>
+        </svg>
+      ),
+    },
+    {
       title: "Postman",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="12" fill="#FF6C37"/>
-          <path d="M13.5 7.5l-5 5 2 2 5-5-2-2z" fill="white" opacity="0.9"/>
-          <circle cx="10" cy="14" r="1.5" fill="white" opacity="0.7"/>
-          <path d="M7 17l2-2" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
-          <path d="M14.5 7l1.5-1.5c.5-.5 1.5-.5 2 0s.5 1.5 0 2L16.5 9" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
+          <path d="M16.5 7.5a1.5 1.5 0 00-2.12 0l-6.5 6.5 2.12 2.12 6.5-6.5a1.5 1.5 0 000-2.12z" fill="white" opacity="0.95"/>
+          <circle cx="9.5" cy="14.5" r="1.5" fill="white" opacity="0.8"/>
+          <path d="M6.5 17.5l2-2" stroke="white" strokeWidth="1.3" strokeLinecap="round"/>
+          <path d="M15 6l2-2c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1L17.1 8" stroke="white" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
       ),
     },
@@ -993,23 +983,17 @@ function SkillsSection() {
       title: "Antigravity IDE",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L9 9H2l5.5 4-2 7L12 16l6.5 4-2-7L22 9h-7L12 2z" fill="#00D9FF" opacity="0.9"/>
-          <circle cx="12" cy="12" r="3" fill="#0A0E1A"/>
-          <path d="M10.5 11.5l1 1 2-2" stroke="#00D9FF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-    },
-    {
-      title: "BRIMEN - BRI",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="4" width="14" height="17" rx="2" fill="#1E40AF" opacity="0.9"/>
-          <rect x="5" y="7" width="10" height="1.5" rx="0.75" fill="#93C5FD"/>
-          <rect x="5" y="10.5" width="10" height="1.5" rx="0.75" fill="#93C5FD"/>
-          <rect x="5" y="14" width="7" height="1.5" rx="0.75" fill="#93C5FD" opacity="0.7"/>
-          <circle cx="18" cy="17" r="5" fill="#2563EB"/>
-          <path d="M15.5 17l1.5 1.5 3-3" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M3 4l2-2h10l2 2" stroke="#60A5FA" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+          {/* Rocket body */}
+          <path d="M12 2C12 2 8 6 8 12v2l4 2 4-2v-2C16 6 12 2 12 2z" fill="#00D9FF" opacity="0.9"/>
+          {/* Rocket fins */}
+          <path d="M8 14l-2 4 4-2z" fill="#7C3AED"/>
+          <path d="M16 14l2 4-4-2z" fill="#7C3AED"/>
+          {/* Rocket window */}
+          <circle cx="12" cy="11" r="2" fill="#0A0E1A" stroke="#00D9FF" strokeWidth="0.8"/>
+          {/* Sparkle top-right */}
+          <path d="M18 3l.5 1.5L20 5l-1.5.5L18 7l-.5-1.5L16 5l1.5-.5z" fill="#F2C811"/>
+          {/* Flame bottom */}
+          <path d="M11 18c0 2 .5 3.5 1 4 .5-.5 1-2 1-4" fill="#FF6C37" opacity="0.8"/>
         </svg>
       ),
     },
@@ -1017,11 +1001,15 @@ function SkillsSection() {
       title: "Stitch AI",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 3l1.5 4L18 6l-3 3 1.5 4.5L12 11l-4.5 2.5L9 9l-3-3 4.5 1.5L12 3z" fill="#A78BFA"/>
-          <path d="M19.5 13l.8 2.2 2.2-.8-1.5 1.8 1 2.3-2.2-.9-1.8 1.5.3-2.4-2.3-1 2.2-.8.3-2.4.8 2.2 2.2-.7z" fill="#C4B5FD" opacity="0.8"/>
-          <path d="M5 14l.6 1.8 1.8-.6-1.2 1.5.8 1.9-1.8-.8-1.5 1.2.3-2-1.9-.8 1.8-.6.3-2 .6 1.8 1.8-.6z" fill="#C4B5FD" opacity="0.6"/>
-          <circle cx="12" cy="16" r="2" fill="#7C3AED" opacity="0.5"/>
-          <path d="M12 14v1M12 17v1M10 16h1M13 16h1" stroke="#A78BFA" strokeWidth="1" strokeLinecap="round"/>
+          {/* Central big sparkle */}
+          <path d="M12 2l1.8 5.4L19.2 6l-4.2 3.6 1.8 5.4L12 12l-4.8 3 1.8-5.4L4.8 6l5.4 1.4z" fill="#A78BFA"/>
+          {/* Top-right small sparkle */}
+          <path d="M19.5 2l.6 1.8 1.8.6-1.8.6-.6 1.8-.6-1.8-1.8-.6 1.8-.6z" fill="#C4B5FD" opacity="0.9"/>
+          {/* Bottom-left small sparkle */}
+          <path d="M4.5 16l.5 1.5 1.5.5-1.5.5-.5 1.5-.5-1.5-1.5-.5 1.5-.5z" fill="#C4B5FD" opacity="0.7"/>
+          {/* AI circuit dot center */}
+          <circle cx="12" cy="17" r="1.5" fill="#7C3AED" opacity="0.6"/>
+          <path d="M12 15.5v1M12 18v1M10.5 17h1M13 17h1" stroke="#A78BFA" strokeWidth="0.9" strokeLinecap="round"/>
         </svg>
       ),
     },
@@ -1123,7 +1111,7 @@ function SkillsSection() {
 
         {/* Footer Stats */}
         <p className="text-center text-text-secondary/60 text-xs mt-5">
-          3 Core Expertise · 9 Languages & Frameworks · 6 Tools
+          3 Core Expertise · 11 Languages & Frameworks · 10 Tools
         </p>
 
       </div>
