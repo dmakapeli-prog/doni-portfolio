@@ -338,7 +338,7 @@ function AboutSection() {
                 </div>
                 <div className="flex items-center gap-4 text-sm">
                   <span className="text-xl">💼</span>
-                  <span className="text-text-secondary font-medium">Magang di PT BRI Unit Cipanas</span>
+                  <span className="text-text-secondary font-medium">Intern di PT Media Jurnal Sukabumi</span>
                 </div>
               </div>
             </div>
@@ -352,15 +352,19 @@ function AboutSection() {
               Next.js dan Tailwind CSS, serta analisis data menggunakan Python.
             </p>
             <p className="fade-up fade-delay-3 text-text-secondary leading-relaxed text-sm sm:text-base">
-              Berpengalaman magang sebagai Administrasi di PT Bank Rakyat Indonesia (BRI) Unit Cipanas,
-              di mana saya mengerjakan project analisis data kunjungan nasabah sebagai kontribusi sesuai
-              bidang Informatika - mulai dari preprocessing data, exploratory data analysis, hingga penyusunan laporan.
+              Pengalaman profesional saya dimulai saat magang di PT Bank Rakyat Indonesia (BRI) Unit Cipanas,
+              di mana saya mengerjakan project analisis data kunjungan nasabah dari tahap preprocessing hingga
+              penyusunan laporan. Setelah itu, saya menyelesaikan PKL secara WFH sebagai Web Developer di
+              PT Media Jurnal Sukabumi dengan membangun web aplikasi{" "}
+              <span className="text-accent-cyan font-medium">&apos;Halo Jurnal&apos;</span>.
             </p>
             <p className="fade-up fade-delay-4 text-text-secondary leading-relaxed text-sm sm:text-base">
-              Selain itu, saya membangun <span className="text-accent-cyan font-medium">DiCode</span>, sebuah
-              website agency digital berisi 10+ halaman demo template (e-commerce, company profile, undangan
-              digital, dan lainnya) untuk menunjukkan kemampuan dalam membangun layout, animasi, dan tampilan
-              responsif menggunakan Next.js. Saya juga aktif di organisasi mahasiswa untuk mengasah kepemimpinan dan kerja tim.
+              Saat ini, saya masih melanjutkan program magang di PT Media Jurnal Sukabumi untuk mengembangkan
+              portal utama <span className="text-accent-cyan font-medium">&apos;Jurnal Vibes&apos;</span>.
+              Selain rutinitas magang, saya juga membangun{" "}
+              <span className="text-accent-cyan font-medium">DiCode</span>, sebuah website agency digital
+              yang berisi 10+ halaman template (e-commerce, company profile, dll) menggunakan Next.js,
+              serta aktif berorganisasi untuk melatih kerja sama tim.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 mt-2">
