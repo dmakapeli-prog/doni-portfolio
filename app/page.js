@@ -217,7 +217,7 @@ function HomeSection() {
   const stats = [
     { num: "2+", label: "Tahun Belajar Coding" },
     { num: "10+", label: "Project Dibuat" },
-    { num: "1", label: "Pengalaman Magang" },
+    { num: "3", label: "Pengalaman Magang & PKL" },
   ];
 
   return (
@@ -249,9 +249,14 @@ function HomeSection() {
 
           <p className="text-text-secondary text-sm leading-relaxed max-w-xl mb-10">
             Saya mahasiswa S1 Teknik Informatika di Universitas Nusa Putra dengan minat pada
-            pengembangan web modern dan analisis data. Berpengalaman magang sebagai Administrasi
-            di PT Bank Rakyat Indonesia (BRI) Unit Cipanas, di mana saya juga mengerjakan project
-            analisis data kunjungan nasabah menggunakan Python sebagai kontribusi sesuai bidang Informatika.
+            pengembangan web modern dan analisis data. Berpengalaman magang di PT Bank Rakyat
+            Indonesia (BRI) Unit Cipanas, di mana saya mengerjakan project analisis data kunjungan
+            nasabah menggunakan Python. Setelah itu, saya menyelesaikan PKL secara WFH sebagai
+            Web Developer di PT Media Jurnal Sukabumi dan berhasil membangun web aplikasi{" "}
+            <span className="text-accent-cyan font-medium">&apos;Halo Jurnal&apos;</span>.
+            Saat ini, saya kembali melanjutkan program magang (WFH) di perusahaan yang sama
+            untuk mengembangkan portal utama{" "}
+            <span className="text-accent-cyan font-medium">&apos;Jurnal Vibes&apos;</span>.
           </p>
 
           {/* Stat Row */}
@@ -755,7 +760,7 @@ function TypingLine() {
 
   return (
     <p className="text-white text-base sm:text-lg mb-3">
-      Beroperasi dibidang{" "}
+      Berfokus pada bidang{" "}
       <span className="text-accent-cyan font-bold">{typedText}</span>
       <span className="typing-cursor" />
     </p>
