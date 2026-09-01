@@ -1190,6 +1190,17 @@ function ProjectsSection() {
 
   const projects = [
     {
+      icon: "📰",
+      title: "Jurnal Vibes",
+      badge: "In Development",
+      badgeClass: "badge-cyan",
+      desc: "Dipercaya langsung oleh manajemen PT Media Jurnal Sukabumi untuk merancang dan membangun portal berita alternatif yang ditargetkan khusus untuk audiens Gen Z. Proyek ini dikembangkan sebagai ekspansi dari portal berita utama perusahaan, dengan turut mengintegrasikan sistem 'Halo Jurnal' sebagai pusat layanan pengaduan dan interaksi pembaca. Dikembangkan secara penuh (full-stack) selama masa magang dan saat ini masih dalam tahap pengembangan aktif menuju fase produksi.",
+      techStack: ["Next.js", "Tailwind CSS"],
+      github: "https://github.com/dmakapeli-prog/jurnal-vibes-app.git",
+      live: "https://jurnal-vibes-app.vercel.app/",
+      image: null,
+    },
+    {
       icon: "🥚",
       title: "Ovara - Toko Telur Segar Online",
       badge: "Web App",
@@ -1332,9 +1343,15 @@ function ProjectsSection() {
                         style={{ background: 'rgba(0,0,0,0.45)' }}
                       >
                         {projects[currentSlide].live && (
-                          <span className="flex items-center gap-2 px-5 py-2.5 rounded-full text-white font-semibold text-sm" style={{ background: 'rgba(0,217,255,0.2)', border: '1px solid rgba(0,217,255,0.5)', backdropFilter: 'blur(8px)' }}>
+                          <a
+                            href={projects[currentSlide].live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-5 py-2.5 rounded-full text-white font-semibold text-sm"
+                            style={{ background: 'rgba(0,217,255,0.2)', border: '1px solid rgba(0,217,255,0.5)', backdropFilter: 'blur(8px)' }}
+                          >
                             🔗 Lihat Website
-                          </span>
+                          </a>
                         )}
                       </div>
                       {/* Badge icon di pojok kiri atas */}
