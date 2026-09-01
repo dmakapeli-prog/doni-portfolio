@@ -1482,17 +1482,75 @@ function ProjectsSection() {
 function ContactSection() {
   const stagger = useStaggerFade();
   const [formData, setFormData] = useState({ nama: "", email: "", pesan: "" });
-  const [showToast, setShowToast] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [toast, setToast] = useState({ show: false, message: "", type: "success" });
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowToast(true);
-    setFormData({ nama: "", email: "", pesan: "" });
-    setTimeout(() => setShowToast(false), 3000);
+    setIsSubmitting(true);
+
+    try {
+      let response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      let result = await response.json();
+
+      if (!response.ok || !result.success) {
+        const accessKey =
+          process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+          "e30953a7-e0d0-4bf6-b516-24e05b5505f5";
+
+        const fallbackRes = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name: formData.nama,
+            email: formData.email,
+            message: formData.pesan,
+            subject: `Pesan Portofolio Baru dari ${formData.nama}`,
+            from_name: "Portofolio Donie Makapeli",
+            to_email: "dmakapeli@gmail.com",
+          }),
+        });
+
+        result = await fallbackRes.json();
+      }
+
+      if (result.success) {
+        setToast({
+          show: true,
+          message: "Pesan berhasil dikirim! Saya akan segera membalas email Anda.",
+          type: "success",
+        });
+        setFormData({ nama: "", email: "", pesan: "" });
+      } else {
+        setToast({
+          show: true,
+          message: result.message || "Gagal mengirim pesan. Silakan coba lagi.",
+          type: "error",
+        });
+      }
+    } catch (err) {
+      setToast({
+        show: true,
+        message: "Terjadi gangguan jaringan. Silakan periksa koneksi Anda.",
+        type: "error",
+      });
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setToast({ show: false, message: "", type: "success" }), 5000);
+    }
   };
 
   const contactInfo = [
@@ -1511,10 +1569,11 @@ function ContactSection() {
     <section id="contact" className="relative py-24 sm:py-32 px-5 sm:px-8 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.5)] to-transparent">
       {/* Toast Notification */}
       <div
-        className={`fixed top-6 right-6 z-[100] toast-glass px-5 py-3.5 rounded-xl text-sm text-white font-medium transition-all duration-500 ${showToast ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
-          }`}
+        className={`fixed top-6 right-6 z-[100] toast-glass px-5 py-3.5 rounded-xl text-sm text-white font-medium transition-all duration-500 flex items-center gap-2 border ${
+          toast.show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+        } ${toast.type === "error" ? "border-red-500/50 bg-red-950/80" : "border-emerald-500/50 bg-emerald-950/80"}`}
       >
-        ✅ Pesan terkirim! <span className="text-text-secondary">(Demo - form belum terhubung ke backend)</span>
+        <span>{toast.type === "error" ? "❌" : "✅"}</span> {toast.message}
       </div>
 
       <div ref={stagger} className="max-w-6xl mx-auto">
@@ -1587,6 +1646,7 @@ function ContactSection() {
                     value={formData.nama}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     placeholder="Nama lengkap"
                     className="contact-input w-full px-4 py-3 rounded-lg text-sm text-white"
                   />
@@ -1600,6 +1660,7 @@ function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     placeholder="email@contoh.com"
                     className="contact-input w-full px-4 py-3 rounded-lg text-sm text-white"
                   />
@@ -1612,6 +1673,7 @@ function ContactSection() {
                     value={formData.pesan}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     rows={4}
                     placeholder="Tulis pesan Anda..."
                     className="contact-input w-full px-4 py-3 rounded-lg text-sm text-white resize-none"
@@ -1619,9 +1681,19 @@ function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="btn-gradient w-full py-3.5 rounded-full text-sm font-semibold"
+                  disabled={isSubmitting}
+                  className={`btn-gradient w-full py-3.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2 transition-all ${
+                    isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+                  }`}
                 >
-                  Kirim Pesan 📩
+                  {isSubmitting ? (
+                    <>
+                      <span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
+                      Mengirim... ⏳
+                    </>
+                  ) : (
+                    "Kirim Pesan 📩"
+                  )}
                 </button>
               </form>
             </div>
