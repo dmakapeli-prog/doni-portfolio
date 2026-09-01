@@ -106,8 +106,29 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+
+      const sectionIds = ["home", "about", "education", "skills", "projects", "contact"];
+      const scrollPosition = window.scrollY + 180;
+
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+        setActive("contact");
+        return;
+      }
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPosition >= top) {
+            setActive(sectionIds[i]);
+            break;
+          }
+        }
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -118,7 +139,7 @@ function Navbar() {
         {/* Kiri: Logo */}
         <div className="flex flex-col items-center md:items-start">
           <a href="#home" className="text-2xl font-bold tracking-tight text-white flex items-center gap-1 select-none">
-            Doni
+            Donie Makapeli
           </a>
           <span className="text-[10px] tracking-[0.25em] text-text-secondary mt-0.5">
             PERSONAL PORTFOLIO
@@ -177,7 +198,7 @@ function IDCard() {
         </div>
 
         {/* Nama & Role */}
-        <h3 className="text-2xl font-bold text-white mb-1 tracking-wide">Doni</h3>
+        <h3 className="text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
         <p className="text-accent-cyan text-[11px] font-medium tracking-widest uppercase leading-relaxed text-center">
           Web Developer<br />& Data Analyst
         </p>
@@ -1225,9 +1246,9 @@ function ProjectsSection() {
     {
       icon: "🌐",
       title: "DiCode - Website Agency Digital",
-      badge: "Web App",
-      badgeClass: "badge-cyan",
-      desc: "Website agency digital DiCode dengan 10+ halaman demo template (e-commerce, company profile, undangan digital, dll) menggunakan Next.js dan Tailwind CSS",
+      badge: "Completed",
+      badgeClass: "badge-green",
+      desc: "Platform website agency digital DiCode yang menyajikan 10+ halaman demo template interaktif (e-commerce, company profile, undangan digital, dll). Memiliki arsitektur modular dengan performa tinggi, dirancang menggunakan Next.js dan Tailwind CSS untuk solusi bisnis digital modern.",
       techStack: ["Next.js", "Tailwind CSS", "React", "Vercel"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
       live: "https://dicode-website.vercel.app",
@@ -1621,7 +1642,7 @@ function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-4">
         {/* Logo */}
         <a href="#home" className="text-xl font-bold text-white flex items-center gap-1 select-none">
-          Doni<span className="footer-dot-pulse">.</span>
+          Donie Makapeli<span className="footer-dot-pulse">.</span>
         </a>
 
         {/* Copyright */}
