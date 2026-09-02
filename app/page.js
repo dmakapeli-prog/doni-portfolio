@@ -1055,7 +1055,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS"],
       github: "https://github.com/dmakapeli-prog/jurnal-vibes-app.git",
       live: "https://jurnal-vibes-app.vercel.app/",
-      image: "/jurnal-vibes.jpg",
+      image: "/jurnal-vibes.png",
     },
     {
       icon: "📢",
@@ -1110,7 +1110,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS", "Vercel"],
       github: null,
       live: "https://esports-bracket-generator.vercel.app/",
-      image: "/project-dicode.png",
+      image: "/bracket.png",
     },
     {
       icon: "🛒",
@@ -1121,7 +1121,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS", "Vercel"],
       github: null,
       live: "https://echo-store-eight.vercel.app/",
-      image: "/echo.jpg",
+      image: "/echo-store.png",
     },
     {
       icon: "🍽️",
