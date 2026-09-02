@@ -480,7 +480,8 @@ function CertificateGrid() {
                 alt={cert.nama}
                 width={400}
                 height={160}
-                className="w-full h-40 object-cover block"
+                unoptimized={true}
+                className="w-full h-40 object-cover block opacity-100"
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
             </div>
@@ -1216,9 +1217,10 @@ function ProjectsSection() {
                         src={projects[currentSlide].image}
                         alt={projects[currentSlide].title}
                         fill
-                        unoptimized={projects[currentSlide].image.startsWith('http')}
+                        priority={currentSlide === 0}
+                        unoptimized={true}
                         sizes="(max-width: 768px) 100vw, 800px"
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500 block"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500 block opacity-100"
                       />
                       {/* Overlay saat hover */}
                       <div
