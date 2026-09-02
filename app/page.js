@@ -1066,7 +1066,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS", "Supabase", "Vercel"],
       github: "https://github.com/dmakapeli-prog/halo-jurnal-app.git",
       live: "https://halo-jurnal-app.vercel.app/",
-      image: "/halo-jurnal.png",
+      image: "/halo-jurnal.jpg",
     },
     {
       icon: "🥚",
@@ -1203,7 +1203,7 @@ function ProjectsSection() {
 
           {/* Active Slide */}
           <div className="flex-1 min-w-0">
-            <div key={currentSlide} className="tab-fade-enter">
+            <div key={currentSlide}>
               <div className="project-card p-4 sm:p-8">
 
                 {/* Preview Image */}
@@ -1217,10 +1217,10 @@ function ProjectsSection() {
                         src={projects[currentSlide].image}
                         alt={projects[currentSlide].title}
                         fill
-                        priority={currentSlide === 0}
+                        priority={true}
                         unoptimized={true}
                         sizes="(max-width: 768px) 100vw, 800px"
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500 block opacity-100"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-300 block opacity-100"
                       />
                       {/* Overlay saat hover */}
                       <div
