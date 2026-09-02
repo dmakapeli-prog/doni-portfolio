@@ -654,21 +654,21 @@ function EducationSection() {
         title: "Web Developer Intern",
         sub: "PT MEDIA JURNAL SUKABUMI (WFH)",
         badge: "Magang",
-        desc: "Bertanggung jawab dalam pengembangan \"Jurnal Vibes\", sebuah website portal utama yang akan mengintegrasikan berbagai sub-kanal aplikasi."
+        desc: "Mendapat mandat langsung dari manajemen untuk merancang dan mengembangkan 'Jurnal Vibes', sebuah portal berita alternatif khusus audiens Gen Z. Bertanggung jawab penuh secara full-stack, termasuk mengintegrasikan sistem 'Halo Jurnal' sebagai fitur layanan pengaduan dan interaksi pembaca."
       },
       {
         period: "13 Jul 2026 - 13 Agu 2026",
         title: "Web Developer (Praktik Kerja Lapangan)",
         sub: "PT MEDIA JURNAL SUKABUMI (WFH)",
         badge: "PKL",
-        desc: "Membangun dan menyelesaikan web aplikasi \"Halo Jurnal\" (halo-jurnal-app.vercel.app) yang difungsikan sebagai salah satu kanal untuk portal utama Jurnal Vibes."
+        desc: "Berhasil membangun dan mendeploy web aplikasi 'Halo Jurnal' (halo-jurnal-app.vercel.app) dari nol. Sistem ini dirancang khusus untuk menangani pengaduan dan komunikasi interaktif, yang kini difungsikan sebagai sub-kanal terintegrasi di dalam ekosistem portal utama Jurnal Vibes."
       },
       {
         period: "Feb 2026 - Jun 2026",
         title: "Magang Administrasi & Data Science",
         sub: "PT Bank Rakyat Indonesia (BRI) Unit Cipanas",
         badge: "Magang",
-        desc: "Mengerjakan analisis data kunjungan nasabah (AR/FR) menggunakan Python dan Google Colab"
+        desc: "Ditempatkan pada posisi operasional administrasi, namun mengambil peran lebih spesifik yang diselaraskan dengan keahlian Teknik Informatika. Selain mengelola sistem kearsipan dokumen (AR/FR), saya mengeksekusi proyek analisis data kunjungan nasabah menggunakan Python dan Pandas untuk membersihkan, memproses, dan menghasilkan wawasan terstruktur yang melampaui tugas administrasi reguler."
       },
       {
         period: "2024 - Sekarang",
