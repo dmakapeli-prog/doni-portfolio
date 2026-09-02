@@ -867,7 +867,8 @@ function SkillsSection() {
     },
     {
       title: "Pandas",
-      svgIcon: <SiPandas className="w-8 h-8 text-[#150458]" />,
+      icon: <SiPandas className="w-8 h-8 text-[#38BDF8]" />,
+      svgIcon: <SiPandas className="w-8 h-8 text-[#38BDF8]" />,
     },
     {
       title: "HTML & CSS",
@@ -884,6 +885,7 @@ function SkillsSection() {
     },
     {
       title: "Supabase",
+      icon: <SiSupabase className="w-8 h-8 text-[#3ECF8E]" />,
       svgIcon: <SiSupabase className="w-8 h-8 text-[#3ECF8E]" />,
     },
     {
@@ -941,6 +943,7 @@ function SkillsSection() {
     },
     {
       title: "Google Colab",
+      icon: <SiGooglecolab className="w-8 h-8 text-[#F9AB00]" />,
       svgIcon: <SiGooglecolab className="w-8 h-8 text-[#F9AB00]" />,
     },
     {
@@ -998,6 +1001,7 @@ function SkillsSection() {
     },
     {
       title: "Postman",
+      icon: <SiPostman className="w-8 h-8 text-[#FF6C37]" />,
       svgIcon: <SiPostman className="w-8 h-8 text-[#FF6C37]" />,
     },
     {
@@ -1106,10 +1110,15 @@ function SkillsSection() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {expertiseSkills.map((s, i) => (
                   <div key={i} className="skill-card p-5 sm:p-6 flex flex-col items-center text-center cursor-default">
-                    {s.svgIcon
-                      ? <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.svgIcon}</div>
-                      : <span className="text-2xl sm:text-3xl mb-3">{s.icon}</span>
-                    }
+                    {s.icon ? (
+                      typeof s.icon === "string" ? (
+                        <span className="text-2xl sm:text-3xl mb-3">{s.icon}</span>
+                      ) : (
+                        <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.icon}</div>
+                      )
+                    ) : s.svgIcon ? (
+                      <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.svgIcon}</div>
+                    ) : null}
                     <h4 className="text-white font-semibold text-sm">{s.title}</h4>
                   </div>
                 ))}
@@ -1124,10 +1133,15 @@ function SkillsSection() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {toolsSkills.map((s, i) => (
                   <div key={i} className="skill-card p-5 sm:p-6 flex flex-col items-center text-center cursor-default">
-                    {s.svgIcon
-                      ? <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.svgIcon}</div>
-                      : <span className="text-2xl sm:text-3xl mb-3">{s.icon}</span>
-                    }
+                    {s.icon ? (
+                      typeof s.icon === "string" ? (
+                        <span className="text-2xl sm:text-3xl mb-3">{s.icon}</span>
+                      ) : (
+                        <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.icon}</div>
+                      )
+                    ) : s.svgIcon ? (
+                      <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.svgIcon}</div>
+                    ) : null}
                     <h4 className="text-white font-semibold text-sm">{s.title}</h4>
                   </div>
                 ))}
