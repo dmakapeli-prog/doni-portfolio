@@ -680,14 +680,20 @@ function EducationSection() {
     Achievement: [
       {
         period: "2026",
-        title: "Menyelesaikan Web Aplikasi \"Halo Jurnal\"",
-        sub: "Web App PKL - halo-jurnal-app.vercel.app · Kanal terintegrasi untuk portal utama Jurnal Vibes, diselesaikan sebagai output PKL di PT MEDIA JURNAL SUKABUMI",
+        title: "Pengembangan Portal Utama \"Jurnal Vibes\"",
+        sub: "Dipercaya oleh manajemen PT Media Jurnal Sukabumi untuk merancang dan membangun ekosistem portal berita khusus audiens Gen Z (Tahap Pengembangan Aktif).",
+        badge: "Ongoing Project",
+      },
+      {
+        period: "2026",
+        title: "Rilis Web Aplikasi \"Halo Jurnal\"",
+        sub: "Mendeploy kanal layanan terintegrasi untuk portal utama Jurnal Vibes sebagai output keberhasilan program PKL di PT Media Jurnal Sukabumi.",
         badge: "PKL Project",
       },
       {
         period: "2026",
-        title: "Menyelesaikan Project DiCode",
-        sub: "Website agency digital DiCode dengan 10+ halaman demo template",
+        title: "Peluncuran Project DiCode",
+        sub: "Merancang website agency digital independen yang menyediakan 10+ halaman demo template fungsional dan responsif menggunakan Next.js.",
         badge: "Project",
       },
       {
