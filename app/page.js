@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useMemo } from "react";
+import { SiPandas, SiSupabase, SiPostman, SiGooglecolab } from "react-icons/si";
 
 /* ==================================================================
    HOOKS
@@ -866,19 +867,7 @@ function SkillsSection() {
     },
     {
       title: "Pandas",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          {/* Left column — top dark blue, bottom pink */}
-          <rect x="3" y="1.5" width="3.2" height="8" rx="1.6" fill="#150458" />
-          <rect x="3" y="14.5" width="3.2" height="8" rx="1.6" fill="#E70488" />
-          {/* Right column — top dark blue, bottom pink */}
-          <rect x="17.8" y="1.5" width="3.2" height="8" rx="1.6" fill="#150458" />
-          <rect x="17.8" y="14.5" width="3.2" height="8" rx="1.6" fill="#E70488" />
-          {/* Middle connector bars */}
-          <rect x="7" y="7" width="10" height="3" rx="1.5" fill="#150458" />
-          <rect x="7" y="14" width="10" height="3" rx="1.5" fill="#E70488" />
-        </svg>
-      ),
+      svgIcon: <SiPandas className="w-8 h-8 text-[#150458]" />,
     },
     {
       title: "HTML & CSS",
@@ -895,11 +884,7 @@ function SkillsSection() {
     },
     {
       title: "Supabase",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C.33 12.59.738 13.5 1.424 13.5H11.1a.5.5 0 01.5.5v9.465c.015.986 1.26 1.41 1.874.637l9.262-11.652c.435-.539.027-1.448-.659-1.448H12.4a.5.5 0 01-.5-.5V1.036z" fill="#3ECF8E" />
-        </svg>
-      ),
+      svgIcon: <SiSupabase className="w-8 h-8 text-[#3ECF8E]" />,
     },
     {
       title: "PostgreSQL",
@@ -956,16 +941,7 @@ function SkillsSection() {
     },
     {
       title: "Google Colab",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          {/* Official Google Colab logo: orange circle with two overlapping play triangles */}
-          <circle cx="12" cy="12" r="12" fill="#F9AB00" />
-          {/* Left play triangle (white) */}
-          <path d="M7.5 8.5l5.5 3.5-5.5 3.5V8.5z" fill="white" />
-          {/* Right play triangle (overlapping, slightly offset, orange-tinted) */}
-          <path d="M10.5 8.5l5.5 3.5-5.5 3.5V8.5z" fill="white" opacity="0.55" />
-        </svg>
-      ),
+      svgIcon: <SiGooglecolab className="w-8 h-8 text-[#F9AB00]" />,
     },
     {
       title: "VS Code",
@@ -1022,32 +998,7 @@ function SkillsSection() {
     },
     {
       title: "Postman",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          {/* Official Postman logo: orange background with astronaut/rocket figure */}
-          <circle cx="12" cy="12" r="12" fill="#FF6C37" />
-          {/* Postman 'P' letter - the official icon is a stylized P */}
-          {/* Astronaut body */}
-          <ellipse cx="11" cy="13" rx="3.5" ry="4.5" fill="white" opacity="0.95" />
-          {/* Helmet (head) */}
-          <circle cx="11" cy="9" r="3" fill="white" />
-          <circle cx="11" cy="9" r="2" fill="#FF6C37" />
-          {/* Visor highlight */}
-          <circle cx="10.3" cy="8.3" r="0.6" fill="white" opacity="0.7" />
-          {/* Arms */}
-          <path d="M7.5 12.5c-1 0-1.5.8-1.5 1.5s.5 1.5 1.5 1.5" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-          <path d="M14.5 12.5c1 0 1.5.8 1.5 1.5s-.5 1.5-1.5 1.5" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-          {/* Legs */}
-          <path d="M9 17l-1.5 2.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-          <path d="M13 17l1.5 2.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-          {/* Boots */}
-          <ellipse cx="7.5" cy="19.8" rx="1.2" ry="0.7" fill="white" />
-          <ellipse cx="14.5" cy="19.8" rx="1.2" ry="0.7" fill="white" />
-          {/* Antenna */}
-          <path d="M11 6l.5-2.5" stroke="white" strokeWidth="1" strokeLinecap="round" />
-          <circle cx="11.5" cy="3.3" r="0.7" fill="white" />
-        </svg>
-      ),
+      svgIcon: <SiPostman className="w-8 h-8 text-[#FF6C37]" />,
     },
     {
       title: "Antigravity IDE",
