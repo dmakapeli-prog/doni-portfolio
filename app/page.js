@@ -1057,6 +1057,17 @@ function ProjectsSection() {
       image: "https://image.thum.io/get/width/800/crop/600/https://jurnal-vibes-app.vercel.app/",
     },
     {
+      icon: "📢",
+      title: "Halo Jurnal",
+      badge: "PKL Project",
+      badgeClass: "badge-cyan",
+      desc: "Web aplikasi layanan pengaduan dan komunikasi interaktif yang dirancang khusus sebagai sub-kanal terintegrasi untuk ekosistem portal berita Jurnal Vibes. Dibangun secara full-stack dari nol dan merupakan output resmi dari keberhasilan program Praktik Kerja Lapangan (PKL) di PT Media Jurnal Sukabumi.",
+      techStack: ["Next.js", "Tailwind CSS", "Supabase", "Vercel"],
+      github: "https://github.com/dmakapeli-prog/halo-jurnal-app.git",
+      live: "https://halo-jurnal-app.vercel.app/",
+      image: "/halo-jurnal.png",
+    },
+    {
       icon: "🥚",
       title: "Ovara - Toko Telur Segar Online",
       badge: "Web App",
