@@ -193,7 +193,7 @@ function IDCard() {
         {/* Foto Profil */}
         <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 sm:mb-5 flex items-center justify-center shadow-inner relative overflow-hidden">
           <Image
-            src="/foto-doni.jpeg"
+            src="/avatar.png"
             alt="Donie Makapeli"
             width={128}
             height={128}
@@ -344,7 +344,7 @@ function AboutSection() {
             <div className="glass-card w-full max-w-md p-5 sm:p-8 flex flex-col items-center">
               <div className="w-full aspect-square rounded-2xl mb-6 sm:mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30 max-w-[260px] sm:max-w-[280px] max-h-[300px] sm:max-h-[320px] mx-auto">
                 <Image
-                  src="/foto-doni.jpeg"
+                  src="/avatar.png"
                   alt="Donie Makapeli"
                   fill
                   priority={true}
