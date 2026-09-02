@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import { SiPandas, SiSupabase, SiPostman, SiGooglecolab } from "react-icons/si";
+import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 
 /* ==================================================================
    HOOKS
@@ -1402,21 +1403,13 @@ function ContactSection() {
   ];
 
   const socials = [
-    { icon: "🐙", label: "GitHub", href: "https://github.com/dmakapeli-prog" },
-    { icon: "💼", label: "LinkedIn", href: "#" },
-    { icon: "📷", label: "Instagram", href: "#" },
+    { icon: <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" />, label: "GitHub", href: "https://github.com/dmakapeli-prog" },
+    { icon: <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6" />, label: "LinkedIn", href: "#" },
+    { icon: <FaDiscord className="w-5 h-5 sm:w-6 sm:h-6" />, label: "Discord", href: "#" },
   ];
 
   return (
     <section id="contact" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.5)] to-transparent">
-      {/* Toast Notification (Bottom Right for Clean UX) */}
-      <div
-        className={`fixed bottom-6 right-6 z-[100] toast-glass px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl text-xs sm:text-sm text-white font-medium transition-all duration-500 flex items-center gap-2 border shadow-2xl ${toast.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
-          } ${toast.type === "error" ? "border-red-500/50 bg-red-950/90" : "border-emerald-500/50 bg-emerald-950/90"}`}
-      >
-        <span>{toast.type === "error" ? "❌" : "✅"}</span> {toast.message}
-      </div>
-
       <div ref={stagger} className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="fade-up text-center mb-10 sm:mb-14">
@@ -1463,7 +1456,7 @@ function ContactSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={s.label}
-                      className="social-icon-btn w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-lg sm:text-xl"
+                      className="social-icon-btn w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-lg sm:text-xl text-white hover:text-accent-cyan transition-colors"
                     >
                       {s.icon}
                     </a>
@@ -1477,17 +1470,14 @@ function ContactSection() {
           <div className="fade-up fade-delay-2">
             <div className="glass-card p-5 sm:p-8">
               <h3 className="text-white font-bold text-base sm:text-lg mb-4 sm:mb-6">Kirim Pesan</h3>
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+              <form action="https://formspree.io/f/xaeyjewp" method="POST" className="space-y-4 sm:space-y-5">
                 <div>
                   <label htmlFor="contact-nama" className="text-text-secondary text-[10px] sm:text-xs font-medium uppercase tracking-wider block mb-1.5 sm:mb-2">Nama</label>
                   <input
                     id="contact-nama"
                     type="text"
-                    name="nama"
-                    value={formData.nama}
-                    onChange={handleChange}
+                    name="name"
                     required
-                    disabled={isSubmitting}
                     placeholder="Nama lengkap"
                     className="contact-input w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm text-white"
                   />
@@ -1498,10 +1488,7 @@ function ContactSection() {
                     id="contact-email"
                     type="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
-                    disabled={isSubmitting}
                     placeholder="email@contoh.com"
                     className="contact-input w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm text-white"
                   />
@@ -1510,11 +1497,8 @@ function ContactSection() {
                   <label htmlFor="contact-pesan" className="text-text-secondary text-[10px] sm:text-xs font-medium uppercase tracking-wider block mb-1.5 sm:mb-2">Pesan</label>
                   <textarea
                     id="contact-pesan"
-                    name="pesan"
-                    value={formData.pesan}
-                    onChange={handleChange}
+                    name="message"
                     required
-                    disabled={isSubmitting}
                     rows={4}
                     placeholder="Tulis pesan Anda..."
                     className="contact-input w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm text-white resize-none"
@@ -1522,18 +1506,9 @@ function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className={`btn-gradient w-full py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-                    }`}
+                  className="btn-gradient w-full py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
-                      Mengirim... ⏳
-                    </>
-                  ) : (
-                    "Kirim Pesan 📩"
-                  )}
+                  Kirim Pesan 📩
                 </button>
               </form>
             </div>
