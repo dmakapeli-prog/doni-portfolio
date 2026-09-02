@@ -135,8 +135,8 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "pt-3 md:pt-4" : "pt-4 md:pt-6"}`}>
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
+    <nav className="fixed top-0 inset-x-0 z-[100] bg-[#0A0E1A]/95 backdrop-blur-md border-b border-white/10 py-2.5 sm:py-3 md:py-4 transition-all duration-300 shadow-xl">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-2.5 md:gap-4">
 
         {/* Kiri: Logo */}
         <div className="flex flex-col items-center md:items-start">
@@ -196,8 +196,9 @@ function IDCard() {
             alt="Donie Makapeli"
             width={128}
             height={128}
-            priority
-            className="w-full h-full object-cover rounded-xl"
+            priority={true}
+            unoptimized={true}
+            className="w-full h-full object-cover rounded-xl opacity-100 transition-none"
           />
         </div>
 
@@ -246,7 +247,7 @@ function HomeSection() {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-28 md:pt-32 pb-12 md:pb-16 px-4 md:px-12 z-10">
+    <section id="home" className="relative min-h-screen flex items-center pt-36 sm:pt-40 md:pt-44 pb-12 md:pb-16 px-4 md:px-12 z-10">
       <div className="relative z-10 max-w-7xl mx-auto w-full grid md:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center">
 
         {/* ====== KIRI (60%): Teks ====== */}
@@ -337,16 +338,18 @@ function AboutSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-          {/* KOLOM KIRI */}
-          <div className="fade-up fade-delay-1 flex justify-center">
+          {/* KOLOM KIRI (Tanpa delay animasi opacity agar foto langsung muncul) */}
+          <div className="flex justify-center">
             <div className="glass-card w-full max-w-md p-5 sm:p-8 flex flex-col items-center">
               <div className="w-full aspect-square rounded-2xl mb-6 sm:mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30 max-w-[260px] sm:max-w-[280px] max-h-[300px] sm:max-h-[320px] mx-auto">
                 <Image
                   src="/foto-doni.jpeg"
                   alt="Donie Makapeli"
                   fill
+                  priority={true}
+                  unoptimized={true}
                   sizes="(max-width: 768px) 260px, 320px"
-                  className="object-cover object-top rounded-2xl"
+                  className="object-cover object-top rounded-2xl opacity-100 transition-none"
                 />
               </div>
 
