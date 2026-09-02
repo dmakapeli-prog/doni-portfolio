@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useMemo } from "react";
+import Image from "next/image";
 import { SiPandas, SiSupabase, SiPostman, SiGooglecolab } from "react-icons/si";
 
 /* ==================================================================
@@ -80,7 +81,7 @@ function BackgroundBlobs() {
   if (isMobile) return null;
 
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none hidden md:block">
       <div className="blob blob-cyan w-[500px] h-[500px] top-[-10%] left-[-5%]" />
       <div className="blob blob-purple w-[600px] h-[600px] bottom-[-15%] right-[-10%]" />
       <div className="blob blob-cyan w-[400px] h-[400px] top-[40%] left-[30%] opacity-5" />
@@ -134,27 +135,27 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "pt-4" : "pt-6"}`}>
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "pt-3 md:pt-4" : "pt-4 md:pt-6"}`}>
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
 
         {/* Kiri: Logo */}
         <div className="flex flex-col items-center md:items-start">
-          <a href="#home" className="text-2xl font-bold tracking-tight text-white flex items-center gap-1 select-none">
+          <a href="#home" className="text-xl md:text-2xl font-bold tracking-tight text-white flex items-center gap-1 select-none">
             Donie Makapeli
           </a>
-          <span className="text-[10px] tracking-[0.25em] text-text-secondary mt-0.5">
+          <span className="text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.25em] text-text-secondary mt-0.5">
             PERSONAL PORTFOLIO
           </span>
         </div>
 
         {/* Tengah/Kanan: Menu Pill */}
-        <div className="nav-pill rounded-full px-2 py-1.5 hidden md:flex items-center gap-1">
+        <div className="nav-pill rounded-full px-2 py-1 md:py-1.5 flex items-center gap-0.5 md:gap-1 max-w-full overflow-x-auto no-scrollbar">
           {links.map((l) => (
             <a
               key={l.id}
               href={`#${l.id}`}
               onClick={() => setActive(l.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${active === l.id
+              className={`px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all whitespace-nowrap ${active === l.id
                 ? "nav-item-active"
                 : "text-text-secondary nav-item-hover"
                 }`}
@@ -183,29 +184,31 @@ function IDCard() {
       </div>
 
       {/* --- Lanyard Strap --- */}
-      <div className="w-[6px] h-[80px] bg-gradient-to-b from-accent-cyan to-accent-purple -mt-0.5 z-0" />
+      <div className="w-[6px] h-[60px] sm:h-[80px] bg-gradient-to-b from-accent-cyan to-accent-purple -mt-0.5 z-0" />
 
       {/* --- Card Body --- */}
-      <div className="id-card-body w-[260px] h-[360px] rounded-2xl p-6 flex flex-col items-center relative z-20 -mt-1">
+      <div className="id-card-body w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 -mt-1">
 
         {/* Foto Profil */}
-        <div className="w-32 h-32 rounded-xl mb-5 flex items-center justify-center shadow-inner relative overflow-hidden">
-          <img
+        <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 sm:mb-5 flex items-center justify-center shadow-inner relative overflow-hidden">
+          <Image
             src="/foto-doni.jpeg"
             alt="Donie Makapeli"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
-            onError={(e) => { e.target.style.display = 'none' }}
+            width={128}
+            height={128}
+            priority
+            className="w-full h-full object-cover rounded-xl"
           />
         </div>
 
         {/* Nama & Role */}
-        <h3 className="text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
-        <p className="text-accent-cyan text-[11px] font-medium tracking-widest uppercase leading-relaxed text-center">
+        <h3 className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
+        <p className="text-accent-cyan text-[10px] sm:text-[11px] font-medium tracking-widest uppercase leading-relaxed text-center">
           Web Developer<br />& Data Analyst
         </p>
 
         {/* Divider */}
-        <div className="w-full h-px bg-white/15 my-4" />
+        <div className="w-full h-px bg-white/15 my-3 sm:my-4" />
 
         {/* Instansi */}
         <p className="text-text-secondary text-xs font-medium tracking-wide">
@@ -243,33 +246,31 @@ function HomeSection() {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-[100px] md:pt-32 pb-16 px-5 sm:px-8 z-10">
-      <div className="relative z-10 max-w-7xl mx-auto w-full grid md:grid-cols-[60%_40%] gap-12 lg:gap-8 items-center">
+    <section id="home" className="relative min-h-screen flex items-center pt-28 md:pt-32 pb-12 md:pb-16 px-4 md:px-12 z-10">
+      <div className="relative z-10 max-w-7xl mx-auto w-full grid md:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center">
 
         {/* ====== KIRI (60%): Teks ====== */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
 
-
-
-          <div className="badge-glass inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium text-white mb-6">
+          <div className="badge-glass inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium text-white mb-4 sm:mb-6 max-w-full text-center">
             <span>✨</span> Mahasiswa S1 Teknik Informatika - Universitas Nusa Putra
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 leading-tight">
             Donie Makapeli
           </h1>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl italic font-serif gradient-text mb-6">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl italic font-serif gradient-text mb-6">
             Web Developer & Data Analyst
           </h2>
 
           <TypingLine />
 
-          <p className="gradient-text-animated text-lg sm:text-xl font-semibold mb-6 max-w-lg">
+          <p className="gradient-text-animated text-base sm:text-xl font-semibold mb-6 max-w-lg">
             Membangun Pengalaman Digital dari Kode hingga Data
           </p>
 
-          <p className="text-text-secondary text-sm leading-relaxed max-w-xl mb-10">
+          <p className="text-text-secondary text-xs sm:text-sm leading-relaxed max-w-xl mb-8 sm:mb-10">
             Saya mahasiswa S1 Teknik Informatika di Universitas Nusa Putra dengan minat pada
             pengembangan web modern dan analisis data. Berpengalaman magang di PT Bank Rakyat
             Indonesia (BRI) Unit Cipanas, di mana saya mengerjakan project analisis data kunjungan
@@ -282,21 +283,21 @@ function HomeSection() {
           </p>
 
           {/* Stat Row */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-y-4 mb-10 w-full">
+          <div className="flex flex-wrap justify-center md:justify-start gap-y-4 mb-8 sm:mb-10 w-full">
             {stats.map((s, i) => (
-              <div key={i} className={`flex flex-col items-center md:items-start px-4 sm:px-6 ${i !== 0 ? 'border-l border-white/10' : 'pl-0'}`}>
-                <p className="text-2xl sm:text-3xl font-bold text-white">{s.num}</p>
-                <p className="text-text-secondary text-[11px] mt-1">{s.label}</p>
+              <div key={i} className={`flex flex-col items-center md:items-start px-4 sm:px-6 ${i !== 0 ? 'border-t sm:border-t-0 sm:border-l border-white/10 pt-3 sm:pt-0' : 'pl-0'}`}>
+                <p className="text-xl sm:text-3xl font-bold text-white">{s.num}</p>
+                <p className="text-text-secondary text-[10px] sm:text-[11px] mt-0.5 sm:mt-1">{s.label}</p>
               </div>
             ))}
           </div>
 
           {/* Buttons */}
-          <div className="flex items-center gap-4">
-            <a href="#about" className="btn-gradient px-8 py-3 rounded-full text-sm">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4">
+            <a href="#about" className="btn-gradient px-6 py-2.5 sm:px-8 sm:py-3 rounded-full text-xs sm:text-sm">
               About Me 👋
             </a>
-            <button onClick={handleCopy} className="btn-outline px-8 py-3 rounded-full text-sm">
+            <button onClick={handleCopy} className="btn-outline px-6 py-2.5 sm:px-8 sm:py-3 rounded-full text-xs sm:text-sm">
               {copied ? "Tersalin! ✅" : "Copy Link 🔗"}
             </button>
           </div>
@@ -304,7 +305,7 @@ function HomeSection() {
         </div>
 
         {/* ====== KANAN (40%): ID Card ====== */}
-        <div className="flex justify-center md:justify-end order-1 md:order-2 pt-8 md:pt-0">
+        <div className="flex justify-center md:justify-end order-1 md:order-2 pt-4 md:pt-0">
           <IDCard />
         </div>
 
@@ -326,40 +327,40 @@ function AboutSection() {
   ];
 
   return (
-    <section id="about" className="relative py-24 sm:py-32 px-5 sm:px-8 z-10">
+    <section id="about" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10">
       <div ref={stagger} className="max-w-7xl mx-auto">
-        <div className="fade-up text-center mb-16">
+        <div className="fade-up text-center mb-12 sm:mb-16">
           <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">TENTANG SAYA</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
             Mengenal Lebih Dekat
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* KOLOM KIRI */}
           <div className="fade-up fade-delay-1 flex justify-center">
-            <div className="glass-card w-full max-w-md p-6 sm:p-8 flex flex-col items-center">
-              <div className="w-full aspect-square rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30"
-                style={{ maxWidth: '280px', margin: '0 auto', maxHeight: '320px' }}>
-                <img
+            <div className="glass-card w-full max-w-md p-5 sm:p-8 flex flex-col items-center">
+              <div className="w-full aspect-square rounded-2xl mb-6 sm:mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30 max-w-[260px] sm:max-w-[280px] max-h-[300px] sm:max-h-[320px] mx-auto">
+                <Image
                   src="/foto-doni.jpeg"
                   alt="Donie Makapeli"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', borderRadius: '16px' }}
-                  onError={(e) => { e.target.style.display = 'none' }}
+                  fill
+                  sizes="(max-width: 768px) 260px, 320px"
+                  className="object-cover object-top rounded-2xl"
                 />
               </div>
 
-              <div className="w-full space-y-4">
-                <div className="flex items-center gap-4 text-sm">
-                  <span className="text-xl">📍</span>
+              <div className="w-full space-y-3.5 sm:space-y-4">
+                <div className="flex items-center gap-3.5 sm:gap-4 text-xs sm:text-sm">
+                  <span className="text-lg sm:text-xl">📍</span>
                   <span className="text-text-secondary font-medium">Sukabumi, Jawa Barat</span>
                 </div>
-                <div className="flex items-center gap-4 text-sm">
-                  <span className="text-xl">🎓</span>
+                <div className="flex items-center gap-3.5 sm:gap-4 text-xs sm:text-sm">
+                  <span className="text-lg sm:text-xl">🎓</span>
                   <span className="text-text-secondary font-medium">S1 Teknik Informatika</span>
                 </div>
-                <div className="flex items-center gap-4 text-sm">
-                  <span className="text-xl">💼</span>
+                <div className="flex items-center gap-3.5 sm:gap-4 text-xs sm:text-sm">
+                  <span className="text-lg sm:text-xl">💼</span>
                   <span className="text-text-secondary font-medium">Intern di PT Media Jurnal Sukabumi</span>
                 </div>
               </div>
@@ -367,18 +368,18 @@ function AboutSection() {
           </div>
 
           {/* KOLOM KANAN */}
-          <div className="flex flex-col gap-6">
-            <p className="fade-up fade-delay-2 text-text-secondary leading-relaxed text-sm sm:text-base">
+          <div className="flex flex-col gap-4 sm:gap-6">
+            <p className="fade-up fade-delay-2 text-text-secondary leading-relaxed text-xs sm:text-base">
               Saya <span className="text-white font-medium">Donie Makapeli</span>, mahasiswa S1 Teknik Informatika di Universitas Nusa Putra. Saya memiliki fokus pada pengembangan web full-stack menggunakan ekosistem modern (Next.js, TypeScript, Tailwind CSS, hingga integrasi database seperti PostgreSQL/Supabase), serta memiliki keahlian dalam pemrosesan dan analisis data menggunakan Python.
             </p>
-            <p className="fade-up fade-delay-3 text-text-secondary leading-relaxed text-sm sm:text-base">
+            <p className="fade-up fade-delay-3 text-text-secondary leading-relaxed text-xs sm:text-base">
               Pengalaman profesional saya dimulai saat magang di PT Bank Rakyat Indonesia (BRI) Unit Cipanas,
               di mana saya mengerjakan project analisis data kunjungan nasabah dari tahap preprocessing hingga
               penyusunan laporan. Setelah itu, saya menyelesaikan PKL secara WFH sebagai Web Developer di
               PT Media Jurnal Sukabumi dengan membangun web aplikasi{" "}
               <span className="text-accent-cyan font-medium">&apos;Halo Jurnal&apos;</span>.
             </p>
-            <p className="fade-up fade-delay-4 text-text-secondary leading-relaxed text-sm sm:text-base">
+            <p className="fade-up fade-delay-4 text-text-secondary leading-relaxed text-xs sm:text-base">
               Saat ini, saya masih melanjutkan program magang di PT Media Jurnal Sukabumi untuk mengembangkan
               portal utama <span className="text-accent-cyan font-medium">&apos;Jurnal Vibes&apos;</span>.
               Selain rutinitas magang, saya juga membangun{" "}
@@ -387,12 +388,12 @@ function AboutSection() {
               serta aktif berorganisasi untuk melatih kerja sama tim.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 mt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 pt-2 sm:pt-4 mt-1 sm:mt-2">
               {cards.map((c, i) => (
-                <div key={i} className={`fade-up fade-delay-${(i % 3) + 2} glass-card p-5 hover:-translate-y-1.5 transition-transform duration-300 hover:shadow-[0_10px_30px_rgba(0,217,255,0.15)] hover:border-accent-cyan/30`}>
-                  <span className="text-2xl mb-3 block">{c.icon}</span>
-                  <h4 className="text-white font-bold text-sm mb-1">{c.title}</h4>
-                  <p className="text-text-secondary text-xs">{c.desc}</p>
+                <div key={i} className={`fade-up fade-delay-${(i % 3) + 2} glass-card p-4 sm:p-5 hover:-translate-y-1.5 transition-transform duration-300 hover:shadow-[0_10px_30px_rgba(0,217,255,0.15)] hover:border-accent-cyan/30`}>
+                  <span className="text-xl sm:text-2xl mb-2 sm:mb-3 block">{c.icon}</span>
+                  <h4 className="text-white font-bold text-xs sm:text-sm mb-1">{c.title}</h4>
+                  <p className="text-text-secondary text-[11px] sm:text-xs">{c.desc}</p>
                 </div>
               ))}
             </div>
@@ -423,14 +424,6 @@ function CertificateGrid() {
     { src: '/certificates/sertif-seminas-sismatik-SI.jpg', nama: 'Seminar Nasional SISMATIK 2026', penerbit: 'Universitas Nusa Putra', tahun: '2026' },
   ];
 
-  useEffect(() => {
-    // Preload gambar sertifikat
-    certs.forEach(cert => {
-      const img = new Image();
-      img.src = cert.src;
-    });
-  }, []);
-
   const visible = showAll ? certs : certs.slice(0, 4);
 
   return (
@@ -438,158 +431,64 @@ function CertificateGrid() {
       {modalOpen && (
         <div
           onClick={() => setModalOpen(false)}
-          style={{
-            position: 'fixed', top: 0, left: 0,
-            width: '100vw', height: '100vh',
-            background: 'rgba(0,0,0,0.80)',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
-            zIndex: 9999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px',
-          }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-md z-[9999] flex items-center justify-center p-4"
         >
           {/* Modal Container */}
           <div
             onClick={(e) => e.stopPropagation()}
-            style={{
-              position: 'relative',
-              maxWidth: '896px',
-              width: '100%',
-              maxHeight: '90vh',
-              background: 'rgba(15, 18, 35, 0.95)',
-              borderRadius: '20px',
-              overflow: 'hidden',
-              border: '1px solid rgba(255,255,255,0.1)',
-              boxShadow: '0 25px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,217,255,0.08)',
-              display: 'flex',
-              flexDirection: 'column',
-              animation: 'modalScaleIn 0.22s cubic-bezier(0.34,1.56,0.64,1)',
-            }}
+            className="relative max-w-4xl w-full maxHeight-[90vh] bg-[#0f1223]/95 rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col animate-[modalScaleIn_0.22s_ease-out]"
           >
             {/* Header Bar */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '14px 20px',
-              borderBottom: '1px solid rgba(255,255,255,0.07)',
-              flexShrink: 0,
-            }}>
-              <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', fontWeight: '600', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/10 shrink-0">
+              <span className="text-white/50 text-xs font-semibold tracking-wider uppercase">
                 📜 Certificate Preview
               </span>
               <button
                 onClick={() => setModalOpen(false)}
-                style={{
-                  width: '32px', height: '32px',
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.08)',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  color: 'rgba(255,255,255,0.7)',
-                  fontSize: '16px',
-                  cursor: 'pointer',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  transition: 'background 0.2s',
-                  lineHeight: 1,
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.16)'}
-                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white/70 text-base cursor-pointer flex items-center justify-center transition-colors"
               >✕</button>
             </div>
 
             {/* Image Area */}
-            <div style={{
-              flex: 1,
-              overflow: 'hidden',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '20px',
-              minHeight: 0,
-            }}>
-              <img
+            <div className="flex-1 overflow-hidden flex items-center justify-center p-4 min-h-0 relative">
+              <Image
                 src={modalImage}
                 alt="Certificate Preview"
-                style={{
-                  maxWidth: '100%',
-                  maxHeight: 'calc(90vh - 110px)',
-                  width: 'auto',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  borderRadius: '12px',
-                  display: 'block',
-                }}
+                width={800}
+                height={550}
+                unoptimized
+                className="max-w-full max-h-[calc(90vh-110px)] w-auto h-auto object-contain rounded-xl block"
               />
             </div>
           </div>
-
-          <style>{`
-            @keyframes modalScaleIn {
-              from { opacity: 0; transform: scale(0.92); }
-              to   { opacity: 1; transform: scale(1); }
-            }
-          `}</style>
         </div>
       )}
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: typeof window !== 'undefined' && window.innerWidth < 500 ? '1fr' : 'repeat(2, 1fr)',
-        gap: '16px',
-        marginTop: '24px',
-      }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
         {visible.map((cert, i) => (
           <div
             key={i}
             onClick={() => { setModalImage(cert.src); setModalOpen(true); }}
-            style={{
-              background: 'rgba(255,255,255,0.05)',
-              borderRadius: '16px',
-              overflow: 'hidden',
-              cursor: 'pointer',
-              border: '1px solid rgba(255,255,255,0.1)',
-              transition: 'transform 0.2s, border-color 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.03)';
-              e.currentTarget.style.borderColor = '#00D9FF';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-            }}
+            className="bg-white/5 rounded-2xl overflow-hidden cursor-pointer border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent-cyan"
           >
-            <div style={{ width: '100%', height: '160px', overflow: 'hidden', backgroundColor: '#1a1a2e', display: 'block' }}>
-              <img
+            <div className="w-full h-40 overflow-hidden bg-[#1a1a2e] relative">
+              <Image
                 src={cert.src}
                 alt={cert.nama}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                style={{ width: '100%', height: '160px', objectFit: 'cover', display: 'block', willChange: 'auto' }}
-                onError={(e) => {
-                  e.target.src = 'https://placehold.co/400x180/1a1a2e/00D9FF?text=Sertifikat';
-                }}
+                width={400}
+                height={160}
+                className="w-full h-40 object-cover block"
+                sizes="(max-width: 640px) 100vw, 50vw"
               />
             </div>
-            <div style={{ padding: '12px 16px', background: 'rgba(10,14,23,0.6)' }}>
-              <h4 style={{ color: 'white', fontWeight: 'bold', fontSize: '13px', marginBottom: '4px' }}>
+            <div className="p-3.5 sm:p-4 bg-[#0a0e17]/60">
+              <h4 className="text-white font-bold text-xs sm:text-sm mb-1 line-clamp-1">
                 {cert.nama}
               </h4>
-              <p style={{ color: '#9CA3AF', fontSize: '11px', marginBottom: '6px' }}>
+              <p className="text-text-secondary text-[11px] mb-2 line-clamp-1">
                 {cert.penerbit}
               </p>
-              <span style={{
-                display: 'inline-block',
-                padding: '2px 10px',
-                borderRadius: '999px',
-                border: '1px solid #00D9FF',
-                color: '#00D9FF',
-                fontSize: '11px',
-              }}>
+              <span className="inline-block px-2.5 py-0.5 rounded-full border border-accent-cyan text-accent-cyan text-[11px]">
                 {cert.tahun}
               </span>
             </div>
@@ -597,18 +496,10 @@ function CertificateGrid() {
         ))}
       </div>
 
-      <div style={{ textAlign: 'center', marginTop: '24px' }}>
+      <div className="text-center mt-6 sm:mt-8">
         <button
           onClick={() => setShowAll(!showAll)}
-          style={{
-            padding: '10px 28px',
-            borderRadius: '999px',
-            border: '1px solid #00D9FF',
-            color: '#00D9FF',
-            background: 'transparent',
-            cursor: 'pointer',
-            fontSize: '14px',
-          }}
+          className="px-6 py-2.5 rounded-full border border-accent-cyan text-accent-cyan bg-transparent hover:bg-accent-cyan/10 transition-colors text-xs sm:text-sm font-medium"
         >
           {showAll ? 'Show Less ↑' : 'Show More ↓'}
         </button>
@@ -704,21 +595,21 @@ function EducationSection() {
   };
 
   return (
-    <section id="education" className="relative py-24 sm:py-32 px-5 sm:px-8 z-10 bg-gradient-to-b from-transparent via-[rgba(26,18,53,0.4)] to-transparent">
+    <section id="education" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(26,18,53,0.4)] to-transparent">
       <div ref={stagger} className="max-w-5xl mx-auto">
-        <div className="fade-up text-center mb-12">
+        <div className="fade-up text-center mb-8 sm:mb-12">
           <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">JOURNEY, EXPERIENCE & ACHIEVEMENT</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-10">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-8 sm:mb-10">
             Pendidikan & Pengalaman
           </h2>
 
           {/* Filter Tabs */}
-          <div className="inline-flex flex-wrap justify-center gap-2 md:gap-3 p-1.5 rounded-full nav-pill mb-16">
+          <div className="inline-flex flex-wrap justify-center gap-1.5 sm:gap-3 p-1.5 rounded-full nav-pill mb-12 sm:mb-16">
             {tabs.map((t) => (
               <button
                 key={t.id}
                 onClick={() => setActiveTab(t.id)}
-                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 ${activeTab === t.id
+                className={`px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 ${activeTab === t.id
                   ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg"
                   : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
                   }`}
@@ -738,28 +629,28 @@ function EducationSection() {
           ) : (
             <div className="relative">
               {/* Vertical Line */}
-              <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent-cyan/50 via-accent-purple/30 to-transparent transform md:-translate-x-1/2" />
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent-cyan/50 via-accent-purple/30 to-transparent transform md:-translate-x-1/2" />
 
-              <div className="space-y-12">
+              <div className="space-y-8 sm:space-y-12">
                 {content[activeTab]?.map((item, index) => {
                   const isLeft = index % 2 === 0;
                   return (
                     <div key={index} className={`w-full flex flex-col md:flex-row ${isLeft ? '' : 'md:flex-row-reverse'} relative fade-up`} style={{ transitionDelay: `${0.1 * (index + 1)}s` }}>
 
                       {/* Timeline Dot */}
-                      <div className="absolute left-6 md:left-1/2 top-2 w-3.5 h-3.5 rounded-full bg-accent-cyan transform -translate-x-1/2 shadow-[0_0_10px_rgba(0,217,255,0.6)] border-2 border-[#1A1235] z-10" />
+                      <div className="absolute left-4 md:left-1/2 top-2 w-3.5 h-3.5 rounded-full bg-accent-cyan transform -translate-x-1/2 shadow-[0_0_10px_rgba(0,217,255,0.6)] border-2 border-[#1A1235] z-10" />
 
                       {/* Content Block */}
-                      <div className={`w-full md:w-1/2 pl-14 md:pl-0 ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
-                        <span className="inline-block px-3 py-1 rounded-full border border-accent-cyan/30 text-accent-cyan text-[10px] font-bold tracking-wider mb-3 bg-accent-cyan/5">
+                      <div className={`w-full md:w-1/2 pl-10 md:pl-0 ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
+                        <span className="inline-block px-3 py-1 rounded-full border border-accent-cyan/30 text-accent-cyan text-[10px] font-bold tracking-wider mb-2 sm:mb-3 bg-accent-cyan/5">
                           {item.badge}
                         </span>
                         <p className="text-accent-purple text-xs font-bold mb-1 tracking-wider uppercase">{item.period}</p>
-                        <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
-                        <p className="text-text-secondary text-sm font-medium mb-2">{item.sub}</p>
+                        <h3 className="text-base sm:text-lg font-bold text-white mb-1">{item.title}</h3>
+                        <p className="text-text-secondary text-xs sm:text-sm font-medium mb-2">{item.sub}</p>
                         {item.desc && (
-                          <div className={`inline-block w-full max-w-sm mt-2 ${isLeft ? 'md:ml-auto' : ''}`}>
-                            <p className="text-text-secondary/80 text-xs leading-relaxed p-4 bg-white/5 rounded-xl border border-white/5 text-left">
+                          <div className={`inline-block w-full mt-2 ${isLeft ? 'md:ml-auto md:max-w-sm' : 'md:max-w-sm'}`}>
+                            <p className="text-text-secondary/80 text-xs leading-relaxed p-3.5 sm:p-4 bg-white/5 rounded-xl border border-white/5 text-left">
                               {item.desc}
                             </p>
                           </div>
@@ -789,7 +680,7 @@ function TypingLine() {
   const typedText = useTypingAnimation(roles, 100, 50, 2000);
 
   return (
-    <p className="text-white text-base sm:text-lg mb-3">
+    <p className="text-white text-sm sm:text-lg mb-3">
       Berfokus pada bidang{" "}
       <span className="text-accent-cyan font-bold">{typedText}</span>
       <span className="typing-cursor" />
@@ -878,10 +769,8 @@ function SkillsSection() {
       title: "HTML & CSS",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          {/* Official HTML5 shield/badge shape */}
           <path d="M4.136 0l1.69 18.954L12 21l6.17-2.043L19.86 0z" fill="#E34F26" />
           <path d="M12 1.5v18.13l5.018-1.66 1.455-16.47H12z" fill="#EF652A" />
-          {/* White 5 digit */}
           <path d="M12 7.3H7.895l.265 2.9H12v2.82H7.57l.35 3.92L12 18.03v-2.97l-2.06-.55-.14-1.51H12V7.3z" fill="white" />
           <path d="M12 7.3v2.9h3.75l-.355 4.47-3.395.89v2.97l4.14-1.15.465-5.19H12z" fill="white" opacity="0.9" />
         </svg>
@@ -896,20 +785,13 @@ function SkillsSection() {
       title: "PostgreSQL",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          {/* Official PostgreSQL elephant head */}
-          {/* Main head shape */}
           <path d="M17.5 3C16.2 1.7 14.5 1 12.7 1c-1.2 0-2.4.3-3.4.9C7.8 1.3 6.2 1.7 5 2.9 3.2 4.7 3 7.7 3 9.5c0 1.2.2 2.5.7 3.6.6 1.3 1.6 1.8 2.1 1.8.4 0 .7-.1 1-.3v2.2c0 2.1.7 3.8 2.5 4.6.5.2 1 .3 1.5.3 1 0 1.9-.3 2.7-.9.6-.4 1-.9 1.3-1.5.3.1.6.2 1 .2.9 0 1.9-.4 2.5-1.4.5-.8.7-1.8.7-2.9V15c.4-.5.7-1.1.8-1.7.3-1 .4-2.2.4-3.2C21 6.9 19.8 4.7 17.5 3z" fill="#336791" />
-          {/* Ear */}
           <path d="M19 7.5c.8 0 1.5-.7 1.5-1.5S19.8 4.5 19 4.5c-.7 0-1.3.5-1.5 1.1L17 5.4c.3-.5.8-.9 1.5-.9.9 0 1.5.7 1.5 1.5S19.4 7.5 18.5 7.5" fill="#336791" />
-          {/* Eye whites */}
           <ellipse cx="9.5" cy="8" rx="1.5" ry="1.7" fill="white" />
           <ellipse cx="14.5" cy="8" rx="1.5" ry="1.7" fill="white" />
-          {/* Pupils */}
           <circle cx="9.8" cy="8.2" r="0.8" fill="#1a1a1a" />
           <circle cx="14.8" cy="8.2" r="0.8" fill="#1a1a1a" />
-          {/* Nose / snout */}
           <path d="M10 11.5c0 1.1.9 2 2 2s2-.9 2-2" stroke="white" strokeWidth="0.8" fill="none" strokeLinecap="round" />
-          {/* Tusk */}
           <path d="M10.5 13.5c-.5.8-1.2 1.5-2 1.8" stroke="#C8A96E" strokeWidth="1" fill="none" strokeLinecap="round" />
         </svg>
       ),
@@ -962,18 +844,13 @@ function SkillsSection() {
       title: "Excel / Sheets",
       svgIcon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          {/* Microsoft Excel official logo: green background with white X */}
           <rect width="24" height="24" rx="3" fill="#1D6F42" />
-          {/* Document/page part right */}
           <rect x="13" y="3" width="8" height="18" rx="1" fill="#21A366" />
-          {/* Horizontal lines in right pane */}
           <rect x="14" y="7" width="6" height="1.2" rx="0.5" fill="white" opacity="0.6" />
           <rect x="14" y="10" width="6" height="1.2" rx="0.5" fill="white" opacity="0.6" />
           <rect x="14" y="13" width="6" height="1.2" rx="0.5" fill="white" opacity="0.6" />
           <rect x="14" y="16" width="6" height="1.2" rx="0.5" fill="white" opacity="0.6" />
-          {/* Green left fold/tab */}
           <path d="M3 4.5C3 3.67 3.67 3 4.5 3H13v18H4.5C3.67 21 3 20.33 3 19.5V4.5z" fill="#107C41" />
-          {/* Bold white X on left */}
           <path d="M5.5 8l3.5 4-3.5 4h2.2l2.4-3 2.4 3H12.2L8.7 12l3.5-4H10l-2.4 3-2.4-3z" fill="white" />
         </svg>
       ),
@@ -1012,24 +889,16 @@ function SkillsSection() {
       title: "Antigravity IDE",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          {/* Rocket nose cone */}
           <path d="M12 1C12 1 7.5 5.5 7.5 12H16.5C16.5 5.5 12 1 12 1z" fill="#00D9FF" />
-          {/* Rocket body */}
           <rect x="7.5" y="12" width="9" height="5" fill="#00B8D9" />
-          {/* Left fin */}
           <path d="M7.5 13.5L4.5 18.5l3-1V13.5z" fill="#7C3AED" />
-          {/* Right fin */}
           <path d="M16.5 13.5L19.5 18.5l-3-1V13.5z" fill="#7C3AED" />
-          {/* Porthole window */}
           <circle cx="12" cy="11" r="2.2" fill="#0A0E1A" />
           <circle cx="12" cy="11" r="1.5" fill="#1a2a4a" />
           <circle cx="11.3" cy="10.3" r="0.45" fill="#00D9FF" opacity="0.8" />
-          {/* Engine nozzle */}
           <path d="M9.5 17h5l.5 1h-6z" fill="#555" />
-          {/* Flame */}
           <path d="M10.5 18.5C10.5 18.5 10 21 12 22.5C14 21 13.5 18.5 13.5 18.5H10.5z" fill="#FF6C37" opacity="0.9" />
           <path d="M11 19C11 19 11 21.5 12 22C13 21.5 13 19 13 19H11z" fill="#FFD700" opacity="0.8" />
-          {/* Stars/sparkles */}
           <path d="M19 3l.4 1.2L20.6 4.6l-1.2.4-.4 1.2-.4-1.2-1.2-.4 1.2-.4z" fill="#FFD700" />
           <path d="M4.5 6l.3.9.9.3-.9.3-.3.9-.3-.9-.9-.3.9-.3z" fill="#00D9FF" opacity="0.7" />
         </svg>
@@ -1039,17 +908,12 @@ function SkillsSection() {
       title: "Stitch AI",
       svgIcon: (
         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-          {/* Magic wand stick */}
           <path d="M14.5 9.5L4.5 19.5" stroke="#C4B5FD" strokeWidth="1.8" strokeLinecap="round" />
-          {/* Wand tip star/sparkle — 4-point sharp star */}
           <path d="M14.5 2L15.5 5.5L19 6.5L15.5 7.5L14.5 11L13.5 7.5L10 6.5L13.5 5.5z" fill="#A78BFA" />
-          {/* Large glow ring */}
           <circle cx="14.5" cy="6.5" r="3.5" stroke="#7C3AED" strokeWidth="0.5" opacity="0.4" fill="none" />
-          {/* Scattered sparkles */}
           <path d="M20 2l.4 1.3 1.3.4-1.3.4-.4 1.3-.4-1.3-1.3-.4 1.3-.4z" fill="#E879F9" opacity="0.9" />
           <path d="M20 13l.3 1 1 .3-1 .3-.3 1-.3-1-1-.3 1-.3z" fill="#C4B5FD" opacity="0.7" />
           <path d="M6 3l.3 1 1 .3-1 .3-.3 1-.3-1-1-.3 1-.3z" fill="#A78BFA" opacity="0.6" />
-          {/* Small dot sparkles on wand trail */}
           <circle cx="7.5" cy="16.5" r="0.8" fill="#C4B5FD" opacity="0.5" />
           <circle cx="11" cy="13" r="0.6" fill="#E879F9" opacity="0.4" />
         </svg>
@@ -1057,27 +921,26 @@ function SkillsSection() {
     },
   ];
 
-
   return (
-    <section id="skills" className="relative py-24 sm:py-32 px-5 sm:px-8 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.6)] to-transparent">
+    <section id="skills" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.6)] to-transparent">
       <div ref={stagger} className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="fade-up text-center mb-12">
+        <div className="fade-up text-center mb-8 sm:mb-12">
           <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">WHAT I KNOW</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
             Skills & Tools
           </h2>
         </div>
 
         {/* Tab Filter */}
-        <div className="fade-up fade-delay-1 flex justify-center mb-14">
+        <div className="fade-up fade-delay-1 flex justify-center mb-10 sm:mb-14">
           <div className="inline-flex gap-2 p-1.5 rounded-full nav-pill">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${activeTab === tab
+                className={`px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all ${activeTab === tab
                   ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg"
                   : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
                   }`}
@@ -1095,12 +958,12 @@ function SkillsSection() {
           {activeTab === "Core" && (
             <div className="tab-fade-enter">
               <p className="text-[10px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-6 text-center">EXPERTISE</p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
                 {coreSkills.map((s, i) => (
-                  <div key={i} className="skill-card-lg p-8 sm:p-10 flex flex-col items-center text-center cursor-default">
-                    <span className="text-4xl sm:text-5xl mb-4">{s.icon}</span>
+                  <div key={i} className="skill-card-lg p-6 sm:p-8 flex flex-col items-center text-center cursor-default">
+                    <span className="text-4xl sm:text-5xl mb-3 sm:mb-4">{s.icon}</span>
                     <h4 className="text-white font-bold text-base sm:text-lg">{s.title}</h4>
-                    {s.desc && <p className="text-sm text-gray-400 text-center mt-3 px-4">{s.desc}</p>}
+                    {s.desc && <p className="text-xs sm:text-sm text-gray-400 text-center mt-2.5 sm:mt-3 px-2 sm:px-4">{s.desc}</p>}
                   </div>
                 ))}
               </div>
@@ -1111,19 +974,19 @@ function SkillsSection() {
           {activeTab === "Expertise" && (
             <div className="tab-fade-enter">
               <p className="text-[10px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-6 text-center">LANGUAGE & FRAMEWORK</p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
                 {expertiseSkills.map((s, i) => (
-                  <div key={i} className="skill-card p-5 sm:p-6 flex flex-col items-center text-center cursor-default">
+                  <div key={i} className="skill-card p-4 sm:p-6 flex flex-col items-center text-center cursor-default">
                     {s.icon ? (
                       typeof s.icon === "string" ? (
-                        <span className="text-2xl sm:text-3xl mb-3">{s.icon}</span>
+                        <span className="text-2xl sm:text-3xl mb-2 sm:mb-3">{s.icon}</span>
                       ) : (
-                        <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.icon}</div>
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 mb-2 sm:mb-3 flex items-center justify-center">{s.icon}</div>
                       )
                     ) : s.svgIcon ? (
-                      <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.svgIcon}</div>
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 mb-2 sm:mb-3 flex items-center justify-center">{s.svgIcon}</div>
                     ) : null}
-                    <h4 className="text-white font-semibold text-sm">{s.title}</h4>
+                    <h4 className="text-white font-semibold text-xs sm:text-sm">{s.title}</h4>
                   </div>
                 ))}
               </div>
@@ -1134,19 +997,19 @@ function SkillsSection() {
           {activeTab === "Tools" && (
             <div className="tab-fade-enter">
               <p className="text-[10px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-6 text-center">TOOLS & PLATFORM</p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
                 {toolsSkills.map((s, i) => (
-                  <div key={i} className="skill-card p-5 sm:p-6 flex flex-col items-center text-center cursor-default">
+                  <div key={i} className="skill-card p-4 sm:p-6 flex flex-col items-center text-center cursor-default">
                     {s.icon ? (
                       typeof s.icon === "string" ? (
-                        <span className="text-2xl sm:text-3xl mb-3">{s.icon}</span>
+                        <span className="text-2xl sm:text-3xl mb-2 sm:mb-3">{s.icon}</span>
                       ) : (
-                        <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.icon}</div>
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 mb-2 sm:mb-3 flex items-center justify-center">{s.icon}</div>
                       )
                     ) : s.svgIcon ? (
-                      <div className="w-8 h-8 mb-3 flex items-center justify-center">{s.svgIcon}</div>
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 mb-2 sm:mb-3 flex items-center justify-center">{s.svgIcon}</div>
                     ) : null}
-                    <h4 className="text-white font-semibold text-sm">{s.title}</h4>
+                    <h4 className="text-white font-semibold text-xs sm:text-sm">{s.title}</h4>
                   </div>
                 ))}
               </div>
@@ -1155,14 +1018,14 @@ function SkillsSection() {
         </div>
 
         {/* Archive Button */}
-        <div className="flex justify-center mt-10">
-          <button className="btn-outline px-6 py-2.5 rounded-full text-sm flex items-center gap-2">
+        <div className="flex justify-center mt-8 sm:mt-10">
+          <button className="btn-outline px-6 py-2.5 rounded-full text-xs sm:text-sm flex items-center gap-2">
             📦 View Archive
           </button>
         </div>
 
         {/* Footer Stats */}
-        <p className="text-center text-text-secondary/60 text-xs mt-5">
+        <p className="text-center text-text-secondary/60 text-[11px] sm:text-xs mt-4 sm:mt-5">
           3 Core Expertise · 11 Languages & Frameworks · 10 Tools
         </p>
 
@@ -1300,19 +1163,19 @@ function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="relative py-24 sm:py-32 px-5 sm:px-8 z-10 bg-gradient-to-b from-transparent via-[rgba(26,18,53,0.4)] to-transparent">
+    <section id="projects" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(26,18,53,0.4)] to-transparent">
       <div ref={stagger} className="max-w-4xl mx-auto">
 
         {/* Header */}
-        <div className="fade-up text-center mb-14">
+        <div className="fade-up text-center mb-10 sm:mb-14">
           <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">MY WORK</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
             Projects
           </h2>
         </div>
 
         {/* Carousel */}
-        <div className="relative flex items-center gap-3 sm:gap-5">
+        <div className="relative flex items-center gap-2 sm:gap-5">
 
           {/* Prev Button */}
           <button
@@ -1326,32 +1189,26 @@ function ProjectsSection() {
           {/* Active Slide */}
           <div className="flex-1 min-w-0">
             <div key={currentSlide} className="tab-fade-enter">
-              <div className="project-card p-6 sm:p-8">
+              <div className="project-card p-4 sm:p-8">
 
                 {/* Preview Image */}
                 <div
-                  className="w-full aspect-video rounded-xl mb-6 relative overflow-hidden group"
+                  className="w-full aspect-video rounded-xl mb-5 sm:mb-6 relative overflow-hidden group"
                   style={{ background: "linear-gradient(135deg, #0a0e1a, #1a1235)" }}
                 >
                   {projects[currentSlide].image ? (
                     <>
-                      <img
+                      <Image
                         src={projects[currentSlide].image}
                         alt={projects[currentSlide].title}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          objectPosition: 'top center',
-                          display: 'block',
-                          transition: 'transform 0.5s ease',
-                        }}
-                        className="group-hover:scale-105"
-                        onError={(e) => { e.target.style.display = 'none'; }}
+                        fill
+                        unoptimized={projects[currentSlide].image.startsWith('http')}
+                        sizes="(max-width: 768px) 100vw, 800px"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500 block"
                       />
                       {/* Overlay saat hover */}
                       <div
-                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
                         style={{ background: 'rgba(0,0,0,0.45)' }}
                       >
                         {projects[currentSlide].live && (
@@ -1359,7 +1216,7 @@ function ProjectsSection() {
                             href={projects[currentSlide].live}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-5 py-2.5 rounded-full text-white font-semibold text-sm"
+                            className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-white font-semibold text-xs sm:text-sm"
                             style={{ background: 'rgba(0,217,255,0.2)', border: '1px solid rgba(0,217,255,0.5)', backdropFilter: 'blur(8px)' }}
                           >
                             🔗 Lihat Website
@@ -1367,14 +1224,14 @@ function ProjectsSection() {
                         )}
                       </div>
                       {/* Badge icon di pojok kiri atas */}
-                      <div className="absolute top-3 left-3 w-9 h-9 rounded-full flex items-center justify-center text-lg" style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                      <div className="absolute top-3 left-3 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-sm sm:text-lg z-10" style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)', border: '1px solid rgba(255,255,255,0.15)' }}>
                         {projects[currentSlide].icon}
                       </div>
                     </>
                   ) : (
                     /* Fallback: emoji besar untuk proyek tanpa gambar */
                     <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #00D9FF22, #A78BFA22)" }}>
-                      <span className="text-6xl sm:text-7xl">{projects[currentSlide].icon}</span>
+                      <span className="text-5xl sm:text-7xl">{projects[currentSlide].icon}</span>
                       <div
                         className="absolute inset-0 opacity-15"
                         style={{
@@ -1387,20 +1244,20 @@ function ProjectsSection() {
                 </div>
 
                 {/* Title + Badge */}
-                <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">{projects[currentSlide].title}</h3>
-                  <span className={`px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase ${projects[currentSlide].badgeClass}`}>
+                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-3">
+                  <h3 className="text-lg sm:text-2xl font-bold text-white">{projects[currentSlide].title}</h3>
+                  <span className={`px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] font-bold tracking-wider uppercase ${projects[currentSlide].badgeClass}`}>
                     {projects[currentSlide].badge}
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="text-text-secondary text-sm leading-relaxed mb-5">
+                <p className="text-text-secondary text-xs sm:text-sm leading-relaxed mb-5">
                   {projects[currentSlide].desc}
                 </p>
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6">
                   {projects[currentSlide].techStack.map((tech, ti) => (
                     <span key={ti} className="tech-pill">{tech}</span>
                   ))}
@@ -1413,7 +1270,7 @@ function ProjectsSection() {
                       href={projects[currentSlide].github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-outline px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2"
+                      className="btn-outline px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm inline-flex items-center gap-2"
                     >
                       GitHub 🐙
                     </a>
@@ -1423,13 +1280,13 @@ function ProjectsSection() {
                       href={projects[currentSlide].live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-gradient px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2"
+                      className="btn-gradient px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm inline-flex items-center gap-2"
                     >
                       Live Demo 🔗
                     </a>
                   )}
                   {!projects[currentSlide].github && !projects[currentSlide].live && (
-                    <span className="badge-gray px-4 py-2 rounded-full text-xs font-medium">
+                    <span className="badge-gray px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium">
                       📄 Laporan Internal
                     </span>
                   )}
@@ -1451,7 +1308,7 @@ function ProjectsSection() {
         </div>
 
         {/* Dot Indicators */}
-        <div className="flex justify-center items-center gap-2.5 mt-8">
+        <div className="flex justify-center items-center gap-2.5 mt-6 sm:mt-8">
           {projects.map((_, index) => (
             <button
               key={index}
@@ -1535,46 +1392,45 @@ function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 px-5 sm:px-8 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.5)] to-transparent">
+    <section id="contact" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.5)] to-transparent">
       {/* Toast Notification (Bottom Right for Clean UX) */}
       <div
-        className={`fixed bottom-6 right-6 z-[100] toast-glass px-5 py-3.5 rounded-xl text-sm text-white font-medium transition-all duration-500 flex items-center gap-2 border shadow-2xl ${
-          toast.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
-        } ${toast.type === "error" ? "border-red-500/50 bg-red-950/90" : "border-emerald-500/50 bg-emerald-950/90"}`}
+        className={`fixed bottom-6 right-6 z-[100] toast-glass px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl text-xs sm:text-sm text-white font-medium transition-all duration-500 flex items-center gap-2 border shadow-2xl ${toast.show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+          } ${toast.type === "error" ? "border-red-500/50 bg-red-950/90" : "border-emerald-500/50 bg-emerald-950/90"}`}
       >
         <span>{toast.type === "error" ? "❌" : "✅"}</span> {toast.message}
       </div>
 
       <div ref={stagger} className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="fade-up text-center mb-14">
+        <div className="fade-up text-center mb-10 sm:mb-14">
           <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">GET IN TOUCH</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
             Mari Terhubung
           </h2>
-          <p className="text-text-secondary text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-text-secondary text-xs sm:text-base max-w-xl mx-auto">
             Tertarik untuk berkolaborasi atau punya pertanyaan? Jangan ragu untuk menghubungi saya.
           </p>
         </div>
 
         {/* 2 Column Layout */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
 
           {/* LEFT COLUMN - Contact Info */}
           <div className="fade-up fade-delay-1">
-            <div className="glass-card p-6 sm:p-8 h-full flex flex-col">
-              <h3 className="text-white font-bold text-lg mb-6">Informasi Kontak</h3>
+            <div className="glass-card p-5 sm:p-8 h-full flex flex-col">
+              <h3 className="text-white font-bold text-base sm:text-lg mb-4 sm:mb-6">Informasi Kontak</h3>
 
-              <div className="space-y-4 mb-8 flex-1">
+              <div className="space-y-3.5 sm:space-y-4 mb-6 sm:mb-8 flex-1">
                 {contactInfo.map((item, i) => (
                   <div
                     key={i}
-                    className="contact-info-card flex items-center gap-4 p-4 rounded-xl cursor-default"
+                    className="contact-info-card flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-xl cursor-default"
                   >
-                    <span className="text-2xl">{item.icon}</span>
+                    <span className="text-xl sm:text-2xl">{item.icon}</span>
                     <div>
-                      <p className="text-text-secondary text-xs font-medium uppercase tracking-wider">{item.label}</p>
-                      <p className="text-white text-sm font-medium mt-0.5">{item.value}</p>
+                      <p className="text-text-secondary text-[10px] sm:text-xs font-medium uppercase tracking-wider">{item.label}</p>
+                      <p className="text-white text-xs sm:text-sm font-medium mt-0.5">{item.value}</p>
                     </div>
                   </div>
                 ))}
@@ -1582,7 +1438,7 @@ function ContactSection() {
 
               {/* Social Icons */}
               <div>
-                <p className="text-text-secondary text-xs font-medium uppercase tracking-wider mb-4">Temukan Saya</p>
+                <p className="text-text-secondary text-xs font-medium uppercase tracking-wider mb-3 sm:mb-4">Temukan Saya</p>
                 <div className="flex items-center gap-3">
                   {socials.map((s, i) => (
                     <a
@@ -1591,7 +1447,7 @@ function ContactSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={s.label}
-                      className="social-icon-btn w-12 h-12 rounded-full flex items-center justify-center text-xl"
+                      className="social-icon-btn w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-lg sm:text-xl"
                     >
                       {s.icon}
                     </a>
@@ -1603,11 +1459,11 @@ function ContactSection() {
 
           {/* RIGHT COLUMN - Contact Form */}
           <div className="fade-up fade-delay-2">
-            <div className="glass-card p-6 sm:p-8">
-              <h3 className="text-white font-bold text-lg mb-6">Kirim Pesan</h3>
-              <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="glass-card p-5 sm:p-8">
+              <h3 className="text-white font-bold text-base sm:text-lg mb-4 sm:mb-6">Kirim Pesan</h3>
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                 <div>
-                  <label htmlFor="contact-nama" className="text-text-secondary text-xs font-medium uppercase tracking-wider block mb-2">Nama</label>
+                  <label htmlFor="contact-nama" className="text-text-secondary text-[10px] sm:text-xs font-medium uppercase tracking-wider block mb-1.5 sm:mb-2">Nama</label>
                   <input
                     id="contact-nama"
                     type="text"
@@ -1617,11 +1473,11 @@ function ContactSection() {
                     required
                     disabled={isSubmitting}
                     placeholder="Nama lengkap"
-                    className="contact-input w-full px-4 py-3 rounded-lg text-sm text-white"
+                    className="contact-input w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm text-white"
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-email" className="text-text-secondary text-xs font-medium uppercase tracking-wider block mb-2">Email</label>
+                  <label htmlFor="contact-email" className="text-text-secondary text-[10px] sm:text-xs font-medium uppercase tracking-wider block mb-1.5 sm:mb-2">Email</label>
                   <input
                     id="contact-email"
                     type="email"
@@ -1631,11 +1487,11 @@ function ContactSection() {
                     required
                     disabled={isSubmitting}
                     placeholder="email@contoh.com"
-                    className="contact-input w-full px-4 py-3 rounded-lg text-sm text-white"
+                    className="contact-input w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm text-white"
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-pesan" className="text-text-secondary text-xs font-medium uppercase tracking-wider block mb-2">Pesan</label>
+                  <label htmlFor="contact-pesan" className="text-text-secondary text-[10px] sm:text-xs font-medium uppercase tracking-wider block mb-1.5 sm:mb-2">Pesan</label>
                   <textarea
                     id="contact-pesan"
                     name="pesan"
@@ -1645,15 +1501,14 @@ function ContactSection() {
                     disabled={isSubmitting}
                     rows={4}
                     placeholder="Tulis pesan Anda..."
-                    className="contact-input w-full px-4 py-3 rounded-lg text-sm text-white resize-none"
+                    className="contact-input w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm text-white resize-none"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`btn-gradient w-full py-3.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2 transition-all ${
-                    isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-                  }`}
+                  className={`btn-gradient w-full py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+                    }`}
                 >
                   {isSubmitting ? (
                     <>
@@ -1679,22 +1534,22 @@ function ContactSection() {
    ================================================================== */
 function Footer() {
   return (
-    <footer className="relative z-10 py-10 px-5 sm:px-8" style={{ background: "rgba(6,8,16,0.7)" }}>
-      <div className="max-w-6xl mx-auto flex flex-col items-center gap-4">
+    <footer className="relative z-10 py-8 sm:py-10 px-4 sm:px-8" style={{ background: "rgba(6,8,16,0.7)" }}>
+      <div className="max-w-6xl mx-auto flex flex-col items-center gap-3 sm:gap-4">
         {/* Logo */}
-        <a href="#home" className="text-xl font-bold text-white flex items-center gap-1 select-none">
+        <a href="#home" className="text-lg sm:text-xl font-bold text-white flex items-center gap-1 select-none">
           Donie Makapeli<span className="footer-dot-pulse">.</span>
         </a>
 
         {/* Copyright */}
-        <p className="text-text-secondary/60 text-xs text-center">
+        <p className="text-text-secondary/60 text-[11px] sm:text-xs text-center">
           © 2026 Donie Makapeli. Dibuat dengan Next.js & Tailwind CSS.
         </p>
 
         {/* Back to Top */}
         <a
           href="#home"
-          className="text-text-secondary text-xs hover:text-accent-cyan transition-colors duration-300 mt-1"
+          className="text-text-secondary text-[11px] sm:text-xs hover:text-accent-cyan transition-colors duration-300 mt-1"
         >
           Back to Top ↑
         </a>

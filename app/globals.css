@@ -444,3 +444,31 @@ body {
   0%, 100% { opacity: 1; text-shadow: 0 0 8px rgba(0,217,255,0.6); }
   50% { opacity: 0.4; text-shadow: 0 0 2px rgba(0,217,255,0.2); }
 }
+
+/* ===== MOBILE PERFORMANCE & RESPONSIVENESS OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+  /* Disable heavy background blurs on mobile to preserve high FPS */
+  .blob {
+    display: none !important;
+  }
+
+  /* Tone down heavy backdrop-blur filters for smoother mobile scrolling */
+  .nav-pill,
+  .id-card-body,
+  .glass-card,
+  .skill-card,
+  .skill-card-lg,
+  .project-card,
+  .contact-info-card,
+  .social-icon-btn,
+  .toast-glass {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  /* Prevent horizontal overflow on mobile */
+  section, body, html {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
