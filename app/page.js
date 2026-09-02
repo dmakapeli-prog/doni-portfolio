@@ -1245,7 +1245,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS", "Vercel"],
       github: null,
       live: "https://echo-store-eight.vercel.app/",
-      image: "https://image.thum.io/get/width/800/crop/600/https://echo-store-eight.vercel.app/",
+      image: "/echo.jpg",
     },
     {
       icon: "🍽️",
