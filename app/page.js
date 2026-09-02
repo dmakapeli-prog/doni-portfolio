@@ -1055,7 +1055,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS"],
       github: "https://github.com/dmakapeli-prog/jurnal-vibes-app.git",
       live: "https://jurnal-vibes-app.vercel.app/",
-      image: "/jurnal-vibes.png",
+      image: "https://image.thum.io/get/width/800/crop/600/https://jurnal-vibes-app.vercel.app/",
     },
     {
       icon: "📢",
@@ -1066,7 +1066,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS", "Supabase", "Vercel"],
       github: "https://github.com/dmakapeli-prog/halo-jurnal-app.git",
       live: "https://halo-jurnal-app.vercel.app/",
-      image: "/halo-jurnal.jpg",
+      image: "https://image.thum.io/get/width/800/crop/600/https://halo-jurnal-app.vercel.app/",
     },
     {
       icon: "🥚",
