@@ -1055,7 +1055,7 @@ function ProjectsSection() {
       techStack: ["Next.js", "Tailwind CSS"],
       github: "https://github.com/dmakapeli-prog/jurnal-vibes-app.git",
       live: "https://jurnal-vibes-app.vercel.app/",
-      image: "/halo-jurnal.png",
+      image: "/jurnal-vibes.png",
     },
     {
       icon: "📢",
