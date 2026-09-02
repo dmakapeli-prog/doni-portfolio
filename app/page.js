@@ -369,9 +369,7 @@ function AboutSection() {
           {/* KOLOM KANAN */}
           <div className="flex flex-col gap-6">
             <p className="fade-up fade-delay-2 text-text-secondary leading-relaxed text-sm sm:text-base">
-              Saya <span className="text-white font-medium">Donie Makapeli</span>, mahasiswa S1 Teknik
-              Informatika di Universitas Nusa Putra dengan fokus pada pengembangan web modern menggunakan
-              Next.js dan Tailwind CSS, serta analisis data menggunakan Python.
+              Saya <span className="text-white font-medium">Donie Makapeli</span>, mahasiswa S1 Teknik Informatika di Universitas Nusa Putra. Saya memiliki fokus pada pengembangan web full-stack menggunakan ekosistem modern (Next.js, TypeScript, Tailwind CSS, hingga integrasi database seperti PostgreSQL/Supabase), serta memiliki keahlian dalam pemrosesan dan analisis data menggunakan Python.
             </p>
             <p className="fade-up fade-delay-3 text-text-secondary leading-relaxed text-sm sm:text-base">
               Pengalaman profesional saya dimulai saat magang di PT Bank Rakyat Indonesia (BRI) Unit Cipanas,
