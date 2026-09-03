@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { SiPandas, SiSupabase, SiPostman, SiGooglecolab } from "react-icons/si";
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 
@@ -83,7 +84,7 @@ function FormatText({ text }) {
 }
 
 /* ==================================================================
-   ANIMATED BACKGROUND BLOBS & SPOTLIGHTS
+   ANIMATED BACKGROUND BLOBS & SPOTLIGHTS (ICE BLUE)
    ================================================================== */
 function BackgroundBlobs() {
   const [isMobile, setIsMobile] = useState(false);
@@ -105,7 +106,7 @@ function BackgroundBlobs() {
       <div className="spotlight-top-left" />
       <div className="spotlight-bottom-right" />
       <div className="blob blob-cyan w-[600px] h-[600px] top-[-10%] left-[-5%]" />
-      <div className="blob blob-purple w-[700px] h-[700px] bottom-[-15%] right-[-10%]" />
+      <div className="blob blob-ice w-[700px] h-[700px] bottom-[-15%] right-[-10%]" />
     </div>
   );
 }
@@ -156,8 +157,8 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-[100] bg-[#0A0E1A]/95 backdrop-blur-md border-b border-white/10 py-2.5 sm:py-3 md:py-4 transition-all duration-300 shadow-xl">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-2.5 md:gap-4">
+    <nav className="fixed top-0 inset-x-0 z-[100] bg-[#05070F]/90 backdrop-blur-md border-b border-white/10 py-2.5 sm:py-3 md:py-4 transition-all duration-300 shadow-xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-2.5 md:gap-4">
 
         {/* Kiri: Logo */}
         <div className="flex flex-col items-center md:items-start">
@@ -165,7 +166,7 @@ function Navbar() {
             Donie Makapeli
           </a>
           <span className="text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.25em] text-text-secondary mt-0.5">
-            PERSONAL PORTFOLIO
+            WEB DEVELOPER PORTFOLIO
           </span>
         </div>
 
@@ -192,64 +193,70 @@ function Navbar() {
 }
 
 /* ==================================================================
-   ID CARD COMPONENT
+   ID CARD COMPONENT (Interactive Framer Motion Drag Card)
    ================================================================== */
 function IDCard() {
   return (
-    <div className="id-card-wrapper flex flex-col items-center cursor-pointer select-none">
+    <motion.div
+      drag
+      dragConstraints={{ top: 0, left: -50, right: 50, bottom: 50 }}
+      dragElastic={0.5}
+      whileDrag={{ scale: 1.05, cursor: "grabbing" }}
+      className="id-card-wrapper flex flex-col items-center cursor-grab select-none touch-none"
+    >
 
-      {/* --- Lanyard Top Holes (Gesper) --- */}
-      <div className="flex justify-between items-center w-8 h-4 bg-white/10 border border-white/20 rounded-t-sm px-1.5 relative z-10">
-        <div className="w-2 h-2 rounded-full bg-gray-200 border border-gray-400" />
-        <div className="w-2 h-2 rounded-full bg-gray-200 border border-gray-400" />
+      {/* --- Minimalist Top Holder Line --- */}
+      <div className="flex justify-between items-center w-8 h-3 bg-white/10 border border-white/20 rounded-t-sm px-1.5 relative z-10">
+        <div className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+        <div className="w-1.5 h-1.5 rounded-full bg-sky-400" />
       </div>
 
-      {/* --- Lanyard Strap --- */}
-      <div className="w-[6px] h-[60px] sm:h-[80px] bg-gradient-to-b from-accent-cyan to-accent-purple -mt-0.5 z-0" />
+      {/* --- Lanyard Strap Accent --- */}
+      <div className="w-[3px] h-10 bg-gradient-to-b from-sky-400 to-sky-600 -mt-0.5 z-0 opacity-80" />
 
       {/* --- Card Body --- */}
-      <div className="id-card-body w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 -mt-1">
+      <div className="w-[250px] sm:w-[270px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 -mt-1 shadow-2xl transition-colors hover:border-sky-400/40">
 
-        {/* Foto Profil */}
-        <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 sm:mb-5 flex items-center justify-center shadow-inner relative overflow-hidden">
+        {/* Foto Profil (Lokal avatar.png) */}
+        <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-inner">
           <Image
-            src="/avatar.png?v=2"
+            src="/avatar.png"
             alt="Donie Makapeli"
             width={128}
             height={128}
             priority={true}
             unoptimized={true}
-            className="w-full h-full object-cover rounded-xl opacity-100 transition-none"
+            className="w-full h-full object-cover rounded-xl opacity-100"
           />
         </div>
 
         {/* Nama & Role */}
         <h3 className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
-        <p className="text-accent-cyan text-[10px] sm:text-[11px] font-medium tracking-widest uppercase leading-relaxed text-center">
-          Web Developer<br />& Data Analyst
+        <p className="text-sky-400 text-[11px] font-semibold tracking-widest uppercase text-center">
+          Web Developer
         </p>
 
         {/* Divider */}
-        <div className="w-full h-px bg-white/15 my-3 sm:my-4" />
+        <div className="w-full h-px bg-white/10 my-3" />
 
         {/* Instansi */}
         <p className="text-text-secondary text-xs font-medium tracking-wide">
           Universitas Nusa Putra
         </p>
-        <p className="text-text-secondary/70 text-[10px] mt-1 tracking-wider uppercase">
+        <p className="text-text-secondary/70 text-[10px] mt-0.5 tracking-wider uppercase">
           S1 Teknik Informatika
         </p>
 
         {/* Bottom accent line */}
-        <div className="absolute bottom-0 inset-x-0 h-1.5 bg-gradient-to-r from-accent-cyan to-accent-purple rounded-b-2xl opacity-70" />
+        <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-sky-600 rounded-b-2xl opacity-80" />
       </div>
 
-    </div>
+    </motion.div>
   );
 }
 
 /* ==================================================================
-   HOME SECTION (Layout 2 Kolom)
+   HOME SECTION (Layout Terpusat 12-Kolom Grid, Text-Left)
    ================================================================== */
 function HomeSection() {
   const [copied, setCopied] = useState(false);
@@ -263,59 +270,43 @@ function HomeSection() {
 
   const stats = [
     { num: "2+", label: "Tahun Belajar Coding" },
-    { num: "10+", label: "Project Dibuat" },
+    { num: "10+", label: "Project Web Dibuat" },
     { num: "3", label: "Pengalaman Magang & PKL" },
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-36 sm:pt-40 md:pt-44 pb-12 md:pb-16 px-4 md:px-12 z-10">
-      <div className="relative z-10 max-w-7xl mx-auto w-full grid md:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center">
+    <section id="home" className="relative min-h-[90vh] flex items-center pt-32 sm:pt-36 md:pt-40 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 z-10">
+      <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-        {/* ====== KIRI (60%): Teks ====== */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
+        {/* ====== KIRI (7/12): Teks Rata Kiri ====== */}
+        <div className="md:col-span-7 flex flex-col items-start text-left order-2 md:order-1">
 
-          <div className="badge-glass inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium text-white mb-4 sm:mb-6 max-w-full text-center">
+          <div className="badge-glass inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium text-white mb-4 max-w-full text-left">
             <span>✨</span> Mahasiswa S1 Teknik Informatika - Universitas Nusa Putra
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 leading-tight">
-            Donie Makapeli
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 text-left leading-tight">
+            Membangun Pengalaman Digital Modern & Interaktif.
           </h1>
 
-          <h2 className="text-xl sm:text-3xl lg:text-4xl italic font-serif gradient-text mb-6">
-            Web Developer & Data Analyst
-          </h2>
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-xl mb-6 text-left">
+            Web Developer dengan keahlian utama dalam ekosistem Next.js, React, dan Tailwind CSS. Berpengalaman merancang arsitektur full-stack yang cepat, responsif, dan berpusat pada pengalaman pengguna.
+          </p>
 
           <TypingLine />
 
-          <p className="gradient-text-animated text-base sm:text-xl font-semibold mb-6 max-w-lg">
-            Membangun Pengalaman Digital dari Kode hingga Data
-          </p>
-
-          <p className="text-text-secondary text-xs sm:text-sm leading-relaxed max-w-xl mb-8 sm:mb-10">
-            Saya mahasiswa S1 Teknik Informatika di Universitas Nusa Putra dengan minat pada
-            pengembangan web modern dan analisis data. Berpengalaman magang di PT Bank Rakyat
-            Indonesia (BRI) Unit Cipanas, di mana saya mengerjakan project analisis data kunjungan
-            nasabah menggunakan Python. Setelah itu, saya menyelesaikan PKL secara WFH sebagai
-            Web Developer di PT Media Jurnal Sukabumi dan berhasil membangun web aplikasi{" "}
-            <span className="text-accent-cyan font-medium">&apos;Halo Jurnal&apos;</span>.
-            Saat ini, saya kembali melanjutkan program magang (WFH) di perusahaan yang sama
-            untuk mengembangkan portal utama{" "}
-            <span className="text-accent-cyan font-medium">&apos;Jurnal Vibes&apos;</span>.
-          </p>
-
           {/* Stat Row */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-y-4 mb-8 sm:mb-10 w-full">
+          <div className="flex flex-wrap justify-start gap-y-4 mb-8 sm:mb-10 w-full pt-2">
             {stats.map((s, i) => (
-              <div key={i} className={`flex flex-col items-center md:items-start px-4 sm:px-6 ${i !== 0 ? 'border-t sm:border-t-0 sm:border-l border-white/10 pt-3 sm:pt-0' : 'pl-0'}`}>
+              <div key={i} className={`flex flex-col items-start px-4 sm:px-6 ${i !== 0 ? 'border-l border-white/10' : 'pl-0'}`}>
                 <p className="text-xl sm:text-3xl font-bold text-white">{s.num}</p>
-                <p className="text-text-secondary text-[10px] sm:text-[11px] mt-0.5 sm:mt-1">{s.label}</p>
+                <p className="text-text-secondary text-[10px] sm:text-[11px] mt-0.5">{s.label}</p>
               </div>
             ))}
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-center justify-start gap-3 sm:gap-4">
             <a href="#about" className="btn-gradient px-6 py-2.5 sm:px-8 sm:py-3 rounded-full text-xs sm:text-sm">
               About Me 👋
             </a>
@@ -326,8 +317,8 @@ function HomeSection() {
 
         </div>
 
-        {/* ====== KANAN (40%): ID Card ====== */}
-        <div className="flex justify-center md:justify-end order-1 md:order-2 pt-4 md:pt-0">
+        {/* ====== KANAN (5/12): ID Card ====== */}
+        <div className="md:col-span-5 flex justify-center md:justify-end order-1 md:order-2">
           <IDCard />
         </div>
 
@@ -337,15 +328,15 @@ function HomeSection() {
 }
 
 /* ==================================================================
-   ABOUT SECTION
+   ABOUT SECTION (Fokus Web Developer)
    ================================================================== */
 function AboutSection() {
   const stagger = useStaggerFade();
 
   const cards = [
-    { icon: "🌐", title: "Web Development", desc: "Next.js, React, Tailwind" },
-    { icon: "📊", title: "Data Analysis", desc: "Python, Pandas, EDA" },
-    { icon: "🎨", title: "UI/UX Design", desc: "Figma, Design System" },
+    { icon: "🌐", title: "Web Development", desc: "Next.js, React, Tailwind CSS" },
+    { icon: "⚡", title: "Full-Stack System", desc: "TypeScript, Supabase, REST API" },
+    { icon: "🎨", title: "UI/UX Design", desc: "Figma, Responsive System" },
   ];
 
   return (
@@ -359,12 +350,12 @@ function AboutSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-          {/* KOLOM KIRI (Tanpa delay animasi opacity agar foto langsung muncul) */}
+          {/* KOLOM KIRI */}
           <div className="flex justify-center">
             <div className="glass-card w-full max-w-md p-5 sm:p-8 flex flex-col items-center">
-              <div className="w-full aspect-square rounded-2xl mb-6 sm:mb-8 flex items-center justify-center relative overflow-hidden shadow-[0_0_30px_rgba(0,217,255,0.2)] border border-accent-cyan/30 max-w-[260px] sm:max-w-[280px] max-h-[300px] sm:max-h-[320px] mx-auto">
+              <div className="w-full aspect-square rounded-2xl mb-6 sm:mb-8 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-2xl max-w-[260px] sm:max-w-[280px] max-h-[300px] sm:max-h-[320px] mx-auto">
                 <Image
-                  src="/avatar.png?v=2"
+                  src="/avatar.png"
                   alt="Donie Makapeli"
                   fill
                   priority={true}
@@ -374,7 +365,7 @@ function AboutSection() {
                 />
               </div>
 
-              <div className="w-full space-y-3.5 sm:space-y-4">
+              <div className="w-full space-y-3.5 sm:space-y-4 text-left">
                 <div className="flex items-center gap-3.5 sm:gap-4 text-xs sm:text-sm">
                   <span className="text-lg sm:text-xl">📍</span>
                   <span className="text-text-secondary font-medium">Sukabumi, Jawa Barat</span>
@@ -385,39 +376,30 @@ function AboutSection() {
                 </div>
                 <div className="flex items-center gap-3.5 sm:gap-4 text-xs sm:text-sm">
                   <span className="text-lg sm:text-xl">💼</span>
-                  <span className="text-text-secondary font-medium">Intern di PT Media Jurnal Sukabumi</span>
+                  <span className="text-text-secondary font-medium">Web Developer Intern di PT Media Jurnal Sukabumi</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* KOLOM KANAN */}
-          <div className="flex flex-col gap-4 sm:gap-6">
-            <p className="fade-up fade-delay-2 text-text-secondary leading-relaxed text-xs sm:text-base">
-              Saya <span className="text-white font-medium">Donie Makapeli</span>, mahasiswa S1 Teknik Informatika di Universitas Nusa Putra. Saya memiliki fokus pada pengembangan web full-stack menggunakan ekosistem modern (Next.js, TypeScript, Tailwind CSS, hingga integrasi database seperti PostgreSQL/Supabase), serta memiliki keahlian dalam pemrosesan dan analisis data menggunakan Python.
+          <div className="flex flex-col gap-4 sm:gap-6 text-left">
+            <p className="fade-up fade-delay-2 text-text-secondary leading-relaxed text-xs sm:text-base text-left">
+              Saya <span className="text-white font-medium">Donie Makapeli</span>, mahasiswa S1 Teknik Informatika di Universitas Nusa Putra yang berfokus penuh pada **Web Development**. Saya memiliki keahlian mendalam dalam merancang dan mengembangkan aplikasi web modern yang cepat, responsif, dan terstruktur menggunakan **Next.js**, **React**, **TypeScript**, **Tailwind CSS**, serta integrasi backend & basis data **Supabase / PostgreSQL**.
             </p>
-            <p className="fade-up fade-delay-3 text-text-secondary leading-relaxed text-xs sm:text-base">
-              Pengalaman profesional saya dimulai saat magang di PT Bank Rakyat Indonesia (BRI) Unit Cipanas,
-              di mana saya mengerjakan project analisis data kunjungan nasabah dari tahap preprocessing hingga
-              penyusunan laporan. Setelah itu, saya menyelesaikan PKL secara WFH sebagai Web Developer di
-              PT Media Jurnal Sukabumi dengan membangun web aplikasi{" "}
-              <span className="text-accent-cyan font-medium">&apos;Halo Jurnal&apos;</span>.
+            <p className="fade-up fade-delay-3 text-text-secondary leading-relaxed text-xs sm:text-base text-left">
+              Pengalaman profesional saya meliputi peran sebagai **Web Developer Intern** di PT Media Jurnal Sukabumi. Saya berhasil membangun dan mendeploy aplikasi web pengaduan <span className="text-sky-400 font-medium">&apos;Halo Jurnal&apos;</span> serta merancang arsitektur portal berita Gen Z <span className="text-sky-400 font-medium">&apos;Jurnal Vibes&apos;</span>.
             </p>
-            <p className="fade-up fade-delay-4 text-text-secondary leading-relaxed text-xs sm:text-base">
-              Saat ini, saya masih melanjutkan program magang di PT Media Jurnal Sukabumi untuk mengembangkan
-              portal utama <span className="text-accent-cyan font-medium">&apos;Jurnal Vibes&apos;</span>.
-              Selain rutinitas magang, saya juga membangun{" "}
-              <span className="text-accent-cyan font-medium">DiCode</span>, sebuah website agency digital
-              yang berisi 10+ halaman template (e-commerce, company profile, dll) menggunakan Next.js,
-              serta aktif berorganisasi untuk melatih kerja sama tim.
+            <p className="fade-up fade-delay-4 text-text-secondary leading-relaxed text-xs sm:text-base text-left">
+              Selain itu, saya menginisiasi proyek <span className="text-sky-400 font-medium">DiCode</span>, yaitu platform agency digital yang menyajikan 10+ template website e-commerce dan company profile interaktif berbasis Next.js.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 pt-2 sm:pt-4 mt-1 sm:mt-2">
               {cards.map((c, i) => (
-                <div key={i} className={`fade-up fade-delay-${(i % 3) + 2} glass-card p-4 sm:p-5 hover:-translate-y-1.5 transition-transform duration-300 hover:shadow-[0_10px_30px_rgba(0,217,255,0.15)] hover:border-accent-cyan/30`}>
+                <div key={i} className={`fade-up fade-delay-${(i % 3) + 2} glass-card p-4 sm:p-5 hover:-translate-y-1.5 transition-all duration-300 border border-white/10 hover:border-sky-400/40 text-left`}>
                   <span className="text-xl sm:text-2xl mb-2 sm:mb-3 block">{c.icon}</span>
-                  <h4 className="text-white font-bold text-xs sm:text-sm mb-1">{c.title}</h4>
-                  <p className="text-text-secondary text-[11px] sm:text-xs">{c.desc}</p>
+                  <h4 className="text-white font-bold text-xs sm:text-sm mb-1 text-left">{c.title}</h4>
+                  <p className="text-text-secondary text-[11px] sm:text-xs text-left">{c.desc}</p>
                 </div>
               ))}
             </div>
@@ -571,7 +553,7 @@ function EducationSection() {
         sub: "PT MEDIA JURNAL SUKABUMI (WFH)",
         badge: "Magang",
         badgeClass: "badge-cyan",
-        desc: "Mengembangkan portal berita 'Jurnal Vibes' secara **Full-Stack** berbasis **Next.js** dan **Tailwind CSS**. Mengintegrasikan sistem pengaduan 'Halo Jurnal' serta merancang arsitektur komponen web yang responsif."
+        desc: "Mengembangkan portal berita 'Jurnal Vibes' secara **Full-Stack** berbasis **Next.js** dan **Tailwind CSS**. Mengintegrasikan sistem pengaduan 'Halo Jurnal' serta merancang komponen antarmuka yang cepat dan responsif."
       },
       {
         period: "13 Jul 2026 - 13 Agu 2026",
@@ -579,15 +561,15 @@ function EducationSection() {
         sub: "PT MEDIA JURNAL SUKABUMI (WFH)",
         badge: "PKL",
         badgeClass: "badge-cyan",
-        desc: "Membangun dan mendeploy aplikasi web 'Halo Jurnal' berbasis **Next.js** dan **Supabase**. Mengimplementasikan fitur formulir pengaduan interaktif dan integrasi basis data real-time."
+        desc: "Membangun dan mendeploy aplikasi web 'Halo Jurnal' berbasis **Next.js** dan **Supabase**. Mengimplementasikan fitur pengaduan interaktif dan integrasi basis data real-time."
       },
       {
         period: "Feb 2026 - Jun 2026",
-        title: "Magang Administrasi & Data Science",
+        title: "Magang Administrasi & Sistem Data",
         sub: "PT Bank Rakyat Indonesia (BRI) Unit Cipanas",
         badge: "Magang",
-        badgeClass: "badge-purple",
-        desc: "Mengelola kearsipan data dokumen operasional (form AR/FR dan integrasi sistem BRIMEN). Melakukan **Data Analysis** dan pemrosesan 5.956+ data transaksi nasabah menggunakan **Python** dan **Pandas**."
+        badgeClass: "badge-ice",
+        desc: "Mengelola kearsipan digital dokumen operasional (form AR/FR) serta mendukung manajemen data sistem operasional internal (BRIMEN) secara terstruktur."
       },
       {
         period: "2024 - Sekarang",
@@ -621,10 +603,10 @@ function EducationSection() {
       },
       {
         period: "2026",
-        title: "Laporan Analisis Data Transaksi Nasabah BRI",
-        sub: "Ekstraksi dan **Data Analysis** 5.956+ data transaksi nasabah menggunakan **Python** dan **Pandas**.",
-        badge: "Data Analysis",
-        badgeClass: "badge-purple",
+        title: "Sistem Administrasi Data & Kearsipan BRI",
+        sub: "Pengelolaan kearsipan digital form AR/FR dan validasi sistem data operasional BRIMEN.",
+        badge: "System Data",
+        badgeClass: "badge-ice",
       }
     ]
   };
