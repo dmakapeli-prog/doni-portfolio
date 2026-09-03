@@ -65,7 +65,25 @@ function useTypingAnimation(words, typingSpeed = 100, deletingSpeed = 50, pauseD
 }
 
 /* ==================================================================
-   ANIMATED BACKGROUND BLOBS
+   TEXT FORMATTER HELPER
+   ================================================================== */
+function FormatText({ text }) {
+  if (!text) return null;
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return (
+    <span>
+      {parts.map((part, i) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+          return <strong key={i} className="text-white font-semibold">{part.slice(2, -2)}</strong>;
+        }
+        return part;
+      })}
+    </span>
+  );
+}
+
+/* ==================================================================
+   ANIMATED BACKGROUND BLOBS & SPOTLIGHTS
    ================================================================== */
 function BackgroundBlobs() {
   const [isMobile, setIsMobile] = useState(false);
@@ -83,9 +101,11 @@ function BackgroundBlobs() {
 
   return (
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none hidden md:block">
-      <div className="blob blob-cyan w-[500px] h-[500px] top-[-10%] left-[-5%]" />
-      <div className="blob blob-purple w-[600px] h-[600px] bottom-[-15%] right-[-10%]" />
-      <div className="blob blob-cyan w-[400px] h-[400px] top-[40%] left-[30%] opacity-5" />
+      {/* Spotlight Ambient Lighting */}
+      <div className="spotlight-top-left" />
+      <div className="spotlight-bottom-right" />
+      <div className="blob blob-cyan w-[600px] h-[600px] top-[-10%] left-[-5%]" />
+      <div className="blob blob-purple w-[700px] h-[700px] bottom-[-15%] right-[-10%]" />
     </div>
   );
 }
@@ -534,12 +554,14 @@ function EducationSection() {
         title: "S1 Teknik Informatika",
         sub: "Universitas Nusa Putra, Sukabumi",
         badge: "Semester 6",
+        badgeClass: "badge-cyan",
       },
       {
         period: "2020 - 2023",
         title: "SMAN 1 Cibadak",
         sub: "Cibadak, Sukabumi",
         badge: "Lulus",
+        badgeClass: "badge-green",
       }
     ],
     Experience: [
@@ -548,53 +570,61 @@ function EducationSection() {
         title: "Web Developer Intern",
         sub: "PT MEDIA JURNAL SUKABUMI (WFH)",
         badge: "Magang",
-        desc: "Mendapat mandat langsung dari manajemen untuk merancang dan mengembangkan 'Jurnal Vibes', sebuah portal berita alternatif khusus audiens Gen Z. Bertanggung jawab penuh secara full-stack, termasuk mengintegrasikan sistem 'Halo Jurnal' sebagai fitur layanan pengaduan dan interaksi pembaca."
+        badgeClass: "badge-cyan",
+        desc: "Mengembangkan portal berita 'Jurnal Vibes' secara **Full-Stack** berbasis **Next.js** dan **Tailwind CSS**. Mengintegrasikan sistem pengaduan 'Halo Jurnal' serta merancang arsitektur komponen web yang responsif."
       },
       {
         period: "13 Jul 2026 - 13 Agu 2026",
         title: "Web Developer (Praktik Kerja Lapangan)",
         sub: "PT MEDIA JURNAL SUKABUMI (WFH)",
         badge: "PKL",
-        desc: "Berhasil membangun dan mendeploy web aplikasi 'Halo Jurnal' (halo-jurnal-app.vercel.app) dari nol. Sistem ini dirancang khusus untuk menangani pengaduan dan komunikasi interaktif, yang kini difungsikan sebagai sub-kanal terintegrasi di dalam ekosistem portal utama Jurnal Vibes."
+        badgeClass: "badge-cyan",
+        desc: "Membangun dan mendeploy aplikasi web 'Halo Jurnal' berbasis **Next.js** dan **Supabase**. Mengimplementasikan fitur formulir pengaduan interaktif dan integrasi basis data real-time."
       },
       {
         period: "Feb 2026 - Jun 2026",
         title: "Magang Administrasi & Data Science",
         sub: "PT Bank Rakyat Indonesia (BRI) Unit Cipanas",
         badge: "Magang",
-        desc: "Ditempatkan pada posisi operasional administrasi, namun mengambil peran lebih spesifik yang diselaraskan dengan keahlian Teknik Informatika. Selain mengelola sistem kearsipan dokumen (AR/FR), saya mengeksekusi proyek analisis data kunjungan nasabah menggunakan Python dan Pandas untuk membersihkan, memproses, dan menghasilkan wawasan terstruktur yang melampaui tugas administrasi reguler."
+        badgeClass: "badge-purple",
+        desc: "Mengelola kearsipan data dokumen operasional (form AR/FR dan integrasi sistem BRIMEN). Melakukan **Data Analysis** dan pemrosesan 5.956+ data transaksi nasabah menggunakan **Python** dan **Pandas**."
       },
       {
         period: "2024 - Sekarang",
         title: "Anggota Himpunan Mahasiswa",
         sub: "Universitas Nusa Putra",
         badge: "Organisasi",
+        badgeClass: "badge-gray",
       }
     ],
     Achievement: [
       {
         period: "2026",
-        title: "Pengembangan Portal Utama \"Jurnal Vibes\"",
-        sub: "Dipercaya oleh manajemen PT Media Jurnal Sukabumi untuk merancang dan membangun ekosistem portal berita khusus audiens Gen Z (Tahap Pengembangan Aktif).",
+        title: "Pengembangan Portal \"Jurnal Vibes\"",
+        sub: "Mengembangkan portal berita Gen Z berbasis **Next.js** dan arsitektur **Full-Stack** web.",
         badge: "Ongoing Project",
+        badgeClass: "badge-cyan",
       },
       {
         period: "2026",
-        title: "Rilis Web Aplikasi \"Halo Jurnal\"",
-        sub: "Mendeploy kanal layanan terintegrasi untuk portal utama Jurnal Vibes sebagai output keberhasilan program PKL di PT Media Jurnal Sukabumi.",
+        title: "Peluncuran Web Aplikasi \"Halo Jurnal\"",
+        sub: "Mendeploy sistem layanan pengaduan terintegrasi berbasis **Next.js** dan **Supabase**.",
         badge: "PKL Project",
+        badgeClass: "badge-cyan",
       },
       {
         period: "2026",
-        title: "Peluncuran Project DiCode",
-        sub: "Merancang website agency digital independen yang menyediakan 10+ halaman demo template fungsional dan responsif menggunakan Next.js.",
+        title: "Pengembangan Website Agency DiCode",
+        sub: "Membangun 10+ template halaman web interaktif dan responsif menggunakan **Next.js**.",
         badge: "Project",
+        badgeClass: "badge-green",
       },
       {
         period: "2026",
-        title: "Laporan Analisis Data Kunjungan Nasabah BRI",
-        sub: "Preprocessing & EDA 5.956+ data transaksi menggunakan Python (Pandas) - format laporan IEEE",
+        title: "Laporan Analisis Data Transaksi Nasabah BRI",
+        sub: "Ekstraksi dan **Data Analysis** 5.956+ data transaksi nasabah menggunakan **Python** dan **Pandas**.",
         badge: "Data Analysis",
+        badgeClass: "badge-purple",
       }
     ]
   };
@@ -634,32 +664,36 @@ function EducationSection() {
           ) : (
             <div className="relative">
               {/* Vertical Line */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent-cyan/50 via-accent-purple/30 to-transparent transform md:-translate-x-1/2" />
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent-cyan/40 via-accent-purple/20 to-transparent transform md:-translate-x-1/2" />
 
-              <div className="space-y-8 sm:space-y-12">
+              <div className="space-y-6 sm:space-y-10">
                 {content[activeTab]?.map((item, index) => {
                   const isLeft = index % 2 === 0;
                   return (
                     <div key={index} className={`w-full flex flex-col md:flex-row ${isLeft ? '' : 'md:flex-row-reverse'} relative fade-up`} style={{ transitionDelay: `${0.1 * (index + 1)}s` }}>
 
                       {/* Timeline Dot */}
-                      <div className="absolute left-4 md:left-1/2 top-2 w-3.5 h-3.5 rounded-full bg-accent-cyan transform -translate-x-1/2 shadow-[0_0_10px_rgba(0,217,255,0.6)] border-2 border-[#1A1235] z-10" />
+                      <div className="absolute left-4 md:left-1/2 top-6 w-3.5 h-3.5 rounded-full bg-accent-cyan transform -translate-x-1/2 border-2 border-[#0A0E1A] z-10" />
 
-                      {/* Content Block */}
-                      <div className={`w-full md:w-1/2 pl-10 md:pl-0 ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
-                        <span className="inline-block px-3 py-1 rounded-full border border-accent-cyan/30 text-accent-cyan text-[10px] font-bold tracking-wider mb-2 sm:mb-3 bg-accent-cyan/5">
-                          {item.badge}
-                        </span>
-                        <p className="text-accent-purple text-xs font-bold mb-1 tracking-wider uppercase">{item.period}</p>
-                        <h3 className="text-base sm:text-lg font-bold text-white mb-1">{item.title}</h3>
-                        <p className="text-text-secondary text-xs sm:text-sm font-medium mb-2">{item.sub}</p>
-                        {item.desc && (
-                          <div className={`inline-block w-full mt-2 ${isLeft ? 'md:ml-auto md:max-w-sm' : 'md:max-w-sm'}`}>
-                            <p className="text-text-secondary/80 text-xs leading-relaxed p-3.5 sm:p-4 bg-white/5 rounded-xl border border-white/5 text-left">
-                              {item.desc}
-                            </p>
+                      {/* Content Card Block */}
+                      <div className={`w-full md:w-1/2 pl-10 md:pl-0 ${isLeft ? 'md:pr-8' : 'md:pl-8'}`}>
+                        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 text-left transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider ${item.badgeClass || 'badge-cyan'}`}>
+                              {item.badge}
+                            </span>
+                            <p className="text-accent-purple text-xs font-bold tracking-wider uppercase">{item.period}</p>
                           </div>
-                        )}
+                          <h3 className="text-base sm:text-lg font-bold text-white mb-1 text-left">{item.title}</h3>
+                          <p className="text-text-secondary text-xs sm:text-sm font-medium mb-2 text-left">
+                            <FormatText text={item.sub} />
+                          </p>
+                          {item.desc && (
+                            <p className="text-text-secondary/80 text-xs sm:text-sm leading-relaxed mt-2 text-left pt-2 border-t border-white/5">
+                              <FormatText text={item.desc} />
+                            </p>
+                          )}
+                        </div>
                       </div>
 
                       {/* Spacer Block */}
@@ -965,10 +999,10 @@ function SkillsSection() {
               <p className="text-[10px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-6 text-center">EXPERTISE</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
                 {coreSkills.map((s, i) => (
-                  <div key={i} className="skill-card-lg p-6 sm:p-8 flex flex-col items-center text-center cursor-default">
-                    <span className="text-4xl sm:text-5xl mb-3 sm:mb-4">{s.icon}</span>
-                    <h4 className="text-white font-bold text-base sm:text-lg">{s.title}</h4>
-                    {s.desc && <p className="text-xs sm:text-sm text-gray-400 text-center mt-2.5 sm:mt-3 px-2 sm:px-4">{s.desc}</p>}
+                  <div key={i} className="skill-card-lg p-6 sm:p-7 flex flex-col items-start text-left cursor-default bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
+                    <span className="text-4xl sm:text-5xl mb-3.5 sm:mb-4">{s.icon}</span>
+                    <h4 className="text-white font-bold text-base sm:text-lg text-left">{s.title}</h4>
+                    {s.desc && <p className="text-xs sm:text-sm text-gray-400 text-left mt-2 sm:mt-2.5 leading-relaxed">{s.desc}</p>}
                   </div>
                 ))}
               </div>
@@ -981,17 +1015,17 @@ function SkillsSection() {
               <p className="text-[10px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-6 text-center">LANGUAGE & FRAMEWORK</p>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
                 {expertiseSkills.map((s, i) => (
-                  <div key={i} className="skill-card p-4 sm:p-6 flex flex-col items-center text-center cursor-default">
+                  <div key={i} className="skill-card p-4 sm:p-5 flex items-center gap-3.5 text-left cursor-default bg-white/5 backdrop-blur-md border border-white/10 rounded-xl transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
                     {s.icon ? (
                       typeof s.icon === "string" ? (
-                        <span className="text-2xl sm:text-3xl mb-2 sm:mb-3">{s.icon}</span>
+                        <span className="text-2xl sm:text-3xl shrink-0">{s.icon}</span>
                       ) : (
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 mb-2 sm:mb-3 flex items-center justify-center">{s.icon}</div>
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center">{s.icon}</div>
                       )
                     ) : s.svgIcon ? (
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 mb-2 sm:mb-3 flex items-center justify-center">{s.svgIcon}</div>
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center">{s.svgIcon}</div>
                     ) : null}
-                    <h4 className="text-white font-semibold text-xs sm:text-sm">{s.title}</h4>
+                    <h4 className="text-white font-semibold text-xs sm:text-sm text-left">{s.title}</h4>
                   </div>
                 ))}
               </div>
@@ -1004,17 +1038,17 @@ function SkillsSection() {
               <p className="text-[10px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-6 text-center">TOOLS & PLATFORM</p>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
                 {toolsSkills.map((s, i) => (
-                  <div key={i} className="skill-card p-4 sm:p-6 flex flex-col items-center text-center cursor-default">
+                  <div key={i} className="skill-card p-4 sm:p-5 flex items-center gap-3.5 text-left cursor-default bg-white/5 backdrop-blur-md border border-white/10 rounded-xl transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
                     {s.icon ? (
                       typeof s.icon === "string" ? (
-                        <span className="text-2xl sm:text-3xl mb-2 sm:mb-3">{s.icon}</span>
+                        <span className="text-2xl sm:text-3xl shrink-0">{s.icon}</span>
                       ) : (
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 mb-2 sm:mb-3 flex items-center justify-center">{s.icon}</div>
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center">{s.icon}</div>
                       )
                     ) : s.svgIcon ? (
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 mb-2 sm:mb-3 flex items-center justify-center">{s.svgIcon}</div>
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center">{s.svgIcon}</div>
                     ) : null}
-                    <h4 className="text-white font-semibold text-xs sm:text-sm">{s.title}</h4>
+                    <h4 className="text-white font-semibold text-xs sm:text-sm text-left">{s.title}</h4>
                   </div>
                 ))}
               </div>
@@ -1506,7 +1540,7 @@ function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="btn-gradient w-full py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
+                  className="btn-contact-submit w-full py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
                 >
                   Kirim Pesan 📩
                 </button>
