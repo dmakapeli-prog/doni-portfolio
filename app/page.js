@@ -282,7 +282,7 @@ function HomeSection() {
         <div className="md:col-span-7 flex flex-col items-start text-left order-2 md:order-1">
 
           <div className="badge-glass inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium text-white mb-4 max-w-full text-left">
-            <span>✨</span> Mahasiswa S1 Teknik Informatika - Universitas Nusa Putra
+            Mahasiswa S1 Teknik Informatika - Universitas Nusa Putra
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 text-left leading-tight">
