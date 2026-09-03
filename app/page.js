@@ -166,7 +166,7 @@ function Navbar() {
             Donie Makapeli
           </a>
           <span className="text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.25em] text-text-secondary mt-0.5">
-            WEB DEVELOPER PORTFOLIO
+            PERSONAL PORTFOLIO
           </span>
         </div>
 
@@ -1575,7 +1575,7 @@ function Footer() {
 
         {/* Copyright */}
         <p className="text-text-secondary/60 text-[11px] sm:text-xs text-center">
-          © 2026 Donie Makapeli. Dibuat dengan Next.js & Tailwind CSS.
+          © 2026 Donie Makapeli. All rights reserved.
         </p>
 
         {/* Back to Top */}
