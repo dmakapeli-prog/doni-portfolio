@@ -232,8 +232,8 @@ function IDCard() {
 
         {/* Nama & Role */}
         <h3 className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
-        <p className="text-sky-400 text-[11px] font-semibold tracking-widest uppercase text-center">
-          Web Developer
+        <p className="text-sky-400 text-[10px] sm:text-[11px] font-semibold tracking-widest uppercase leading-relaxed text-center">
+          Web Developer<br />& Data Analyst
         </p>
 
         {/* Divider */}
@@ -270,7 +270,7 @@ function HomeSection() {
 
   const stats = [
     { num: "2+", label: "Tahun Belajar Coding" },
-    { num: "10+", label: "Project Web Dibuat" },
+    { num: "10+", label: "Project Dibuat" },
     { num: "3", label: "Pengalaman Magang & PKL" },
   ];
 
@@ -285,15 +285,31 @@ function HomeSection() {
             <span>✨</span> Mahasiswa S1 Teknik Informatika - Universitas Nusa Putra
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 text-left leading-tight">
-            Membangun Pengalaman Digital Modern & Interaktif.
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 text-left leading-tight">
+            Donie Makapeli
           </h1>
 
-          <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-xl mb-6 text-left">
-            Web Developer dengan keahlian utama dalam ekosistem Next.js, React, dan Tailwind CSS. Berpengalaman merancang arsitektur full-stack yang cepat, responsif, dan berpusat pada pengalaman pengguna.
-          </p>
+          <h2 className="text-xl sm:text-3xl lg:text-4xl italic font-serif gradient-text mb-5 text-left">
+            Web Developer & Data Analyst
+          </h2>
 
           <TypingLine />
+
+          <p className="gradient-text-animated text-base sm:text-xl font-semibold mb-5 text-left">
+            Membangun Pengalaman Digital dari Kode hingga Data
+          </p>
+
+          <p className="text-text-secondary text-xs sm:text-sm leading-relaxed max-w-xl mb-8 sm:mb-10 text-left">
+            Saya mahasiswa S1 Teknik Informatika di Universitas Nusa Putra dengan minat pada
+            pengembangan web modern dan analisis data. Berpengalaman magang di PT Bank Rakyat
+            Indonesia (BRI) Unit Cipanas, di mana saya mengerjakan project analisis data kunjungan
+            nasabah menggunakan Python. Setelah itu, saya menyelesaikan PKL secara WFH sebagai
+            Web Developer di PT Media Jurnal Sukabumi dan berhasil membangun web aplikasi{" "}
+            <span className="text-sky-400 font-medium">&apos;Halo Jurnal&apos;</span>.
+            Saat ini, saya kembali melanjutkan program magang (WFH) di perusahaan yang sama
+            untuk mengembangkan portal utama{" "}
+            <span className="text-sky-400 font-medium">&apos;Jurnal Vibes&apos;</span>.
+          </p>
 
           {/* Stat Row */}
           <div className="flex flex-wrap justify-start gap-y-4 mb-8 sm:mb-10 w-full pt-2">
@@ -328,15 +344,15 @@ function HomeSection() {
 }
 
 /* ==================================================================
-   ABOUT SECTION (Fokus Web Developer)
+   ABOUT SECTION
    ================================================================== */
 function AboutSection() {
   const stagger = useStaggerFade();
 
   const cards = [
-    { icon: "🌐", title: "Web Development", desc: "Next.js, React, Tailwind CSS" },
-    { icon: "⚡", title: "Full-Stack System", desc: "TypeScript, Supabase, REST API" },
-    { icon: "🎨", title: "UI/UX Design", desc: "Figma, Responsive System" },
+    { icon: "🌐", title: "Web Development", desc: "Next.js, React, Tailwind" },
+    { icon: "📊", title: "Data Analysis", desc: "Python, Pandas, EDA" },
+    { icon: "🎨", title: "UI/UX Design", desc: "Figma, Design System" },
   ];
 
   return (
@@ -376,7 +392,7 @@ function AboutSection() {
                 </div>
                 <div className="flex items-center gap-3.5 sm:gap-4 text-xs sm:text-sm">
                   <span className="text-lg sm:text-xl">💼</span>
-                  <span className="text-text-secondary font-medium">Web Developer Intern di PT Media Jurnal Sukabumi</span>
+                  <span className="text-text-secondary font-medium">Intern di PT Media Jurnal Sukabumi</span>
                 </div>
               </div>
             </div>
@@ -385,13 +401,22 @@ function AboutSection() {
           {/* KOLOM KANAN */}
           <div className="flex flex-col gap-4 sm:gap-6 text-left">
             <p className="fade-up fade-delay-2 text-text-secondary leading-relaxed text-xs sm:text-base text-left">
-              Saya <span className="text-white font-medium">Donie Makapeli</span>, mahasiswa S1 Teknik Informatika di Universitas Nusa Putra yang berfokus penuh pada **Web Development**. Saya memiliki keahlian mendalam dalam merancang dan mengembangkan aplikasi web modern yang cepat, responsif, dan terstruktur menggunakan **Next.js**, **React**, **TypeScript**, **Tailwind CSS**, serta integrasi backend & basis data **Supabase / PostgreSQL**.
+              Saya <span className="text-white font-medium">Donie Makapeli</span>, mahasiswa S1 Teknik Informatika di Universitas Nusa Putra. Saya memiliki fokus pada pengembangan web full-stack menggunakan ekosistem modern (Next.js, TypeScript, Tailwind CSS, hingga integrasi database seperti PostgreSQL/Supabase), serta memiliki keahlian dalam pemrosesan dan analisis data menggunakan Python.
             </p>
             <p className="fade-up fade-delay-3 text-text-secondary leading-relaxed text-xs sm:text-base text-left">
-              Pengalaman profesional saya meliputi peran sebagai **Web Developer Intern** di PT Media Jurnal Sukabumi. Saya berhasil membangun dan mendeploy aplikasi web pengaduan <span className="text-sky-400 font-medium">&apos;Halo Jurnal&apos;</span> serta merancang arsitektur portal berita Gen Z <span className="text-sky-400 font-medium">&apos;Jurnal Vibes&apos;</span>.
+              Pengalaman profesional saya dimulai saat magang di PT Bank Rakyat Indonesia (BRI) Unit Cipanas,
+              di mana saya mengerjakan project analisis data kunjungan nasabah dari tahap preprocessing hingga
+              penyusunan laporan. Setelah itu, saya menyelesaikan PKL secara WFH sebagai Web Developer di
+              PT Media Jurnal Sukabumi dengan membangun web aplikasi{" "}
+              <span className="text-sky-400 font-medium">&apos;Halo Jurnal&apos;</span>.
             </p>
             <p className="fade-up fade-delay-4 text-text-secondary leading-relaxed text-xs sm:text-base text-left">
-              Selain itu, saya menginisiasi proyek <span className="text-sky-400 font-medium">DiCode</span>, yaitu platform agency digital yang menyajikan 10+ template website e-commerce dan company profile interaktif berbasis Next.js.
+              Saat ini, saya masih melanjutkan program magang di PT Media Jurnal Sukabumi untuk mengembangkan
+              portal utama <span className="text-sky-400 font-medium">&apos;Jurnal Vibes&apos;</span>.
+              Selain rutinitas magang, saya juga membangun{" "}
+              <span className="text-sky-400 font-medium">DiCode</span>, sebuah website agency digital
+              yang berisi 10+ halaman template (e-commerce, company profile, dll) menggunakan Next.js,
+              serta aktif berorganisasi untuk melatih kerja sama tim.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 pt-2 sm:pt-4 mt-1 sm:mt-2">
@@ -565,11 +590,11 @@ function EducationSection() {
       },
       {
         period: "Feb 2026 - Jun 2026",
-        title: "Magang Administrasi & Sistem Data",
+        title: "Magang Administrasi & Data Science",
         sub: "PT Bank Rakyat Indonesia (BRI) Unit Cipanas",
         badge: "Magang",
-        badgeClass: "badge-ice",
-        desc: "Mengelola kearsipan digital dokumen operasional (form AR/FR) serta mendukung manajemen data sistem operasional internal (BRIMEN) secara terstruktur."
+        badgeClass: "badge-purple",
+        desc: "Ditempatkan pada posisi operasional administrasi, namun mengambil peran lebih spesifik yang diselaraskan dengan keahlian Teknik Informatika. Selain mengelola sistem kearsipan dokumen (AR/FR), saya mengeksekusi proyek analisis data kunjungan nasabah menggunakan **Python** dan **Pandas** untuk membersihkan, memproses, dan menghasilkan wawasan terstruktur yang melampaui tugas administrasi reguler."
       },
       {
         period: "2024 - Sekarang",
@@ -603,10 +628,10 @@ function EducationSection() {
       },
       {
         period: "2026",
-        title: "Sistem Administrasi Data & Kearsipan BRI",
-        sub: "Pengelolaan kearsipan digital form AR/FR dan validasi sistem data operasional BRIMEN.",
-        badge: "System Data",
-        badgeClass: "badge-ice",
+        title: "Laporan Analisis Data Kunjungan Nasabah BRI",
+        sub: "Preprocessing & EDA 5.956+ data transaksi menggunakan **Python** (**Pandas**) - format laporan IEEE",
+        badge: "Data Analysis",
+        badgeClass: "badge-purple",
       }
     ]
   };
