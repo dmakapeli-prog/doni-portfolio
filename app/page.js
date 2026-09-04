@@ -344,92 +344,157 @@ function HomeSection() {
 }
 
 /* ==================================================================
-   ABOUT SECTION
+   ABOUT SECTION (Wide Glassmorphism Bento Refinement)
    ================================================================== */
 function AboutSection() {
   const stagger = useStaggerFade();
 
+  const stats = [
+    { num: "2+", label: "Tahun Belajar Coding", sub: "Web & Data Science" },
+    { num: "10+", label: "Project Dibuat", sub: "Web App & Analytics" },
+    { num: "3", label: "Pengalaman Magang & PKL", sub: "BRI & Media Jurnal" },
+    { num: "5.956+", label: "Data Nasabah Murni", sub: "Diolah via Python" },
+  ];
+
   const cards = [
-    { icon: "🌐", title: "Web Development", desc: "Next.js, React, Tailwind" },
-    { icon: "📊", title: "Data Analysis", desc: "Python, Pandas, EDA" },
-    { icon: "🎨", title: "UI/UX Design", desc: "Figma, Design System" },
+    {
+      icon: "🌐",
+      title: "Web Development",
+      desc: "Spesialisasi pada Next.js, React, TypeScript, Tailwind CSS, dan Supabase untuk membangun web app modern, cepat, dan scalable.",
+      badge: "Full-Stack Tech"
+    },
+    {
+      icon: "📊",
+      title: "Data Analysis",
+      desc: "Eksplorasi data mentah (EDA), cleaning, dan visualisasi menggunakan Python, Pandas, dan Google Colab berbasis standar laporan IEEE.",
+      badge: "Python & EDA"
+    },
+    {
+      icon: "🎨",
+      title: "UI/UX Design",
+      desc: "Merancang antarmuka bersih bergaya Bento Grid, glassmorphism sinematik, micro-interactions, dan prinsip desain berpusat pengguna.",
+      badge: "Design System"
+    },
   ];
 
   return (
     <section id="about" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10">
       <div ref={stagger} className="max-w-7xl mx-auto">
-        <div className="fade-up text-center mb-12 sm:mb-16">
+        
+        {/* Section Header */}
+        <div className="fade-up text-center mb-10 sm:mb-16">
           <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">TENTANG SAYA</p>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
             Mengenal Lebih Dekat
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-          {/* KOLOM KIRI */}
-          <div className="flex justify-center">
-            <div className="glass-card w-full max-w-md p-5 sm:p-8 flex flex-col items-center">
-              <div className="w-full aspect-square rounded-2xl mb-6 sm:mb-8 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-2xl max-w-[260px] sm:max-w-[280px] max-h-[300px] sm:max-h-[320px] mx-auto">
+        {/* Wide Glassmorphism Bento Card Container */}
+        <div className="fade-up fade-delay-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl transition-all duration-500 hover:border-sky-400/30 hover:bg-white/[0.06] hover:shadow-[0_0_30px_rgba(56,189,248,0.1)]">
+          
+          {/* Upper Grid Layout: Profile & Story */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 pb-10 border-b border-white/10">
+            
+            {/* Left Column (5/12): Avatar & Location Badges */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div className="w-full max-w-[280px] sm:max-w-[320px] aspect-square rounded-2xl mb-6 relative overflow-hidden border border-white/15 shadow-2xl group">
                 <Image
                   src="/avatar.png"
                   alt="Donie Makapeli"
                   fill
                   priority={true}
                   unoptimized={true}
-                  sizes="(max-width: 768px) 260px, 320px"
-                  className="object-cover object-top rounded-2xl opacity-100 transition-none"
+                  sizes="(max-width: 768px) 280px, 320px"
+                  className="object-cover object-top rounded-2xl opacity-100 group-hover:scale-105 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#05070F]/80 via-transparent to-transparent opacity-80" />
+                <div className="absolute bottom-3 left-3 right-3 text-center">
+                  <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-[#05070F]/80 backdrop-blur-md border border-white/10 text-sky-400 inline-block shadow-lg">
+                    ⚡ Available for Hire & Collaboration
+                  </span>
+                </div>
               </div>
 
-              <div className="w-full space-y-3.5 sm:space-y-4 text-left">
-                <div className="flex items-center gap-3.5 sm:gap-4 text-xs sm:text-sm">
-                  <span className="text-lg sm:text-xl">📍</span>
-                  <span className="text-text-secondary font-medium">Sukabumi, Jawa Barat</span>
+              {/* Status Pills */}
+              <div className="w-full max-w-[320px] space-y-2.5">
+                <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs sm:text-sm text-text-secondary font-medium">
+                  <span className="text-base">📍</span>
+                  <span>Sukabumi, Jawa Barat</span>
                 </div>
-                <div className="flex items-center gap-3.5 sm:gap-4 text-xs sm:text-sm">
-                  <span className="text-lg sm:text-xl">🎓</span>
-                  <span className="text-text-secondary font-medium">S1 Teknik Informatika</span>
+                <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs sm:text-sm text-text-secondary font-medium">
+                  <span className="text-base">🎓</span>
+                  <span>S1 Teknik Informatika - Univ. Nusa Putra</span>
                 </div>
-                <div className="flex items-center gap-3.5 sm:gap-4 text-xs sm:text-sm">
-                  <span className="text-lg sm:text-xl">💼</span>
-                  <span className="text-text-secondary font-medium">Intern di PT Media Jurnal Sukabumi</span>
+                <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs sm:text-sm text-text-secondary font-medium">
+                  <span className="text-base">💼</span>
+                  <span className="text-sky-400 font-semibold">Web Developer Intern @ PT Media Jurnal Sukabumi</span>
                 </div>
               </div>
             </div>
+
+            {/* Right Column (7/12): Narrative Description */}
+            <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5 text-left">
+              <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
+                Menghubungkan Estetika Modern Frontend dengan Kekuatan Analisis Data
+              </h3>
+
+              <p className="text-text-secondary leading-relaxed text-xs sm:text-sm md:text-base">
+                Saya <strong className="text-white font-semibold">Donie Makapeli</strong>, mahasiswa S1 Teknik Informatika di Universitas Nusa Putra yang berfokus pada <strong className="text-white font-semibold">Web Development</strong> dan <strong className="text-white font-semibold">Data Analysis</strong>. Saya memiliki ketertarikan mendalam dalam menciptakan antarmuka pengguna yang cepat, interaktif, dan bernilai estetika tinggi, serta mengolah data murni menjadi wawasan keputusan yang berdampak nyata.
+              </p>
+
+              <p className="text-text-secondary leading-relaxed text-xs sm:text-sm md:text-base">
+                Pengalaman industri saya mencakup program magang di <strong className="text-white font-semibold">PT Bank Rakyat Indonesia (BRI) Unit Cipanas</strong>, di mana saya mengeksekusi analisis data eksploratif (EDA) terhadap <span className="text-sky-400 font-semibold">5.956+ data kunjungan nasabah</span> menggunakan Python dan Pandas. Selanjutnya, pada program PKL di <strong className="text-white font-semibold">PT Media Jurnal Sukabumi</strong>, saya membangun dan merilis web aplikasi <span className="text-sky-400 font-semibold">&apos;Halo Jurnal&apos;</span> berbasis Next.js dan Supabase.
+              </p>
+
+              <p className="text-text-secondary leading-relaxed text-xs sm:text-sm md:text-base">
+                Saat ini, saya kembali dipercaya melanjutkan magang di PT Media Jurnal Sukabumi untuk mengembangkan portal berita Gen Z utama <span className="text-sky-400 font-semibold">&apos;Jurnal Vibes&apos;</span>. Saya juga pendiri website agency <span className="text-sky-400 font-semibold">DiCode</span> dengan 10+ halaman demo interaktif.
+              </p>
+            </div>
+
           </div>
 
-          {/* KOLOM KANAN */}
-          <div className="flex flex-col gap-4 sm:gap-6 text-left">
-            <p className="fade-up fade-delay-2 text-text-secondary leading-relaxed text-xs sm:text-base text-left">
-              Saya <span className="text-white font-medium">Donie Makapeli</span>, mahasiswa S1 Teknik Informatika di Universitas Nusa Putra. Saya memiliki fokus pada pengembangan web full-stack menggunakan ekosistem modern (Next.js, TypeScript, Tailwind CSS, hingga integrasi database seperti PostgreSQL/Supabase), serta memiliki keahlian dalam pemrosesan dan analisis data menggunakan Python.
-            </p>
-            <p className="fade-up fade-delay-3 text-text-secondary leading-relaxed text-xs sm:text-base text-left">
-              Pengalaman profesional saya dimulai saat magang di PT Bank Rakyat Indonesia (BRI) Unit Cipanas,
-              di mana saya mengerjakan project analisis data kunjungan nasabah dari tahap preprocessing hingga
-              penyusunan laporan. Setelah itu, saya menyelesaikan PKL secara WFH sebagai Web Developer di
-              PT Media Jurnal Sukabumi dengan membangun web aplikasi{" "}
-              <span className="text-sky-400 font-medium">&apos;Halo Jurnal&apos;</span>.
-            </p>
-            <p className="fade-up fade-delay-4 text-text-secondary leading-relaxed text-xs sm:text-base text-left">
-              Saat ini, saya masih melanjutkan program magang di PT Media Jurnal Sukabumi untuk mengembangkan
-              portal utama <span className="text-sky-400 font-medium">&apos;Jurnal Vibes&apos;</span>.
-              Selain rutinitas magang, saya juga membangun{" "}
-              <span className="text-sky-400 font-medium">DiCode</span>, sebuah website agency digital
-              yang berisi 10+ halaman template (e-commerce, company profile, dll) menggunakan Next.js,
-              serta aktif berorganisasi untuk melatih kerja sama tim.
-            </p>
+          {/* Key Metrics / Statistics Row inside Bento Card */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            {stats.map((s, i) => (
+              <div
+                key={i}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 sm:p-5 flex flex-col items-start transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.08] hover:-translate-y-1"
+              >
+                <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight bg-gradient-to-r from-sky-400 to-sky-200 bg-clip-text text-transparent mb-1">
+                  {s.num}
+                </p>
+                <p className="text-white text-xs sm:text-sm font-semibold mb-0.5">{s.label}</p>
+                <p className="text-text-secondary text-[10px] sm:text-xs">{s.sub}</p>
+              </div>
+            ))}
+          </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 pt-2 sm:pt-4 mt-1 sm:mt-2">
+          {/* Sub-Bento Cards: 3 Core Expertise Pillars */}
+          <div>
+            <p className="text-[11px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-4 text-left">PILAR KEAHLIAN UTAMA</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
               {cards.map((c, i) => (
-                <div key={i} className={`fade-up fade-delay-${(i % 3) + 2} glass-card p-4 sm:p-5 hover:-translate-y-1.5 transition-all duration-300 border border-white/10 hover:border-sky-400/40 text-left`}>
-                  <span className="text-xl sm:text-2xl mb-2 sm:mb-3 block">{c.icon}</span>
-                  <h4 className="text-white font-bold text-xs sm:text-sm mb-1 text-left">{c.title}</h4>
-                  <p className="text-text-secondary text-[11px] sm:text-xs text-left">{c.desc}</p>
+                <div
+                  key={i}
+                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 text-left transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.08] hover:-translate-y-1.5 hover:shadow-[0_8px_25px_-5px_rgba(56,189,248,0.15)] flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-3xl sm:text-4xl">{c.icon}</span>
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-sky-500/10 border border-sky-400/30 text-sky-400">
+                        {c.badge}
+                      </span>
+                    </div>
+                    <h4 className="text-white font-bold text-base sm:text-lg mb-2">{c.title}</h4>
+                    <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">{c.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
+
         </div>
+
       </div>
     </section>
   );
@@ -1081,300 +1146,350 @@ function SkillsSection() {
 }
 
 /* ==================================================================
-   PROJECTS SECTION (Carousel)
+   PROJECTS SECTION (Asymmetric Bento Grid)
    ================================================================== */
 function ProjectsSection() {
   const stagger = useStaggerFade();
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = ["All", "Featured", "Web App", "Data Analysis", "Freelance"];
 
   const projects = [
     {
+      id: "jurnal-vibes",
       icon: "📰",
       title: "Jurnal Vibes",
       badge: "In Development",
       badgeClass: "badge-cyan",
-      desc: "Dipercaya langsung oleh manajemen PT Media Jurnal Sukabumi untuk merancang dan membangun portal berita alternatif yang ditargetkan khusus untuk audiens Gen Z. Proyek ini dikembangkan sebagai ekspansi dari portal berita utama perusahaan, dengan turut mengintegrasikan sistem 'Halo Jurnal' sebagai pusat layanan pengaduan dan interaksi pembaca. Dikembangkan secara penuh (full-stack) selama masa magang dan saat ini masih dalam tahap pengembangan aktif menuju fase produksi.",
-      techStack: ["Next.js", "Tailwind CSS"],
+      category: ["Featured", "Web App"],
+      gridSpan: "md:col-span-2 lg:col-span-2 md:row-span-2",
+      isFeatured: true,
+      desc: "Dipercaya langsung oleh manajemen PT Media Jurnal Sukabumi untuk merancang dan membangun portal berita alternatif yang ditargetkan khusus untuk audiens Gen Z. Dikembangkan secara full-stack berbasis Next.js & Tailwind CSS, terintegrasi dengan sub-layanan pengaduan 'Halo Jurnal'.",
+      techStack: ["Next.js", "Tailwind CSS", "React", "Vercel"],
       github: "https://github.com/dmakapeli-prog/jurnal-vibes-app.git",
       live: "https://jurnal-vibes-app.vercel.app/",
       image: "/jurnal-vibes.png",
     },
     {
+      id: "halo-jurnal",
       icon: "📢",
       title: "Halo Jurnal",
       badge: "PKL Project",
       badgeClass: "badge-cyan",
-      desc: "Web aplikasi layanan pengaduan dan komunikasi interaktif yang dirancang khusus sebagai sub-kanal terintegrasi untuk ekosistem portal berita Jurnal Vibes. Dibangun secara full-stack dari nol dan merupakan output resmi dari keberhasilan program Praktik Kerja Lapangan (PKL) di PT Media Jurnal Sukabumi.",
+      category: ["Featured", "Web App"],
+      gridSpan: "md:col-span-2 lg:col-span-2",
+      isFeatured: true,
+      desc: "Web aplikasi layanan pengaduan dan komunikasi interaktif publik sebagai output resmi Praktik Kerja Lapangan (PKL) di PT Media Jurnal Sukabumi, terintegrasi penuh dengan Supabase backend.",
       techStack: ["Next.js", "Tailwind CSS", "Supabase", "Vercel"],
       github: "https://github.com/dmakapeli-prog/halo-jurnal-app.git",
       live: "https://halo-jurnal-app.vercel.app/",
       image: "https://image.thum.io/get/width/800/crop/600/https://halo-jurnal-app.vercel.app/",
     },
     {
-      icon: "🥚",
-      title: "Ovara - Toko Telur Segar Online",
-      badge: "Web App",
-      badgeClass: "badge-orange",
-      desc: "Website e-commerce telur ayam segar premium dengan fitur keranjang belanja, sistem stok realtime via Supabase, dan integrasi order WhatsApp otomatis. Dibangun untuk UMKM lokal Cibadak, Sukabumi.",
-      techStack: ["Next.js", "Tailwind CSS", "Supabase", "Vercel"],
-      github: "https://github.com/dmakapeli-prog/ovara-website",
-      live: "https://ovara-nine.vercel.app",
-      image: "/project-ovara.png",
+      id: "bri-data-analysis",
+      icon: "📊",
+      title: "Analisis Data Kunjungan Nasabah BRI",
+      badge: "Data Analysis",
+      badgeClass: "badge-purple",
+      category: ["Featured", "Data Analysis"],
+      gridSpan: "md:col-span-2 lg:col-span-2",
+      isFeatured: true,
+      isDataCard: true,
+      desc: "Preprocessing dan Exploratory Data Analysis (EDA) terhadap 5.956+ data transaksi nasabah PT Bank Rakyat Indonesia (BRI) Unit Cipanas menggunakan Python & Pandas, disajikan dalam format standar laporan ilmiah IEEE.",
+      techStack: ["Python", "Pandas", "EDA", "IEEE Format", "Google Colab"],
+      statsHighlight: [
+        { label: "Data Records", val: "5.956+" },
+        { label: "Method", val: "EDA & Python" },
+        { label: "Output", val: "IEEE Report" }
+      ],
+      github: null,
+      live: null,
+      image: null,
     },
     {
+      id: "thriftin",
       icon: "🛍️",
-      title: "ThriftIn - Preloved Fashion Marketplace",
+      title: "ThriftIn - Fashion Marketplace",
       badge: "Web App",
       badgeClass: "badge-cyan",
-      desc: "Platform marketplace fashion thrift dan preloved dengan fitur lengkap seperti real-time chat, sistem tawar harga, pelacakan pesanan, notifikasi real-time, rating & ulasan, wishlist, dan admin panel untuk manajemen produk dan transaksi.",
-      techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
+      category: ["Web App"],
+      gridSpan: "md:col-span-1 lg:col-span-2",
+      desc: "Platform marketplace preloved & thrift fashion dengan fitur real-time chat, tawar harga, pelacakan pesanan, serta admin dashboard komprehensif.",
+      techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
       github: "https://github.com/dmakapeli-prog/thriftin",
       live: "https://thriftin-alpha.vercel.app",
       image: "/project-thriftin.png",
     },
     {
+      id: "dicode",
       icon: "🌐",
       title: "DiCode - Website Agency Digital",
       badge: "Completed",
       badgeClass: "badge-green",
-      desc: "Platform website agency digital DiCode yang menyajikan 10+ halaman demo template interaktif (e-commerce, company profile, undangan digital, dll). Memiliki arsitektur modular dengan performa tinggi, dirancang menggunakan Next.js dan Tailwind CSS untuk solusi bisnis digital modern.",
+      category: ["Web App"],
+      gridSpan: "md:col-span-1 lg:col-span-2",
+      desc: "Platform agency digital dengan 10+ halaman template interaktif (e-commerce, company profile, undangan) berarsitektur modular dan performa tinggi.",
       techStack: ["Next.js", "Tailwind CSS", "React", "Vercel"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
       live: "https://dicode-website.vercel.app",
       image: "/project-dicode.png",
     },
     {
+      id: "ovara",
+      icon: "🥚",
+      title: "Ovara - Toko Telur Segar Online",
+      badge: "Web App",
+      badgeClass: "badge-orange",
+      category: ["Web App"],
+      gridSpan: "md:col-span-1",
+      desc: "Website e-commerce telur ayam segar premium dengan keranjang belanja, manajemen stok Supabase, dan integrasi WhatsApp.",
+      techStack: ["Next.js", "Tailwind CSS", "Supabase"],
+      github: "https://github.com/dmakapeli-prog/ovara-website",
+      live: "https://ovara-nine.vercel.app",
+      image: "/project-ovara.png",
+    },
+    {
+      id: "esports-bracket",
       icon: "🏆",
       title: "Esports Bracket Generator",
       badge: "Freelance",
       badgeClass: "badge-purple",
-      desc: "Web aplikasi interaktif untuk manajemen bagan (bracket) turnamen esports. Merupakan proyek freelance berbayar yang dirancang secara khusus untuk memfasilitasi operasional kompetisi dan manajemen bagan pertandingan komunitas secara dinamis.",
+      category: ["Freelance", "Web App"],
+      gridSpan: "md:col-span-1",
+      desc: "Web aplikasi interaktif untuk pengelolaan dan pencetakan bagan (bracket) turnamen esports dinamis.",
       techStack: ["Next.js", "Tailwind CSS", "Vercel"],
       github: null,
       live: "https://esports-bracket-generator.vercel.app/",
       image: "/bracket.png",
     },
     {
+      id: "echo-store",
       icon: "🛒",
-      title: "Echo Store",
+      title: "Echo Store - Gaming Digital",
       badge: "Freelance",
       badgeClass: "badge-purple",
-      desc: "Platform e-commerce khusus yang dibangun untuk transaksi dan manajemen aset komunitas esports (Echo Prime). Proyek freelance berbayar ini berfokus pada antarmuka pengguna yang modern, bernuansa gaming, responsif, dan siap digunakan untuk operasional toko digital.",
+      category: ["Freelance", "Web App"],
+      gridSpan: "md:col-span-1",
+      desc: "Platform e-commerce aset digital komunitas esports Echo Prime dengan antarmuka bernuansa gaming.",
       techStack: ["Next.js", "Tailwind CSS", "Vercel"],
       github: null,
       live: "https://echo-store-eight.vercel.app/",
       image: "/echo-store.png",
     },
     {
+      id: "dapurku",
       icon: "🍽️",
       title: "DapurKu - Website Kuliner",
       badge: "Web App",
       badgeClass: "badge-orange",
-      desc: "Website kuliner modern untuk DapurKu Gunung Walat dengan fitur menu interaktif, filter kategori, keranjang belanja, integrasi WhatsApp & GrabFood, peta lokasi, dan testimoni pelanggan.",
-      techStack: ["Next.js", "Tailwind CSS", "Vercel", "WhatsApp API"],
+      category: ["Web App"],
+      gridSpan: "md:col-span-1",
+      desc: "Website kuliner modern dengan menu interaktif, filter kategori, keranjang belanja, & integrasi GrabFood/WhatsApp.",
+      techStack: ["Next.js", "Tailwind CSS", "WhatsApp API"],
       github: null,
       live: "https://dapurku-websiite.vercel.app",
       image: "/project-dapurku.png",
     },
     {
+      id: "minimalist-elegance",
       icon: "💌",
-      title: "Minimalist Elegance - Undangan Digital",
-      badge: "Demo Template",
-      badgeClass: "badge-purple",
-      desc: "Template undangan pernikahan digital dengan desain minimalis, countdown real-time, RSVP form, dan galeri foto",
-      techStack: ["Next.js", "Tailwind CSS", "Animation"],
+      title: "Minimalist Elegance",
+      badge: "Template",
+      badgeClass: "badge-gray",
+      category: ["Web App"],
+      gridSpan: "md:col-span-1",
+      desc: "Template undangan pernikahan digital dengan countdown real-time, RSVP form, dan galeri foto.",
+      techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
       live: "https://dicode-website.vercel.app/demo/minimalist-elegance",
       image: "/project-minimalist.png",
     },
     {
+      id: "royal-blossom",
       icon: "👑",
-      title: "Royal Blossom - Undangan Digital",
-      badge: "Demo Template",
-      badgeClass: "badge-purple",
-      desc: "Template undangan pernikahan digital tema mewah dengan animasi gerbang pembuka, parallax, partikel emas, dan galeri carousel interaktif",
+      title: "Royal Blossom",
+      badge: "Template",
+      badgeClass: "badge-gray",
+      category: ["Web App"],
+      gridSpan: "md:col-span-1",
+      desc: "Template undangan digital tema mewah dengan animasi gerbang pembuka, parallax, dan galeri carousel.",
       techStack: ["Next.js", "Tailwind CSS", "Animation"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
       live: "https://dicode-website.vercel.app/demo/royal-blossom",
       image: "/project-royalblossom.png",
     },
-    {
-      icon: "📊",
-      title: "Analisis Data Kunjungan Nasabah BRI",
-      badge: "Data Analysis",
-      badgeClass: "badge-green",
-      desc: "Preprocessing dan exploratory data analysis terhadap 5.956+ data transaksi nasabah menggunakan Python dan Pandas, disusun dalam laporan format IEEE",
-      techStack: ["Python", "Pandas", "Google Colab", "EDA"],
-      github: null,
-      live: null,
-      image: null,
-    },
   ];
 
-  const totalSlides = projects.length;
-
-  const goTo = (index) => {
-    if (index < 0) setCurrentSlide(totalSlides - 1);
-    else if (index >= totalSlides) setCurrentSlide(0);
-    else setCurrentSlide(index);
-  };
+  const filteredProjects = projects.filter((p) => {
+    if (activeCategory === "All") return true;
+    return p.category.includes(activeCategory);
+  });
 
   return (
-    <section id="projects" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(26,18,53,0.4)] to-transparent">
-      <div ref={stagger} className="max-w-4xl mx-auto">
+    <section id="projects" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(26,18,53,0.3)] to-transparent">
+      <div ref={stagger} className="max-w-7xl mx-auto">
 
-        {/* Header */}
-        <div className="fade-up text-center mb-10 sm:mb-14">
-          <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">MY WORK</p>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
-            Projects
+        {/* Section Header */}
+        <div className="fade-up text-center mb-8 sm:mb-12">
+          <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">MY WORK & PORTFOLIO</p>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            Bento Projects Showcase
           </h2>
+          <p className="text-text-secondary text-xs sm:text-base max-w-xl mx-auto">
+            Kumpulan proyek pilihan pengembangan web full-stack dan analisis data yang dibangun dengan standar profesional.
+          </p>
         </div>
 
-        {/* Carousel */}
-        <div className="relative flex items-center gap-2 sm:gap-5">
+        {/* Category Filter Tabs */}
+        <div className="fade-up fade-delay-1 flex justify-center mb-10 sm:mb-12">
+          <div className="inline-flex flex-wrap justify-center gap-1.5 sm:gap-2 p-1.5 rounded-full nav-pill">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
+                  activeCategory === cat
+                    ? "bg-gradient-to-r from-sky-500 to-sky-400 text-white shadow-lg shadow-sky-500/20"
+                    : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
 
-          {/* Prev Button */}
-          <button
-            onClick={() => goTo(currentSlide - 1)}
-            className="carousel-nav-btn shrink-0"
-            aria-label="Previous project"
-          >
-            ‹
-          </button>
+        {/* Asymmetric Bento Grid */}
+        <div className="fade-up fade-delay-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-[minmax(280px,auto)]">
+          {filteredProjects.map((p) => {
+            // Compute dynamic grid span when viewing All category vs filtered
+            const spanClass = activeCategory === "All" ? p.gridSpan : "md:col-span-1 lg:col-span-2";
 
-          {/* Active Slide */}
-          <div className="flex-1 min-w-0">
-            <div key={currentSlide}>
-              <div className="project-card p-4 sm:p-8">
-
-                {/* Preview Image */}
-                <div
-                  className="w-full aspect-video rounded-xl mb-5 sm:mb-6 relative overflow-hidden group"
-                  style={{ background: "linear-gradient(135deg, #0a0e1a, #1a1235)" }}
-                >
-                  {projects[currentSlide].image ? (
-                    <>
+            return (
+              <div
+                key={p.id}
+                className={`${spanClass} bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.07] hover:shadow-[0_10px_30px_-5px_rgba(56,189,248,0.15)] hover:-translate-y-1 flex flex-col justify-between group p-5 sm:p-6 text-left relative`}
+              >
+                <div>
+                  {/* Image or Special Visual Graphic */}
+                  {p.image ? (
+                    <div className="w-full aspect-[16/9] rounded-xl mb-4 relative overflow-hidden bg-[#0a0e1a] border border-white/10 group-hover:border-white/20 transition-colors">
                       <Image
-                        src={projects[currentSlide].image}
-                        alt={projects[currentSlide].title}
+                        src={p.image}
+                        alt={p.title}
                         fill
-                        priority={true}
                         unoptimized={true}
-                        sizes="(max-width: 768px) 100vw, 800px"
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-300 block opacity-100"
+                        priority={p.isFeatured}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                       />
-                      {/* Overlay saat hover */}
-                      <div
-                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
-                        style={{ background: 'rgba(0,0,0,0.45)' }}
-                      >
-                        {projects[currentSlide].live && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#05070F] via-transparent to-transparent opacity-60" />
+                      
+                      {/* Hover Overlay Live Link Button */}
+                      {p.live && (
+                        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                           <a
-                            href={projects[currentSlide].live}
+                            href={p.live}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-white font-semibold text-xs sm:text-sm"
-                            style={{ background: 'rgba(0,217,255,0.2)', border: '1px solid rgba(0,217,255,0.5)', backdropFilter: 'blur(8px)' }}
+                            className="px-4 py-2 rounded-full bg-sky-500/90 text-white font-semibold text-xs sm:text-sm border border-sky-300/40 shadow-lg hover:scale-105 transition-transform flex items-center gap-1.5"
                           >
-                            🔗 Lihat Website
+                            <span>Live Preview</span> 🔗
                           </a>
-                        )}
+                        </div>
+                      )}
+                      
+                      <div className="absolute top-2.5 left-2.5 w-8 h-8 rounded-full bg-[#05070F]/80 backdrop-blur-md border border-white/15 flex items-center justify-center text-sm z-10">
+                        {p.icon}
                       </div>
-                      {/* Badge icon di pojok kiri atas */}
-                      <div className="absolute top-3 left-3 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-sm sm:text-lg z-10" style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)', border: '1px solid rgba(255,255,255,0.15)' }}>
-                        {projects[currentSlide].icon}
+                    </div>
+                  ) : p.isDataCard ? (
+                    /* Special Graphic Card for Data Analysis */
+                    <div className="w-full aspect-[16/9] rounded-xl mb-4 p-4 relative overflow-hidden bg-gradient-to-br from-[#0b1021] to-[#161f38] border border-sky-400/20 flex flex-col justify-between">
+                      <div className="flex justify-between items-start">
+                        <span className="text-3xl">{p.icon}</span>
+                        <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-sky-500/10 text-sky-400 border border-sky-400/30">
+                          Python & Pandas EDA
+                        </span>
                       </div>
-                    </>
+                      
+                      <div className="grid grid-cols-3 gap-2 my-2">
+                        {p.statsHighlight?.map((st, i) => (
+                          <div key={i} className="bg-white/5 rounded-lg p-2 border border-white/5 text-center">
+                            <p className="text-white font-bold text-xs sm:text-sm">{st.val}</p>
+                            <p className="text-[9px] text-text-secondary">{st.label}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="text-[10px] font-mono text-sky-300/80 flex items-center justify-between">
+                        <span>Laporan IEEE • BRI Unit Cipanas</span>
+                        <span>EDA Matrix ✓</span>
+                      </div>
+                    </div>
                   ) : (
-                    /* Fallback: emoji besar untuk proyek tanpa gambar */
-                    <div className="w-full h-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #00D9FF22, #A78BFA22)" }}>
-                      <span className="text-5xl sm:text-7xl">{projects[currentSlide].icon}</span>
-                      <div
-                        className="absolute inset-0 opacity-15"
-                        style={{
-                          backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
-                          backgroundSize: "14px 14px",
-                        }}
-                      />
+                    /* Fallback Card Graphic */
+                    <div className="w-full aspect-[16/9] rounded-xl mb-4 relative overflow-hidden bg-gradient-to-br from-white/5 to-white/10 border border-white/10 flex items-center justify-center">
+                      <span className="text-4xl sm:text-5xl group-hover:scale-110 transition-transform duration-300">{p.icon}</span>
                     </div>
                   )}
-                </div>
 
-                {/* Title + Badge */}
-                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-3">
-                  <h3 className="text-lg sm:text-2xl font-bold text-white">{projects[currentSlide].title}</h3>
-                  <span className={`px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] font-bold tracking-wider uppercase ${projects[currentSlide].badgeClass}`}>
-                    {projects[currentSlide].badge}
-                  </span>
-                </div>
-
-                {/* Description */}
-                <p className="text-text-secondary text-xs sm:text-sm leading-relaxed mb-5">
-                  {projects[currentSlide].desc}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6">
-                  {projects[currentSlide].techStack.map((tech, ti) => (
-                    <span key={ti} className="tech-pill">{tech}</span>
-                  ))}
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex flex-wrap items-center gap-3">
-                  {projects[currentSlide].github && (
-                    <a
-                      href={projects[currentSlide].github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-outline px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm inline-flex items-center gap-2"
-                    >
-                      GitHub 🐙
-                    </a>
-                  )}
-                  {projects[currentSlide].live && (
-                    <a
-                      href={projects[currentSlide].live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-gradient px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm inline-flex items-center gap-2"
-                    >
-                      Live Demo 🔗
-                    </a>
-                  )}
-                  {!projects[currentSlide].github && !projects[currentSlide].live && (
-                    <span className="badge-gray px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium">
-                      📄 Laporan Internal
+                  {/* Header info (Title + Badge) */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <h3 className="text-base sm:text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
+                      {p.title}
+                    </h3>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase ${p.badgeClass}`}>
+                      {p.badge}
                     </span>
-                  )}
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-text-secondary text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3 group-hover:line-clamp-none transition-all">
+                    {p.desc}
+                  </p>
+                </div>
+
+                {/* Footer: Tech Stack & Action Links */}
+                <div>
+                  <div className="flex flex-wrap gap-1.5 mb-4 pt-2 border-t border-white/5">
+                    {p.techStack.map((tech, ti) => (
+                      <span key={ti} className="tech-pill">{tech}</span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-2.5">
+                    {p.github && (
+                      <a
+                        href={p.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3.5 py-1.5 rounded-full text-xs font-semibold border border-white/15 text-text-secondary hover:text-white hover:border-white/30 hover:bg-white/5 transition-all flex items-center gap-1.5"
+                      >
+                        <span>GitHub</span> 🐙
+                      </a>
+                    )}
+                    {p.live && (
+                      <a
+                        href={p.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/40 hover:bg-sky-500/30 hover:border-sky-400 transition-all flex items-center gap-1.5"
+                      >
+                        <span>Live Demo</span> 🔗
+                      </a>
+                    )}
+                    {!p.github && !p.live && (
+                      <span className="text-[11px] text-text-secondary/70 italic">
+                        📄 Laporan Lomba / Internal
+                      </span>
+                    )}
+                  </div>
                 </div>
 
               </div>
-            </div>
-          </div>
-
-          {/* Next Button */}
-          <button
-            onClick={() => goTo(currentSlide + 1)}
-            className="carousel-nav-btn shrink-0"
-            aria-label="Next project"
-          >
-            ›
-          </button>
-
-        </div>
-
-        {/* Dot Indicators */}
-        <div className="flex justify-center items-center gap-2.5 mt-6 sm:mt-8">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`carousel-dot ${index === currentSlide ? "active" : ""}`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+            );
+          })}
         </div>
 
       </div>
