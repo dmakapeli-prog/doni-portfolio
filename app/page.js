@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { SiPandas, SiSupabase, SiPostman, SiGooglecolab } from "react-icons/si";
+import { SiPandas, SiSupabase, SiPostman, SiGooglecolab, SiNodejs, SiPhp, SiLaravel, SiMongodb } from "react-icons/si";
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 import InitialLoader from "./components/InitialLoader";
 
@@ -796,18 +796,18 @@ function SkillsSection() {
   const tabs = ["Core", "Expertise", "Tools"];
 
   const coreSkills = [
-    { icon: "🌐", title: "Web Development", desc: "Membangun aplikasi web modern yang responsif, interaktif, dan berkinerja tinggi dari frontend hingga integrasi backend." },
-    { icon: "📊", title: "Data Analysis", desc: "Mengekstraksi, membersihkan, dan menganalisis data mentah menjadi wawasan terstruktur untuk mendukung keputusan." },
-    { icon: "🎨", title: "UI/UX Design", desc: "Merancang antarmuka pengguna yang intuitif dipadukan dengan estetika visual yang kuat dan berpusat pada pengalaman." },
+    { icon: "🌐", name: "Web Development", desc: "Membangun aplikasi web modern yang responsif, interaktif, dan berkinerja tinggi dari frontend hingga integrasi backend." },
+    { icon: "📊", name: "Data Analysis", desc: "Mengekstraksi, membersihkan, dan menganalisis data mentah menjadi wawasan terstruktur untuk mendukung keputusan." },
+    { icon: "🎨", name: "UI/UX Design", desc: "Merancang antarmuka pengguna yang intuitif dipadukan dengan estetika visual yang kuat dan berpusat pada pengalaman." },
   ];
 
   const expertiseSkills = [
     {
-      title: "React JS",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "React JS",
+      desc: "Frontend Library",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="2.139" fill="#61DAFB" />
-          <path d="M12 6.5c3.9 0 7.5.9 10.2 2.4C24.9 10.5 26 12 26 13.5c0 1.5-1.1 3-3.8 4.6C19.5 19.6 15.9 20.5 12 20.5s-7.5-.9-10.2-2.4C-.9 16.5-2 15-2 13.5c0-1.5 1.1-3 3.8-4.6C4.5 7.4 8.1 6.5 12 6.5zm0-1c-4.1 0-7.9 1-10.8 2.7C-1.7 9.9-3 11.6-3 13.5s1.3 3.6 4.2 5.3C4.1 20.5 7.9 21.5 12 21.5s7.9-1 10.8-2.7c2.9-1.7 4.2-3.4 4.2-5.3s-1.3-3.6-4.2-5.3C19.9 6.5 16.1 5.5 12 5.5z" fill="none" />
           <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none" />
           <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none" transform="rotate(60 12 12)" />
           <ellipse cx="12" cy="12" rx="11" ry="4.2" stroke="#61DAFB" strokeWidth="1" fill="none" transform="rotate(120 12 12)" />
@@ -815,58 +815,64 @@ function SkillsSection() {
       ),
     },
     {
-      title: "Next JS",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "Next JS",
+      desc: "Full-stack Framework",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="12" fill="white" />
           <path d="M19.07 20.624L8.432 7H7v10.001h1.432V8.955l9.793 12.207c.302-.173.595-.361.878-.563M16 7h1.432v10H16z" fill="black" />
         </svg>
       ),
     },
     {
-      title: "Tailwind CSS",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "Tailwind CSS",
+      desc: "CSS Framework",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 6C9.33 6 7.67 7.33 7 10c1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35.98 1 2.09 2.15 4.6 2.15 2.67 0 4.33-1.33 5-4-.99 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.62 7.15 14.51 6 12 6zM7 13c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.38 17.85 9.49 19 12 19c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.62 14.15 9.51 13 7 13z" fill="#38BDF8" />
         </svg>
       ),
     },
     {
-      title: "JavaScript",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "JavaScript",
+      desc: "Programming Language",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <rect width="24" height="24" rx="3" fill="#F7DF1E" />
           <path d="M6.234 18.03c.353.576.957.96 1.86.96 1.02 0 1.68-.51 1.68-1.56V11.4h-1.62v5.94c0 .48-.18.66-.48.66-.3 0-.51-.18-.66-.45l-1.17.6-.01-.01zm5.01-.09c.45.72 1.29 1.17 2.43 1.17 1.29 0 2.19-.63 2.19-1.8 0-1.05-.6-1.56-1.71-2.04l-.36-.15c-.54-.24-.78-.39-.78-.78 0-.3.24-.54.6-.54.36 0 .6.15.81.54l1.11-.72c-.45-.78-1.08-1.08-1.92-1.08-1.2 0-1.98.75-1.98 1.8 0 1.05.6 1.59 1.56 1.98l.36.15c.6.27.93.42.93.84 0 .36-.33.63-.84.63-.6 0-.99-.3-1.26-.78l-1.14.72-.07.07z" fill="black" />
         </svg>
       ),
     },
     {
-      title: "TypeScript",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "TypeScript",
+      desc: "Typed JavaScript",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <rect width="24" height="24" rx="3" fill="#3178C6" />
           <path d="M13.37 14.571v1.714c.278.143.608.25.99.32.38.07.78.106 1.196.106.41 0 .797-.044 1.163-.13.366-.086.686-.225.96-.416.274-.19.49-.435.65-.733.16-.298.24-.657.24-1.078 0-.302-.044-.566-.133-.793a1.903 1.903 0 00-.39-.617 3.16 3.16 0 00-.627-.496 7.658 7.658 0 00-.846-.43 9.274 9.274 0 01-.55-.27 2.48 2.48 0 01-.38-.263.985.985 0 01-.217-.29.79.79 0 01-.07-.332c0-.112.022-.212.068-.3a.616.616 0 01.193-.22.9.9 0 01.302-.135 1.47 1.47 0 01.39-.047c.104 0 .213.008.328.024.115.016.23.042.345.078.116.036.228.083.337.14.11.057.21.124.303.201v-1.603a4.28 4.28 0 00-.882-.22 6.353 6.353 0 00-1.022-.077c-.404 0-.783.047-1.138.14a2.795 2.795 0 00-.933.43 2.083 2.083 0 00-.633.733c-.155.296-.232.645-.232 1.046 0 .518.147.96.441 1.326.294.366.74.676 1.336.93.198.083.384.165.558.248.174.082.325.17.453.263.128.093.23.196.303.31.074.113.11.242.11.387 0 .118-.023.225-.07.32a.64.64 0 01-.208.237 1.02 1.02 0 01-.337.15 1.79 1.79 0 01-.456.053c-.296 0-.59-.054-.882-.162a3.106 3.106 0 01-.812-.476zM9.8 11.03H12V9.6H6V11.03h2.196V18H9.8V11.03z" fill="white" />
         </svg>
       ),
     },
     {
-      title: "Python",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "Python",
+      desc: "Data & Scripting",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.963 3.403 5.963h2.031v-2.868s-.109-3.403 3.347-3.403h5.768s3.236.052 3.236-3.13V3.13S18.304 0 11.914 0zm-3.22 1.814a1.04 1.04 0 11-.001 2.08 1.04 1.04 0 010-2.08z" fill="#3673A5" />
           <path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12v-.826h8.12S24 18.211 24 12.031c0-6.18-3.403-5.963-3.403-5.963h-2.031v2.868s.109 3.403-3.347 3.403H9.451s-3.236-.052-3.236 3.13V20.87S5.696 24 12.086 24zm3.22-1.814a1.04 1.04 0 110-2.08 1.04 1.04 0 010 2.08z" fill="#FDD048" />
         </svg>
       ),
     },
     {
-      title: "Pandas",
-      icon: <SiPandas className="w-8 h-8 text-[#38BDF8]" />,
-      svgIcon: <SiPandas className="w-8 h-8 text-[#38BDF8]" />,
+      name: "Pandas",
+      desc: "Data Analysis Library",
+      icon: <SiPandas className="text-xl text-[#38BDF8]" />,
     },
     {
-      title: "HTML & CSS",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "HTML & CSS",
+      desc: "Frontend Core",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <path d="M4.136 0l1.69 18.954L12 21l6.17-2.043L19.86 0z" fill="#E34F26" />
           <path d="M12 1.5v18.13l5.018-1.66 1.455-16.47H12z" fill="#EF652A" />
           <path d="M12 7.3H7.895l.265 2.9H12v2.82H7.57l.35 3.92L12 18.03v-2.97l-2.06-.55-.14-1.51H12V7.3z" fill="white" />
@@ -875,14 +881,15 @@ function SkillsSection() {
       ),
     },
     {
-      title: "Supabase",
-      icon: <SiSupabase className="w-8 h-8 text-[#3ECF8E]" />,
-      svgIcon: <SiSupabase className="w-8 h-8 text-[#3ECF8E]" />,
+      name: "Supabase",
+      desc: "Backend as a Service",
+      icon: <SiSupabase className="text-xl text-[#3ECF8E]" />,
     },
     {
-      title: "PostgreSQL",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "PostgreSQL",
+      desc: "Relational Database",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.5 3C16.2 1.7 14.5 1 12.7 1c-1.2 0-2.4.3-3.4.9C7.8 1.3 6.2 1.7 5 2.9 3.2 4.7 3 7.7 3 9.5c0 1.2.2 2.5.7 3.6.6 1.3 1.6 1.8 2.1 1.8.4 0 .7-.1 1-.3v2.2c0 2.1.7 3.8 2.5 4.6.5.2 1 .3 1.5.3 1 0 1.9-.3 2.7-.9.6-.4 1-.9 1.3-1.5.3.1.6.2 1 .2.9 0 1.9-.4 2.5-1.4.5-.8.7-1.8.7-2.9V15c.4-.5.7-1.1.8-1.7.3-1 .4-2.2.4-3.2C21 6.9 19.8 4.7 17.5 3z" fill="#336791" />
           <path d="M19 7.5c.8 0 1.5-.7 1.5-1.5S19.8 4.5 19 4.5c-.7 0-1.3.5-1.5 1.1L17 5.4c.3-.5.8-.9 1.5-.9.9 0 1.5.7 1.5 1.5S19.4 7.5 18.5 7.5" fill="#336791" />
           <ellipse cx="9.5" cy="8" rx="1.5" ry="1.7" fill="white" />
@@ -895,9 +902,10 @@ function SkillsSection() {
       ),
     },
     {
-      title: "SQL",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "SQL",
+      desc: "Database Query Language",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="2" width="20" height="4" rx="1.5" fill="#60A5FA" />
           <rect x="2" y="8" width="20" height="4" rx="1.5" fill="#93C5FD" opacity="0.8" />
           <rect x="2" y="14" width="12" height="4" rx="1.5" fill="#BFDBFE" opacity="0.6" />
@@ -906,42 +914,50 @@ function SkillsSection() {
         </svg>
       ),
     },
+    { name: "Node.js", desc: "JavaScript Runtime", icon: <SiNodejs className="text-xl text-[#339933]"/> },
+    { name: "PHP", desc: "Backend Language", icon: <SiPhp className="text-xl text-[#777BB4]"/> },
+    { name: "Laravel", desc: "Backend Framework", icon: <SiLaravel className="text-xl text-[#FF2D20]"/> },
+    { name: "MongoDB", desc: "NoSQL Database", icon: <SiMongodb className="text-xl text-[#47A248]"/> },
   ];
 
   const toolsSkills = [
     {
-      title: "GitHub",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "GitHub",
+      desc: "Version Control",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" fill="white" />
         </svg>
       ),
     },
     {
-      title: "Vercel",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "Vercel",
+      desc: "Cloud Deployment",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <path d="M24 22.525H0l12-21.05 12 21.05z" fill="white" />
         </svg>
       ),
     },
     {
-      title: "Google Colab",
-      icon: <SiGooglecolab className="w-8 h-8 text-[#F9AB00]" />,
-      svgIcon: <SiGooglecolab className="w-8 h-8 text-[#F9AB00]" />,
+      name: "Google Colab",
+      desc: "Data Science Workspace",
+      icon: <SiGooglecolab className="text-xl text-[#F9AB00]" />,
     },
     {
-      title: "VS Code",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "VS Code",
+      desc: "Code Editor",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <path d="M23.15 2.587L18.21.21a1.494 1.494 0 00-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 00-1.276.057L.327 7.261A1 1 0 00.326 8.74L3.899 12 .326 15.26a1 1 0 00.001 1.479L1.65 17.94a.999.999 0 001.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 001.704.29l4.942-2.377A1.5 1.5 0 0024 20.06V3.939a1.5 1.5 0 00-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" fill="#007ACC" />
         </svg>
       ),
     },
     {
-      title: "Excel / Sheets",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "Excel / Sheets",
+      desc: "Data Management",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <rect width="24" height="24" rx="3" fill="#1D6F42" />
           <rect x="13" y="3" width="8" height="18" rx="1" fill="#21A366" />
           <rect x="14" y="7" width="6" height="1.2" rx="0.5" fill="white" opacity="0.6" />
@@ -954,9 +970,10 @@ function SkillsSection() {
       ),
     },
     {
-      title: "Figma",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "Figma",
+      desc: "UI/UX Design",
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 24c2.209 0 4-1.791 4-4v-4H8c-2.209 0-4 1.791-4 4s1.791 4 4 4z" fill="#0ACF83" />
           <path d="M4 12c0-2.209 1.791-4 4-4h4v8H8c-2.209 0-4-1.791-4-4z" fill="#A259FF" />
           <path d="M4 4c0-2.209 1.791-4 4-4h4v8H8C5.791 8 4 6.209 4 4z" fill="#F24E1E" />
@@ -966,9 +983,10 @@ function SkillsSection() {
       ),
     },
     {
-      title: "Power BI",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "Power BI",
+      desc: "Data Visualization",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="12" width="4" height="10" rx="1" fill="#F2C811" />
           <rect x="8" y="8" width="4" height="14" rx="1" fill="#F2C811" opacity="0.85" />
           <rect x="14" y="4" width="4" height="18" rx="1" fill="#F2C811" opacity="0.7" />
@@ -979,14 +997,15 @@ function SkillsSection() {
       ),
     },
     {
-      title: "Postman",
-      icon: <SiPostman className="w-8 h-8 text-[#FF6C37]" />,
-      svgIcon: <SiPostman className="w-8 h-8 text-[#FF6C37]" />,
+      name: "Postman",
+      desc: "API Testing",
+      icon: <SiPostman className="text-xl text-[#FF6C37]" />,
     },
     {
-      title: "Antigravity IDE",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "Antigravity IDE",
+      desc: "AI Development",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 1C12 1 7.5 5.5 7.5 12H16.5C16.5 5.5 12 1 12 1z" fill="#00D9FF" />
           <rect x="7.5" y="12" width="9" height="5" fill="#00B8D9" />
           <path d="M7.5 13.5L4.5 18.5l3-1V13.5z" fill="#7C3AED" />
@@ -1003,9 +1022,10 @@ function SkillsSection() {
       ),
     },
     {
-      title: "Stitch AI",
-      svgIcon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
+      name: "Stitch AI",
+      desc: "AI Coding Assistant",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
           <path d="M14.5 9.5L4.5 19.5" stroke="#C4B5FD" strokeWidth="1.8" strokeLinecap="round" />
           <path d="M14.5 2L15.5 5.5L19 6.5L15.5 7.5L14.5 11L13.5 7.5L10 6.5L13.5 5.5z" fill="#A78BFA" />
           <circle cx="14.5" cy="6.5" r="3.5" stroke="#7C3AED" strokeWidth="0.5" opacity="0.4" fill="none" />
@@ -1060,7 +1080,7 @@ function SkillsSection() {
                 {coreSkills.map((s, i) => (
                   <div key={i} className="skill-card-lg p-6 sm:p-7 flex flex-col items-start text-left cursor-default bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
                     <span className="text-4xl sm:text-5xl mb-3.5 sm:mb-4">{s.icon}</span>
-                    <h4 className="text-white font-bold text-base sm:text-lg text-left">{s.title}</h4>
+                    <h4 className="text-white font-bold text-base sm:text-lg text-left">{s.name}</h4>
                     {s.desc && <p className="text-xs sm:text-sm text-gray-400 text-left mt-2 sm:mt-2.5 leading-relaxed">{s.desc}</p>}
                   </div>
                 ))}
@@ -1072,19 +1092,16 @@ function SkillsSection() {
           {activeTab === "Expertise" && (
             <div className="tab-fade-enter">
               <p className="text-[10px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-6 text-center">LANGUAGE & FRAMEWORK</p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
-                {expertiseSkills.map((s, i) => (
-                  <div key={i} className="skill-card p-4 sm:p-5 flex items-center gap-3.5 text-left cursor-default bg-white/5 backdrop-blur-md border border-white/10 rounded-xl transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
-                    {s.icon ? (
-                      typeof s.icon === "string" ? (
-                        <span className="text-2xl sm:text-3xl shrink-0">{s.icon}</span>
-                      ) : (
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center">{s.icon}</div>
-                      )
-                    ) : s.svgIcon ? (
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center">{s.svgIcon}</div>
-                    ) : null}
-                    <h4 className="text-white font-semibold text-xs sm:text-sm text-left">{s.title}</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                {expertiseSkills.map((skill, i) => (
+                  <div key={i} className="flex items-center gap-4 p-4 bg-[#161B22]/50 border border-white/5 rounded-xl hover:bg-[#1F2937]/80 transition-colors cursor-default">
+                    <div className="text-2xl text-white flex-shrink-0 flex items-center justify-center">
+                      {skill.icon}
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="font-semibold text-sm text-gray-200">{skill.name}</span>
+                      <span className="text-xs text-gray-500 mt-0.5">{skill.desc}</span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -1095,19 +1112,16 @@ function SkillsSection() {
           {activeTab === "Tools" && (
             <div className="tab-fade-enter">
               <p className="text-[10px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-6 text-center">TOOLS & PLATFORM</p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
-                {toolsSkills.map((s, i) => (
-                  <div key={i} className="skill-card p-4 sm:p-5 flex items-center gap-3.5 text-left cursor-default bg-white/5 backdrop-blur-md border border-white/10 rounded-xl transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
-                    {s.icon ? (
-                      typeof s.icon === "string" ? (
-                        <span className="text-2xl sm:text-3xl shrink-0">{s.icon}</span>
-                      ) : (
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center">{s.icon}</div>
-                      )
-                    ) : s.svgIcon ? (
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 shrink-0 flex items-center justify-center">{s.svgIcon}</div>
-                    ) : null}
-                    <h4 className="text-white font-semibold text-xs sm:text-sm text-left">{s.title}</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                {toolsSkills.map((skill, i) => (
+                  <div key={i} className="flex items-center gap-4 p-4 bg-[#161B22]/50 border border-white/5 rounded-xl hover:bg-[#1F2937]/80 transition-colors cursor-default">
+                    <div className="text-2xl text-white flex-shrink-0 flex items-center justify-center">
+                      {skill.icon}
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="font-semibold text-sm text-gray-200">{skill.name}</span>
+                      <span className="text-xs text-gray-500 mt-0.5">{skill.desc}</span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -1124,7 +1138,7 @@ function SkillsSection() {
 
         {/* Footer Stats */}
         <p className="text-center text-text-secondary/60 text-[11px] sm:text-xs mt-4 sm:mt-5">
-          3 Core Expertise · 11 Languages & Frameworks · 10 Tools
+          3 Core Expertise · 15 Languages & Frameworks · 10 Tools
         </p>
 
       </div>
