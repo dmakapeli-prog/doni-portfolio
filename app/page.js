@@ -389,7 +389,7 @@ function AboutSection() {
   return (
     <section id="about" className="relative py-8 sm:py-12 md:py-16 px-4 md:px-8 z-10">
       <div ref={stagger} className="max-w-6xl mx-auto">
-        
+
         {/* Section Header */}
         <div className="fade-up text-center mb-6 sm:mb-10">
           <p className="text-[10px] font-bold tracking-[0.2em] gradient-text uppercase mb-2">TENTANG SAYA</p>
@@ -400,10 +400,10 @@ function AboutSection() {
 
         {/* Wide Glassmorphism Bento Card Container */}
         <div className="fade-up fade-delay-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-7 md:p-8 shadow-2xl transition-all duration-500 hover:border-sky-400/30 hover:bg-white/[0.06]">
-          
+
           {/* Upper Grid Layout: Profile & Story */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center mb-6 pb-6 border-b border-white/10">
-            
+
             {/* Left Column (5/12): Avatar & Location Badges */}
             <div className="lg:col-span-5 flex flex-col items-center">
               <div className="w-full max-w-[200px] sm:max-w-[240px] aspect-square rounded-2xl mb-4 relative overflow-hidden border border-white/15 shadow-2xl group">
@@ -1334,11 +1334,10 @@ function ProjectsSection() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium transition-all ${
-                  activeCategory === cat
-                    ? "bg-gradient-to-r from-sky-500 to-sky-400 text-white shadow-lg shadow-sky-500/20"
-                    : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
-                }`}
+                className={`px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium transition-all ${activeCategory === cat
+                  ? "bg-gradient-to-r from-sky-500 to-sky-400 text-white shadow-lg shadow-sky-500/20"
+                  : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
+                  }`}
               >
                 {cat}
               </button>
@@ -1371,7 +1370,7 @@ function ProjectsSection() {
                         className="object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#05070F] via-transparent to-transparent opacity-60" />
-                      
+
                       {/* Hover Overlay Live Link Button */}
                       {p.live && (
                         <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -1385,7 +1384,7 @@ function ProjectsSection() {
                           </a>
                         </div>
                       )}
-                      
+
                       <div className="absolute top-2.5 left-2.5 w-8 h-8 rounded-full bg-[#05070F]/80 backdrop-blur-md border border-white/15 flex items-center justify-center text-sm z-10">
                         {p.icon}
                       </div>
@@ -1399,7 +1398,7 @@ function ProjectsSection() {
                           Python & Pandas EDA
                         </span>
                       </div>
-                      
+
                       <div className="grid grid-cols-3 gap-2 my-2">
                         {p.statsHighlight?.map((st, i) => (
                           <div key={i} className="bg-white/5 rounded-lg p-2 border border-white/5 text-center">
