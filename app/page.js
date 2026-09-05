@@ -1149,7 +1149,7 @@ function ProjectsSection() {
       badge: "In Development",
       badgeClass: "badge-cyan",
       category: ["Featured", "Web App"],
-      gridSpan: "md:col-span-2 lg:col-span-2 md:row-span-2",
+      gridSpan: "md:col-span-2 lg:col-span-2",
       isFeatured: true,
       desc: "Dipercaya langsung oleh manajemen PT Media Jurnal Sukabumi untuk merancang dan membangun portal berita alternatif yang ditargetkan khusus untuk audiens Gen Z. Dikembangkan secara full-stack berbasis Next.js & Tailwind CSS, terintegrasi dengan sub-layanan pengaduan 'Halo Jurnal'.",
       techStack: ["Next.js", "Tailwind CSS", "React", "Vercel"],
@@ -1346,8 +1346,8 @@ function ProjectsSection() {
           </div>
         </div>
 
-        {/* Asymmetric Bento Grid */}
-        <div className="fade-up fade-delay-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-[minmax(280px,auto)]">
+        {/* Compact Bento Grid (Dense Packing) */}
+        <div className="fade-up fade-delay-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 grid-flow-row-dense items-start">
           {filteredProjects.map((p) => {
             // Compute dynamic grid span when viewing All category vs filtered
             const spanClass = activeCategory === "All" ? p.gridSpan : "md:col-span-1 lg:col-span-2";
@@ -1355,12 +1355,12 @@ function ProjectsSection() {
             return (
               <div
                 key={p.id}
-                className={`${spanClass} bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.07] hover:shadow-[0_10px_30px_-5px_rgba(56,189,248,0.15)] hover:-translate-y-1 flex flex-col justify-between group p-5 sm:p-6 text-left relative`}
+                className={`${spanClass} h-fit bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.07] hover:shadow-[0_10px_30px_-5px_rgba(56,189,248,0.15)] hover:-translate-y-1 flex flex-col justify-between group p-5 sm:p-6 text-left relative`}
               >
                 <div>
                   {/* Image or Special Visual Graphic */}
                   {p.image ? (
-                    <div className="w-full aspect-[16/9] rounded-xl mb-4 relative overflow-hidden bg-[#0a0e1a] border border-white/10 group-hover:border-white/20 transition-colors">
+                    <div className="w-full aspect-video rounded-xl mb-4 relative overflow-hidden bg-[#0a0e1a] border border-white/10 group-hover:border-white/20 transition-colors">
                       <Image
                         src={p.image}
                         alt={p.title}
@@ -1392,7 +1392,7 @@ function ProjectsSection() {
                     </div>
                   ) : p.isDataCard ? (
                     /* Special Graphic Card for Data Analysis */
-                    <div className="w-full aspect-[16/9] rounded-xl mb-4 p-4 relative overflow-hidden bg-gradient-to-br from-[#0b1021] to-[#161f38] border border-sky-400/20 flex flex-col justify-between">
+                    <div className="w-full aspect-video rounded-xl mb-4 p-4 relative overflow-hidden bg-gradient-to-br from-[#0b1021] to-[#161f38] border border-sky-400/20 flex flex-col justify-between">
                       <div className="flex justify-between items-start">
                         <span className="text-3xl">{p.icon}</span>
                         <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-sky-500/10 text-sky-400 border border-sky-400/30">
@@ -1416,7 +1416,7 @@ function ProjectsSection() {
                     </div>
                   ) : (
                     /* Fallback Card Graphic */
-                    <div className="w-full aspect-[16/9] rounded-xl mb-4 relative overflow-hidden bg-gradient-to-br from-white/5 to-white/10 border border-white/10 flex items-center justify-center">
+                    <div className="w-full aspect-video rounded-xl mb-4 relative overflow-hidden bg-gradient-to-br from-white/5 to-white/10 border border-white/10 flex items-center justify-center">
                       <span className="text-4xl sm:text-5xl group-hover:scale-110 transition-transform duration-300">{p.icon}</span>
                     </div>
                   )}
