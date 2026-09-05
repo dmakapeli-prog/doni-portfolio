@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { SiPandas, SiSupabase, SiPostman, SiGooglecolab } from "react-icons/si";
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
+import InitialLoader from "./components/InitialLoader";
 
 /* ==================================================================
    HOOKS
@@ -194,26 +195,34 @@ function Navbar() {
 
 /* ==================================================================
    ID CARD COMPONENT (Realistic Hanging Lanyard & Pendulum Physics)
+   - Lanyard rope extends from top of viewport
+   - Metallic badge clip connects rope to card
+   - Pendulum swing on drag with useTransform rotation
+   - Gentle wind sway animation when idle
    ================================================================== */
 function IDCard() {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const dragRotate = useTransform(x, [-120, 0, 120], [-18, 0, 18]);
+  const dragRotate = useTransform(x, [-150, 0, 150], [-25, 0, 25]);
   const [isDragging, setIsDragging] = useState(false);
 
   return (
-    <div className="relative flex flex-col items-center select-none pt-2">
+    <div className="relative flex flex-col items-center select-none" style={{ paddingTop: 0 }}>
 
-      {/* --- Visual Tali (Lanyard Strap) Menjulur ke Atas --- */}
-      <div className="w-4 sm:w-5 h-24 sm:h-32 bg-gradient-to-b from-transparent via-sky-400/40 to-sky-500/80 border-x border-sky-300/30 relative overflow-hidden flex items-center justify-center z-0 rounded-t-full shadow-lg">
-        <div className="w-0.5 h-full bg-sky-200/50" />
+      {/* --- Lanyard Rope extending from viewport top --- */}
+      <div
+        className="lanyard-rope flex items-center justify-center"
+        style={{ height: "120px", minHeight: "80px" }}
+      >
+        {/* Center thread highlight */}
+        <div className="w-px h-full bg-white/[0.08]" />
       </div>
 
-      {/* --- Swinging Pendulum Card Assembly --- */}
+      {/* --- Full Swinging Pendulum Assembly --- */}
       <motion.div
         drag
-        dragConstraints={{ left: -90, right: 90, top: -20, bottom: 70 }}
-        dragElastic={0.25}
+        dragConstraints={{ left: -100, right: 100, top: -25, bottom: 80 }}
+        dragElastic={0.2}
         dragSnapToOrigin={true}
         onDragStart={() => setIsDragging(true)}
         onDragEnd={() => setIsDragging(false)}
@@ -227,7 +236,7 @@ function IDCard() {
           isDragging
             ? undefined
             : {
-                rotate: [-2, 2, -2],
+                rotate: [-2, 2, -1.5, 1.8, -2],
               }
         }
         transition={
@@ -236,26 +245,24 @@ function IDCard() {
             : {
                 rotate: {
                   repeat: Infinity,
-                  duration: 4,
+                  duration: 5,
                   ease: "easeInOut",
                 },
               }
         }
-        whileGrab={{ cursor: "grabbing", scale: 1.03 }}
-        className="id-card-wrapper flex flex-col items-center cursor-grab select-none touch-none relative z-10 -mt-1"
+        whileTap={{ cursor: "grabbing", scale: 1.02 }}
+        className="id-card-wrapper flex flex-col items-center cursor-grab select-none touch-none relative z-10"
       >
-        {/* --- Metallic Badge Clip & Swivel Ring --- */}
+        {/* --- Badge Clip Assembly (Swivel Ring + Metal Clamp) --- */}
         <div className="flex flex-col items-center relative z-30">
-          {/* Metal Ring */}
-          <div className="w-4 h-4 rounded-full border-2 border-slate-200 bg-gradient-to-tr from-slate-700 via-slate-400 to-slate-100 shadow-md" />
-          {/* Metal Clamp Clip */}
-          <div className="w-6 h-3.5 bg-gradient-to-b from-slate-100 via-slate-300 to-slate-500 rounded-t-sm border border-slate-300/80 shadow-md -mt-1 flex items-center justify-center">
-            <div className="w-2 h-1 bg-slate-700 rounded-sm" />
-          </div>
+          {/* Swivel Ring */}
+          <div className="swivel-ring" />
+          {/* Metallic Badge Clip */}
+          <div className="badge-clip -mt-1" />
         </div>
 
         {/* --- Card Body --- */}
-        <div className="w-[250px] sm:w-[270px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 -mt-0.5 shadow-2xl transition-colors hover:border-sky-400/40 hover:shadow-[0_10px_30px_-5px_rgba(56,189,248,0.2)]">
+        <div className="id-card-body w-[250px] sm:w-[270px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 -mt-0.5 shadow-2xl">
 
           {/* Slot Hole for Badge Holder Clip */}
           <div className="w-8 h-1.5 rounded-full bg-[#05070F] border border-white/20 mb-3 shadow-inner" />
@@ -1755,6 +1762,9 @@ function Footer() {
 export default function Home() {
   return (
     <>
+      {/* Cinematic Loading Screen */}
+      <InitialLoader />
+
       <BackgroundBlobs />
       <Navbar />
       <main>
