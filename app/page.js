@@ -159,12 +159,12 @@ function Navbar() {
 
   return (
     <nav className="fixed top-0 inset-x-0 z-[100] bg-[#05070F]/90 backdrop-blur-md border-b border-white/10 py-2.5 sm:py-3 md:py-4 transition-all duration-300 shadow-xl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-2.5 md:gap-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-2.5 md:gap-4">
 
         {/* Kiri: Logo */}
         <div className="flex items-center">
           <a href="#home" className="text-xl md:text-2xl font-extrabold tracking-tight text-white select-none">
-            DM<span className="text-sky-400">.</span>
+            DM
           </a>
         </div>
 
@@ -291,7 +291,7 @@ function HomeSection() {
   ];
 
   return (
-    <section id="home" className="relative min-h-[75vh] flex items-center pt-32 sm:pt-36 md:pt-40 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 z-10">
+    <section id="home" className="relative min-h-[75vh] flex items-center pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 z-10">
       <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-center">
 
         {/* ====== KIRI (7/12): Teks Rata Kiri ====== */}
