@@ -194,122 +194,72 @@ function Navbar() {
 }
 
 /* ==================================================================
-   ID CARD COMPONENT (Realistic Div Lanyard & Pendulum Physics)
-   - Div lanyard: w-4/w-5, bg-[#111], shadow-inner
-   - Metallic clip: bg-gradient from-gray-400 to-gray-600
-   - Pendulum: drag="x", dragConstraints left/right 0, dragElastic 0.4
-   - useTransform(x, [-200,200], [-15,15]) for rotation
-   - Idle sway: rotate [-2,2,-2], repeat Infinity, duration 4
+   ID CARD COMPONENT (Exact Rizq Wijaya Pendulum Physics & Lanyard)
    ================================================================== */
 function IDCard() {
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-200, 200], [-15, 15]);
 
   return (
-    <div className="relative flex flex-col items-center select-none">
-
-      {/* --- Tali Lanyard (Div) --- */}
-      <div className="w-4 sm:w-5 h-28 sm:h-36 bg-[#111] shadow-inner relative rounded-t-sm">
-        {/* Fabric texture lines */}
-        <div className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.06) 3px, rgba(255,255,255,0.06) 4px)",
-          }}
-        />
-        {/* Center accent stripe */}
-        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-sky-500/20" />
-        {/* Edge highlights */}
-        <div className="absolute inset-y-0 left-0 w-px bg-white/[0.06]" />
-        <div className="absolute inset-y-0 right-0 w-px bg-white/[0.06]" />
+    <motion.div 
+      style={{ x, rotate, transformOrigin: 'top center' }}
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      dragElastic={0.6}
+      animate={{ rotate: [-1.5, 1.5, -1.5] }}
+      transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+      className="flex flex-col items-center cursor-grab active:cursor-grabbing select-none"
+    >
+      {/* 1. TALI LANYARD */}
+      <div className="w-1.5 h-24 bg-[#222] shadow-sm"></div>
+      
+      {/* 2. KLIP BESI */}
+      <div className="w-5 h-6 bg-gradient-to-b from-gray-400 to-gray-600 rounded-sm shadow-md border-b-2 border-gray-700 -mt-1 z-10 relative">
+          {/* Lubang pengait klip */}
+          <div className="w-2 h-2 rounded-full bg-black/60 mx-auto mt-1"></div>
       </div>
+      
+      {/* 3. KARTU ID CARD */}
+      <div className="-mt-2 relative z-0">
+         <div className="id-card-body w-[250px] sm:w-[270px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 shadow-2xl">
+           {/* Slot Hole for Badge Holder Clip */}
+           <div className="w-8 h-1.5 rounded-full bg-[#05070F] border border-white/20 mb-3 shadow-inner" />
 
-      {/* --- Klip Besi Metalik (Badge Clip) --- */}
-      <div className="flex flex-col items-center -mt-px">
-        {/* Clip body */}
-        <div className="w-8 h-5 bg-gradient-to-b from-gray-400 to-gray-600 rounded-sm border border-gray-500/60 shadow-md relative flex items-center justify-center">
-          {/* Highlight top */}
-          <div className="absolute top-0 inset-x-0 h-1 bg-white/20 rounded-t-sm" />
-          {/* Lubang pengait (hook hole) */}
-          <div className="w-2 h-2 rounded-full bg-black/60 border border-gray-700/50 shadow-inner" />
-          {/* Side rivets */}
-          <div className="absolute left-1 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-gray-300/50" />
-          <div className="absolute right-1 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-gray-300/50" />
-        </div>
-        {/* Clip jaw / bottom grip */}
-        <div className="w-7 h-1.5 bg-gradient-to-b from-gray-500 to-gray-700 rounded-b-sm border-x border-b border-gray-600/50" />
+           {/* Foto Profil */}
+           <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-inner group">
+             <Image
+               src="/avatar.png"
+               alt="Donie Makapeli"
+               width={128}
+               height={128}
+               priority={true}
+               unoptimized={true}
+               className="w-full h-full object-cover rounded-xl opacity-100 group-hover:scale-105 transition-transform duration-300 pointer-events-none"
+             />
+           </div>
+
+           {/* Nama & Role */}
+           <h3 className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
+           <p className="text-sky-400 text-[10px] sm:text-[11px] font-semibold tracking-widest uppercase leading-relaxed text-center">
+             Web Developer<br />& Data Analyst
+           </p>
+
+           {/* Divider */}
+           <div className="w-full h-px bg-white/10 my-3" />
+
+           {/* Instansi */}
+           <p className="text-text-secondary text-xs font-medium tracking-wide">
+             Universitas Nusa Putra
+           </p>
+           <p className="text-text-secondary/70 text-[10px] mt-0.5 tracking-wider uppercase">
+             S1 Teknik Informatika
+           </p>
+
+           {/* Bottom Accent Line */}
+           <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-sky-600 rounded-b-2xl opacity-80" />
+         </div>
       </div>
-
-      {/* --- Pendulum Card (Framer Motion) --- */}
-      <motion.div
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        dragElastic={0.4}
-        style={{
-          x,
-          rotate,
-          transformOrigin: "top center",
-        }}
-        animate={{
-          rotate: [-2, 2, -2],
-        }}
-        transition={{
-          rotate: {
-            repeat: Infinity,
-            duration: 4,
-            ease: "easeInOut",
-          },
-          x: {
-            type: "spring",
-            stiffness: 200,
-            damping: 15,
-          },
-        }}
-        whileTap={{ cursor: "grabbing", scale: 1.02 }}
-        className="flex flex-col items-center cursor-grab select-none touch-none relative z-10"
-      >
-
-        {/* --- Card Body --- */}
-        <div className="id-card-body w-[250px] sm:w-[270px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 shadow-2xl">
-
-          {/* Slot Hole for Badge Holder Clip */}
-          <div className="w-8 h-1.5 rounded-full bg-[#05070F] border border-white/20 mb-3 shadow-inner" />
-
-          {/* Foto Profil */}
-          <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-inner group">
-            <Image
-              src="/avatar.png"
-              alt="Donie Makapeli"
-              width={128}
-              height={128}
-              priority={true}
-              unoptimized={true}
-              className="w-full h-full object-cover rounded-xl opacity-100 group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          {/* Nama & Role */}
-          <h3 className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
-          <p className="text-sky-400 text-[10px] sm:text-[11px] font-semibold tracking-widest uppercase leading-relaxed text-center">
-            Web Developer<br />& Data Analyst
-          </p>
-
-          {/* Divider */}
-          <div className="w-full h-px bg-white/10 my-3" />
-
-          {/* Instansi */}
-          <p className="text-text-secondary text-xs font-medium tracking-wide">
-            Universitas Nusa Putra
-          </p>
-          <p className="text-text-secondary/70 text-[10px] mt-0.5 tracking-wider uppercase">
-            S1 Teknik Informatika
-          </p>
-
-          {/* Bottom Accent Line */}
-          <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-sky-600 rounded-b-2xl opacity-80" />
-        </div>
-
-      </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
