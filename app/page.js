@@ -353,7 +353,7 @@ function HomeSection() {
         </div>
 
         {/* ====== KANAN (5/12): ID Card ====== */}
-        <div className="md:col-span-5 flex justify-center md:justify-end order-1 md:order-2">
+        <div className="md:col-span-5 flex justify-center md:justify-end items-center self-center order-1 md:order-2">
           <IDCard />
         </div>
 
@@ -367,13 +367,6 @@ function HomeSection() {
    ================================================================== */
 function AboutSection() {
   const stagger = useStaggerFade();
-
-  const stats = [
-    { num: "2+", label: "Tahun Belajar Coding", sub: "Web & Data Science" },
-    { num: "10+", label: "Project Dibuat", sub: "Web App & Analytics" },
-    { num: "3", label: "Pengalaman Magang & PKL", sub: "BRI & Media Jurnal" },
-    { num: "5.956+", label: "Data Nasabah Murni", sub: "Diolah via Python" },
-  ];
 
   const cards = [
     {
@@ -412,7 +405,7 @@ function AboutSection() {
         <div className="fade-up fade-delay-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl transition-all duration-500 hover:border-sky-400/30 hover:bg-white/[0.06] hover:shadow-[0_0_30px_rgba(56,189,248,0.1)]">
           
           {/* Upper Grid Layout: Profile & Story */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 pb-10 border-b border-white/10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-8 pb-8 border-b border-white/10">
             
             {/* Left Column (5/12): Avatar & Location Badges */}
             <div className="lg:col-span-5 flex flex-col items-center">
@@ -464,22 +457,6 @@ function AboutSection() {
               </p>
             </div>
 
-          </div>
-
-          {/* Key Metrics / Statistics Row inside Bento Card */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-            {stats.map((s, i) => (
-              <div
-                key={i}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 sm:p-5 flex flex-col items-start transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.08] hover:-translate-y-1"
-              >
-                <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight bg-gradient-to-r from-sky-400 to-sky-200 bg-clip-text text-transparent mb-1">
-                  {s.num}
-                </p>
-                <p className="text-white text-xs sm:text-sm font-semibold mb-0.5">{s.label}</p>
-                <p className="text-text-secondary text-[10px] sm:text-xs">{s.sub}</p>
-              </div>
-            ))}
           </div>
 
           {/* Sub-Bento Cards: 3 Core Expertise Pillars */}
