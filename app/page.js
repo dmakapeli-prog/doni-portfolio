@@ -162,13 +162,10 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-2.5 md:gap-4">
 
         {/* Kiri: Logo */}
-        <div className="flex flex-col items-center md:items-start">
-          <a href="#home" className="text-xl md:text-2xl font-bold tracking-tight text-white flex items-center gap-1 select-none">
-            Donie Makapeli
+        <div className="flex items-center">
+          <a href="#home" className="text-xl md:text-2xl font-extrabold tracking-tight text-white select-none">
+            Donie<span className="text-sky-400">.</span>
           </a>
-          <span className="text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.25em] text-text-secondary mt-0.5">
-            PERSONAL PORTFOLIO
-          </span>
         </div>
 
         {/* Tengah/Kanan: Menu Pill */}
@@ -294,7 +291,7 @@ function HomeSection() {
   ];
 
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center pt-32 sm:pt-36 md:pt-40 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 z-10">
+    <section id="home" className="relative min-h-[85vh] flex items-center pt-20 sm:pt-24 md:pt-28 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 z-10">
       <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
 
         {/* ====== KIRI (7/12): Teks Rata Kiri ====== */}
@@ -353,7 +350,7 @@ function HomeSection() {
         </div>
 
         {/* ====== KANAN (5/12): ID Card ====== */}
-        <div className="md:col-span-5 flex justify-center md:justify-end items-center self-center order-1 md:order-2">
+        <div className="md:col-span-5 flex justify-center md:justify-end items-center self-center order-1 md:order-2 -mt-4 md:-mt-8">
           <IDCard />
         </div>
 
