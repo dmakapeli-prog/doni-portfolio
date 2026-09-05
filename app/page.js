@@ -1200,7 +1200,7 @@ function ProjectsSection() {
       badge: "Web App",
       badgeClass: "badge-cyan",
       category: ["Web App"],
-      gridSpan: "md:col-span-1 lg:col-span-2",
+      gridSpan: "md:col-span-2 lg:col-span-2",
       desc: "Platform marketplace preloved & thrift fashion dengan fitur real-time chat, tawar harga, pelacakan pesanan, serta admin dashboard komprehensif.",
       techStack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
       github: "https://github.com/dmakapeli-prog/thriftin",
@@ -1214,7 +1214,7 @@ function ProjectsSection() {
       badge: "Completed",
       badgeClass: "badge-green",
       category: ["Web App"],
-      gridSpan: "md:col-span-1 lg:col-span-2",
+      gridSpan: "md:col-span-2 lg:col-span-2",
       desc: "Platform agency digital dengan 10+ halaman template interaktif (e-commerce, company profile, undangan) berarsitektur modular dan performa tinggi.",
       techStack: ["Next.js", "Tailwind CSS", "React", "Vercel"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
@@ -1228,7 +1228,7 @@ function ProjectsSection() {
       badge: "Web App",
       badgeClass: "badge-orange",
       category: ["Web App"],
-      gridSpan: "md:col-span-1",
+      gridSpan: "md:col-span-1 lg:col-span-1",
       desc: "Website e-commerce telur ayam segar premium dengan keranjang belanja, manajemen stok Supabase, dan integrasi WhatsApp.",
       techStack: ["Next.js", "Tailwind CSS", "Supabase"],
       github: "https://github.com/dmakapeli-prog/ovara-website",
@@ -1242,7 +1242,7 @@ function ProjectsSection() {
       badge: "Freelance",
       badgeClass: "badge-purple",
       category: ["Freelance", "Web App"],
-      gridSpan: "md:col-span-1",
+      gridSpan: "md:col-span-1 lg:col-span-1",
       desc: "Web aplikasi interaktif untuk pengelolaan dan pencetakan bagan (bracket) turnamen esports dinamis.",
       techStack: ["Next.js", "Tailwind CSS", "Vercel"],
       github: null,
@@ -1256,7 +1256,7 @@ function ProjectsSection() {
       badge: "Freelance",
       badgeClass: "badge-purple",
       category: ["Freelance", "Web App"],
-      gridSpan: "md:col-span-1",
+      gridSpan: "md:col-span-1 lg:col-span-1",
       desc: "Platform e-commerce aset digital komunitas esports Echo Prime dengan antarmuka bernuansa gaming.",
       techStack: ["Next.js", "Tailwind CSS", "Vercel"],
       github: null,
@@ -1270,7 +1270,7 @@ function ProjectsSection() {
       badge: "Web App",
       badgeClass: "badge-orange",
       category: ["Web App"],
-      gridSpan: "md:col-span-1",
+      gridSpan: "md:col-span-1 lg:col-span-1",
       desc: "Website kuliner modern dengan menu interaktif, filter kategori, keranjang belanja, & integrasi GrabFood/WhatsApp.",
       techStack: ["Next.js", "Tailwind CSS", "WhatsApp API"],
       github: null,
@@ -1284,7 +1284,7 @@ function ProjectsSection() {
       badge: "Template",
       badgeClass: "badge-gray",
       category: ["Web App"],
-      gridSpan: "md:col-span-1",
+      gridSpan: "md:col-span-1 lg:col-span-1",
       desc: "Template undangan pernikahan digital dengan countdown real-time, RSVP form, dan galeri foto.",
       techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
@@ -1298,7 +1298,7 @@ function ProjectsSection() {
       badge: "Template",
       badgeClass: "badge-gray",
       category: ["Web App"],
-      gridSpan: "md:col-span-1",
+      gridSpan: "md:col-span-1 lg:col-span-1",
       desc: "Template undangan digital tema mewah dengan animasi gerbang pembuka, parallax, dan galeri carousel.",
       techStack: ["Next.js", "Tailwind CSS", "Animation"],
       github: "https://github.com/dmakapeli-prog/dtech-website",
@@ -1346,8 +1346,8 @@ function ProjectsSection() {
           </div>
         </div>
 
-        {/* Compact Bento Grid (Dense Packing) */}
-        <div className="fade-up fade-delay-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 grid-flow-row-dense items-start">
+        {/* Symmetric 4-Column Bento Grid */}
+        <div className="fade-up fade-delay-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredProjects.map((p) => {
             // Compute dynamic grid span when viewing All category vs filtered
             const spanClass = activeCategory === "All" ? p.gridSpan : "md:col-span-1 lg:col-span-2";
@@ -1355,12 +1355,12 @@ function ProjectsSection() {
             return (
               <div
                 key={p.id}
-                className={`${spanClass} h-fit flex flex-col justify-between bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.07] hover:shadow-[0_10px_30px_-5px_rgba(56,189,248,0.15)] hover:-translate-y-1 group p-5 sm:p-6 text-left relative`}
+                className={`${spanClass} h-full flex flex-col justify-between bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.07] hover:shadow-[0_10px_30px_-5px_rgba(56,189,248,0.15)] hover:-translate-y-1 group p-5 sm:p-6 text-left relative`}
               >
                 <div>
                   {/* Image or Special Visual Graphic */}
                   {p.image ? (
-                    <div className="w-full h-56 rounded-t-xl mb-4 relative overflow-hidden bg-[#0a0e1a] border border-white/10 group-hover:border-white/20 transition-colors">
+                    <div className="w-full aspect-video rounded-xl mb-4 relative overflow-hidden bg-[#0a0e1a] border border-white/10 group-hover:border-white/20 transition-colors">
                       <Image
                         src={p.image}
                         alt={p.title}
@@ -1368,7 +1368,7 @@ function ProjectsSection() {
                         unoptimized={true}
                         priority={p.isFeatured}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="w-full h-56 object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#05070F] via-transparent to-transparent opacity-60" />
                       
@@ -1392,7 +1392,7 @@ function ProjectsSection() {
                     </div>
                   ) : p.isDataCard ? (
                     /* Special Graphic Card for Data Analysis */
-                    <div className="w-full h-56 rounded-t-xl mb-4 p-4 relative overflow-hidden bg-gradient-to-br from-[#0b1021] to-[#161f38] border border-sky-400/20 flex flex-col justify-between">
+                    <div className="w-full aspect-video rounded-xl mb-4 p-4 relative overflow-hidden bg-gradient-to-br from-[#0b1021] to-[#161f38] border border-sky-400/20 flex flex-col justify-between">
                       <div className="flex justify-between items-start">
                         <span className="text-3xl">{p.icon}</span>
                         <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-sky-500/10 text-sky-400 border border-sky-400/30">
@@ -1416,7 +1416,7 @@ function ProjectsSection() {
                     </div>
                   ) : (
                     /* Fallback Card Graphic */
-                    <div className="w-full h-56 rounded-t-xl mb-4 relative overflow-hidden bg-gradient-to-br from-white/5 to-white/10 border border-white/10 flex items-center justify-center">
+                    <div className="w-full aspect-video rounded-xl mb-4 relative overflow-hidden bg-gradient-to-br from-[#05070f] to-[#111827] border border-white/10 flex items-center justify-center">
                       <span className="text-4xl sm:text-5xl group-hover:scale-110 transition-transform duration-300">{p.icon}</span>
                     </div>
                   )}
@@ -1432,13 +1432,13 @@ function ProjectsSection() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-text-secondary text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3 group-hover:line-clamp-none transition-all">
+                  <p className="text-text-secondary text-xs sm:text-sm leading-relaxed mb-4">
                     {p.desc}
                   </p>
                 </div>
 
                 {/* Footer: Tech Stack & Action Links */}
-                <div>
+                <div className="mt-auto pt-4">
                   <div className="flex flex-wrap gap-1.5 mb-4 pt-2 border-t border-white/5">
                     {p.techStack.map((tech, ti) => (
                       <span key={ti} className="tech-pill">{tech}</span>
