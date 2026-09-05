@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { SiPandas, SiSupabase, SiPostman, SiGooglecolab, SiNodejs, SiPhp, SiLaravel, SiMongodb } from "react-icons/si";
+import { SiPandas, SiSupabase, SiPostman, SiGooglecolab, SiNodedotjs, SiPhp, SiLaravel, SiMongodb } from "react-icons/si";
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 import InitialLoader from "./components/InitialLoader";
 
@@ -914,7 +914,7 @@ function SkillsSection() {
         </svg>
       ),
     },
-    { name: "Node.js", desc: "JavaScript Runtime", icon: <SiNodejs className="text-xl text-[#339933]"/> },
+    { name: "Node.js", desc: "JavaScript Runtime", icon: <SiNodedotjs className="text-xl text-[#339933]"/> },
     { name: "PHP", desc: "Backend Language", icon: <SiPhp className="text-xl text-[#777BB4]"/> },
     { name: "Laravel", desc: "Backend Framework", icon: <SiLaravel className="text-xl text-[#FF2D20]"/> },
     { name: "MongoDB", desc: "NoSQL Database", icon: <SiMongodb className="text-xl text-[#47A248]"/> },
