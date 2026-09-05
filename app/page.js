@@ -164,7 +164,7 @@ function Navbar() {
         {/* Kiri: Logo */}
         <div className="flex items-center">
           <a href="#home" className="text-xl md:text-2xl font-extrabold tracking-tight text-white select-none">
-            Donie<span className="text-sky-400">.</span>
+            DM<span className="text-sky-400">.</span>
           </a>
         </div>
 
@@ -291,7 +291,7 @@ function HomeSection() {
   ];
 
   return (
-    <section id="home" className="relative min-h-[75vh] flex items-center pt-16 sm:pt-20 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 z-10">
+    <section id="home" className="relative min-h-[75vh] flex items-center pt-32 sm:pt-36 md:pt-40 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 z-10">
       <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-center">
 
         {/* ====== KIRI (7/12): Teks Rata Kiri ====== */}
