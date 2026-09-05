@@ -214,14 +214,18 @@ function IDCard() {
         transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
         className="flex flex-col items-center cursor-grab active:cursor-grabbing relative z-10"
       >
-        {/* 1. Tali Lanyard Realistis (w-3.5 bg-[#111]) */}
-        <div className="w-3.5 h-28 bg-[#111] shadow-inner relative rounded-t-sm">
-          <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-white/10" />
-        </div>
+        {/* Tali Lanyard Tebal */}
+        <div className="w-3 h-32 bg-gradient-to-r from-[#111] via-[#222] to-[#111] shadow-[inset_0_0_8px_rgba(0,0,0,0.8)] relative z-0 mx-auto"></div>
 
-        {/* 2. Badge Clip (Kotak Metalik dengan Lubang Hitam di Tengah) */}
-        <div className="w-6 h-5 bg-gradient-to-b from-gray-400 to-gray-600 rounded-sm shadow-md border border-gray-600/50 -mt-1 z-10 relative flex items-center justify-center">
-          <div className="w-2 h-2 rounded-full bg-black/80 border border-gray-700 shadow-inner" />
+        {/* Klip Besi 3D */}
+        <div className="relative z-10 -mt-2 flex flex-col items-center mb-[-8px]">
+          {/* Penjepit Atas */}
+          <div className="w-6 h-3 bg-gradient-to-b from-gray-400 to-gray-600 rounded-sm shadow-[0_2px_4px_rgba(0,0,0,0.5)] border-b border-gray-700"></div>
+          {/* Pengait Bawah */}
+          <div className="w-4 h-6 bg-gradient-to-b from-gray-500 to-gray-800 rounded-b-md shadow-lg flex justify-center items-end pb-1.5 border border-gray-600/50">
+            {/* Lubang Pengait */}
+            <div className="w-1.5 h-1.5 bg-[#0a0a0a] rounded-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.8)]"></div>
+          </div>
         </div>
 
         {/* 3. Kartu ID Body */}
@@ -441,31 +445,10 @@ function AboutSection() {
               </div>
             </div>
 
-            {/* Right Column (7/12): Narrative Description & Code Editor */}
+            {/* Right Column (7/12): Narrative Description */}
             <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5 text-left">
-              
-              {/* Code Editor Box */}
-              <div className="w-full bg-[#05070f]/90 border border-white/10 rounded-xl overflow-hidden shadow-2xl mb-2 font-mono text-xs sm:text-sm">
-                {/* Top Header Bar */}
-                <div className="flex items-center gap-2 px-4 py-2.5 bg-white/5 border-b border-white/10">
-                  <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-green-500/80 inline-block" />
-                  <span className="ml-2 text-[11px] text-text-secondary/70 font-sans font-medium">developer.js</span>
-                </div>
-                {/* Code Content */}
-                <div className="p-4 sm:p-5 leading-relaxed text-gray-300 overflow-x-auto space-y-1">
-                  <div>
-                    <span className="text-purple-400 font-semibold">const</span> <span className="text-blue-400 font-semibold">role</span> = [<span className="text-emerald-300">&quot;Full-Stack Dev&quot;</span>, <span className="text-emerald-300">&quot;Data Analyst&quot;</span>];
-                  </div>
-                  <div>
-                    <span className="text-purple-400 font-semibold">const</span> <span className="text-blue-400 font-semibold">goal</span> = <span className="text-emerald-300">&quot;Membangun produk dari kode hingga data&quot;</span>;
-                  </div>
-                </div>
-              </div>
-
               <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
-                Menghubungkan Estetika Modern Frontend dengan Kekuatan Analisis Data
+                Membangun Aplikasi Web Full-Stack dan Solusi Berbasis Data.
               </h3>
 
               <p className="text-text-secondary leading-relaxed text-xs sm:text-sm md:text-base">
