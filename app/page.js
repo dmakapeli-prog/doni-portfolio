@@ -212,32 +212,32 @@ function IDCard() {
         className="flex flex-col items-center cursor-grab active:cursor-grabbing relative z-10"
       >
         {/* Tali Lanyard Tebal */}
-        <div className="w-3 h-32 bg-gradient-to-r from-[#111] via-[#222] to-[#111] shadow-[inset_0_0_8px_rgba(0,0,0,0.8)] relative z-0 mx-auto"></div>
+        <div className="w-2.5 h-20 sm:h-24 bg-gradient-to-r from-[#111] via-[#222] to-[#111] shadow-[inset_0_0_8px_rgba(0,0,0,0.8)] relative z-0 mx-auto"></div>
 
         {/* Klip Besi 3D */}
         <div className="relative z-10 -mt-2 flex flex-col items-center mb-[-8px]">
           {/* Penjepit Atas */}
-          <div className="w-6 h-3 bg-gradient-to-b from-gray-400 to-gray-600 rounded-sm shadow-[0_2px_4px_rgba(0,0,0,0.5)] border-b border-gray-700"></div>
+          <div className="w-5 h-2.5 bg-gradient-to-b from-gray-400 to-gray-600 rounded-sm shadow-[0_2px_4px_rgba(0,0,0,0.5)] border-b border-gray-700"></div>
           {/* Pengait Bawah */}
-          <div className="w-4 h-6 bg-gradient-to-b from-gray-500 to-gray-800 rounded-b-md shadow-lg flex justify-center items-end pb-1.5 border border-gray-600/50">
+          <div className="w-3.5 h-5 bg-gradient-to-b from-gray-500 to-gray-800 rounded-b-md shadow-lg flex justify-center items-end pb-1 border border-gray-600/50">
             {/* Lubang Pengait */}
-            <div className="w-1.5 h-1.5 bg-[#0a0a0a] rounded-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.8)]"></div>
+            <div className="w-1.2 h-1.2 bg-[#0a0a0a] rounded-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.8)]"></div>
           </div>
         </div>
 
         {/* 3. Kartu ID Body */}
         <div className="-mt-1 relative z-0">
-          <div className="id-card-body w-[250px] sm:w-[270px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 shadow-2xl">
+          <div className="id-card-body w-[230px] sm:w-[250px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 flex flex-col items-center relative z-20 shadow-2xl">
             {/* Slot Hole for Badge Holder Clip */}
-            <div className="w-8 h-1.5 rounded-full bg-[#05070F] border border-white/20 mb-3 shadow-inner" />
+            <div className="w-7 h-1.5 rounded-full bg-[#05070F] border border-white/20 mb-2.5 shadow-inner" />
 
             {/* Foto Profil */}
-            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-inner group">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl mb-3 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-inner group">
               <Image
                 src="/avatar.png"
                 alt="Donie Makapeli"
-                width={128}
-                height={128}
+                width={112}
+                height={112}
                 priority={true}
                 unoptimized={true}
                 className="w-full h-full object-cover rounded-xl opacity-100 group-hover:scale-105 transition-transform duration-300 pointer-events-none"
@@ -245,19 +245,19 @@ function IDCard() {
             </div>
 
             {/* Nama & Role */}
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
-            <p className="text-sky-400 text-[10px] sm:text-[11px] font-semibold tracking-widest uppercase leading-relaxed text-center">
+            <h3 className="text-base sm:text-lg font-bold text-white mb-0.5 tracking-wide">Donie Makapeli</h3>
+            <p className="text-sky-400 text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase leading-relaxed text-center">
               Full-Stack Web Developer<br />& Data Analyst
             </p>
 
             {/* Divider */}
-            <div className="w-full h-px bg-white/10 my-3" />
+            <div className="w-full h-px bg-white/10 my-2.5" />
 
             {/* Instansi */}
-            <p className="text-text-secondary text-xs font-medium tracking-wide">
+            <p className="text-text-secondary text-[11px] sm:text-xs font-medium tracking-wide">
               Universitas Nusa Putra
             </p>
-            <p className="text-text-secondary/70 text-[10px] mt-0.5 tracking-wider uppercase">
+            <p className="text-text-secondary/70 text-[9px] mt-0.5 tracking-wider uppercase">
               S1 Teknik Informatika
             </p>
 
@@ -291,31 +291,31 @@ function HomeSection() {
   ];
 
   return (
-    <section id="home" className="relative min-h-[85vh] flex items-center pt-20 sm:pt-24 md:pt-28 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 z-10">
-      <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <section id="home" className="relative min-h-[75vh] flex items-center pt-16 sm:pt-20 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 z-10">
+      <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-center">
 
         {/* ====== KIRI (7/12): Teks Rata Kiri ====== */}
         <div className="md:col-span-7 flex flex-col items-start text-left order-2 md:order-1">
 
-          <div className="badge-glass inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium text-white mb-4 max-w-full text-left">
+          <div className="badge-glass inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium text-white mb-3 max-w-full text-left">
             Mahasiswa S1 Teknik Informatika - Universitas Nusa Putra
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 text-left leading-tight">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-1.5 text-left leading-tight">
             Donie Makapeli
           </h1>
 
-          <h2 className="text-xl sm:text-3xl lg:text-4xl italic font-serif gradient-text mb-5 text-left">
+          <h2 className="text-lg sm:text-2xl lg:text-3xl italic font-serif gradient-text mb-3.5 text-left">
             Full-Stack Web Developer & Data Analyst
           </h2>
 
           <TypingLine />
 
-          <p className="gradient-text-animated text-base sm:text-xl font-semibold mb-5 text-left">
+          <p className="gradient-text-animated text-sm sm:text-base font-semibold mb-3.5 text-left">
             Membangun Pengalaman Digital dari Kode hingga Data
           </p>
 
-          <p className="text-text-secondary text-xs sm:text-sm leading-relaxed max-w-xl mb-8 sm:mb-10 text-left">
+          <p className="text-text-secondary text-xs sm:text-sm leading-relaxed max-w-xl mb-6 sm:mb-8 text-left">
             Saya mahasiswa S1 Teknik Informatika di Universitas Nusa Putra dengan minat pada
             pengembangan web modern dan analisis data. Berpengalaman magang di PT Bank Rakyat
             Indonesia (BRI) Unit Cipanas, di mana saya mengerjakan project analisis data kunjungan
@@ -328,21 +328,21 @@ function HomeSection() {
           </p>
 
           {/* Stat Row */}
-          <div className="flex flex-wrap justify-start gap-y-4 mb-8 sm:mb-10 w-full pt-2">
+          <div className="flex flex-wrap justify-start gap-y-3 mb-6 sm:mb-8 w-full pt-1">
             {stats.map((s, i) => (
-              <div key={i} className={`flex flex-col items-start px-4 sm:px-6 ${i !== 0 ? 'border-l border-white/10' : 'pl-0'}`}>
-                <p className="text-xl sm:text-3xl font-bold text-white">{s.num}</p>
+              <div key={i} className={`flex flex-col items-start px-3.5 sm:px-5 ${i !== 0 ? 'border-l border-white/10' : 'pl-0'}`}>
+                <p className="text-lg sm:text-2xl font-bold text-white">{s.num}</p>
                 <p className="text-text-secondary text-[10px] sm:text-[11px] mt-0.5">{s.label}</p>
               </div>
             ))}
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-wrap items-center justify-start gap-3 sm:gap-4">
-            <a href="#about" className="btn-gradient px-6 py-2.5 sm:px-8 sm:py-3 rounded-full text-xs sm:text-sm">
+          <div className="flex flex-wrap items-center justify-start gap-3">
+            <a href="#about" className="btn-gradient px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm">
               About Me 👋
             </a>
-            <button onClick={handleCopy} className="btn-outline px-6 py-2.5 sm:px-8 sm:py-3 rounded-full text-xs sm:text-sm">
+            <button onClick={handleCopy} className="btn-outline px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm">
               {copied ? "Tersalin! ✅" : "Copy Link 🔗"}
             </button>
           </div>
@@ -350,7 +350,7 @@ function HomeSection() {
         </div>
 
         {/* ====== KANAN (5/12): ID Card ====== */}
-        <div className="md:col-span-5 flex justify-center md:justify-end items-center self-center order-1 md:order-2 -mt-4 md:-mt-8">
+        <div className="md:col-span-5 flex justify-center md:justify-end items-center self-center order-1 md:order-2 -mt-2 md:-mt-4">
           <IDCard />
         </div>
 
@@ -387,69 +387,69 @@ function AboutSection() {
   ];
 
   return (
-    <section id="about" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10">
-      <div ref={stagger} className="max-w-7xl mx-auto">
+    <section id="about" className="relative py-8 sm:py-12 md:py-16 px-4 md:px-8 z-10">
+      <div ref={stagger} className="max-w-6xl mx-auto">
         
         {/* Section Header */}
-        <div className="fade-up text-center mb-10 sm:mb-16">
-          <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">TENTANG SAYA</p>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+        <div className="fade-up text-center mb-6 sm:mb-10">
+          <p className="text-[10px] font-bold tracking-[0.2em] gradient-text uppercase mb-2">TENTANG SAYA</p>
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white">
             Mengenal Lebih Dekat
           </h2>
         </div>
 
         {/* Wide Glassmorphism Bento Card Container */}
-        <div className="fade-up fade-delay-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl transition-all duration-500 hover:border-sky-400/30 hover:bg-white/[0.06] hover:shadow-[0_0_30px_rgba(56,189,248,0.1)]">
+        <div className="fade-up fade-delay-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-7 md:p-8 shadow-2xl transition-all duration-500 hover:border-sky-400/30 hover:bg-white/[0.06]">
           
           {/* Upper Grid Layout: Profile & Story */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-8 pb-8 border-b border-white/10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center mb-6 pb-6 border-b border-white/10">
             
             {/* Left Column (5/12): Avatar & Location Badges */}
             <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="w-full max-w-[280px] sm:max-w-[320px] aspect-square rounded-2xl mb-6 relative overflow-hidden border border-white/15 shadow-2xl group">
+              <div className="w-full max-w-[200px] sm:max-w-[240px] aspect-square rounded-2xl mb-4 relative overflow-hidden border border-white/15 shadow-2xl group">
                 <Image
                   src="/avatar.png"
                   alt="Donie Makapeli"
                   fill
                   priority={true}
                   unoptimized={true}
-                  sizes="(max-width: 768px) 280px, 320px"
+                  sizes="(max-width: 768px) 200px, 240px"
                   className="object-cover object-top rounded-2xl opacity-100 group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* Status Pills */}
-              <div className="w-full max-w-[320px] space-y-2.5">
-                <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs sm:text-sm text-text-secondary font-medium">
-                  <span className="text-base">📍</span>
+              <div className="w-full max-w-[240px] space-y-2">
+                <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-text-secondary font-medium">
+                  <span className="text-sm">📍</span>
                   <span>Sukabumi, Jawa Barat</span>
                 </div>
-                <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs sm:text-sm text-text-secondary font-medium">
-                  <span className="text-base">🎓</span>
+                <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-text-secondary font-medium">
+                  <span className="text-sm">🎓</span>
                   <span>S1 Teknik Informatika - Univ. Nusa Putra</span>
                 </div>
-                <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs sm:text-sm text-text-secondary font-medium">
-                  <span className="text-base">💼</span>
+                <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-text-secondary font-medium">
+                  <span className="text-sm">💼</span>
                   <span className="text-sky-400 font-semibold">Web Developer Intern @ PT Media Jurnal Sukabumi</span>
                 </div>
               </div>
             </div>
 
             {/* Right Column (7/12): Narrative Description */}
-            <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5 text-left">
-              <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
+            <div className="lg:col-span-7 flex flex-col gap-3.5 sm:gap-4 text-left">
+              <h3 className="text-lg sm:text-xl font-bold text-white leading-snug">
                 Membangun Aplikasi Web Full-Stack dan Solusi Berbasis Data.
               </h3>
 
-              <p className="text-text-secondary leading-relaxed text-xs sm:text-sm md:text-base">
+              <p className="text-text-secondary leading-relaxed text-xs sm:text-sm">
                 Saya <strong className="text-white font-semibold">Donie Makapeli</strong>, mahasiswa S1 Teknik Informatika di Universitas Nusa Putra yang berfokus pada <strong className="text-white font-semibold">Web Development</strong> dan <strong className="text-white font-semibold">Data Analysis</strong>. Saya memiliki ketertarikan mendalam dalam menciptakan antarmuka pengguna yang cepat, interaktif, dan bernilai estetika tinggi, serta mengolah data murni menjadi wawasan keputusan yang berdampak nyata.
               </p>
 
-              <p className="text-text-secondary leading-relaxed text-xs sm:text-sm md:text-base">
+              <p className="text-text-secondary leading-relaxed text-xs sm:text-sm">
                 Pengalaman industri saya mencakup program magang di <strong className="text-white font-semibold">PT Bank Rakyat Indonesia (BRI) Unit Cipanas</strong>, di mana saya mengeksekusi analisis data eksploratif (EDA) terhadap <span className="text-sky-400 font-semibold">5.956+ data kunjungan nasabah</span> menggunakan Python dan Pandas. Selanjutnya, pada program PKL di <strong className="text-white font-semibold">PT Media Jurnal Sukabumi</strong>, saya membangun dan merilis web aplikasi <span className="text-sky-400 font-semibold">&apos;Halo Jurnal&apos;</span> berbasis Next.js dan Supabase.
               </p>
 
-              <p className="text-text-secondary leading-relaxed text-xs sm:text-sm md:text-base">
+              <p className="text-text-secondary leading-relaxed text-xs sm:text-sm">
                 Saat ini, saya kembali dipercaya melanjutkan magang di PT Media Jurnal Sukabumi untuk mengembangkan portal berita Gen Z utama <span className="text-sky-400 font-semibold">&apos;Jurnal Vibes&apos;</span>. Saya juga pendiri website agency <span className="text-sky-400 font-semibold">DiCode</span> dengan 10+ halaman demo interaktif.
               </p>
             </div>
@@ -458,22 +458,22 @@ function AboutSection() {
 
           {/* Sub-Bento Cards: 3 Core Expertise Pillars */}
           <div>
-            <p className="text-[11px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-4 text-left">PILAR KEAHLIAN UTAMA</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <p className="text-[10px] font-bold tracking-[0.2em] text-text-secondary uppercase mb-3 text-left">PILAR KEAHLIAN UTAMA</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-5">
               {cards.map((c, i) => (
                 <div
                   key={i}
-                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 text-left transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.08] hover:-translate-y-1.5 hover:shadow-[0_8px_25px_-5px_rgba(56,189,248,0.15)] flex flex-col justify-between"
+                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-5 text-left transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.08] hover:-translate-y-1 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-3xl sm:text-4xl">{c.icon}</span>
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-sky-500/10 border border-sky-400/30 text-sky-400">
+                    <div className="flex items-center justify-between mb-2.5">
+                      <span className="text-2xl sm:text-3xl">{c.icon}</span>
+                      <span className="px-2 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase bg-sky-500/10 border border-sky-400/30 text-sky-400">
                         {c.badge}
                       </span>
                     </div>
-                    <h4 className="text-white font-bold text-base sm:text-lg mb-2">{c.title}</h4>
-                    <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">{c.desc}</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1.5">{c.title}</h4>
+                    <p className="text-text-secondary text-xs leading-relaxed">{c.desc}</p>
                   </div>
                 </div>
               ))}
@@ -689,21 +689,21 @@ function EducationSection() {
   };
 
   return (
-    <section id="education" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(26,18,53,0.4)] to-transparent">
+    <section id="education" className="relative py-8 sm:py-12 md:py-16 px-4 md:px-8 z-10 bg-gradient-to-b from-transparent via-[rgba(26,18,53,0.4)] to-transparent">
       <div ref={stagger} className="max-w-5xl mx-auto">
-        <div className="fade-up text-center mb-8 sm:mb-12">
-          <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">JOURNEY, EXPERIENCE & ACHIEVEMENT</p>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-8 sm:mb-10">
+        <div className="fade-up text-center mb-6 sm:mb-8">
+          <p className="text-[10px] font-bold tracking-[0.2em] gradient-text uppercase mb-2">JOURNEY, EXPERIENCE & ACHIEVEMENT</p>
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">
             Pendidikan & Pengalaman
           </h2>
 
           {/* Filter Tabs */}
-          <div className="inline-flex flex-wrap justify-center gap-1.5 sm:gap-3 p-1.5 rounded-full nav-pill mb-12 sm:mb-16">
+          <div className="inline-flex flex-wrap justify-center gap-1.5 sm:gap-2.5 p-1.5 rounded-full nav-pill mb-8 sm:mb-10">
             {tabs.map((t) => (
               <button
                 key={t.id}
                 onClick={() => setActiveTab(t.id)}
-                className={`px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 ${activeTab === t.id
+                className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 ${activeTab === t.id
                   ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg"
                   : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
                   }`}
@@ -1020,25 +1020,25 @@ function SkillsSection() {
   ];
 
   return (
-    <section id="skills" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.6)] to-transparent">
+    <section id="skills" className="relative py-8 sm:py-12 md:py-16 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.6)] to-transparent">
       <div ref={stagger} className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="fade-up text-center mb-8 sm:mb-12">
-          <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">WHAT I KNOW</p>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+        <div className="fade-up text-center mb-6 sm:mb-8">
+          <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-2">WHAT I KNOW</p>
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white">
             Skills & Tools
           </h2>
         </div>
 
         {/* Tab Filter */}
-        <div className="fade-up fade-delay-1 flex justify-center mb-10 sm:mb-14">
+        <div className="fade-up fade-delay-1 flex justify-center mb-6 sm:mb-8">
           <div className="inline-flex gap-2 p-1.5 rounded-full nav-pill">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all ${activeTab === tab
+                className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${activeTab === tab
                   ? "bg-gradient-to-r from-accent-cyan to-accent-purple text-white shadow-lg"
                   : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
                   }`}
@@ -1050,7 +1050,7 @@ function SkillsSection() {
         </div>
 
         {/* Tab Content */}
-        <div className="fade-up fade-delay-2 min-h-[320px]">
+        <div className="fade-up fade-delay-2 min-h-[250px]">
 
           {/* Core Tab */}
           {activeTab === "Core" && (
@@ -1313,28 +1313,28 @@ function ProjectsSection() {
   });
 
   return (
-    <section id="projects" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(26,18,53,0.3)] to-transparent">
-      <div ref={stagger} className="max-w-7xl mx-auto">
+    <section id="projects" className="relative py-8 sm:py-12 md:py-16 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(26,18,53,0.3)] to-transparent">
+      <div ref={stagger} className="max-w-6xl mx-auto">
 
         {/* Section Header */}
-        <div className="fade-up text-center mb-8 sm:mb-12">
-          <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">MY WORK & PORTFOLIO</p>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="fade-up text-center mb-6 sm:mb-8">
+          <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-2">MY WORK & PORTFOLIO</p>
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
             Bento Projects Showcase
           </h2>
-          <p className="text-text-secondary text-xs sm:text-base max-w-xl mx-auto">
+          <p className="text-text-secondary text-xs sm:text-sm max-w-xl mx-auto">
             Kumpulan proyek pilihan pengembangan web full-stack dan analisis data yang dibangun dengan standar profesional.
           </p>
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="fade-up fade-delay-1 flex justify-center mb-10 sm:mb-12">
+        <div className="fade-up fade-delay-1 flex justify-center mb-6 sm:mb-8">
           <div className="inline-flex flex-wrap justify-center gap-1.5 sm:gap-2 p-1.5 rounded-full nav-pill">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
+                className={`px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-medium transition-all ${
                   activeCategory === cat
                     ? "bg-gradient-to-r from-sky-500 to-sky-400 text-white shadow-lg shadow-sky-500/20"
                     : "text-text-secondary hover:text-white border border-transparent hover:border-white/10"
@@ -1347,7 +1347,7 @@ function ProjectsSection() {
         </div>
 
         {/* Symmetric 4-Column Bento Grid */}
-        <div className="fade-up fade-delay-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="fade-up fade-delay-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {filteredProjects.map((p) => {
             // Compute dynamic grid span when viewing All category vs filtered
             const spanClass = activeCategory === "All" ? p.gridSpan : "md:col-span-1 lg:col-span-2";
@@ -1355,7 +1355,7 @@ function ProjectsSection() {
             return (
               <div
                 key={p.id}
-                className={`${spanClass} h-full flex flex-col justify-between bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.07] hover:shadow-[0_10px_30px_-5px_rgba(56,189,248,0.15)] hover:-translate-y-1 group p-5 sm:p-6 text-left relative`}
+                className={`${spanClass} h-full flex flex-col justify-between bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-sky-400/40 hover:bg-white/[0.07] hover:shadow-[0_10px_30px_-5px_rgba(56,189,248,0.15)] hover:-translate-y-1 group p-4 sm:p-5 text-left relative`}
               >
                 <div>
                   {/* Image or Special Visual Graphic */}
@@ -1552,26 +1552,26 @@ function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="relative py-12 md:py-24 lg:py-32 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.5)] to-transparent">
+    <section id="contact" className="relative py-8 sm:py-12 md:py-16 px-4 md:px-12 z-10 bg-gradient-to-b from-transparent via-[rgba(10,14,26,0.5)] to-transparent">
       <div ref={stagger} className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="fade-up text-center mb-10 sm:mb-14">
-          <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-3">GET IN TOUCH</p>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
+        <div className="fade-up text-center mb-6 sm:mb-8">
+          <p className="text-[11px] font-bold tracking-[0.2em] gradient-text uppercase mb-2">GET IN TOUCH</p>
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3">
             Mari Terhubung
           </h2>
-          <p className="text-text-secondary text-xs sm:text-base max-w-xl mx-auto">
+          <p className="text-text-secondary text-xs sm:text-sm max-w-xl mx-auto">
             Tertarik untuk berkolaborasi atau punya pertanyaan? Jangan ragu untuk menghubungi saya.
           </p>
         </div>
 
         {/* 2 Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
 
           {/* LEFT COLUMN - Contact Info */}
           <div className="fade-up fade-delay-1">
-            <div className="glass-card p-5 sm:p-8 h-full flex flex-col">
-              <h3 className="text-white font-bold text-base sm:text-lg mb-4 sm:mb-6">Informasi Kontak</h3>
+            <div className="glass-card p-4 sm:p-6 h-full flex flex-col">
+              <h3 className="text-white font-bold text-base sm:text-lg mb-3 sm:mb-4">Informasi Kontak</h3>
 
               <div className="space-y-3.5 sm:space-y-4 mb-6 sm:mb-8 flex-1">
                 {contactInfo.map((item, i) => (
@@ -1611,7 +1611,7 @@ function ContactSection() {
 
           {/* RIGHT COLUMN - Contact Form */}
           <div className="fade-up fade-delay-2">
-            <div className="glass-card p-5 sm:p-8">
+            <div className="glass-card p-4 sm:p-6">
               <h3 className="text-white font-bold text-base sm:text-lg mb-4 sm:mb-6">Kirim Pesan</h3>
               <form action="https://formspree.io/f/xaeyjewp" method="POST" className="space-y-4 sm:space-y-5">
                 <div>
