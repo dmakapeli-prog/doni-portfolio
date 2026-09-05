@@ -194,91 +194,75 @@ function Navbar() {
 }
 
 /* ==================================================================
-   ID CARD COMPONENT (3D Realistic Pendulum with Metallic Lanyard SVG)
+   ID CARD COMPONENT (Realistic Lanyard & Pendulum Physics)
    ================================================================== */
 function IDCard() {
   const x = useMotionValue(0);
-  const mouseX = useSpring(x, { stiffness: 300, damping: 20 });
-  const rotateZ = useTransform(mouseX, [-200, 200], [-15, 15]); // Ayunan kiri-kanan
-  const rotateY = useTransform(mouseX, [-200, 200], [-25, 25]); // Putaran 3D
+  const rotate = useTransform(x, [-200, 200], [-25, 25]);
 
   return (
-    /* Container Utama dengan Perspective 3D */
-    <div style={{ perspective: "1000px" }} className="relative flex flex-col items-center select-none">
-      
-      {/* 1. Tali Lanyard (Tebal & Realistis) */}
-      <div className="w-5 h-28 bg-[#111] shadow-[inset_0_0_12px_rgba(0,0,0,0.9)] relative z-0"></div>
-
-      {/* 2. Pengait Besi (Carabiner SVG) */}
-      <div className="z-10 -mt-2 drop-shadow-md">
-        <svg width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0C7 0 4 4 4 9V16C4 19 7 22 10 22H14C17 22 20 19 20 16V9C20 4 17 0 12 0Z" fill="url(#metal)" stroke="#333" strokeWidth="2"/>
-          <rect x="9" y="21" width="6" height="12" rx="2" fill="url(#metal)" />
-          <circle cx="12" cy="27" r="2" fill="#05070F" />
-          <defs>
-            <linearGradient id="metal" x1="0" y1="0" x2="24" y2="34" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#777" />
-              <stop offset="0.5" stopColor="#ddd" />
-              <stop offset="1" stopColor="#444" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-
-      {/* 3. Kartu ID (Animasi 3D) */}
+    <div className="relative flex flex-col items-center select-none">
       <motion.div
-        style={{ 
-          x,
-          rotateZ, 
-          rotateY, 
+        style={{
+          rotate,
           transformOrigin: "top center",
-          transformStyle: "preserve-3d" 
         }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
-        dragElastic={0.3}
-        className="relative -mt-3 cursor-grab active:cursor-grabbing z-20"
+        dragElastic={0.4}
+        animate={{ rotate: [-1.5, 1.5, -1.5] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+        className="flex flex-col items-center cursor-grab active:cursor-grabbing relative z-10"
       >
-        {/* Lubang punch-hole di atas ID Card */}
-        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-4 h-1.5 bg-[#05070F] rounded-full z-30 opacity-90 shadow-inner"></div>
-        
-        {/* KARTU AVATAR DONIE */}
-        <div className="id-card-body w-[250px] sm:w-[270px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 shadow-2xl">
-          {/* Slot Hole for Badge Holder Clip */}
-          <div className="w-8 h-1.5 rounded-full bg-[#05070F] border border-white/20 mb-3 shadow-inner" />
+        {/* 1. Tali Lanyard Realistis (w-3.5 bg-[#111]) */}
+        <div className="w-3.5 h-28 bg-[#111] shadow-inner relative rounded-t-sm">
+          <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-white/10" />
+        </div>
 
-          {/* Foto Profil */}
-          <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-inner group">
-            <Image
-              src="/avatar.png"
-              alt="Donie Makapeli"
-              width={128}
-              height={128}
-              priority={true}
-              unoptimized={true}
-              className="w-full h-full object-cover rounded-xl opacity-100 group-hover:scale-105 transition-transform duration-300 pointer-events-none"
-            />
+        {/* 2. Badge Clip (Kotak Metalik dengan Lubang Hitam di Tengah) */}
+        <div className="w-6 h-5 bg-gradient-to-b from-gray-400 to-gray-600 rounded-sm shadow-md border border-gray-600/50 -mt-1 z-10 relative flex items-center justify-center">
+          <div className="w-2 h-2 rounded-full bg-black/80 border border-gray-700 shadow-inner" />
+        </div>
+
+        {/* 3. Kartu ID Body */}
+        <div className="-mt-1 relative z-0">
+          <div className="id-card-body w-[250px] sm:w-[270px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 shadow-2xl">
+            {/* Slot Hole for Badge Holder Clip */}
+            <div className="w-8 h-1.5 rounded-full bg-[#05070F] border border-white/20 mb-3 shadow-inner" />
+
+            {/* Foto Profil */}
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-inner group">
+              <Image
+                src="/avatar.png"
+                alt="Donie Makapeli"
+                width={128}
+                height={128}
+                priority={true}
+                unoptimized={true}
+                className="w-full h-full object-cover rounded-xl opacity-100 group-hover:scale-105 transition-transform duration-300 pointer-events-none"
+              />
+            </div>
+
+            {/* Nama & Role */}
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
+            <p className="text-sky-400 text-[10px] sm:text-[11px] font-semibold tracking-widest uppercase leading-relaxed text-center">
+              Full-Stack Web Developer<br />& Data Analyst
+            </p>
+
+            {/* Divider */}
+            <div className="w-full h-px bg-white/10 my-3" />
+
+            {/* Instansi */}
+            <p className="text-text-secondary text-xs font-medium tracking-wide">
+              Universitas Nusa Putra
+            </p>
+            <p className="text-text-secondary/70 text-[10px] mt-0.5 tracking-wider uppercase">
+              S1 Teknik Informatika
+            </p>
+
+            {/* Bottom Accent Line */}
+            <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-sky-600 rounded-b-2xl opacity-80" />
           </div>
-
-          {/* Nama & Role */}
-          <h3 className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
-          <p className="text-sky-400 text-[10px] sm:text-[11px] font-semibold tracking-widest uppercase leading-relaxed text-center">
-            Web Developer<br />& Data Analyst
-          </p>
-
-          {/* Divider */}
-          <div className="w-full h-px bg-white/10 my-3" />
-
-          {/* Instansi */}
-          <p className="text-text-secondary text-xs font-medium tracking-wide">
-            Universitas Nusa Putra
-          </p>
-          <p className="text-text-secondary/70 text-[10px] mt-0.5 tracking-wider uppercase">
-            S1 Teknik Informatika
-          </p>
-
-          {/* Bottom Accent Line */}
-          <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-sky-600 rounded-b-2xl opacity-80" />
         </div>
       </motion.div>
     </div>
@@ -321,7 +305,7 @@ function HomeSection() {
           </h1>
 
           <h2 className="text-xl sm:text-3xl lg:text-4xl italic font-serif gradient-text mb-5 text-left">
-            Web Developer & Data Analyst
+            Full-Stack Web Developer & Data Analyst
           </h2>
 
           <TypingLine />
@@ -438,12 +422,6 @@ function AboutSection() {
                   sizes="(max-width: 768px) 280px, 320px"
                   className="object-cover object-top rounded-2xl opacity-100 group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05070F]/80 via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-3 left-3 right-3 text-center">
-                  <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-[#05070F]/80 backdrop-blur-md border border-white/10 text-sky-400 inline-block shadow-lg">
-                    ⚡ Available for Hire & Collaboration
-                  </span>
-                </div>
               </div>
 
               {/* Status Pills */}
@@ -463,8 +441,29 @@ function AboutSection() {
               </div>
             </div>
 
-            {/* Right Column (7/12): Narrative Description */}
+            {/* Right Column (7/12): Narrative Description & Code Editor */}
             <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5 text-left">
+              
+              {/* Code Editor Box */}
+              <div className="w-full bg-[#05070f]/90 border border-white/10 rounded-xl overflow-hidden shadow-2xl mb-2 font-mono text-xs sm:text-sm">
+                {/* Top Header Bar */}
+                <div className="flex items-center gap-2 px-4 py-2.5 bg-white/5 border-b border-white/10">
+                  <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-green-500/80 inline-block" />
+                  <span className="ml-2 text-[11px] text-text-secondary/70 font-sans font-medium">developer.js</span>
+                </div>
+                {/* Code Content */}
+                <div className="p-4 sm:p-5 leading-relaxed text-gray-300 overflow-x-auto space-y-1">
+                  <div>
+                    <span className="text-purple-400 font-semibold">const</span> <span className="text-blue-400 font-semibold">role</span> = [<span className="text-emerald-300">&quot;Full-Stack Dev&quot;</span>, <span className="text-emerald-300">&quot;Data Analyst&quot;</span>];
+                  </div>
+                  <div>
+                    <span className="text-purple-400 font-semibold">const</span> <span className="text-blue-400 font-semibold">goal</span> = <span className="text-emerald-300">&quot;Membangun produk dari kode hingga data&quot;</span>;
+                  </div>
+                </div>
+              </div>
+
               <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
                 Menghubungkan Estetika Modern Frontend dengan Kekuatan Analisis Data
               </h3>
