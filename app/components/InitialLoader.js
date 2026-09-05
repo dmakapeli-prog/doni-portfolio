@@ -1,73 +1,67 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 /* ==================================================================
    CINEMATIC INITIAL LOADER
-   - Full-screen overlay (bg-[#030712]) on first page load
-   - Animated logo monogram "< DM />" with elegant pulse
-   - Circular loading indicator with orbit animation
-   - Fades out + slides up after ~2s to reveal portfolio
-   - CRITICAL: No overflow manipulation on body — uses only
-     pointer-events and visibility to avoid scroll-blocking bugs
+   - Fixed-position overlay, z-9999, completely removed from DOM on exit
+   - ZERO body/html overflow manipulation
+   - AnimatePresence unmounts component after exit animation completes
    ================================================================== */
 export default function InitialLoader() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isExited, setIsExited] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [shouldRender, setShouldRender] = useState(true);
 
   useEffect(() => {
-    // Hold loader for 2 seconds, then begin exit animation
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
+    const timer = setTimeout(() => setIsVisible(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
-  // When isLoading flips to false, the exit animation runs (~0.8s).
-  // onExitComplete marks the overlay as fully gone so we can unmount it.
-  // NO body.style.overflow manipulation anywhere — eliminates scroll bugs.
+  const handleExitComplete = useCallback(() => {
+    // Fully remove from DOM — no invisible layer remains
+    setShouldRender(false);
+  }, []);
 
-  if (isExited) return null;
+  // Component returns absolutely nothing after exit — no DOM node at all
+  if (!shouldRender) return null;
 
   return (
-    <AnimatePresence onExitComplete={() => setIsExited(true)}>
-      {isLoading && (
+    <AnimatePresence onExitComplete={handleExitComplete}>
+      {isVisible && (
         <motion.div
-          key="cinematic-loader"
-          initial={{ opacity: 1, y: 0 }}
+          key="loader"
+          initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
-            y: -60,
-            transition: {
-              duration: 0.8,
-              ease: [0.76, 0, 0.24, 1],
-            },
+            y: -50,
+            transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
           }}
-          className="loader-overlay"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            background: "#030712",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+          }}
         >
-          {/* ---- Background ambient glow ---- */}
+          {/* Ambient glows */}
           <div className="loader-ambient-glow loader-ambient-glow--top" />
           <div className="loader-ambient-glow loader-ambient-glow--bottom" />
 
-          {/* ---- Central Content ---- */}
+          {/* Center content */}
           <div className="loader-center">
-
-            {/* Circular Orbit Ring */}
             <div className="loader-orbit-ring">
               <div className="loader-orbit-dot" />
             </div>
 
-            {/* Logo Monogram */}
             <motion.div
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.6,
-                ease: [0.16, 1, 0.3, 1],
-                delay: 0.15,
-              }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
               className="loader-logo"
             >
               <span className="loader-logo-bracket">&lt;</span>
@@ -75,7 +69,6 @@ export default function InitialLoader() {
               <span className="loader-logo-bracket"> /&gt;</span>
             </motion.div>
 
-            {/* Subtitle Text */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,7 +78,6 @@ export default function InitialLoader() {
               Donie Makapeli.
             </motion.p>
 
-            {/* Horizontal Loading Bar */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -96,7 +88,6 @@ export default function InitialLoader() {
             </motion.div>
           </div>
 
-          {/* ---- Scanline overlay effect ---- */}
           <div className="loader-scanlines" />
         </motion.div>
       )}

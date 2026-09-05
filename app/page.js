@@ -194,146 +194,78 @@ function Navbar() {
 }
 
 /* ==================================================================
-   ID CARD COMPONENT (Realistic SVG Lanyard & Spring Pendulum Physics)
-   - SVG lanyard strap (14px wide) with fabric texture & woven detail
-   - Detailed metallic badge clip with hook/slot rendered in SVG
-   - Spring pendulum physics: dragConstraints zeroed, dragElastic 0.7
-   - useTransform maps x → rotate for realistic pendulum tilt
-   - Gentle idle wind sway when not being dragged
+   ID CARD COMPONENT (Realistic Div Lanyard & Pendulum Physics)
+   - Div lanyard: w-4/w-5, bg-[#111], shadow-inner
+   - Metallic clip: bg-gradient from-gray-400 to-gray-600
+   - Pendulum: drag="x", dragConstraints left/right 0, dragElastic 0.4
+   - useTransform(x, [-200,200], [-15,15]) for rotation
+   - Idle sway: rotate [-2,2,-2], repeat Infinity, duration 4
    ================================================================== */
 function IDCard() {
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-200, 200], [-15, 15]);
 
   return (
-    <div className="relative flex flex-col items-center select-none" style={{ paddingTop: 0 }}>
+    <div className="relative flex flex-col items-center select-none">
 
-      {/* --- SVG Lanyard Strap (Realistic Fabric) --- */}
-      <svg
-        width="16"
-        height="120"
-        viewBox="0 0 16 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="block"
-        style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))" }}
-      >
-        {/* Main strap body */}
-        <defs>
-          <linearGradient id="strapGrad" x1="0" y1="0" x2="16" y2="0" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#1e293b" />
-            <stop offset="20%" stopColor="#334155" />
-            <stop offset="50%" stopColor="#475569" />
-            <stop offset="80%" stopColor="#334155" />
-            <stop offset="100%" stopColor="#1e293b" />
-          </linearGradient>
-          {/* Fabric weave pattern */}
-          <pattern id="fabricWeave" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
-            <rect width="4" height="4" fill="transparent" />
-            <rect x="0" y="0" width="2" height="2" fill="rgba(255,255,255,0.03)" />
-            <rect x="2" y="2" width="2" height="2" fill="rgba(255,255,255,0.03)" />
-          </pattern>
-        </defs>
+      {/* --- Tali Lanyard (Div) --- */}
+      <div className="w-4 sm:w-5 h-28 sm:h-36 bg-[#111] shadow-inner relative rounded-t-sm">
+        {/* Fabric texture lines */}
+        <div className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.06) 3px, rgba(255,255,255,0.06) 4px)",
+          }}
+        />
+        {/* Center accent stripe */}
+        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-sky-500/20" />
+        {/* Edge highlights */}
+        <div className="absolute inset-y-0 left-0 w-px bg-white/[0.06]" />
+        <div className="absolute inset-y-0 right-0 w-px bg-white/[0.06]" />
+      </div>
 
-        {/* Strap background with gradient */}
-        <rect x="1" y="0" width="14" height="120" rx="2" fill="url(#strapGrad)" />
-
-        {/* Fabric weave texture overlay */}
-        <rect x="1" y="0" width="14" height="120" rx="2" fill="url(#fabricWeave)" />
-
-        {/* Left edge stitch line */}
-        <line x1="2.5" y1="4" x2="2.5" y2="116" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" strokeDasharray="3 2" />
-
-        {/* Right edge stitch line */}
-        <line x1="13.5" y1="4" x2="13.5" y2="116" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" strokeDasharray="3 2" />
-
-        {/* Center stripe (brand accent) */}
-        <rect x="6.5" y="0" width="3" height="120" fill="rgba(56,189,248,0.12)" rx="1" />
-        <line x1="8" y1="0" x2="8" y2="120" stroke="rgba(56,189,248,0.2)" strokeWidth="0.5" />
-
-        {/* Top fade-out to blend with background */}
-        <rect x="1" y="0" width="14" height="20" rx="2" fill="url(#topFade)" />
-        <defs>
-          <linearGradient id="topFade" x1="0" y1="0" x2="0" y2="20">
-            <stop offset="0%" stopColor="#05070F" stopOpacity="1" />
-            <stop offset="100%" stopColor="#05070F" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-
-      {/* --- SVG Metallic Badge Clip --- */}
-      <svg
-        width="36"
-        height="28"
-        viewBox="0 0 36 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="block -mt-1"
-        style={{ filter: "drop-shadow(0 2px 3px rgba(0,0,0,0.5))" }}
-      >
-        <defs>
-          <linearGradient id="clipGrad" x1="0" y1="0" x2="0" y2="28">
-            <stop offset="0%" stopColor="#e2e8f0" />
-            <stop offset="25%" stopColor="#cbd5e1" />
-            <stop offset="50%" stopColor="#94a3b8" />
-            <stop offset="75%" stopColor="#64748b" />
-            <stop offset="100%" stopColor="#475569" />
-          </linearGradient>
-        </defs>
-
+      {/* --- Klip Besi Metalik (Badge Clip) --- */}
+      <div className="flex flex-col items-center -mt-px">
         {/* Clip body */}
-        <rect x="4" y="0" width="28" height="22" rx="3" fill="url(#clipGrad)" stroke="#94a3b8" strokeWidth="0.5" />
+        <div className="w-8 h-5 bg-gradient-to-b from-gray-400 to-gray-600 rounded-sm border border-gray-500/60 shadow-md relative flex items-center justify-center">
+          {/* Highlight top */}
+          <div className="absolute top-0 inset-x-0 h-1 bg-white/20 rounded-t-sm" />
+          {/* Lubang pengait (hook hole) */}
+          <div className="w-2 h-2 rounded-full bg-black/60 border border-gray-700/50 shadow-inner" />
+          {/* Side rivets */}
+          <div className="absolute left-1 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-gray-300/50" />
+          <div className="absolute right-1 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-gray-300/50" />
+        </div>
+        {/* Clip jaw / bottom grip */}
+        <div className="w-7 h-1.5 bg-gradient-to-b from-gray-500 to-gray-700 rounded-b-sm border-x border-b border-gray-600/50" />
+      </div>
 
-        {/* Top highlight */}
-        <rect x="5" y="1" width="26" height="3" rx="1.5" fill="rgba(255,255,255,0.25)" />
-
-        {/* Center slot / hook hole */}
-        <rect x="13" y="7" width="10" height="5" rx="2" fill="#334155" stroke="#475569" strokeWidth="0.5" />
-        {/* Slot inner shadow */}
-        <rect x="14" y="8" width="8" height="3" rx="1.5" fill="#1e293b" />
-
-        {/* Bottom teeth / grip lines */}
-        <line x1="10" y1="17" x2="26" y2="17" stroke="#64748b" strokeWidth="0.5" />
-        <line x1="10" y1="19" x2="26" y2="19" stroke="#64748b" strokeWidth="0.5" />
-
-        {/* Bottom jaw */}
-        <rect x="6" y="21" width="24" height="6" rx="2" fill="#64748b" stroke="#475569" strokeWidth="0.5" />
-        <rect x="8" y="22" width="20" height="2" rx="1" fill="rgba(255,255,255,0.1)" />
-
-        {/* Side rivets */}
-        <circle cx="8" cy="11" r="1.5" fill="#94a3b8" stroke="#475569" strokeWidth="0.3" />
-        <circle cx="28" cy="11" r="1.5" fill="#94a3b8" stroke="#475569" strokeWidth="0.3" />
-      </svg>
-
-      {/* --- Spring Pendulum Card Assembly --- */}
+      {/* --- Pendulum Card (Framer Motion) --- */}
       <motion.div
-        drag
-        dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-        dragElastic={0.7}
-        onDrag={() => {}}
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.4}
         style={{
           x,
           rotate,
           transformOrigin: "top center",
         }}
         animate={{
-          rotate: [-2, 2, -1.5, 1.8, -2],
+          rotate: [-2, 2, -2],
         }}
         transition={{
           rotate: {
             repeat: Infinity,
-            duration: 5,
+            duration: 4,
             ease: "easeInOut",
           },
           x: {
             type: "spring",
-            stiffness: 150,
-            damping: 12,
-            mass: 0.8,
+            stiffness: 200,
+            damping: 15,
           },
         }}
         whileTap={{ cursor: "grabbing", scale: 1.02 }}
-        className="id-card-wrapper flex flex-col items-center cursor-grab select-none touch-none relative z-10"
+        className="flex flex-col items-center cursor-grab select-none touch-none relative z-10"
       >
 
         {/* --- Card Body --- */}
@@ -342,7 +274,7 @@ function IDCard() {
           {/* Slot Hole for Badge Holder Clip */}
           <div className="w-8 h-1.5 rounded-full bg-[#05070F] border border-white/20 mb-3 shadow-inner" />
 
-          {/* Foto Profil (Lokal avatar.png) */}
+          {/* Foto Profil */}
           <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-inner group">
             <Image
               src="/avatar.png"
