@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { SiPandas, SiSupabase, SiPostman, SiGooglecolab, SiNodedotjs, SiPhp, SiLaravel, SiMongodb } from "react-icons/si";
+import { SiPandas, SiSupabase, SiPostman, SiGooglecolab, SiNodedotjs, SiPhp, SiLaravel, SiMongodb, SiHtml5, SiPostgresql, SiGit } from "react-icons/si";
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 import InitialLoader from "./components/InitialLoader";
 
@@ -868,39 +868,13 @@ function SkillsSection() {
       desc: "Data Analysis Library",
       icon: <SiPandas className="text-xl text-[#38BDF8]" />,
     },
-    {
-      name: "HTML & CSS",
-      desc: "Frontend Core",
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4.136 0l1.69 18.954L12 21l6.17-2.043L19.86 0z" fill="#E34F26" />
-          <path d="M12 1.5v18.13l5.018-1.66 1.455-16.47H12z" fill="#EF652A" />
-          <path d="M12 7.3H7.895l.265 2.9H12v2.82H7.57l.35 3.92L12 18.03v-2.97l-2.06-.55-.14-1.51H12V7.3z" fill="white" />
-          <path d="M12 7.3v2.9h3.75l-.355 4.47-3.395.89v2.97l4.14-1.15.465-5.19H12z" fill="white" opacity="0.9" />
-        </svg>
-      ),
-    },
+    { name: "HTML5 & CSS3", desc: "Frontend Core", icon: <SiHtml5 className="text-xl text-[#E34F26]"/> },
     {
       name: "Supabase",
       desc: "Backend as a Service",
       icon: <SiSupabase className="text-xl text-[#3ECF8E]" />,
     },
-    {
-      name: "PostgreSQL",
-      desc: "Relational Database",
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.5 3C16.2 1.7 14.5 1 12.7 1c-1.2 0-2.4.3-3.4.9C7.8 1.3 6.2 1.7 5 2.9 3.2 4.7 3 7.7 3 9.5c0 1.2.2 2.5.7 3.6.6 1.3 1.6 1.8 2.1 1.8.4 0 .7-.1 1-.3v2.2c0 2.1.7 3.8 2.5 4.6.5.2 1 .3 1.5.3 1 0 1.9-.3 2.7-.9.6-.4 1-.9 1.3-1.5.3.1.6.2 1 .2.9 0 1.9-.4 2.5-1.4.5-.8.7-1.8.7-2.9V15c.4-.5.7-1.1.8-1.7.3-1 .4-2.2.4-3.2C21 6.9 19.8 4.7 17.5 3z" fill="#336791" />
-          <path d="M19 7.5c.8 0 1.5-.7 1.5-1.5S19.8 4.5 19 4.5c-.7 0-1.3.5-1.5 1.1L17 5.4c.3-.5.8-.9 1.5-.9.9 0 1.5.7 1.5 1.5S19.4 7.5 18.5 7.5" fill="#336791" />
-          <ellipse cx="9.5" cy="8" rx="1.5" ry="1.7" fill="white" />
-          <ellipse cx="14.5" cy="8" rx="1.5" ry="1.7" fill="white" />
-          <circle cx="9.8" cy="8.2" r="0.8" fill="#1a1a1a" />
-          <circle cx="14.8" cy="8.2" r="0.8" fill="#1a1a1a" />
-          <path d="M10 11.5c0 1.1.9 2 2 2s2-.9 2-2" stroke="white" strokeWidth="0.8" fill="none" strokeLinecap="round" />
-          <path d="M10.5 13.5c-.5.8-1.2 1.5-2 1.8" stroke="#C8A96E" strokeWidth="1" fill="none" strokeLinecap="round" />
-        </svg>
-      ),
-    },
+    { name: "PostgreSQL", desc: "Relational Database", icon: <SiPostgresql className="text-xl text-[#4169E1]"/> },
     {
       name: "SQL",
       desc: "Database Query Language",
@@ -914,10 +888,11 @@ function SkillsSection() {
         </svg>
       ),
     },
-    { name: "Node.js", desc: "JavaScript Runtime", icon: <SiNodedotjs className="text-xl text-[#339933]"/> },
-    { name: "PHP", desc: "Backend Language", icon: <SiPhp className="text-xl text-[#777BB4]"/> },
-    { name: "Laravel", desc: "Backend Framework", icon: <SiLaravel className="text-xl text-[#FF2D20]"/> },
-    { name: "MongoDB", desc: "NoSQL Database", icon: <SiMongodb className="text-xl text-[#47A248]"/> },
+    { name: "Git & GitHub", desc: "Version Control", icon: <SiGit className="text-xl text-[#F05032]"/> },
+    { name: "Node.js", desc: "JavaScript Runtime", icon: <SiNodedotjs className="text-xl text-[#339933]" /> },
+    { name: "PHP", desc: "Backend Language", icon: <SiPhp className="text-xl text-[#777BB4]" /> },
+    { name: "Laravel", desc: "Backend Framework", icon: <SiLaravel className="text-xl text-[#FF2D20]" /> },
+    { name: "MongoDB", desc: "NoSQL Database", icon: <SiMongodb className="text-xl text-[#47A248]" /> },
   ];
 
   const toolsSkills = [
@@ -1138,7 +1113,7 @@ function SkillsSection() {
 
         {/* Footer Stats */}
         <p className="text-center text-text-secondary/60 text-[11px] sm:text-xs mt-4 sm:mt-5">
-          3 Core Expertise · 15 Languages & Frameworks · 10 Tools
+          3 Core Expertise · 16 Languages & Frameworks · 10 Tools
         </p>
 
       </div>
