@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { SiPandas, SiSupabase, SiPostman, SiGooglecolab } from "react-icons/si";
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 import InitialLoader from "./components/InitialLoader";
@@ -194,72 +194,94 @@ function Navbar() {
 }
 
 /* ==================================================================
-   ID CARD COMPONENT (Exact Rizq Wijaya Pendulum Physics & Lanyard)
+   ID CARD COMPONENT (3D Realistic Pendulum with Metallic Lanyard SVG)
    ================================================================== */
 function IDCard() {
   const x = useMotionValue(0);
-  const rotate = useTransform(x, [-200, 200], [-15, 15]);
+  const mouseX = useSpring(x, { stiffness: 300, damping: 20 });
+  const rotateZ = useTransform(mouseX, [-200, 200], [-15, 15]); // Ayunan kiri-kanan
+  const rotateY = useTransform(mouseX, [-200, 200], [-25, 25]); // Putaran 3D
 
   return (
-    <motion.div 
-      style={{ x, rotate, transformOrigin: 'top center' }}
-      drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      dragElastic={0.6}
-      animate={{ rotate: [-1.5, 1.5, -1.5] }}
-      transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-      className="flex flex-col items-center cursor-grab active:cursor-grabbing select-none"
-    >
-      {/* 1. TALI LANYARD */}
-      <div className="w-1.5 h-24 bg-[#222] shadow-sm"></div>
+    /* Container Utama dengan Perspective 3D */
+    <div style={{ perspective: "1000px" }} className="relative flex flex-col items-center select-none">
       
-      {/* 2. KLIP BESI */}
-      <div className="w-5 h-6 bg-gradient-to-b from-gray-400 to-gray-600 rounded-sm shadow-md border-b-2 border-gray-700 -mt-1 z-10 relative">
-          {/* Lubang pengait klip */}
-          <div className="w-2 h-2 rounded-full bg-black/60 mx-auto mt-1"></div>
+      {/* 1. Tali Lanyard (Tebal & Realistis) */}
+      <div className="w-5 h-28 bg-[#111] shadow-[inset_0_0_12px_rgba(0,0,0,0.9)] relative z-0"></div>
+
+      {/* 2. Pengait Besi (Carabiner SVG) */}
+      <div className="z-10 -mt-2 drop-shadow-md">
+        <svg width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C7 0 4 4 4 9V16C4 19 7 22 10 22H14C17 22 20 19 20 16V9C20 4 17 0 12 0Z" fill="url(#metal)" stroke="#333" strokeWidth="2"/>
+          <rect x="9" y="21" width="6" height="12" rx="2" fill="url(#metal)" />
+          <circle cx="12" cy="27" r="2" fill="#05070F" />
+          <defs>
+            <linearGradient id="metal" x1="0" y1="0" x2="24" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#777" />
+              <stop offset="0.5" stopColor="#ddd" />
+              <stop offset="1" stopColor="#444" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
-      
-      {/* 3. KARTU ID CARD */}
-      <div className="-mt-2 relative z-0">
-         <div className="id-card-body w-[250px] sm:w-[270px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 shadow-2xl">
-           {/* Slot Hole for Badge Holder Clip */}
-           <div className="w-8 h-1.5 rounded-full bg-[#05070F] border border-white/20 mb-3 shadow-inner" />
 
-           {/* Foto Profil */}
-           <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-inner group">
-             <Image
-               src="/avatar.png"
-               alt="Donie Makapeli"
-               width={128}
-               height={128}
-               priority={true}
-               unoptimized={true}
-               className="w-full h-full object-cover rounded-xl opacity-100 group-hover:scale-105 transition-transform duration-300 pointer-events-none"
-             />
-           </div>
+      {/* 3. Kartu ID (Animasi 3D) */}
+      <motion.div
+        style={{ 
+          x,
+          rotateZ, 
+          rotateY, 
+          transformOrigin: "top center",
+          transformStyle: "preserve-3d" 
+        }}
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.3}
+        className="relative -mt-3 cursor-grab active:cursor-grabbing z-20"
+      >
+        {/* Lubang punch-hole di atas ID Card */}
+        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-4 h-1.5 bg-[#05070F] rounded-full z-30 opacity-90 shadow-inner"></div>
+        
+        {/* KARTU AVATAR DONIE */}
+        <div className="id-card-body w-[250px] sm:w-[270px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col items-center relative z-20 shadow-2xl">
+          {/* Slot Hole for Badge Holder Clip */}
+          <div className="w-8 h-1.5 rounded-full bg-[#05070F] border border-white/20 mb-3 shadow-inner" />
 
-           {/* Nama & Role */}
-           <h3 className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
-           <p className="text-sky-400 text-[10px] sm:text-[11px] font-semibold tracking-widest uppercase leading-relaxed text-center">
-             Web Developer<br />& Data Analyst
-           </p>
+          {/* Foto Profil */}
+          <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/10 shadow-inner group">
+            <Image
+              src="/avatar.png"
+              alt="Donie Makapeli"
+              width={128}
+              height={128}
+              priority={true}
+              unoptimized={true}
+              className="w-full h-full object-cover rounded-xl opacity-100 group-hover:scale-105 transition-transform duration-300 pointer-events-none"
+            />
+          </div>
 
-           {/* Divider */}
-           <div className="w-full h-px bg-white/10 my-3" />
+          {/* Nama & Role */}
+          <h3 className="text-lg sm:text-xl font-bold text-white mb-1 tracking-wide">Donie Makapeli</h3>
+          <p className="text-sky-400 text-[10px] sm:text-[11px] font-semibold tracking-widest uppercase leading-relaxed text-center">
+            Web Developer<br />& Data Analyst
+          </p>
 
-           {/* Instansi */}
-           <p className="text-text-secondary text-xs font-medium tracking-wide">
-             Universitas Nusa Putra
-           </p>
-           <p className="text-text-secondary/70 text-[10px] mt-0.5 tracking-wider uppercase">
-             S1 Teknik Informatika
-           </p>
+          {/* Divider */}
+          <div className="w-full h-px bg-white/10 my-3" />
 
-           {/* Bottom Accent Line */}
-           <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-sky-600 rounded-b-2xl opacity-80" />
-         </div>
-      </div>
-    </motion.div>
+          {/* Instansi */}
+          <p className="text-text-secondary text-xs font-medium tracking-wide">
+            Universitas Nusa Putra
+          </p>
+          <p className="text-text-secondary/70 text-[10px] mt-0.5 tracking-wider uppercase">
+            S1 Teknik Informatika
+          </p>
+
+          {/* Bottom Accent Line */}
+          <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-sky-600 rounded-b-2xl opacity-80" />
+        </div>
+      </motion.div>
+    </div>
   );
 }
 
