@@ -9,9 +9,12 @@ import { motion, AnimatePresence } from "framer-motion";
    - Animated logo monogram "< DM />" with elegant pulse
    - Circular loading indicator with orbit animation
    - Fades out + slides up after ~2s to reveal portfolio
+   - CRITICAL: No overflow manipulation on body — uses only
+     pointer-events and visibility to avoid scroll-blocking bugs
    ================================================================== */
 export default function InitialLoader() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isExited, setIsExited] = useState(false);
 
   useEffect(() => {
     // Hold loader for 2 seconds, then begin exit animation
@@ -19,17 +22,17 @@ export default function InitialLoader() {
       setIsLoading(false);
     }, 2000);
 
-    // Prevent body scroll while loading
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      clearTimeout(timer);
-      document.body.style.overflow = "";
-    };
+    return () => clearTimeout(timer);
   }, []);
 
+  // When isLoading flips to false, the exit animation runs (~0.8s).
+  // onExitComplete marks the overlay as fully gone so we can unmount it.
+  // NO body.style.overflow manipulation anywhere — eliminates scroll bugs.
+
+  if (isExited) return null;
+
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={() => setIsExited(true)}>
       {isLoading && (
         <motion.div
           key="cinematic-loader"
