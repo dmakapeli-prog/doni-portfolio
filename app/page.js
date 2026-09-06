@@ -1095,15 +1095,8 @@ function SkillsSection() {
           )}
         </div>
 
-        {/* Archive Button */}
-        <div className="flex justify-center mt-8 sm:mt-10">
-          <button className="btn-outline px-6 py-2.5 rounded-full text-xs sm:text-sm flex items-center gap-2">
-            📦 View Archive
-          </button>
-        </div>
-
         {/* Footer Stats */}
-        <p className="text-center text-text-secondary/60 text-[11px] sm:text-xs mt-4 sm:mt-5">
+        <p className="text-center text-text-secondary/60 text-[11px] sm:text-xs mt-6 sm:mt-8">
           3 Core Expertise · 16 Languages & Frameworks · 10 Tools
         </p>
 
