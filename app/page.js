@@ -102,11 +102,11 @@ function HeroSection() {
           </div>
 
           {/* TENGAH — Portrait Photo */}
-          <div className="hero-center fade-up fd2">
+          <div className="hero-center flex items-end justify-center h-full fade-up fd2">
             <img
               src="/donie-profile.png"
               alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-              className="w-full max-w-md mx-auto object-contain object-bottom grayscale contrast-125 drop-shadow-2xl"
+              className="w-full max-w-md object-contain object-bottom grayscale drop-shadow-2xl"
             />
           </div>
 
@@ -180,12 +180,11 @@ function AboutSection() {
 
           {/* KANAN — Foto */}
           <div className="fade-up fd2">
-            <div className="about-photo-frame">
-              <img
-                src="/avatar.png"
-                alt="Donie Makapeli"
-              />
-            </div>
+            <img
+              src="/donie-profile.png"
+              alt="Donie Makapeli"
+              className="w-full h-auto object-cover rounded-xl grayscale border border-gray-700"
+            />
           </div>
 
         </div>
