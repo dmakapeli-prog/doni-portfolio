@@ -173,7 +173,7 @@ img { max-width: 100%; display: block; }
   z-index: 1;
 }
 
-/* KIRI: justify-center items-start h-full — teks TENGAH vertikal */
+/* KIRI: justify-center + pb-32 → teks agak ke ATAS dari tengah */
 .hero-left {
   display: flex;
   flex-direction: column;
@@ -184,7 +184,7 @@ img { max-width: 100%; display: block; }
   padding-left: max(calc((100vw - 1200px) / 2 + 2rem), 2.5rem);
   padding-right: 1.5rem;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 8rem;   /* pb-32 — dorong teks naik ke atas dari pusat */
 }
 
 .hero-greeting {
@@ -262,7 +262,7 @@ img { max-width: 100%; display: block; }
   );
 }
 
-/* KANAN: justify-end items-start h-full pb-16~24 — teks di area dada/bahu foto */
+/* KANAN: justify-end + pb-20 → teks merosot ke BAWAH dengan jarak */
 .hero-right {
   display: flex;
   flex-direction: column;
@@ -272,7 +272,7 @@ img { max-width: 100%; display: block; }
   gap: 1rem;
   padding-right: max(calc((100vw - 1200px) / 2 + 2rem), 2.5rem);
   padding-left: 1.5rem;
-  padding-bottom: 5rem;   /* ~pb-20: sejajar area dada/bahu foto */
+  padding-bottom: 5rem;   /* pb-20 — jarak dari dasar layar */
   padding-top: 1rem;
 }
 
