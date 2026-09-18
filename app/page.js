@@ -104,7 +104,7 @@ function HeroSection() {
           {/* TENGAH — Portrait Photo */}
           <div className="hero-center fade-up fd2">
             <img
-              src="/foto-doni.jpeg"
+              src="/avatar.png"
               alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
               className="hero-portrait"
             />
@@ -182,7 +182,7 @@ function AboutSection() {
           <div className="fade-up fd2">
             <div className="about-photo-frame">
               <img
-                src="/foto-doni.jpeg"
+                src="/avatar.png"
                 alt="Donie Makapeli"
               />
             </div>
