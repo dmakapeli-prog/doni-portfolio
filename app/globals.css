@@ -139,33 +139,69 @@ img { max-width: 100%; display: block; }
 .hero-section {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   padding-top: 64px;
+  position: relative;
+  overflow: hidden;
+  /* Full viewport width — NO max-width constraint */
+  width: 100%;
+}
+
+/* Blue glow background on the right — matches reference */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background: radial-gradient(ellipse at 80% 50%, rgba(20, 50, 140, 0.55) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 42% 1fr;
   gap: 2rem;
-  align-items: end;
-  min-height: calc(100vh - 64px);
-  padding: 4rem 0 3rem;
+  width: 100%;
+  min-height: 85vh;
+  height: calc(100vh - 64px);
+  padding: 0;
+  position: relative;
+  z-index: 1;
 }
 
+/* KIRI: justify-center items-start h-full — teks TENGAH vertikal */
 .hero-left {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 3rem;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
   gap: 1.5rem;
+  padding-left: max(calc((100vw - 1200px) / 2 + 2rem), 2.5rem);
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .hero-greeting {
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: clamp(3rem, 5.5vw, 5rem);
   font-weight: 900;
   color: var(--text-white);
   line-height: 1.05;
   letter-spacing: -0.03em;
+}
+
+/* Underline bar below greeting — matches reference */
+.hero-greeting-underline {
+  width: 60px;
+  height: 3px;
+  background: var(--text-white);
+  border-radius: 2px;
+  margin-top: 0.75rem;
 }
 
 .btn-cv {
@@ -173,51 +209,85 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 0.5rem;
   padding: 0.65rem 1.75rem;
-  border: 2px solid var(--blue-light);
-  border-radius: 8px;
+  background: var(--blue);
+  border: 2px solid var(--blue);
+  border-radius: 999px;
   color: var(--text-white);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   text-decoration: none;
-  background: transparent;
   cursor: pointer;
   transition: all 0.25s ease;
   width: fit-content;
 }
 .btn-cv:hover {
-  background: var(--blue);
-  border-color: var(--blue);
-  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+  background: var(--blue-light);
+  border-color: var(--blue-light);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.45);
 }
 
+/* TENGAH: justify-center items-end h-full — foto NEMPEL KE BAWAH */
 .hero-center {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
 }
 
-/* hero-portrait removed — now using Tailwind classes directly on img */
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  /* Grayscale — exactly like reference */
+  filter: grayscale(100%) contrast(1.08) brightness(0.9);
+  /* Fade bottom edge into background */
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 10%,
+    black 22%,
+    black 100%
+  );
+  mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 10%,
+    black 22%,
+    black 100%
+  );
+}
 
+/* KANAN: justify-end items-start h-full pb-16~24 — teks di area dada/bahu foto */
 .hero-right {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 3rem;
+  align-items: flex-start;
+  height: 100%;
   gap: 1rem;
+  padding-right: max(calc((100vw - 1200px) / 2 + 2rem), 2.5rem);
+  padding-left: 1.5rem;
+  padding-bottom: 5rem;   /* ~pb-20: sejajar area dada/bahu foto */
+  padding-top: 1rem;
 }
 
 .hero-role {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
   font-weight: 800;
   color: var(--text-white);
   line-height: 1.3;
 }
 
 .hero-desc {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-gray);
   line-height: 1.75;
-  max-width: 340px;
+  max-width: 320px;
 }
 
 /* ============================================================

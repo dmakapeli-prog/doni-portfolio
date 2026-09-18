@@ -84,44 +84,43 @@ function HeroSection() {
 
   return (
     <section id="hero" className="hero-section">
-      <div className="section-wrap" style={{ width: "100%" }}>
-        <div ref={ref} className="hero-grid">
+      <div ref={ref} className="hero-grid">
 
-          {/* KIRI — Greeting + CV Button */}
-          <div className="hero-left">
-            <div className="fade-up">
-              <h1 className="hero-greeting">
-                Hallo,<br />I&apos;m Donie
-              </h1>
-            </div>
-            <div className="fade-up fd1">
-              <a href="/cv-donie-makapeli.pdf" download className="btn-cv">
-                ⬇&nbsp; Download CV
-              </a>
-            </div>
+        {/* KIRI — Greeting + CV Button */}
+        <div className="hero-left">
+          <div className="fade-up">
+            <h1 className="hero-greeting">
+              Hallo,<br />I&apos;m Donie
+            </h1>
+            <div className="hero-greeting-underline" />
           </div>
-
-          {/* TENGAH — Portrait Photo */}
-          <div className="hero-center flex items-end justify-center h-full fade-up fd2">
-            <img
-              src="/donie-profile.png"
-              alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-              className="w-full max-w-md object-contain object-bottom grayscale drop-shadow-2xl"
-            />
+          <div className="fade-up fd1">
+            <a href="/cv-donie-makapeli.pdf" download className="btn-cv">
+              ⬇&nbsp; Download CV
+            </a>
           </div>
-
-          {/* KANAN — Role & Description */}
-          <div className="hero-right fade-up fd3">
-            <h2 className="hero-role">
-              Full-Stack Developer<br />&amp; Data Analyst
-            </h2>
-            <p className="hero-desc">
-              Saya mengembangkan website modern dan solusi analisis data
-              yang presisi, berfokus pada kinerja sistem dan kejelasan informasi.
-            </p>
-          </div>
-
         </div>
+
+        {/* TENGAH — Portrait Photo */}
+        <div className="hero-center fade-up fd2">
+          <img
+            src="/donie-profile.png"
+            alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
+            className="hero-photo"
+          />
+        </div>
+
+        {/* KANAN — Role & Description */}
+        <div className="hero-right fade-up fd3">
+          <h2 className="hero-role">
+            Full-Stack Developer<br />&amp; Data Analyst
+          </h2>
+          <p className="hero-desc">
+            Saya mengembangkan website modern dan solusi analisis data
+            yang presisi, berfokus pada kinerja sistem dan kejelasan informasi.
+          </p>
+        </div>
+
       </div>
     </section>
   );
