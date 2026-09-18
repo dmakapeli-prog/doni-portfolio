@@ -196,16 +196,7 @@ img { max-width: 100%; display: block; }
   align-items: flex-end;
 }
 
-.hero-portrait {
-  width: 100%;
-  max-width: 360px;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: top center;
-  border-radius: 0;
-  display: block;
-  filter: drop-shadow(0 20px 60px rgba(37, 99, 235, 0.2));
-}
+/* hero-portrait removed — now using Tailwind classes directly on img */
 
 .hero-right {
   display: flex;
