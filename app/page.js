@@ -84,10 +84,10 @@ function HeroSection() {
 
   return (
     <section id="hero" className="hero-section">
-      <div ref={ref} className="hero-grid">
+      <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 max-w-5xl mx-auto w-full min-h-[85vh] px-4 md:px-8 hero-grid">
 
         {/* KIRI — Greeting + CV Button */}
-        <div className="hero-left">
+        <div className="flex flex-col justify-center items-start h-full hero-left">
           <div className="fade-up">
             <h1 className="hero-greeting">
               Hallo,<br />I&apos;m Donie
@@ -102,7 +102,7 @@ function HeroSection() {
         </div>
 
         {/* TENGAH — Portrait Photo */}
-        <div className="hero-center fade-up fd2">
+        <div className="flex justify-center items-end h-full hero-center fade-up fd2">
           <img
             src="/donie-profile.png"
             alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
@@ -111,7 +111,7 @@ function HeroSection() {
         </div>
 
         {/* KANAN — Role & Description */}
-        <div className="hero-right fade-up fd3">
+        <div className="flex flex-col justify-end items-start h-full pb-8 md:pb-12 hero-right fade-up fd3">
           <h2 className="hero-role">
             Full-Stack Developer<br />&amp; Data Analyst
           </h2>
