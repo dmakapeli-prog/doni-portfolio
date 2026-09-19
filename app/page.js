@@ -84,7 +84,7 @@ function HeroSection() {
 
   return (
     <section id="hero" className="hero-section">
-      <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 max-w-5xl mx-auto w-full min-h-[85vh] px-4 md:px-8 hero-grid">
+      <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto w-full min-h-[85vh] px-6 lg:px-12 hero-grid">
 
         {/* KIRI — Greeting + CV Button */}
         <div className="flex flex-col justify-center items-start h-full hero-left">
@@ -111,7 +111,7 @@ function HeroSection() {
         </div>
 
         {/* KANAN — Role & Description */}
-        <div className="flex flex-col justify-end items-start h-full pb-8 md:pb-12 hero-right fade-up fd3">
+        <div className="flex flex-col justify-end items-start h-full pb-16 lg:pb-24 hero-right fade-up fd3">
           <h2 className="hero-role">
             Full-Stack Developer<br />&amp; Data Analyst
           </h2>
