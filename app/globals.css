@@ -59,13 +59,19 @@ img { max-width: 100%; display: block; }
 }
 
 .navbar-inner {
-  max-width: 1200px;
+  max-width: 80rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .navbar-inner {
+    padding: 0 3rem;
+  }
 }
 
 .nav-logo-pill {
@@ -212,7 +218,7 @@ img { max-width: 100%; display: block; }
 
 /* TENGAH: flex justify-center items-end h-full — foto NEMPEL KE BAWAH */
 .hero-center {
-  overflow: hidden;
+  overflow: visible;
   position: relative;
 }
 

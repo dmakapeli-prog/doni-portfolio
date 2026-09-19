@@ -57,7 +57,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-inner">
+      <div className="navbar-inner max-w-7xl mx-auto w-full px-6 lg:px-12">
         <a href="#about" className="nav-logo-pill">Portofolio.</a>
         <div className="nav-links">
           {links.map((l) => (
@@ -106,7 +106,7 @@ function HeroSection() {
           <img
             src="/donie-profile.png"
             alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-            className="hero-photo"
+            className="hero-photo scale-110 md:scale-120 lg:scale-125 origin-bottom"
           />
         </div>
 
