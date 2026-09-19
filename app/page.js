@@ -111,7 +111,7 @@ function HeroSection() {
         </div>
 
         {/* KANAN — Role & Description */}
-        <div className="flex flex-col justify-end items-start h-full pb-16 lg:pb-24 hero-right fade-up fd3">
+        <div className="flex flex-col justify-end items-start h-full pb-10 lg:pb-16 hero-right fade-up fd3">
           <h2 className="hero-role">
             Full-Stack Developer<br />&amp; Data Analyst
           </h2>
