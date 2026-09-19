@@ -77,17 +77,26 @@ function Navbar() {
 }
 
 /* ==============================================================
-   HERO SECTION — 3 kolom: Teks | Foto | Role+Desc
+   HERO SECTION — Absolute Positioning: Foto di Tengah, Teks Kiri & Kanan
    ============================================================== */
 function HeroSection() {
   const ref = useReveal();
 
   return (
     <section id="hero" className="hero-section">
-      <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto w-full min-h-[85vh] px-6 lg:px-12 hero-grid">
+      <div ref={ref} className="flex relative w-full h-[85vh] max-w-7xl mx-auto overflow-hidden px-6 lg:px-12">
 
-        {/* KIRI — Greeting + CV Button */}
-        <div className="flex flex-col justify-center items-start h-full hero-left">
+        {/* TENGAH — Portrait Photo (Absolut) */}
+        <div className="absolute inset-0 flex justify-center items-end z-0 fade-up fd2">
+          <img
+            src="/donie-profile.png"
+            alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
+            className="hero-photo w-[85%] md:w-[65%] lg:w-[50%] max-w-2xl h-auto object-contain object-bottom grayscale drop-shadow-2xl"
+          />
+        </div>
+
+        {/* KIRI — Greeting + CV Button (Absolut & Sejajar Navbar) */}
+        <div className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 flex flex-col items-start z-10 pt-16 hero-left">
           <div className="fade-up">
             <h1 className="hero-greeting">
               Hallo,<br />I&apos;m Donie
@@ -101,17 +110,8 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* TENGAH — Portrait Photo */}
-        <div className="flex justify-center items-end h-full hero-center fade-up fd2">
-          <img
-            src="/donie-profile.png"
-            alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-            className="hero-photo scale-110 md:scale-120 lg:scale-125 origin-bottom"
-          />
-        </div>
-
-        {/* KANAN — Role & Description */}
-        <div className="flex flex-col justify-end items-start h-full pb-10 lg:pb-16 hero-right fade-up fd3">
+        {/* KANAN — Role & Description (Absolut & Rata Bawah) */}
+        <div className="absolute right-6 lg:right-12 bottom-12 lg:bottom-24 flex flex-col items-start z-10 max-w-sm hero-right fade-up fd3">
           <h2 className="hero-role">
             Full-Stack Developer<br />&amp; Data Analyst
           </h2>
