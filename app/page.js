@@ -90,7 +90,7 @@ function HeroSection() {
       >
 
         {/* KIRI — Greeting + CV Button */}
-        <div className="absolute left-6 lg:left-12 top-[35%] lg:top-[40%] -translate-y-1/2 flex flex-col items-start z-10 max-w-lg hero-left">
+        <div className="absolute left-6 lg:left-12 xl:left-16 top-[35%] lg:top-[40%] -translate-y-1/2 flex flex-col items-start z-10 max-w-lg hero-left">
           <div className="fade-up flex flex-col items-start">
             <h1 className="hero-greeting text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold leading-tight lg:leading-none tracking-tight">
               Hallo,<br />I&apos;m Donie
@@ -119,7 +119,7 @@ function HeroSection() {
         <img
           src="/donie-profile.png"
           alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] md:w-[65%] lg:w-[55%] max-w-[900px] h-auto object-contain object-bottom grayscale drop-shadow-2xl z-0 pointer-events-none [-webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[75vh] lg:h-[85vh] w-auto object-contain object-bottom grayscale drop-shadow-2xl z-0 pointer-events-none [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
         />
 
       </div>
