@@ -87,11 +87,11 @@ function HeroSection() {
       <div ref={ref} className="flex relative w-full h-[85vh] max-w-7xl mx-auto overflow-hidden px-6 lg:px-12">
 
         {/* TENGAH — Portrait Photo (Absolut) */}
-        <div className="absolute inset-0 flex justify-center items-end z-0 fade-up fd2">
+        <div className="absolute inset-x-0 bottom-0 flex justify-center items-end z-0 pointer-events-none fade-up fd2">
           <img
             src="/donie-profile.png"
             alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-            className="hero-photo w-[85%] md:w-[65%] lg:w-[50%] max-w-2xl h-auto object-contain object-bottom grayscale drop-shadow-2xl"
+            className="hero-photo h-[70vh] lg:h-[80vh] w-auto max-w-none object-contain object-bottom grayscale drop-shadow-2xl"
           />
         </div>
 
