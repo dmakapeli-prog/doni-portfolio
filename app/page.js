@@ -92,10 +92,10 @@ function HeroSection() {
         {/* KIRI — Greeting + CV Button (Mobile: Flow atas, PC: Absolut Kiri) */}
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left z-10 hero-left lg:absolute lg:left-12 lg:top-1/2 lg:-translate-y-1/2 lg:pt-0">
           <div className="fade-up flex flex-col items-center lg:items-start">
-            <h1 className="hero-greeting">
+            <h1 className="hero-greeting text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold leading-tight lg:leading-none tracking-tight">
               Hallo,<br />I&apos;m Donie
             </h1>
-            <div className="hero-greeting-underline" />
+            <div className="hero-greeting-underline w-20 lg:w-28 h-1 lg:h-1.5" />
           </div>
           <div className="fade-up fd1">
             <a href="/cv-donie-makapeli.pdf" download className="btn-cv">
@@ -105,8 +105,8 @@ function HeroSection() {
         </div>
 
         {/* KANAN — Role & Description (Mobile: Flow tengah, PC: Absolut Kanan Bawah) */}
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left z-10 max-w-md lg:max-w-sm hero-right fade-up fd3 lg:absolute lg:right-12 lg:bottom-16">
-          <h2 className="hero-role">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left z-10 max-w-md lg:max-w-sm hero-right fade-up fd3 lg:absolute lg:right-12 lg:bottom-12 xl:bottom-20">
+          <h2 className="hero-role text-2xl lg:text-3xl">
             Full-Stack Developer<br className="hidden lg:block" />&amp; Data Analyst
           </h2>
           <p className="hero-desc">
@@ -120,7 +120,7 @@ function HeroSection() {
           <img
             src="/donie-profile.png"
             alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-            className="hero-photo h-[60vh] md:h-[70vh] lg:h-[85vh] w-auto max-w-none object-contain object-bottom grayscale drop-shadow-2xl transform scale-110 lg:scale-125 origin-bottom"
+            className="hero-photo w-auto h-[65vh] md:h-[75vh] lg:h-[85vh] max-w-3xl transform scale-110 lg:scale-[1.35] origin-bottom object-contain object-bottom grayscale drop-shadow-2xl"
           />
         </div>
 

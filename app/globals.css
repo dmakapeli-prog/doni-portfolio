@@ -178,20 +178,16 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-greeting {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 900;
   color: var(--text-white);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
 }
 
 /* Underline bar below greeting — matches reference */
 .hero-greeting-underline {
-  width: 60px;
-  height: 3px;
+  width: 80px;
+  height: 4px;
   background: var(--text-white);
   border-radius: 2px;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
 }
 
 .btn-cv {
@@ -247,7 +243,6 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-role {
-  font-size: clamp(1rem, 1.8vw, 1.35rem);
   font-weight: 800;
   color: var(--text-white);
   line-height: 1.3;
