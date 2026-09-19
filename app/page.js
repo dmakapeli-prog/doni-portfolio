@@ -105,7 +105,7 @@ function HeroSection() {
         </div>
 
         {/* KANAN — Role & Description */}
-        <div className="absolute right-6 lg:right-16 xl:right-24 bottom-[25%] lg:bottom-[30%] flex flex-col items-start z-10 max-w-[18rem] md:max-w-xs hero-right fade-up fd3">
+        <div className="absolute right-6 lg:right-12 xl:right-16 bottom-[25%] lg:bottom-[30%] flex flex-col items-start z-10 max-w-sm hero-right fade-up fd3">
           <h2 className="hero-role text-2xl lg:text-3xl">
             Full-Stack Developer<br className="hidden lg:block" />&amp; Data Analyst
           </h2>
@@ -119,7 +119,7 @@ function HeroSection() {
         <img
           src="/donie-profile.png"
           alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-auto h-[65vh] md:h-[70vh] lg:h-[75vh] max-w-3xl object-contain object-bottom grayscale drop-shadow-2xl z-0 pointer-events-none [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] md:w-[65%] lg:w-[55%] max-w-[900px] h-auto object-contain object-bottom grayscale drop-shadow-2xl z-0 pointer-events-none [-webkit-mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]"
         />
 
       </div>
