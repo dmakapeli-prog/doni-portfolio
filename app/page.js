@@ -120,7 +120,7 @@ function HeroSection() {
           <img
             src="/donie-profile.png"
             alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-            className="hero-photo h-[50vh] md:h-[60vh] lg:h-[80vh] w-auto max-w-none object-contain object-bottom grayscale drop-shadow-2xl"
+            className="hero-photo h-[60vh] md:h-[70vh] lg:h-[85vh] w-auto max-w-none object-contain object-bottom grayscale drop-shadow-2xl transform scale-110 lg:scale-125 origin-bottom"
           />
         </div>
 
