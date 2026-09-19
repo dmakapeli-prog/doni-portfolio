@@ -913,5 +913,4 @@ img { max-width: 100%; display: block; }
   .contact-cards-grid { grid-template-columns: 1fr; }
   .cert-card { flex: 0 0 calc(85% - 0.75rem); }
   .section-wrap { padding: 0 1.25rem; }
-  .navbar-inner { padding: 0 1.25rem; }
 }

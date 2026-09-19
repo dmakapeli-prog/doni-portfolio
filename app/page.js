@@ -77,27 +77,21 @@ function Navbar() {
 }
 
 /* ==============================================================
-   HERO SECTION — Absolute Positioning: Foto di Tengah, Teks Kiri & Kanan
+   HERO SECTION — Responsive: Mobile Stacked to PC Absolute
    ============================================================== */
 function HeroSection() {
   const ref = useReveal();
 
   return (
     <section id="hero" className="hero-section">
-      <div ref={ref} className="flex relative w-full h-[85vh] max-w-7xl mx-auto overflow-hidden px-6 lg:px-12">
+      <div
+        ref={ref}
+        className="relative flex flex-col items-center justify-between pt-10 lg:pt-0 w-full min-h-[85vh] lg:h-[85vh] max-w-7xl mx-auto overflow-hidden px-6 lg:px-12 gap-8 lg:gap-0"
+      >
 
-        {/* TENGAH — Portrait Photo (Absolut) */}
-        <div className="absolute inset-x-0 bottom-0 flex justify-center items-end z-0 pointer-events-none fade-up fd2">
-          <img
-            src="/donie-profile.png"
-            alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-            className="hero-photo h-[70vh] lg:h-[80vh] w-auto max-w-none object-contain object-bottom grayscale drop-shadow-2xl"
-          />
-        </div>
-
-        {/* KIRI — Greeting + CV Button (Absolut & Sejajar Navbar) */}
-        <div className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 flex flex-col items-start z-10 pt-16 hero-left">
-          <div className="fade-up">
+        {/* KIRI — Greeting + CV Button (Mobile: Flow atas, PC: Absolut Kiri) */}
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left z-10 hero-left lg:absolute lg:left-12 lg:top-1/2 lg:-translate-y-1/2 lg:pt-0">
+          <div className="fade-up flex flex-col items-center lg:items-start">
             <h1 className="hero-greeting">
               Hallo,<br />I&apos;m Donie
             </h1>
@@ -110,15 +104,24 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* KANAN — Role & Description (Absolut & Rata Bawah) */}
-        <div className="absolute right-6 lg:right-12 bottom-12 lg:bottom-24 flex flex-col items-start z-10 max-w-sm hero-right fade-up fd3">
+        {/* KANAN — Role & Description (Mobile: Flow tengah, PC: Absolut Kanan Bawah) */}
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left z-10 max-w-md lg:max-w-sm hero-right fade-up fd3 lg:absolute lg:right-12 lg:bottom-16">
           <h2 className="hero-role">
-            Full-Stack Developer<br />&amp; Data Analyst
+            Full-Stack Developer<br className="hidden lg:block" />&amp; Data Analyst
           </h2>
           <p className="hero-desc">
             Saya mengembangkan website modern dan solusi analisis data
             yang presisi, berfokus pada kinerja sistem dan kejelasan informasi.
           </p>
+        </div>
+
+        {/* TENGAH — Portrait Photo (Mobile: Flow bawah, PC: Absolut Tengah Dasar) */}
+        <div className="flex justify-center items-end z-0 pointer-events-none fade-up fd2 lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2">
+          <img
+            src="/donie-profile.png"
+            alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
+            className="hero-photo h-[50vh] md:h-[60vh] lg:h-[80vh] w-auto max-w-none object-contain object-bottom grayscale drop-shadow-2xl"
+          />
         </div>
 
       </div>
