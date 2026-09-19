@@ -89,9 +89,9 @@ function HeroSection() {
         className="relative flex flex-col items-center justify-between pt-10 lg:pt-0 w-full min-h-[85vh] lg:h-[85vh] max-w-7xl mx-auto overflow-hidden px-6 lg:px-12 gap-8 lg:gap-0"
       >
 
-        {/* KIRI — Greeting + CV Button (Mobile: Flow atas, PC: Absolut Kiri) */}
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left z-10 hero-left lg:absolute lg:left-12 lg:top-1/2 lg:-translate-y-1/2 lg:pt-0">
-          <div className="fade-up flex flex-col items-center lg:items-start">
+        {/* KIRI — Greeting + CV Button */}
+        <div className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 flex flex-col items-start z-10 max-w-lg hero-left">
+          <div className="fade-up flex flex-col items-start">
             <h1 className="hero-greeting text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold leading-tight lg:leading-none tracking-tight">
               Hallo,<br />I&apos;m Donie
             </h1>
@@ -104,8 +104,8 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* KANAN — Role & Description (Mobile: Flow tengah, PC: Absolut Kanan Bawah) */}
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left z-10 max-w-md lg:max-w-sm hero-right fade-up fd3 lg:absolute lg:right-12 lg:bottom-12 xl:bottom-20">
+        {/* KANAN — Role & Description */}
+        <div className="absolute right-6 lg:right-12 bottom-12 lg:bottom-20 flex flex-col items-start z-10 max-w-sm hero-right fade-up fd3">
           <h2 className="hero-role text-2xl lg:text-3xl">
             Full-Stack Developer<br className="hidden lg:block" />&amp; Data Analyst
           </h2>
@@ -115,12 +115,12 @@ function HeroSection() {
           </p>
         </div>
 
-        {/* TENGAH — Portrait Photo (Mobile: Flow bawah, PC: Absolut Tengah Dasar) */}
-        <div className="flex justify-center items-end z-0 pointer-events-none fade-up fd2 lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2">
+        {/* TENGAH — Portrait Photo */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex justify-center items-end z-0 pointer-events-none fade-up fd2">
           <img
             src="/donie-profile.png"
             alt="Donie Makapeli — Full-Stack Developer & Data Analyst"
-            className="hero-photo w-auto h-[65vh] md:h-[75vh] lg:h-[85vh] max-w-3xl transform scale-110 lg:scale-[1.35] origin-bottom object-contain object-bottom grayscale drop-shadow-2xl"
+            className="hero-photo h-[60vh] md:h-[70vh] lg:h-[80vh] w-auto max-w-2xl transform scale-105 lg:scale-110 origin-bottom object-contain object-bottom grayscale drop-shadow-2xl"
           />
         </div>
 
